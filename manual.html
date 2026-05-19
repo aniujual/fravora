@@ -88,6 +88,23 @@
     }
     .topnav-links a:hover { color: var(--text); background: var(--bg-3); }
     .topnav-links a.active { color: var(--accent-bright); }
+    .theme-btn {
+      background: none;
+      border: 1.5px solid var(--border);
+      color: var(--text);
+      border-radius: 50%;
+      font-size: 1.3em;
+      width: 2.2em;
+      height: 2.2em;
+      margin-left: 0.5em;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      vertical-align: middle;
+    }
+    .theme-btn:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
 
     /* ── LAYOUT ── */
     .layout {
@@ -564,24 +581,6 @@
     <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
     <button class="mobile-menu-btn" onclick="toggleSidebar()" id="menuBtn">☰ Menu</button>
   </div>
-  /* Theme toggle button */
-  .theme-btn {
-    background: none;
-    border: 1.5px solid var(--border);
-    color: var(--text);
-    border-radius: 50%;
-    font-size: 1.3em;
-    width: 2.2em;
-    height: 2.2em;
-    margin-left: 0.5em;
-    cursor: pointer;
-    transition: color 0.2s, border-color 0.2s;
-    vertical-align: middle;
-  }
-  .theme-btn:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-  }
 </nav>
 
 <!-- LAYOUT -->
@@ -652,7 +651,7 @@
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <div class="step-body">Go to <strong>Settings → Sources</strong> and add at least one photo source — local folder, SMB/NAS share, or Google Photos.</div>
+          <div class="step-body">Go to <strong>Settings → Sources</strong> and add at least one photo source — local folder, SMB/NAS share, Google Photos, or OneDrive.</div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
@@ -707,7 +706,7 @@
         <div class="feature-card">
           <div class="card-icon">☁️</div>
           <div class="card-title">Google Photos</div>
-          <div class="card-desc">Connect your Google account and select albums or photo picks. Free tier supports 1 album; PRO expands the quota and syncs more frequently.</div>
+          <div class="card-desc">Connect your Google account and select images to include in your slideshow. Albums are not available; only user-picked images are supported. There is no syncing or scanning of Google Photos albums.</div>
         </div>
         <div class="feature-card">
           <div class="card-icon">📁</div>
@@ -739,7 +738,7 @@
       <div class="settings-list">
         <div class="setting-row"><span class="setting-name">Create album</span><span class="setting-desc">Give the album a name, then attach SMB folders, local folders, and/or cloud collections to it.</span></div>
         <div class="setting-row"><span class="setting-name">Enable for playback</span><span class="setting-desc">Only enabled albums are included in the slideshow. Toggle albums on/off without deleting them.</span></div>
-        <div class="setting-row"><span class="setting-name">Include subfolders</span><span class="setting-desc">Recursively scan nested folders within the attached source. <span style="color:var(--accent-bright)">PRO required for SMB recursive scanning.</span></span></div>
+        <div class="setting-row"><span class="setting-name">Include subfolders</span><span class="setting-desc">Recursively scan nested folders within the attached source. <span style="color:var(--accent-bright)">PRO tier only.</span></span></div>
         <div class="setting-row"><span class="setting-name">Image counters</span><span class="setting-desc">Each album shows visible / hidden / total image counts so you can verify the configuration.</span></div>
         <div class="setting-row"><span class="setting-name">Hidden photos</span><span class="setting-desc">Hide individual photos per-album or globally without deleting them. Unhide anytime from <strong>Settings → Albums → Hidden photos</strong>.</span></div>
       </div>
