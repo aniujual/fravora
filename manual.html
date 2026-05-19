@@ -413,6 +413,13 @@
       color: var(--text-muted);
       line-height: 1.5;
     }
+    .status-alerts-list .setting-name {
+      width: 260px;
+      min-width: 260px;
+    }
+    .status-alerts-list .setting-desc {
+      flex: 1;
+    }
     .pro-tag {
       flex-shrink: 0;
       font-size: 9px;
@@ -584,6 +591,7 @@
       .feature-grid { grid-template-columns: 1fr; }
       .compare-table { font-size: 13px; }
       .setting-name { min-width: 130px; font-size: 12px; }
+      .status-alerts-list .setting-name { width: 130px; min-width: 130px; }
     }
   </style>
 </head>
@@ -1052,7 +1060,7 @@
       </div>
 
       <h3>Status & Alerts</h3>
-      <div class="settings-list">
+      <div class="settings-list status-alerts-list">
         <div class="setting-row"><span class="setting-name">Zoom navigator</span><span class="setting-desc">Mini-map appears while zoomed, showing the full image and your current viewport.</span></div>
         <div class="setting-row"><span class="setting-name">Network warning badge</span><span class="setting-desc">Appears when one or more SMB shares are unreachable. Tap to list failed shares.</span></div>
         <div class="setting-row"><span class="setting-name">Google Photos storage status</span><span class="setting-desc">Cloud status icons indicate import state: red for blocked/pending, yellow + count for partial recovery, and green + count for full recovery.</span></div>
