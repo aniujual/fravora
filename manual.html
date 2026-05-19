@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fravora user manual: setup, sources, albums, slideshow, overlays, radio, voice control, PRO features, and troubleshooting." />
+  <meta name="description" content="Fravora user manual with setup, gestures, overlays, radio, voice control, storage/status alerts, support tools, PRO features, and troubleshooting." />
   <title>User Manual – Fravora</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -748,8 +748,9 @@
       <h3>Cache & Storage</h3>
       <div class="settings-list">
         <div class="setting-row"><span class="setting-name">Image Cache Size</span><span class="setting-desc">Controls how much local storage is used for the resized image cache. Range: 128 MB to 2 GB with automatic pruning of older entries.</span></div>
+        <div class="setting-row"><span class="setting-name">Low Storage Alert</span><span class="setting-desc">Fravora warns you if your configured cache target exceeds currently available device storage.</span></div>
         <div class="setting-row"><span class="setting-name">Scan Interval</span><span class="setting-desc">How often Fravora rescans all enabled sources for new or removed photos. Range: 5 to 120 minutes.</span></div>
-        <div class="setting-row"><span class="setting-name">Google Photos headroom</span><span class="setting-desc">Reserves free-space on your device before downloading Google Photos images, protecting against storage exhaustion.</span></div>
+        <div class="setting-row"><span class="setting-name">Google Photos headroom</span><span class="setting-desc">Reserves free-space on your device before downloading Google Photos images, protecting against storage exhaustion. Includes status feedback and warning icons when your target exceeds available space.</span></div>
         <div class="setting-row"><span class="setting-name">Clear Cache</span><span class="setting-desc">Available for both standard image cache and Google Photos cache. Useful if old picks are no longer needed or the cache grows too large.</span></div>
       </div>
     </section>
@@ -800,7 +801,7 @@
       <div class="settings-list">
         <div class="setting-row"><span class="setting-name">Photo Interval</span><span class="setting-desc">How long each photo is displayed. Range: 10–600 seconds.</span><span class="free-tag">FREE</span></div>
         <div class="setting-row"><span class="setting-name">Image Order</span><span class="setting-desc">Date Added, Taken Date, Album Order, File Name, Random, or Smart Shuffle (PRO).</span></div>
-        <div class="setting-row"><span class="setting-name">Smart Shuffle</span><span class="setting-desc">Shuffle-based order that reduces back-to-back similar shots for a more varied display.</span><span class="pro-tag">PRO</span></div>
+        <div class="setting-row"><span class="setting-name">Smart Shuffle</span><span class="setting-desc">Intelligent shuffle that reduces back-to-back similar shots by detecting burst-style filenames and close capture times.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Display Mode</span><span class="setting-desc"><strong>Fit</strong> — shows the full image with no cropping. <strong>Fill</strong> — fills the screen, may crop edges.</span><span class="free-tag">FREE</span></div>
         <div class="setting-row"><span class="setting-name">Transition Effects</span><span class="setting-desc">Free tier runs without transitions. PRO unlocks Slide, Cube, Zoom, Crossfade, Depth, Parallax, Accordion, Vertical Slide, Card Deck, and Random.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Transition Speed</span><span class="setting-desc">Choose animation pace for transitions: Slow, Medium, or Fast.</span><span class="pro-tag">PRO</span></div>
@@ -931,6 +932,7 @@
         <div class="setting-row"><span class="setting-name">Unlimited search</span><span class="setting-desc">No daily search limit.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Advanced filters</span><span class="setting-desc">Filter by country code, language, genre tag, and minimum bitrate to find better streams faster.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Recently played</span><span class="setting-desc">Quick history of your most recent stations so you can jump back instantly.</span><span class="pro-tag">PRO</span></div>
+        <div class="setting-row"><span class="setting-name">Station failure tracking</span><span class="setting-desc">Session-only warning icons appear next to stations that failed to play, helping you quickly spot unstable streams.</span></div>
         <div class="setting-row"><span class="setting-name">Auto-play on select</span><span class="setting-desc">Tapping a station in search results starts playback immediately.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Auto-play on app start</span><span class="setting-desc">Optionally resume radio automatically when Fravora launches.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Background playback</span><span class="setting-desc">Radio keeps playing when the screen turns off or another app is in the foreground.</span><span class="pro-tag">PRO</span></div>
@@ -971,12 +973,17 @@
         </div>
         <div class="step">
           <div class="step-num">3</div>
-          <div class="step-body">Enable the <strong>Voice Control</strong> master toggle, then turn on the feature toggles you want (radio, slideshow, assistant).</div>
+          <div class="step-body">Enable the <strong>Voice Control</strong> master toggle and review the activation disclaimer. First-time enable requires a short acknowledgement delay.</div>
         </div>
         <div class="step">
           <div class="step-num">4</div>
-          <div class="step-body">Choose your <strong>wake phrase</strong> and optional wake feedback sound. Say the wake phrase — you'll see a blue listening frame.</div>
+          <div class="step-body">Choose your <strong>wake phrase</strong>, optional wake feedback sound, and the feature toggles you want (radio, slideshow, assistant). Say the wake phrase and you will see a blue listening frame.</div>
         </div>
+      </div>
+
+      <div class="callout warn">
+        <span class="callout-icon">🛡️</span>
+        <div class="callout-body"><strong>Safety check (first enable):</strong> Voice Control shows a mandatory disclaimer with a brief acknowledgement lock before activation.</div>
       </div>
 
       <h3>Wake Phrases</h3>
@@ -1033,6 +1040,7 @@
       <div class="settings-list">
         <div class="setting-row"><span class="setting-name">Ambient logo tap</span><span class="setting-desc">Single tap toggles radio play/pause.</span></div>
         <div class="setting-row"><span class="setting-name">Ambient logo double tap</span><span class="setting-desc">Opens radio station search immediately.</span></div>
+        <div class="setting-row"><span class="setting-name">Ambient logo animation</span><span class="setting-desc">The icon breathes during playback and subtly pulses with bass intensity.</span></div>
         <div class="setting-row"><span class="setting-name">Weather overlay tap</span><span class="setting-desc">Opens a detailed weather forecast overlay with 12-hour and 7-day views.</span></div>
       </div>
 
@@ -1047,6 +1055,7 @@
       <div class="settings-list">
         <div class="setting-row"><span class="setting-name">Zoom navigator</span><span class="setting-desc">Mini-map appears while zoomed, showing the full image and your current viewport.</span></div>
         <div class="setting-row"><span class="setting-name">Network warning badge</span><span class="setting-desc">Appears when one or more SMB shares are unreachable. Tap to list failed shares.</span></div>
+        <div class="setting-row"><span class="setting-name">Google Photos storage status</span><span class="setting-desc">Cloud status icons indicate import state: red for blocked/pending, yellow + count for partial recovery, and green + count for full recovery.</span></div>
         <div class="setting-row"><span class="setting-name">Blocking network overlay</span><span class="setting-desc">Full-screen warning appears if Fravora cannot load any photo due to network failures.</span></div>
         <div class="setting-row"><span class="setting-name">New images badge</span><span class="setting-desc">Notification strip appears when new photos are discovered during a scan.</span></div>
       </div>
@@ -1084,6 +1093,7 @@
           <tr><td class="label">Cloud connections</td><td>1 album</td><td>Expanded</td></tr>
           <tr><td class="label">Include subfolders (recursive)</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Scan interval control</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">Low storage cache alerts</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
 
           <tr class="section-row"><td colspan="3">Slideshow</td></tr>
           <tr><td class="label">Uninterrupted slideshow</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
@@ -1099,6 +1109,7 @@
           <tr><td class="label">Favorites</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Advanced search filters</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Recently played</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">Station failure tracking</td><td><span class="check">✓</span> (session)</td><td><span class="check">✓</span> (session)</td></tr>
           <tr><td class="label">Background playback</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Lockscreen media controls</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Radio running hours</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
@@ -1119,6 +1130,7 @@
 
           <tr class="section-row"><td colspan="3">Controls</td></tr>
           <tr><td class="label">Voice control</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">Voice activation disclaimer</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
 
           <tr class="section-row"><td colspan="3">Unlock PRO</td></tr>
           <tr><td class="label">Rewarded ad (+15 min)</td><td><span class="check">✓</span> up to 4/day</td><td>—</td></tr>
@@ -1199,6 +1211,7 @@
             <li>Free up storage space on the device.</li>
             <li>Increase <strong>Google Photos headroom</strong> in Sources to reserve more free space.</li>
             <li>Clear the Google Photos cache from Sources settings if old picks are stale.</li>
+            <li>Watch cloud status icons in the frame notification strip: red means blocked, yellow means partial recovery, green means fully recovered.</li>
           </ul>
         </div>
       </details>
@@ -1211,12 +1224,20 @@
       </details>
 
       <details class="trouble-item">
+        <summary class="trouble-q">Why do some stations show warning icons in Radio settings?</summary>
+        <div class="trouble-a">
+          Those are session-only station failure indicators. They mark stations that failed during the current app run so you can avoid unstable streams quickly.
+        </div>
+      </details>
+
+      <details class="trouble-item">
         <summary class="trouble-q">Voice control won't enable or hears only one command</summary>
         <div class="trouble-a">
           <ul>
             <li>Install <strong>Speech Services by Google</strong> from the Play Store if it's not already present.</li>
             <li>Set it as the default voice input: <strong>Android Settings → General Management → Language and Input → Voice Input</strong>.</li>
             <li>Grant microphone permission to Fravora when prompted.</li>
+            <li>On first enable, complete the mandatory activation disclaimer acknowledgement.</li>
             <li>Enable <strong>Wait for follow-up</strong> in Voice settings if you want multi-step voice interactions.</li>
             <li>Increase the <strong>Command window</strong> timeout if commands are timing out too quickly.</li>
           </ul>
@@ -1264,6 +1285,11 @@
 
       <div class="feature-grid">
         <div class="feature-card">
+          <div class="card-icon">📘</div>
+          <div class="card-title">User Manual</div>
+          <div class="card-desc">Open <strong>Settings → Support → User Manual</strong> for direct access to this documentation from inside the app.</div>
+        </div>
+        <div class="feature-card">
           <div class="card-icon">📧</div>
           <div class="card-title">Report an Issue</div>
           <div class="card-desc">Go to <strong>Settings → Support → Report an Issue</strong> to send a detailed bug report by email, including device and app version details.</div>
@@ -1291,7 +1317,7 @@
         <div class="feature-card">
           <div class="card-icon">📖</div>
           <div class="card-title">Replay Onboarding</div>
-          <div class="card-desc">Re-run the first-launch onboarding flow anytime from <strong>Settings → Support → Replay Onboarding</strong>.</div>
+          <div class="card-desc">Re-run the 8-step first-launch onboarding flow anytime from <strong>Settings → Support → Replay Onboarding</strong>.</div>
         </div>
       </div>
 
