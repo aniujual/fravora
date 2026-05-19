@@ -31,7 +31,7 @@
       --blue: #60a5fa;
       --blue-bg: rgba(96,165,250,0.08);
       --radius: 10px;
-      --sidebar-width: 260px;
+      --sidebar-width: max-content;
       --topbar-height: 60px;
     }
 
@@ -145,6 +145,7 @@
       padding: 32px 0 80px;
     }
     .sidebar-inner {
+      display: inline-block;
       position: sticky;
       top: calc(var(--topbar-height) + 16px);
       max-height: calc(100vh - var(--topbar-height) - 32px);
@@ -181,6 +182,7 @@
       text-decoration: none;
       color: var(--text-muted);
       font-size: 13.5px;
+      white-space: nowrap;
       transition: color 0.15s, background 0.15s;
       line-height: 1.3;
     }
@@ -994,14 +996,26 @@
         <div class="setting-row"><span class="setting-name">Hello Fravora</span><span class="setting-desc">Alternative wake phrase. Same on-device processing.</span></div>
       </div>
 
-      <h3>Commands</h3>
+      <h3>Command Categories</h3>
       <div class="settings-list">
-        <div class="setting-row"><span class="setting-name">Play / start / resume radio</span><span class="setting-desc">Starts or resumes the radio stream.</span></div>
-        <div class="setting-row"><span class="setting-name">Stop / pause radio</span><span class="setting-desc">Pauses or stops the current radio stream.</span></div>
-        <div class="setting-row"><span class="setting-name">Play / pause / stop slideshow</span><span class="setting-desc">Controls slideshow playback without touching the screen.</span></div>
-        <div class="setting-row"><span class="setting-name">Disable voice control</span><span class="setting-desc">Turns off voice listening until re-enabled in Settings.</span></div>
+        <div class="setting-row"><span class="setting-name">Radio play commands</span><span class="setting-desc">Examples: <code>play radio</code>, <code>start radio</code>, <code>resume radio</code>, <code>turn on radio</code>, or <code>launch radio</code>.</span></div>
+        <div class="setting-row"><span class="setting-name">Radio stop commands</span><span class="setting-desc">Examples: <code>stop radio</code>, <code>pause radio</code>, <code>turn off radio</code>, <code>end radio</code>, or <code>close radio</code>.</span></div>
+        <div class="setting-row"><span class="setting-name">Slideshow play commands</span><span class="setting-desc">Examples: <code>play slideshow</code>, <code>start slideshow</code>, <code>resume slideshow</code>, or <code>turn on slideshow</code>.</span></div>
+        <div class="setting-row"><span class="setting-name">Slideshow stop commands</span><span class="setting-desc">Examples: <code>pause slideshow</code>, <code>stop slideshow</code>, <code>turn off slideshow</code>, or <code>end slideshow</code>.</span></div>
+        <div class="setting-row"><span class="setting-name">Disable voice control</span><span class="setting-desc">Quickly disable voice listening with phrases like <code>disable voice control</code>, <code>stop voice control</code>, or <code>turn off voice control</code>.</span></div>
+      </div>
+
+      <h3>Command Behavior</h3>
+      <div class="settings-list">
         <div class="setting-row"><span class="setting-name">Wait for follow-up</span><span class="setting-desc">Keeps listening briefly after a command so you can issue another one without saying the wake phrase again.</span></div>
         <div class="setting-row"><span class="setting-name">Command window</span><span class="setting-desc">Adjust the listening timeout for commands (3 to 15 seconds).</span></div>
+      </div>
+
+      <h3>Parsing Rules</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">English-only</span><span class="setting-desc">Voice commands are currently parsed in English.</span></div>
+        <div class="setting-row"><span class="setting-name">Noun-qualified</span><span class="setting-desc">Commands should include the target, for example <code>play radio</code> rather than only <code>play</code>.</span></div>
+        <div class="setting-row"><span class="setting-name">Fuzzy matching</span><span class="setting-desc">Wake phrases tolerate slight variations, and command parsing accepts common filler words like <code>stop the radio</code>.</span></div>
       </div>
 
       <h3>Visual Feedback</h3>
