@@ -404,7 +404,8 @@
       font-size: 13.5px;
       font-weight: 500;
       color: var(--text);
-      min-width: 180px;
+      width: 260px;
+      min-width: 260px;
       flex-shrink: 0;
       font-family: 'DM Mono', monospace;
     }
@@ -412,12 +413,6 @@
       font-size: 13.5px;
       color: var(--text-muted);
       line-height: 1.5;
-    }
-    .status-alerts-list .setting-name {
-      width: 260px;
-      min-width: 260px;
-    }
-    .status-alerts-list .setting-desc {
       flex: 1;
     }
     .pro-tag {
@@ -590,8 +585,7 @@
       .content-header h1 { font-size: 24px; }
       .feature-grid { grid-template-columns: 1fr; }
       .compare-table { font-size: 13px; }
-      .setting-name { min-width: 130px; font-size: 12px; }
-      .status-alerts-list .setting-name { width: 130px; min-width: 130px; }
+      .setting-name { width: 130px; min-width: 130px; font-size: 12px; }
     }
   </style>
 </head>
@@ -886,7 +880,7 @@
           <div class="card-title">Now Playing</div>
           <div class="card-desc">Scrolling marquee with the current station and song information while radio is playing.</div>
         </div>
-        <div class="feature-card">
+        <div class="feature-card pro-card">
           <div class="card-icon">📻</div>
           <div class="card-title">Ambient Logo</div>
           <div class="card-desc">Pulsing Fravora icon that doubles as a radio status indicator and quick interaction target.</div>
@@ -1060,7 +1054,7 @@
       </div>
 
       <h3>Status & Alerts</h3>
-      <div class="settings-list status-alerts-list">
+      <div class="settings-list">
         <div class="setting-row"><span class="setting-name">Zoom navigator</span><span class="setting-desc">Mini-map appears while zoomed, showing the full image and your current viewport.</span></div>
         <div class="setting-row"><span class="setting-name">Network warning badge</span><span class="setting-desc">Appears when one or more SMB shares are unreachable. Tap to list failed shares.</span></div>
         <div class="setting-row"><span class="setting-name">Google Photos storage status</span><span class="setting-desc">Cloud status icons indicate import state: red for blocked/pending, yellow + count for partial recovery, and green + count for full recovery.</span></div>
@@ -1128,7 +1122,7 @@
           <tr><td class="label">Photo metadata (date/location)</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Now Playing overlay</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Photo index overlay</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td class="label">Ambient logo indicator</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">Ambient logo indicator</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Overlay positioning</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Anti burn-in effect</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
 
