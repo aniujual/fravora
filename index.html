@@ -168,6 +168,151 @@
       margin-bottom: 3.5rem; line-height: 1.2;
     }
 
+    /* ── FRAME SHOWCASE ── */
+    .frame-showcase {
+      padding: 5rem 2rem 3rem;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .frame-showcase::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(155,93,229,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .showcase-inner { max-width: 1200px; margin: 0 auto; }
+
+    /* TV / frame device mockup */
+    .tv-mockup-wrap {
+      position: relative;
+      margin: 0 auto 3rem;
+      max-width: 900px;
+    }
+    .tv-frame {
+      background: #111;
+      border-radius: 18px;
+      padding: 16px 16px 40px;
+      box-shadow: 0 0 0 2px #333, 0 30px 80px rgba(0,0,0,0.7), 0 0 60px rgba(155,93,229,0.1);
+      position: relative;
+    }
+    .tv-screen {
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      position: relative;
+      background: #000;
+    }
+    .tv-screen img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.6s ease;
+    }
+    .tv-stand {
+      width: 60px; height: 20px;
+      background: linear-gradient(to bottom, #222, #111);
+      margin: 0 auto;
+      border-radius: 0 0 6px 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .tv-base {
+      width: 120px; height: 8px;
+      background: #1a1a1a;
+      margin: 0 auto;
+      border-radius: 4px;
+    }
+
+    /* Frame switcher dots */
+    .frame-dots {
+      display: flex; justify-content: center; gap: 8px; margin-top: 1.5rem;
+    }
+    .frame-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--border); cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      border: none;
+    }
+    .frame-dot.active { background: var(--accent); transform: scale(1.3); }
+
+    .frame-caption {
+      text-align: center; margin-top: 1rem;
+      font-size: 0.85rem; color: var(--muted);
+      min-height: 1.4em;
+      transition: opacity 0.3s;
+    }
+
+    /* ── SETTINGS SCREENSHOTS GRID ── */
+    .screenshots-section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .screenshots-tabs {
+      display: flex; gap: 0.5rem; flex-wrap: wrap;
+      justify-content: center; margin-bottom: 2.5rem;
+    }
+    .tab-btn {
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--muted); font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem; font-weight: 500;
+      padding: 0.45rem 1rem; border-radius: 999px;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .tab-btn:hover { color: var(--text); border-color: var(--accent); }
+    .tab-btn.active {
+      background: var(--accent); border-color: var(--accent);
+      color: #fff;
+    }
+
+    .screenshots-stage {
+      position: relative;
+    }
+    .screenshot-panel {
+      display: none;
+      animation: fadeUp 0.35s ease;
+    }
+    .screenshot-panel.active { display: block; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Tablet/landscape mockup for settings */
+    .tablet-mockup {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #0e0e0e;
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: 0 0 0 1.5px #2a2a2a, 0 24px 64px rgba(0,0,0,0.6), 0 0 40px rgba(155,93,229,0.08);
+      position: relative;
+    }
+    .tablet-mockup::before {
+      content: '';
+      position: absolute;
+      top: 6px; left: 50%; transform: translateX(-50%);
+      width: 40px; height: 4px;
+      background: #222; border-radius: 2px;
+    }
+    .tablet-screen {
+      border-radius: 10px;
+      overflow: hidden;
+      background: #1c1b1f;
+    }
+    .tablet-screen img {
+      width: 100%; display: block;
+      border-radius: 10px;
+    }
+    .screenshot-desc {
+      text-align: center; margin-top: 1.5rem;
+      max-width: 520px; margin-left: auto; margin-right: auto;
+    }
+    .screenshot-desc h3 {
+      font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .screenshot-desc p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
     /* ── FEATURES ── */
     .features { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
     .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
@@ -330,6 +475,8 @@
       nav { padding: 0 1rem; }
       .nav-links a { padding: 0.4rem 0.5rem; font-size: 0.85rem; }
       .comp-table td, .comp-table th { padding: 0.65rem 0.75rem; }
+      .screenshots-tabs { gap: 0.35rem; }
+      .tab-btn { font-size: 0.78rem; padding: 0.35rem 0.75rem; }
     }
   </style>
 </head>
@@ -366,6 +513,108 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2 2 0 0 0 2.14-.21l12.44-7.19-3.13-3.12-11.45 10.52zM20.65 9.22l-3.34-1.93-3.51 3.5 3.51 3.51 3.37-1.95a2 2 0 0 0-.03-3.13zM1 1.45A2 2 0 0 0 .5 2.87v18.27a2 2 0 0 0 .5 1.41L14.4 12 1 1.45zm13.39 9.14L2.82.38A2 2 0 0 0 1 .17L14.39 10.59l.01-4z"/></svg>
         Get it on Google Play
       </a>
+    </div>
+  </section>
+
+  <!-- FRAME SHOWCASE -->
+  <section class="frame-showcase">
+    <div class="showcase-inner">
+      <p class="section-label">See it in action</p>
+      <h2 class="section-title">Your memories, beautifully framed</h2>
+
+      <div class="tv-mockup-wrap">
+        <div class="tv-frame">
+          <div class="tv-screen">
+            <img id="frameImg" src="screen_frame1.png" alt="Fravora frame showing a temple in Nara, Japan with weather and time overlays" />
+          </div>
+        </div>
+        <div class="tv-stand"></div>
+        <div class="tv-base"></div>
+      </div>
+
+      <div class="frame-dots">
+        <button class="frame-dot active" data-idx="0" aria-label="Frame photo 1"></button>
+        <button class="frame-dot" data-idx="1" aria-label="Frame photo 2"></button>
+      </div>
+      <p class="frame-caption" id="frameCaption">Nara, Japan — weather overlay, clock, and now-playing radio info all in one glance</p>
+    </div>
+  </section>
+
+  <!-- SETTINGS SCREENSHOTS -->
+  <section class="screenshots-section">
+    <p class="section-label">Full control</p>
+    <h2 class="section-title">Every detail, your way</h2>
+
+    <div class="screenshots-tabs" role="tablist">
+      <button class="tab-btn active" data-tab="radio" role="tab">📻 Radio</button>
+      <button class="tab-btn" data-tab="overlays" role="tab">🌤️ Overlays</button>
+      <button class="tab-btn" data-tab="layout" role="tab">🗂️ Overlay Layout</button>
+      <button class="tab-btn" data-tab="slideshow" role="tab">🖼️ Slideshow</button>
+      <button class="tab-btn" data-tab="voice" role="tab">🎙️ Voice</button>
+    </div>
+
+    <div class="screenshots-stage">
+
+      <div class="screenshot-panel active" id="tab-radio">
+        <div class="tablet-mockup">
+          <div class="tablet-screen">
+            <img src="screen_settings_radio.png" alt="Radio settings screen showing station favourites and scheduling" />
+          </div>
+        </div>
+        <div class="screenshot-desc">
+          <h3>Radio & favourites</h3>
+          <p>Save favourite stations, schedule when radio plays each day, and keep music going in the background — all in one place.</p>
+        </div>
+      </div>
+
+      <div class="screenshot-panel" id="tab-overlays">
+        <div class="tablet-mockup">
+          <div class="tablet-screen">
+            <img src="screen_settings_overlays.png" alt="Overlays settings screen showing time, weather, and photo info toggles" />
+          </div>
+        </div>
+        <div class="screenshot-desc">
+          <h3>Overlay visibility</h3>
+          <p>Toggle weather, clock, photo metadata, and now-playing info individually. Choose exact sizes for each element.</p>
+        </div>
+      </div>
+
+      <div class="screenshot-panel" id="tab-layout">
+        <div class="tablet-mockup">
+          <div class="tablet-screen">
+            <img src="screen_settings_overlays2.png" alt="Overlay layout settings showing a 6-zone positioning grid" />
+          </div>
+        </div>
+        <div class="screenshot-desc">
+          <h3>Overlay layout</h3>
+          <p>Drag overlays to any of six screen zones — top-left, top-center, top-right, and three bottom zones. Your frame, your layout.</p>
+        </div>
+      </div>
+
+      <div class="screenshot-panel" id="tab-slideshow">
+        <div class="tablet-mockup">
+          <div class="tablet-screen">
+            <img src="screen_settings_slideshow.png" alt="Slideshow settings showing photo interval, order, transitions, and screen saver options" />
+          </div>
+        </div>
+        <div class="screenshot-desc">
+          <h3>Slideshow & scheduling</h3>
+          <p>Set photo intervals, display mode, transition effects, and running hours with per-day schedules. Set it once and forget it.</p>
+        </div>
+      </div>
+
+      <div class="screenshot-panel" id="tab-voice">
+        <div class="tablet-mockup">
+          <div class="tablet-screen">
+            <img src="screen_settings_voice.png" alt="Voice control settings showing wake phrase, command categories, and listening window" />
+          </div>
+        </div>
+        <div class="screenshot-desc">
+          <h3>Voice control</h3>
+          <p>Set a custom wake phrase, tune the listening window, and choose which command categories are active — all processed on-device.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -632,6 +881,49 @@
         const isOpen = item.classList.contains('open');
         document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
         if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Frame photo switcher
+    const frameImages = [
+      { src: 'screen_frame1.png', caption: 'Nara, Japan — weather overlay, clock, and now-playing radio info all in one glance' },
+      { src: 'screen_frame2.png', caption: 'Kyoto, Japan — Nijo Castle garden. Radio station and current song shown at the top' },
+    ];
+    const frameImg = document.getElementById('frameImg');
+    const frameCaption = document.getElementById('frameCaption');
+    const frameDots = document.querySelectorAll('.frame-dot');
+    let frameIdx = 0;
+    let frameTimer;
+
+    function showFrame(idx) {
+      frameIdx = idx;
+      frameImg.style.opacity = '0';
+      setTimeout(() => {
+        frameImg.src = frameImages[idx].src;
+        frameImg.alt = frameImages[idx].caption;
+        frameCaption.textContent = frameImages[idx].caption;
+        frameImg.style.opacity = '1';
+      }, 300);
+      frameDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    }
+
+    frameDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        clearInterval(frameTimer);
+        showFrame(parseInt(dot.dataset.idx));
+        frameTimer = setInterval(() => showFrame((frameIdx + 1) % frameImages.length), 5000);
+      });
+    });
+
+    frameTimer = setInterval(() => showFrame((frameIdx + 1) % frameImages.length), 5000);
+
+    // Settings screenshot tabs
+    document.querySelectorAll('.tab-btn').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.screenshot-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
       });
     });
   </script>
