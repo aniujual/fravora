@@ -687,7 +687,7 @@
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <div class="step-body">Go to <strong>Settings → Sources</strong> and add at least one photo source — local folder, SMB/NAS share, or any supported cloud provider shown in-app.</div>
+          <div class="step-body">Go to <strong>Settings → Sources</strong> and add at least one photo source — local folder, SMB/NAS share, Google Photos, or Microsoft OneDrive.</div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
@@ -740,7 +740,7 @@
       </div>
 
       <h3>Cloud Sources</h3>
-      <p>Fravora supports cloud providers through a unified source flow. Available now: Google Photos and Microsoft OneDrive. Dropbox integration is in progress.</p>
+      <p>Fravora supports cloud providers through a unified source flow. Supported cloud sources are Google Photos and Microsoft OneDrive.</p>
       <div class="feature-grid">
         <div class="feature-card">
           <div class="card-icon">☁️</div>
@@ -816,6 +816,7 @@
         <div class="setting-row"><span class="setting-name">Image Order</span><span class="setting-desc">Date Added, Taken Date, Album Order, File Name, Random, or Smart Shuffle (PRO).</span></div>
         <div class="setting-row"><span class="setting-name">Smart Shuffle</span><span class="setting-desc">Intelligent shuffle that reduces back-to-back similar shots by detecting burst-style filenames and close capture times.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Display Mode</span><span class="setting-desc"><strong>Fit</strong> — shows the full image with no cropping. <strong>Fill</strong> — fills the screen, may crop edges.</span><span class="free-tag">FREE</span></div>
+        <div class="setting-row"><span class="setting-name">Image Backdrop Style</span><span class="setting-desc">In Fit mode, styles the empty letterbox/pillarbox area for a cleaner frame look. Hidden when Display Mode is Fill.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Transition Effects</span><span class="setting-desc">Free tier runs without transitions. PRO unlocks Slide, Cube, Zoom, Crossfade, Depth, Parallax, Accordion, Vertical Slide, Card Deck, and Random.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Transition Speed</span><span class="setting-desc">Choose animation pace for transitions: Slow, Medium, or Fast.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Scan Interval</span><span class="setting-desc">How often Fravora rescans sources for new or removed photos (5 to 120 minutes).</span><span class="pro-tag">PRO</span></div>
@@ -854,6 +855,7 @@
         <div class="setting-row"><span class="setting-name">App Font Size</span><span class="setting-desc">Adjust text size across the app interface (Small, Medium, Large).</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Fullscreen Mode</span><span class="setting-desc">Hides the status bar and navigation bar for a true frame look.</span><span class="free-tag">FREE</span></div>
         <div class="setting-row"><span class="setting-name">Keep Screen Awake</span><span class="setting-desc">Prevents the device from sleeping while the app is in the foreground.</span><span class="free-tag">FREE</span></div>
+        <div class="setting-row"><span class="setting-name">TV Compatibility</span><span class="setting-desc">Supports Android/Google TV and Amazon Fire TV launchers.</span><span class="free-tag">FREE</span></div>
         <div class="setting-row"><span class="setting-name">Settings Photo Background</span><span class="setting-desc">Uses a blurred version of the current slideshow image as settings backdrop.</span><span class="pro-tag">PRO</span></div>
       </div>
     </section>
@@ -910,7 +912,7 @@
 
       <div class="callout pro" style="margin-top:20px">
         <span class="callout-icon">✦</span>
-        <div class="callout-body"><strong>Overlay Layout (PRO):</strong> Place overlays in corner and center slots, adjust per-overlay font sizes, and hide overlays you do not need.</div>
+        <div class="callout-body"><strong>Overlay Layout (PRO):</strong> Assign weather, clock, metadata, and ambient logo across a 2x2 corner grid with collision-safe swaps and optional hide state.</div>
       </div>
 
       <div class="callout tip">
@@ -936,6 +938,8 @@
         <div class="setting-row"><span class="setting-name">Search</span><span class="setting-desc">Search for stations by name, genre, language, or country. Free tier has a daily search limit.</span><span class="free-tag">FREE</span></div>
         <div class="setting-row"><span class="setting-name">Play / Pause / Stop</span><span class="setting-desc">Manual controls available at all times during the session.</span><span class="free-tag">FREE</span></div>
         <div class="setting-row"><span class="setting-name">Session persistence</span><span class="setting-desc">Current station is remembered during the session but cleared when the app restarts.</span><span class="free-tag">FREE</span></div>
+        <div class="setting-row"><span class="setting-name">Favorites list</span><span class="setting-desc">Favorites remain visible in the UI but are locked on Free.</span><span class="free-tag">FREE</span></div>
+        <div class="setting-row"><span class="setting-name">Recently played list</span><span class="setting-desc">Recently played history remains visible in the UI but is locked on Free.</span><span class="free-tag">FREE</span></div>
       </div>
 
       <h3>PRO Radio Features</h3>
@@ -944,7 +948,7 @@
         <div class="setting-row"><span class="setting-name">Favorites</span><span class="setting-desc">Save stations to a favorites list for quick access.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Unlimited search</span><span class="setting-desc">No daily search limit.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Advanced filters</span><span class="setting-desc">Filter by country code, language, genre tag, and minimum bitrate to find better streams faster.</span><span class="pro-tag">PRO</span></div>
-        <div class="setting-row"><span class="setting-name">Recently played</span><span class="setting-desc">Quick history of your most recent stations so you can jump back instantly.</span><span class="pro-tag">PRO</span></div>
+        <div class="setting-row"><span class="setting-name">Recently played</span><span class="setting-desc">History of the last 3 stations (deduped by URL) with per-item remove actions in Settings → Radio.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Station failure tracking</span><span class="setting-desc">Session-only warning icons appear next to stations that failed to play, helping you quickly spot unstable streams.</span></div>
         <div class="setting-row"><span class="setting-name">Auto-play on select</span><span class="setting-desc">Tapping a station in search results starts playback immediately.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Auto-play on app start</span><span class="setting-desc">Optionally resume radio automatically when Fravora launches.</span><span class="pro-tag">PRO</span></div>
@@ -986,7 +990,7 @@
         </div>
         <div class="step">
           <div class="step-num">3</div>
-          <div class="step-body">Enable the <strong>Voice Control</strong> master toggle and review the activation disclaimer. First-time enable requires a short acknowledgement delay.</div>
+          <div class="step-body">Enable the <strong>Voice Control</strong> master toggle and review the activation disclaimer. First-time enable includes a mandatory 3-second acknowledgement lock.</div>
         </div>
         <div class="step">
           <div class="step-num">4</div>
@@ -1007,17 +1011,18 @@
 
       <h3>Command Categories</h3>
       <div class="settings-list">
-        <div class="setting-row"><span class="setting-name">Radio play commands</span><span class="setting-desc">Examples: <code>play radio</code>, <code>start radio</code>, <code>resume radio</code>, <code>turn on radio</code>, or <code>launch radio</code>.</span></div>
-        <div class="setting-row"><span class="setting-name">Radio stop commands</span><span class="setting-desc">Examples: <code>stop radio</code>, <code>pause radio</code>, <code>turn off radio</code>, <code>end radio</code>, or <code>close radio</code>.</span></div>
-        <div class="setting-row"><span class="setting-name">Slideshow play commands</span><span class="setting-desc">Examples: <code>play slideshow</code>, <code>start slideshow</code>, <code>resume slideshow</code>, or <code>turn on slideshow</code>.</span></div>
-        <div class="setting-row"><span class="setting-name">Slideshow stop commands</span><span class="setting-desc">Examples: <code>pause slideshow</code>, <code>stop slideshow</code>, <code>turn off slideshow</code>, or <code>end slideshow</code>.</span></div>
-        <div class="setting-row"><span class="setting-name">Disable voice control</span><span class="setting-desc">Quickly disable voice listening with phrases like <code>disable voice control</code>, <code>stop voice control</code>, or <code>turn off voice control</code>.</span></div>
+        <div class="setting-row"><span class="setting-name">Radio play commands</span><span class="setting-desc">Examples: <code>play/start/turn on/switch on/resume/unpause/begin/launch/enable/activate/open/run radio</code>.</span></div>
+        <div class="setting-row"><span class="setting-name">Radio stop commands</span><span class="setting-desc">Examples: <code>stop/pause/turn off/switch off/end/close/disable/deactivate radio</code>.</span></div>
+        <div class="setting-row"><span class="setting-name">Slideshow commands</span><span class="setting-desc">Examples: <code>play/start/turn on/resume slideshow</code> and <code>pause/stop/turn off/end slideshow</code>.</span></div>
+        <div class="setting-row"><span class="setting-name">Assistant volume commands</span><span class="setting-desc">Examples: <code>increase volume</code>, <code>decrease volume</code>, <code>set volume to 40</code>, <code>mute</code>, and <code>unmute</code>.</span></div>
+        <div class="setting-row"><span class="setting-name">Disable voice control</span><span class="setting-desc">Examples: <code>stop/disable/turn off/switch off/end/close/deactivate voice control</code> (also works with <code>voice</code> shorthand).</span></div>
       </div>
 
       <h3>Command Behavior</h3>
       <div class="settings-list">
         <div class="setting-row"><span class="setting-name">Wait for follow-up</span><span class="setting-desc">Keeps listening briefly after a command so you can issue another one without saying the wake phrase again.</span></div>
         <div class="setting-row"><span class="setting-name">Command window</span><span class="setting-desc">Adjust the listening timeout for commands (3 to 15 seconds).</span></div>
+        <div class="setting-row"><span class="setting-name">Runtime feature gating</span><span class="setting-desc">Radio, slideshow, and assistant commands only run when their corresponding Voice settings toggles are enabled.</span></div>
       </div>
 
       <h3>Parsing Rules</h3>
@@ -1025,6 +1030,7 @@
         <div class="setting-row"><span class="setting-name">English-only</span><span class="setting-desc">Voice commands are currently parsed in English.</span></div>
         <div class="setting-row"><span class="setting-name">Noun-qualified</span><span class="setting-desc">Commands should include the target, for example <code>play radio</code> rather than only <code>play</code>.</span></div>
         <div class="setting-row"><span class="setting-name">Fuzzy matching</span><span class="setting-desc">Wake phrases tolerate slight variations, and command parsing accepts common filler words like <code>stop the radio</code>.</span></div>
+        <div class="setting-row"><span class="setting-name">State-aware alternatives</span><span class="setting-desc">When speech alternatives conflict (for example start vs stop), Fravora chooses based on the current runtime state.</span></div>
       </div>
 
       <h3>Visual Feedback</h3>
@@ -1066,7 +1072,7 @@
         <div class="setting-row"><span class="setting-name">Ambient logo tap</span><span class="setting-desc">Single tap toggles radio play/pause.</span></div>
         <div class="setting-row"><span class="setting-name">Ambient logo double tap</span><span class="setting-desc">Opens radio station search immediately.</span></div>
         <div class="setting-row"><span class="setting-name">Ambient logo animation</span><span class="setting-desc">The icon breathes during playback and subtly pulses with bass intensity.</span></div>
-        <div class="setting-row"><span class="setting-name">Weather overlay tap</span><span class="setting-desc">Opens a detailed weather forecast overlay with 12-hour and 7-day views.</span></div>
+        <div class="setting-row"><span class="setting-name">Weather overlay tap</span><span class="setting-desc">Opens a detailed weather forecast overlay with 24-hour and 7-day views.</span></div>
       </div>
 
       <h3>In-Frame Menu</h3>
@@ -1113,9 +1119,12 @@
         </thead>
         <tbody>
           <tr class="section-row"><td colspan="3">Sources & Albums</td></tr>
+          <tr><td class="label">Total source entries</td><td>1</td><td>Expanded</td></tr>
+          <tr><td class="label">Albums</td><td>1</td><td>Expanded</td></tr>
           <tr><td class="label">Local folders per album</td><td>1</td><td>Multiple</td></tr>
           <tr><td class="label">SMB folders per album</td><td>1</td><td>Multiple</td></tr>
           <tr><td class="label">Cloud connections</td><td>1 connection</td><td>Expanded</td></tr>
+          <tr><td class="label">Cloud target assignments per album</td><td>1</td><td>Expanded</td></tr>
           <tr><td class="label">Include subfolders (recursive)</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Scan interval control</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Low storage cache alerts</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
@@ -1123,6 +1132,7 @@
           <tr class="section-row"><td colspan="3">Slideshow</td></tr>
           <tr><td class="label">Uninterrupted slideshow</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Smart Shuffle order</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">Image backdrop style (Fit mode)</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Transition effects</td><td>None only</td><td>10+ effects</td></tr>
           <tr><td class="label">Transition speed control</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Running hours scheduling</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
@@ -1131,9 +1141,9 @@
           <tr class="section-row"><td colspan="3">Radio</td></tr>
           <tr><td class="label">Search & play stations</td><td><span class="check">✓</span> (limited)</td><td><span class="check">✓</span> unlimited</td></tr>
           <tr><td class="label">Station persistence</td><td>Session only</td><td>Across restarts</td></tr>
-          <tr><td class="label">Favorites</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">Favorites</td><td>Visible (locked)</td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Advanced search filters</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td class="label">Recently played</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">Recently played</td><td>Visible (locked)</td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Station failure tracking</td><td><span class="check">✓</span> (session)</td><td><span class="check">✓</span> (session)</td></tr>
           <tr><td class="label">Background playback</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Lockscreen media controls</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
@@ -1152,9 +1162,11 @@
           <tr class="section-row"><td colspan="3">Appearance</td></tr>
           <tr><td class="label">App font size control</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">App color scheme</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">TV launcher compatibility</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
 
           <tr class="section-row"><td colspan="3">Controls</td></tr>
           <tr><td class="label">Voice control</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">Assistant volume voice commands</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Voice activation disclaimer</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
 
           <tr class="section-row"><td colspan="3">Unlock PRO</td></tr>
