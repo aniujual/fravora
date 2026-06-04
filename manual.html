@@ -585,7 +585,9 @@
       font-size: 14px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 640px) {
+      .topnav { padding: 0 1rem; }
+      .topnav-links a { padding: 0.4rem 0.5rem; font-size: 0.85rem; }
       .layout { padding: 0 16px; gap: 0; }
       .sidebar { display: none; width: 0; }
       .sidebar.open {
@@ -651,9 +653,8 @@
           <li><a href="#appearance" onclick="closeSidebar()"><span class="icon">🎨</span>Appearance</a></li>
           <li><a href="#overlays" onclick="closeSidebar()"><span class="icon">✨</span>Overlays</a></li>
           <li><a href="#radio" onclick="closeSidebar()"><span class="icon">📻</span>Radio</a></li>
-          <li><a href="#weather-forecast" onclick="closeSidebar()"><span class="icon">🌦️</span>Weather Forecast<span class="pro-badge">PRO</span></a></li>
-          <li><a href="#calendar" onclick="closeSidebar()"><span class="icon">📅</span>Calendar<span class="pro-badge">PRO</span></a></li>
           <li><a href="#voice" onclick="closeSidebar()"><span class="icon">🎙️</span>Voice Control<span class="pro-badge">PRO</span></a></li>
+          <li><a href="#support" onclick="closeSidebar()"><span class="icon">💬</span>Support</a></li>
         </ul>
       </div>
 
@@ -661,9 +662,10 @@
         <div class="sidebar-label">Reference</div>
         <ul class="sidebar-nav">
           <li><a href="#frame-interactions" onclick="closeSidebar()"><span class="icon">🖐️</span>Frame Interactions</a></li>
+          <li><a href="#weather-forecast" onclick="closeSidebar()"><span class="icon">🌦️</span>Weather Forecast<span class="pro-badge">PRO</span></a></li>
+          <li><a href="#calendar" onclick="closeSidebar()"><span class="icon">📅</span>Calendar<span class="pro-badge">PRO</span></a></li>
           <li><a href="#pro" onclick="closeSidebar()"><span class="icon">⭐</span>Free vs PRO</a></li>
           <li><a href="#faq" onclick="closeSidebar()"><span class="icon">🔧</span>FAQ & Troubleshooting</a></li>
-          <li><a href="#support" onclick="closeSidebar()"><span class="icon">💬</span>Support</a></li>
         </ul>
       </div>
 
@@ -975,89 +977,12 @@
       </div>
     </section>
 
-    <!-- WEATHER FORECAST -->
-    <section class="section" id="weather-forecast">
-      <div class="section-header">
-        <div class="section-icon">🌦️</div>
-        <div>
-          <div class="section-number">08</div>
-          <h2>Weather Forecast</h2>
-        </div>
-      </div>
-
-      <div class="callout pro">
-        <span class="callout-icon">✦</span>
-        <div class="callout-body"><strong>PRO feature.</strong> Tap the weather overlay in frame view to open full-screen forecast details.</div>
-      </div>
-
-      <h3>Views & Navigation</h3>
-      <div class="settings-list">
-        <div class="setting-row"><span class="setting-name">Tap-to-open forecast</span><span class="setting-desc">Open forecast details directly from the weather overlay.</span><span class="pro-tag">PRO</span></div>
-        <div class="setting-row"><span class="setting-name">24-hour forecast</span><span class="setting-desc">Hourly forecast strip for the next 24 hours.</span></div>
-        <div class="setting-row"><span class="setting-name">7-day forecast</span><span class="setting-desc">Daily forecast cards with weather-adaptive styling.</span></div>
-        <div class="setting-row"><span class="setting-name">Swipe navigation</span><span class="setting-desc">Swipe left/right inside hour/day detail views across visible forecast bounds.</span></div>
-      </div>
-
-      <h3>Forecast Details</h3>
-      <div class="settings-list">
-        <div class="setting-row"><span class="setting-name">Weather-adaptive styling</span><span class="setting-desc">Forecast UI colors blend with the active app theme and current weather tone.</span></div>
-        <div class="setting-row"><span class="setting-name">Rich forecast data</span><span class="setting-desc">Temperature, precipitation probability, wind, humidity, UV, and day/night context.</span></div>
-        <div class="setting-row"><span class="setting-name">Localized labels</span><span class="setting-desc">Hour/day labels follow your configured clock/date formatting preferences.</span></div>
-      </div>
-
-      <h3>Runtime Behavior</h3>
-      <div class="settings-list">
-        <div class="setting-row"><span class="setting-name">Top-level overlay</span><span class="setting-desc">Forecast opens above slideshow content in full-screen mode.</span></div>
-        <div class="setting-row"><span class="setting-name">Slideshow pause integration</span><span class="setting-desc">While forecast is open, slideshow timing is paused and resumes when closed.</span></div>
-      </div>
-    </section>
-
-    <!-- CALENDAR -->
-    <section class="section" id="calendar">
-      <div class="section-header">
-        <div class="section-icon">📅</div>
-        <div>
-          <div class="section-number">09</div>
-          <h2>Calendar</h2>
-        </div>
-      </div>
-
-      <div class="callout pro">
-        <span class="callout-icon">✦</span>
-        <div class="callout-body"><strong>PRO feature.</strong> Tap the clock/date overlay in frame view to open the full-screen calendar.</div>
-      </div>
-
-      <h3>Views & Navigation</h3>
-      <div class="settings-list">
-        <div class="setting-row"><span class="setting-name">Tap-to-open calendar</span><span class="setting-desc">Open calendar directly from the date/time overlay while viewing photos.</span><span class="pro-tag">PRO</span></div>
-        <div class="setting-row"><span class="setting-name">Month navigation</span><span class="setting-desc">Swipe left or right to move between months.</span></div>
-        <div class="setting-row"><span class="setting-name">Day details</span><span class="setting-desc">Open a day and swipe within the visible day range.</span></div>
-        <div class="setting-row"><span class="setting-name">Week start preference</span><span class="setting-desc">Month grid follows the configured first day of week.</span></div>
-      </div>
-
-      <h3>Events & Reminders</h3>
-      <div class="settings-list">
-        <div class="setting-row"><span class="setting-name">Event CRUD</span><span class="setting-desc">Create, edit, and delete events.</span></div>
-        <div class="setting-row"><span class="setting-name">All-day support</span><span class="setting-desc">All-day toggle with timed-range restore when switched back off.</span></div>
-        <div class="setting-row"><span class="setting-name">Recurrence</span><span class="setting-desc">Recurring events with edit scopes (this occurrence, this and following, whole series) and skip-date exclusions.</span></div>
-        <div class="setting-row"><span class="setting-name">Per-event reminders</span><span class="setting-desc">Digest, 1-hour, and 15-minute reminder options.</span></div>
-        <div class="setting-row"><span class="setting-name">Reminder actions</span><span class="setting-desc">Snooze, Dismiss, Delete, and Close from the reminder summary dialog.</span></div>
-      </div>
-
-      <h3>Calendar UX Enhancements</h3>
-      <div class="settings-list">
-        <div class="setting-row"><span class="setting-name">Day multi-select</span><span class="setting-desc">Long-press enters multi-select mode with bulk Delete selected action.</span></div>
-        <div class="setting-row"><span class="setting-name">Scroll-stable selection</span><span class="setting-desc">Selecting events does not jump scroll position in day view.</span></div>
-        <div class="setting-row"><span class="setting-name">Change-aware save</span><span class="setting-desc">Event editor Save stays disabled until draft changes are made.</span></div>
-      </div>
-    </section>
-
     <!-- VOICE -->
     <section class="section" id="voice">
       <div class="section-header">
         <div class="section-icon">🎙️</div>
         <div>
-          <div class="section-number">10</div>
+          <div class="section-number">08</div>
           <h2>Voice Control</h2>
         </div>
       </div>
@@ -1135,12 +1060,66 @@
       </div>
     </section>
 
+    <!-- SUPPORT -->
+    <section class="section" id="support">
+      <div class="section-header">
+        <div class="section-icon">💬</div>
+        <div>
+          <div class="section-number">09</div>
+          <h2>Support</h2>
+        </div>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="card-icon">📘</div>
+          <div class="card-title">User Manual</div>
+          <div class="card-desc">Open <strong>Settings → Support → User Manual</strong> for direct access to this documentation from inside the app.</div>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">📧</div>
+          <div class="card-title">Report an Issue</div>
+          <div class="card-desc">Go to <strong>Settings → Support → Report an Issue</strong> to send a detailed bug report by email, including device and app version details.</div>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">💡</div>
+          <div class="card-title">Feature Requests</div>
+          <div class="card-desc">Use <strong>Settings → Support → Feature Request</strong> to share ideas for improvements or new features.</div>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">🔄</div>
+          <div class="card-title">Check for Updates</div>
+          <div class="card-desc">Use <strong>Settings → Support → Check for Updates</strong> to verify you have the latest version from the Play Store.</div>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">📝</div>
+          <div class="card-title">Release Notes</div>
+          <div class="card-desc">Open <strong>Settings → Support → Release Notes</strong> to review what changed in your currently installed version.</div>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">🗺️</div>
+          <div class="card-title">Roadmap</div>
+          <div class="card-desc">Check <strong>Settings → Support → Roadmap</strong> to see planned features and known issues under active work.</div>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">📖</div>
+          <div class="card-title">Replay Onboarding</div>
+          <div class="card-desc">Re-run the 8-step first-launch onboarding flow anytime from <strong>Settings → Support → Replay Onboarding</strong>.</div>
+        </div>
+      </div>
+
+      <div class="callout tip" style="margin-top:20px">
+        <span class="callout-icon">📬</span>
+        <div class="callout-body">You can also reach the developer directly at <a href="mailto:aniujual.dev@yahoo.com" style="color:var(--accent-bright)">aniujual.dev@yahoo.com</a>. For privacy details, see the <a href="privacy.html" style="color:var(--accent-bright)">Privacy Policy</a>. To request data deletion, visit <a href="data-deletion.html" style="color:var(--accent-bright)">Data Deletion</a>.</div>
+      </div>
+    </section>
+
     <!-- FRAME INTERACTIONS -->
     <section class="section" id="frame-interactions">
       <div class="section-header">
         <div class="section-icon">🖐️</div>
         <div>
-          <div class="section-number">11</div>
+          <div class="section-number">10</div>
           <h2>Frame Interactions (Hidden Gems)</h2>
         </div>
       </div>
@@ -1191,12 +1170,89 @@
       </div>
     </section>
 
+    <!-- WEATHER FORECAST -->
+    <section class="section" id="weather-forecast">
+      <div class="section-header">
+        <div class="section-icon">🌦️</div>
+        <div>
+          <div class="section-number">11</div>
+          <h2>Weather Forecast</h2>
+        </div>
+      </div>
+
+      <div class="callout pro">
+        <span class="callout-icon">✦</span>
+        <div class="callout-body"><strong>PRO feature.</strong> Tap the weather overlay in frame view to open full-screen forecast details.</div>
+      </div>
+
+      <h3>Views & Navigation</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">Tap-to-open forecast</span><span class="setting-desc">Open forecast details directly from the weather overlay.</span><span class="pro-tag">PRO</span></div>
+        <div class="setting-row"><span class="setting-name">24-hour forecast</span><span class="setting-desc">Hourly forecast strip for the next 24 hours.</span></div>
+        <div class="setting-row"><span class="setting-name">7-day forecast</span><span class="setting-desc">Daily forecast cards with weather-adaptive styling.</span></div>
+        <div class="setting-row"><span class="setting-name">Swipe navigation</span><span class="setting-desc">Swipe left/right inside hour/day detail views across visible forecast bounds.</span></div>
+      </div>
+
+      <h3>Forecast Details</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">Weather-adaptive styling</span><span class="setting-desc">Forecast UI colors blend with the active app theme and current weather tone.</span></div>
+        <div class="setting-row"><span class="setting-name">Rich forecast data</span><span class="setting-desc">Temperature, precipitation probability, wind, humidity, UV, and day/night context.</span></div>
+        <div class="setting-row"><span class="setting-name">Localized labels</span><span class="setting-desc">Hour/day labels follow your configured clock/date formatting preferences.</span></div>
+      </div>
+
+      <h3>Runtime Behavior</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">Top-level overlay</span><span class="setting-desc">Forecast opens above slideshow content in full-screen mode.</span></div>
+        <div class="setting-row"><span class="setting-name">Slideshow pause integration</span><span class="setting-desc">While forecast is open, slideshow timing is paused and resumes when closed.</span></div>
+      </div>
+    </section>
+
+    <!-- CALENDAR -->
+    <section class="section" id="calendar">
+      <div class="section-header">
+        <div class="section-icon">📅</div>
+        <div>
+          <div class="section-number">12</div>
+          <h2>Calendar</h2>
+        </div>
+      </div>
+
+      <div class="callout pro">
+        <span class="callout-icon">✦</span>
+        <div class="callout-body"><strong>PRO feature.</strong> Tap the clock/date overlay in frame view to open the full-screen calendar.</div>
+      </div>
+
+      <h3>Views & Navigation</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">Tap-to-open calendar</span><span class="setting-desc">Open calendar directly from the date/time overlay while viewing photos.</span><span class="pro-tag">PRO</span></div>
+        <div class="setting-row"><span class="setting-name">Month navigation</span><span class="setting-desc">Swipe left or right to move between months.</span></div>
+        <div class="setting-row"><span class="setting-name">Day details</span><span class="setting-desc">Open a day and swipe within the visible day range.</span></div>
+        <div class="setting-row"><span class="setting-name">Week start preference</span><span class="setting-desc">Month grid follows the configured first day of week.</span></div>
+      </div>
+
+      <h3>Events & Reminders</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">Event CRUD</span><span class="setting-desc">Create, edit, and delete events.</span></div>
+        <div class="setting-row"><span class="setting-name">All-day support</span><span class="setting-desc">All-day toggle with timed-range restore when switched back off.</span></div>
+        <div class="setting-row"><span class="setting-name">Recurrence</span><span class="setting-desc">Recurring events with edit scopes (this occurrence, this and following, whole series) and skip-date exclusions.</span></div>
+        <div class="setting-row"><span class="setting-name">Per-event reminders</span><span class="setting-desc">Digest, 1-hour, and 15-minute reminder options.</span></div>
+        <div class="setting-row"><span class="setting-name">Reminder actions</span><span class="setting-desc">Snooze, Dismiss, Delete, and Close from the reminder summary dialog.</span></div>
+      </div>
+
+      <h3>Calendar UX Enhancements</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">Day multi-select</span><span class="setting-desc">Long-press enters multi-select mode with bulk Delete selected action.</span></div>
+        <div class="setting-row"><span class="setting-name">Scroll-stable selection</span><span class="setting-desc">Selecting events does not jump scroll position in day view.</span></div>
+        <div class="setting-row"><span class="setting-name">Change-aware save</span><span class="setting-desc">Event editor Save stays disabled until draft changes are made.</span></div>
+      </div>
+    </section>
+
     <!-- FREE VS PRO -->
     <section class="section" id="pro">
       <div class="section-header">
         <div class="section-icon">⭐</div>
         <div>
-          <div class="section-number">12</div>
+          <div class="section-number">13</div>
           <h2>Free vs PRO</h2>
         </div>
       </div>
@@ -1259,8 +1315,6 @@
           <tr><td class="label">Overlay positioning</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Anti burn-in effect</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Full-screen weather forecast (24h/7d)</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
-
-          <tr class="section-row"><td colspan="3">Calendar</td></tr>
           <tr><td class="label">Tap-to-open calendar from clock/date</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Event editing, recurrence &amp; reminders</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
 
@@ -1291,7 +1345,7 @@
       <div class="section-header">
         <div class="section-icon">🔧</div>
         <div>
-          <div class="section-number">13</div>
+          <div class="section-number">14</div>
           <h2>FAQ & Troubleshooting</h2>
         </div>
       </div>
@@ -1311,7 +1365,14 @@
       <details class="trouble-item">
         <summary class="trouble-q">How do I use hidden frame features like zoom, panning, and quick radio controls?</summary>
         <div class="trouble-a">
-          In frame view, use <strong>double tap</strong> to zoom, <strong>pinch</strong> to zoom smoothly, and <strong>drag</strong> to pan while zoomed. The ambient logo also supports quick actions: single tap to play/pause radio, double tap to open station search.
+          In frame view, these shortcuts work as "hidden" interactions:
+          <ul>
+            <li><strong>Double tap</strong> to zoom, <strong>pinch</strong> to zoom smoothly, and <strong>drag</strong> to pan while zoomed.</li>
+            <li><strong>Ambient logo:</strong> single tap toggles radio play/pause, and double tap opens station search.</li>
+            <li><strong>Weather overlay:</strong> tap to open detailed weather forecast (24-hour and 7-day views, PRO).</li>
+            <li><strong>Clock/date overlay:</strong> tap to open the full-screen calendar (PRO).</li>
+            <li><strong>New images badge:</strong> tap to open the new-images viewer when fresh photos are detected.</li>
+          </ul>
         </div>
       </details>
 
@@ -1413,60 +1474,6 @@
           Temporary PRO access from rewarded ads expires after the granted time (+15 min per ad, up to 4/day). Your PRO settings are saved and will be automatically restored the next time you activate PRO — either via another ad or a permanent purchase.
         </div>
       </details>
-    </section>
-
-    <!-- SUPPORT -->
-    <section class="section" id="support">
-      <div class="section-header">
-        <div class="section-icon">💬</div>
-        <div>
-          <div class="section-number">14</div>
-          <h2>Support</h2>
-        </div>
-      </div>
-
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="card-icon">📘</div>
-          <div class="card-title">User Manual</div>
-          <div class="card-desc">Open <strong>Settings → Support → User Manual</strong> for direct access to this documentation from inside the app.</div>
-        </div>
-        <div class="feature-card">
-          <div class="card-icon">📧</div>
-          <div class="card-title">Report an Issue</div>
-          <div class="card-desc">Go to <strong>Settings → Support → Report an Issue</strong> to send a detailed bug report by email, including device and app version details.</div>
-        </div>
-        <div class="feature-card">
-          <div class="card-icon">💡</div>
-          <div class="card-title">Feature Requests</div>
-          <div class="card-desc">Use <strong>Settings → Support → Feature Request</strong> to share ideas for improvements or new features.</div>
-        </div>
-        <div class="feature-card">
-          <div class="card-icon">🔄</div>
-          <div class="card-title">Check for Updates</div>
-          <div class="card-desc">Use <strong>Settings → Support → Check for Updates</strong> to verify you have the latest version from the Play Store.</div>
-        </div>
-        <div class="feature-card">
-          <div class="card-icon">📝</div>
-          <div class="card-title">Release Notes</div>
-          <div class="card-desc">Open <strong>Settings → Support → Release Notes</strong> to review what changed in your currently installed version.</div>
-        </div>
-        <div class="feature-card">
-          <div class="card-icon">🗺️</div>
-          <div class="card-title">Roadmap</div>
-          <div class="card-desc">Check <strong>Settings → Support → Roadmap</strong> to see planned features and known issues under active work.</div>
-        </div>
-        <div class="feature-card">
-          <div class="card-icon">📖</div>
-          <div class="card-title">Replay Onboarding</div>
-          <div class="card-desc">Re-run the 8-step first-launch onboarding flow anytime from <strong>Settings → Support → Replay Onboarding</strong>.</div>
-        </div>
-      </div>
-
-      <div class="callout tip" style="margin-top:20px">
-        <span class="callout-icon">📬</span>
-        <div class="callout-body">You can also reach the developer directly at <a href="mailto:aniujual.dev@yahoo.com" style="color:var(--accent-bright)">aniujual.dev@yahoo.com</a>. For privacy details, see the <a href="privacy.html" style="color:var(--accent-bright)">Privacy Policy</a>. To request data deletion, visit <a href="data-deletion.html" style="color:var(--accent-bright)">Data Deletion</a>.</div>
-      </div>
     </section>
 
   </main>
