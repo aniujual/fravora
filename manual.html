@@ -14,21 +14,22 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #0f1117;
-      --bg-2: #161b27;
-      --bg-3: #1e2436;
-      --border: rgba(255,255,255,0.08);
-      --border-accent: rgba(139,92,246,0.3);
-      --text: #e8eaf0;
-      --text-muted: #8b92a8;
-      --text-faint: #555d72;
-      --accent: #8b5cf6;
-      --accent-bright: #a78bfa;
-      --accent-glow: rgba(139,92,246,0.15);
-      --accent-2: #6366f1;
+      --bg: #0e0b14;
+      --bg-2: #1c1728;
+      --bg-3: #13101c;
+      --border: #2e2640;
+      --border-accent: rgba(155,93,229,0.35);
+      --text: #e8e0f5;
+      --text-muted: #8b7fa8;
+      --text-faint: #6b5b8a;
+      --accent: #9b5de5;
+      --accent-bright: #c77dff;
+      --accent-glow: rgba(155,93,229,0.15);
+      --accent-2: #c77dff;
+      --nav-bg: rgba(14,11,20,0.85);
       --green: #34d399;
       --green-bg: rgba(52,211,153,0.08);
       --yellow: #fbbf24;
@@ -39,22 +40,23 @@
       --blue-bg: rgba(96,165,250,0.08);
       --radius: 10px;
       --sidebar-width: max-content;
-      --topbar-height: 60px;
+      --topbar-height: 64px;
     }
 
     [data-theme="light"] {
-      --bg: #f6f8fc;
-      --bg-2: #eef2f9;
-      --bg-3: #dde4f1;
-      --border: rgba(15, 23, 42, 0.14);
-      --border-accent: rgba(79, 70, 229, 0.32);
-      --text: #0f172a;
-      --text-muted: #334155;
-      --text-faint: #64748b;
-      --accent: #4f46e5;
-      --accent-bright: #4338ca;
-      --accent-glow: rgba(79, 70, 229, 0.12);
-      --accent-2: #6366f1;
+      --bg: #f5f0ff;
+      --bg-2: #ffffff;
+      --bg-3: #ede6ff;
+      --border: #d4c8f0;
+      --border-accent: rgba(124,58,237,0.32);
+      --text: #1a1033;
+      --text-muted: #6b5b8a;
+      --text-faint: #8b7fa8;
+      --accent: #7c3aed;
+      --accent-bright: #9b5de5;
+      --accent-glow: rgba(124,58,237,0.12);
+      --accent-2: #9b5de5;
+      --nav-bg: rgba(245,240,255,0.88);
       --green: #059669;
       --green-bg: rgba(5, 150, 105, 0.12);
       --yellow: #b45309;
@@ -67,7 +69,7 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-y: scroll; }
 
     body {
       background: var(--bg);
@@ -76,60 +78,70 @@
       font-size: 15px;
       line-height: 1.7;
       min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
     }
 
     /* ── TOP NAV ── */
     .topnav {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
       height: var(--topbar-height);
-      background: rgba(15,17,23,0.92);
-      backdrop-filter: blur(12px);
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 24px;
+      padding: 0 2rem;
     }
     .topnav-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 0.6rem;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 17px;
-      color: var(--text);
-      letter-spacing: -0.3px;
     }
-    .topnav-logo img { width: 28px; height: 28px; border-radius: 7px; }
+    .topnav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .topnav-logo span {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text);
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
     .topnav-links {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 0.25rem;
     }
     .topnav-links a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 14px;
-      padding: 6px 12px;
-      border-radius: 7px;
-      transition: color 0.15s, background 0.15s;
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.2;
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
     }
-    .topnav-links a:hover { color: var(--text); background: var(--bg-3); }
-    .topnav-links a.active { color: var(--accent-bright); }
+    .topnav-links a:hover, .topnav-links a.active { color: var(--text); background: var(--bg-2); }
     .theme-btn {
-      background: none;
-      border: 1.5px solid var(--border);
-      color: var(--text);
-      border-radius: 50%;
-      font-size: 1.3em;
-      width: 2.2em;
-      height: 2.2em;
-      margin-left: 0.5em;
+      margin-left: 0.75rem;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      font-size: 1rem;
       cursor: pointer;
-      transition: color 0.2s, border-color 0.2s;
-      vertical-align: middle;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
     }
     .theme-btn:hover {
       color: var(--accent);
@@ -140,7 +152,7 @@
     .layout {
       display: flex;
       max-width: 1200px;
-      margin: 0 auto;
+      margin: var(--topbar-height) auto 0;
       padding: 0 24px;
       gap: 40px;
     }
@@ -604,15 +616,13 @@
 <nav class="topnav">
   <a class="topnav-logo" href="index.html">
     <img src="fravora.png" alt="Fravora" />
-    Fravora
+    <span>Fravora</span>
   </a>
-  <div style="display:flex;align-items:center;gap:8px;">
-    <div class="topnav-links">
-      <a href="index.html">Home</a>
-      <a href="manual.html" class="active">User Manual</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="data-deletion.html">Data Deletion</a>
-    </div>
+  <div class="topnav-links">
+    <a href="index.html">Home</a>
+    <a href="manual.html" class="active">User Manual</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="data-deletion.html">Data Deletion</a>
     <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
     <button class="mobile-menu-btn" onclick="toggleSidebar()" id="menuBtn">☰ Menu</button>
   </div>
@@ -641,6 +651,8 @@
           <li><a href="#appearance" onclick="closeSidebar()"><span class="icon">🎨</span>Appearance</a></li>
           <li><a href="#overlays" onclick="closeSidebar()"><span class="icon">✨</span>Overlays</a></li>
           <li><a href="#radio" onclick="closeSidebar()"><span class="icon">📻</span>Radio</a></li>
+          <li><a href="#weather-forecast" onclick="closeSidebar()"><span class="icon">🌦️</span>Weather Forecast<span class="pro-badge">PRO</span></a></li>
+          <li><a href="#calendar" onclick="closeSidebar()"><span class="icon">📅</span>Calendar<span class="pro-badge">PRO</span></a></li>
           <li><a href="#voice" onclick="closeSidebar()"><span class="icon">🎙️</span>Voice Control<span class="pro-badge">PRO</span></a></li>
         </ul>
       </div>
@@ -963,12 +975,89 @@
       </div>
     </section>
 
+    <!-- WEATHER FORECAST -->
+    <section class="section" id="weather-forecast">
+      <div class="section-header">
+        <div class="section-icon">🌦️</div>
+        <div>
+          <div class="section-number">08</div>
+          <h2>Weather Forecast</h2>
+        </div>
+      </div>
+
+      <div class="callout pro">
+        <span class="callout-icon">✦</span>
+        <div class="callout-body"><strong>PRO feature.</strong> Tap the weather overlay in frame view to open full-screen forecast details.</div>
+      </div>
+
+      <h3>Views & Navigation</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">Tap-to-open forecast</span><span class="setting-desc">Open forecast details directly from the weather overlay.</span><span class="pro-tag">PRO</span></div>
+        <div class="setting-row"><span class="setting-name">24-hour forecast</span><span class="setting-desc">Hourly forecast strip for the next 24 hours.</span></div>
+        <div class="setting-row"><span class="setting-name">7-day forecast</span><span class="setting-desc">Daily forecast cards with weather-adaptive styling.</span></div>
+        <div class="setting-row"><span class="setting-name">Swipe navigation</span><span class="setting-desc">Swipe left/right inside hour/day detail views across visible forecast bounds.</span></div>
+      </div>
+
+      <h3>Forecast Details</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">Weather-adaptive styling</span><span class="setting-desc">Forecast UI colors blend with the active app theme and current weather tone.</span></div>
+        <div class="setting-row"><span class="setting-name">Rich forecast data</span><span class="setting-desc">Temperature, precipitation probability, wind, humidity, UV, and day/night context.</span></div>
+        <div class="setting-row"><span class="setting-name">Localized labels</span><span class="setting-desc">Hour/day labels follow your configured clock/date formatting preferences.</span></div>
+      </div>
+
+      <h3>Runtime Behavior</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">Top-level overlay</span><span class="setting-desc">Forecast opens above slideshow content in full-screen mode.</span></div>
+        <div class="setting-row"><span class="setting-name">Slideshow pause integration</span><span class="setting-desc">While forecast is open, slideshow timing is paused and resumes when closed.</span></div>
+      </div>
+    </section>
+
+    <!-- CALENDAR -->
+    <section class="section" id="calendar">
+      <div class="section-header">
+        <div class="section-icon">📅</div>
+        <div>
+          <div class="section-number">09</div>
+          <h2>Calendar</h2>
+        </div>
+      </div>
+
+      <div class="callout pro">
+        <span class="callout-icon">✦</span>
+        <div class="callout-body"><strong>PRO feature.</strong> Tap the clock/date overlay in frame view to open the full-screen calendar.</div>
+      </div>
+
+      <h3>Views & Navigation</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">Tap-to-open calendar</span><span class="setting-desc">Open calendar directly from the date/time overlay while viewing photos.</span><span class="pro-tag">PRO</span></div>
+        <div class="setting-row"><span class="setting-name">Month navigation</span><span class="setting-desc">Swipe left or right to move between months.</span></div>
+        <div class="setting-row"><span class="setting-name">Day details</span><span class="setting-desc">Open a day and swipe within the visible day range.</span></div>
+        <div class="setting-row"><span class="setting-name">Week start preference</span><span class="setting-desc">Month grid follows the configured first day of week.</span></div>
+      </div>
+
+      <h3>Events & Reminders</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">Event CRUD</span><span class="setting-desc">Create, edit, and delete events.</span></div>
+        <div class="setting-row"><span class="setting-name">All-day support</span><span class="setting-desc">All-day toggle with timed-range restore when switched back off.</span></div>
+        <div class="setting-row"><span class="setting-name">Recurrence</span><span class="setting-desc">Recurring events with edit scopes (this occurrence, this and following, whole series) and skip-date exclusions.</span></div>
+        <div class="setting-row"><span class="setting-name">Per-event reminders</span><span class="setting-desc">Digest, 1-hour, and 15-minute reminder options.</span></div>
+        <div class="setting-row"><span class="setting-name">Reminder actions</span><span class="setting-desc">Snooze, Dismiss, Delete, and Close from the reminder summary dialog.</span></div>
+      </div>
+
+      <h3>Calendar UX Enhancements</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">Day multi-select</span><span class="setting-desc">Long-press enters multi-select mode with bulk Delete selected action.</span></div>
+        <div class="setting-row"><span class="setting-name">Scroll-stable selection</span><span class="setting-desc">Selecting events does not jump scroll position in day view.</span></div>
+        <div class="setting-row"><span class="setting-name">Change-aware save</span><span class="setting-desc">Event editor Save stays disabled until draft changes are made.</span></div>
+      </div>
+    </section>
+
     <!-- VOICE -->
     <section class="section" id="voice">
       <div class="section-header">
         <div class="section-icon">🎙️</div>
         <div>
-          <div class="section-number">08</div>
+          <div class="section-number">10</div>
           <h2>Voice Control</h2>
         </div>
       </div>
@@ -1051,7 +1140,7 @@
       <div class="section-header">
         <div class="section-icon">🖐️</div>
         <div>
-          <div class="section-number">09</div>
+          <div class="section-number">11</div>
           <h2>Frame Interactions (Hidden Gems)</h2>
         </div>
       </div>
@@ -1073,6 +1162,7 @@
         <div class="setting-row"><span class="setting-name">Ambient logo double tap</span><span class="setting-desc">Opens radio station search immediately.</span></div>
         <div class="setting-row"><span class="setting-name">Ambient logo animation</span><span class="setting-desc">The icon breathes during playback and subtly pulses with bass intensity.</span></div>
         <div class="setting-row"><span class="setting-name">Weather overlay tap</span><span class="setting-desc">Opens a detailed weather forecast overlay with 24-hour and 7-day views.</span></div>
+        <div class="setting-row"><span class="setting-name">Clock/date overlay tap</span><span class="setting-desc">Opens the full-screen calendar overlay.</span><span class="pro-tag">PRO</span></div>
       </div>
 
       <h3>In-Frame Menu</h3>
@@ -1090,6 +1180,15 @@
         <div class="setting-row"><span class="setting-name">Blocking network overlay</span><span class="setting-desc">Full-screen warning appears if Fravora cannot load any photo due to network failures.</span></div>
         <div class="setting-row"><span class="setting-name">New images badge</span><span class="setting-desc">Notification strip appears when new photos are discovered during a scan.</span></div>
       </div>
+
+      <h3>New Images Overlay</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">Discovery badge</span><span class="setting-desc">A notification-strip badge appears when periodic scans detect newly added photos.</span></div>
+        <div class="setting-row"><span class="setting-name">Tap-to-open viewer</span><span class="setting-desc">Tapping the badge opens a dedicated viewer for newly discovered items.</span></div>
+        <div class="setting-row"><span class="setting-name">Session-aware dismissal</span><span class="setting-desc">Closing the viewer acknowledges and clears the current new-image notification set.</span></div>
+        <div class="setting-row"><span class="setting-name">Order-aware integration</span><span class="setting-desc">New items are integrated without duplicating photos already queued in random-order playback.</span></div>
+        <div class="setting-row"><span class="setting-name">Scope safety</span><span class="setting-desc">Scope-changing refreshes clear stale discovery buffers so out-of-scope photos are not shown as new.</span></div>
+      </div>
     </section>
 
     <!-- FREE VS PRO -->
@@ -1097,7 +1196,7 @@
       <div class="section-header">
         <div class="section-icon">⭐</div>
         <div>
-          <div class="section-number">10</div>
+          <div class="section-number">12</div>
           <h2>Free vs PRO</h2>
         </div>
       </div>
@@ -1137,6 +1236,7 @@
           <tr><td class="label">Transition speed control</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Running hours scheduling</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Bouncing standby clock</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">New images overlay badge &amp; viewer</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
 
           <tr class="section-row"><td colspan="3">Radio</td></tr>
           <tr><td class="label">Search & play stations</td><td><span class="check">✓</span> (limited)</td><td><span class="check">✓</span> unlimited</td></tr>
@@ -1158,6 +1258,11 @@
           <tr><td class="label">Ambient logo indicator</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Overlay positioning</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Anti burn-in effect</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">Full-screen weather forecast (24h/7d)</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+
+          <tr class="section-row"><td colspan="3">Calendar</td></tr>
+          <tr><td class="label">Tap-to-open calendar from clock/date</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">Event editing, recurrence &amp; reminders</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
 
           <tr class="section-row"><td colspan="3">Appearance</td></tr>
           <tr><td class="label">App font size control</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
@@ -1186,7 +1291,7 @@
       <div class="section-header">
         <div class="section-icon">🔧</div>
         <div>
-          <div class="section-number">11</div>
+          <div class="section-number">13</div>
           <h2>FAQ & Troubleshooting</h2>
         </div>
       </div>
@@ -1315,7 +1420,7 @@
       <div class="section-header">
         <div class="section-icon">💬</div>
         <div>
-          <div class="section-number">12</div>
+          <div class="section-number">14</div>
           <h2>Support</h2>
         </div>
       </div>
