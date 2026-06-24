@@ -679,7 +679,7 @@
       <div class="badge">📖 Documentation</div>
       <h1>User Manual</h1>
       <p>Everything you need to set up, personalize, and get the most out of Fravora, from first launch to advanced gestures and voice workflows.</p>
-      <div class="meta">Last updated: May 20, 2026 · Based on current app implementation</div>
+      <div class="meta">Last updated: June 24, 2026 · Based on current app implementation</div>
     </div>
 
     <!-- QUICK START -->
@@ -701,7 +701,7 @@
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <div class="step-body">Go to <strong>Settings → Sources</strong> and add at least one photo source — local folder, SMB/NAS share, Google Photos, Microsoft OneDrive, or Dropbox.</div>
+          <div class="step-body">Go to <strong>Settings → Sources</strong> and add at least one photo source — local folder, SMB/NAS share, Google Photos, Microsoft OneDrive, Dropbox, or Immich.</div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
@@ -754,12 +754,12 @@
       </div>
 
       <h3>Cloud Sources</h3>
-      <p>Fravora supports cloud providers through a unified source flow. Supported cloud sources are Google Photos, Microsoft OneDrive, and Dropbox.</p>
+      <p>Fravora supports cloud providers through a unified source flow. Supported cloud sources are Google Photos, Microsoft OneDrive, Dropbox, and Immich.</p>
       <div class="feature-grid">
         <div class="feature-card">
           <div class="card-icon">☁️</div>
           <div class="card-title">Cloud providers</div>
-          <div class="card-desc">Connect Google Photos, OneDrive, or Dropbox and choose the media items or folders you want to include in playback.</div>
+          <div class="card-desc">Connect Google Photos, OneDrive, Dropbox, or Immich and choose the media items, folders, or albums you want to include in playback.</div>
         </div>
         <div class="feature-card">
           <div class="card-icon">🧩</div>
@@ -1008,7 +1008,7 @@
       <h3>Command Behavior</h3>
       <div class="settings-list">
         <div class="setting-row"><span class="setting-name">Wait for follow-up</span><span class="setting-desc">Keeps listening briefly after a command so you can issue another one without saying the wake phrase again.</span></div>
-        <div class="setting-row"><span class="setting-name">Command window</span><span class="setting-desc">Adjust the listening timeout for commands (3 to 15 seconds).</span></div>
+        <div class="setting-row"><span class="setting-name">Command window</span><span class="setting-desc">Adjust how long Fravora listens for a command (3 to 7 seconds).</span></div>
         <div class="setting-row"><span class="setting-name">Runtime feature gating</span><span class="setting-desc">Radio, slideshow, and assistant commands only run when their corresponding Voice settings toggles are enabled.</span></div>
       </div>
 
@@ -1048,7 +1048,8 @@
         <div class="setting-row"><span class="setting-name">User Manual</span><span class="setting-desc">Open <strong>Settings → Support → User Manual</strong> for direct access to this documentation from inside the app.</span></div>
         <div class="setting-row"><span class="setting-name">Report an Issue</span><span class="setting-desc">Use <strong>Settings → Support → Report an Issue</strong> to send a detailed bug report by email, including device and app version details.</span></div>
         <div class="setting-row"><span class="setting-name">Feature Request</span><span class="setting-desc">Use <strong>Settings → Support → Feature Request</strong> to share ideas for improvements or new features.</span></div>
-        <div class="setting-row"><span class="setting-name">Check for Updates</span><span class="setting-desc">Use <strong>Settings → Support → Check for Updates</strong> to verify you have the latest version from the Play Store.</span></div>
+        <div class="setting-row"><span class="setting-name">In-frame update alerts</span><span class="setting-desc">Update availability can appear in the in-frame notification strip with periodic checks and per-version acknowledgement to avoid repeated prompts.</span></div>
+        <div class="setting-row"><span class="setting-name">Check for Updates</span><span class="setting-desc">Use <strong>Settings → Support → Check for Updates</strong> to verify you have the latest version. Store routing is automatic (Google Play or Amazon Appstore, depending on build flavor).</span></div>
         <div class="setting-row"><span class="setting-name">Release Notes</span><span class="setting-desc">Open <strong>Settings → Support → Release Notes</strong> to review what changed in your currently installed version.</span></div>
         <div class="setting-row"><span class="setting-name">Roadmap</span><span class="setting-desc">Open <strong>Settings → Support → Roadmap</strong> to see planned features and known issues under active work.</span></div>
         <div class="setting-row"><span class="setting-name">Replay Onboarding</span><span class="setting-desc">Re-run the 8-step first-launch onboarding flow anytime from <strong>Settings → Support → Replay Onboarding</strong>.</span></div>
@@ -1101,6 +1102,7 @@
       <div class="settings-list">
         <div class="setting-row"><span class="setting-name">Zoom navigator</span><span class="setting-desc">Mini-map appears while zoomed, showing the full image and your current viewport.</span></div>
         <div class="setting-row"><span class="setting-name">Network warning badge</span><span class="setting-desc">Appears when one or more SMB shares are unreachable. Tap to list failed shares.</span></div>
+        <div class="setting-row"><span class="setting-name">Update available badge</span><span class="setting-desc">The in-frame notification strip can display app update availability and route update actions to the correct store for your build.</span></div>
         <div class="setting-row"><span class="setting-name">Google Photos storage status</span><span class="setting-desc">Cloud status icons indicate import state: red for blocked/pending, yellow + count for partial recovery, and green + count for full recovery.</span></div>
         <div class="setting-row"><span class="setting-name">Blocking network overlay</span><span class="setting-desc">Full-screen warning appears if Fravora cannot load any photo due to network failures.</span></div>
         <div class="setting-row"><span class="setting-name">New images badge</span><span class="setting-desc">Notification strip appears when new photos are discovered during a scan.</span></div>
