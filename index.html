@@ -7,11 +7,124 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <title>Fravora – Photo Frame & Radio</title>
-  <meta name="description" content="Turn your Android device into a beautiful photo frame with built-in radio streaming, smart overlays, and voice control. Privacy-first, no interruptions." />
-  <link rel="icon" type="image/png" href="fravora.png" />
+  <meta name="description" content="Fravora is an Android digital photo frame app for NAS/SMB, local folders, and cloud photos with radio, overlays, and voice control. Works offline with local and NAS sources." />
+  <link rel="canonical" href="https://aniujual.github.io/fravora/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Fravora" />
+  <meta property="og:title" content="Fravora – Photo Frame & Radio" />
+  <meta property="og:description" content="Fravora is an Android digital photo frame app for NAS/SMB, local folders, and cloud photos with radio, overlays, and voice control. Works offline with local and NAS sources." />
+  <meta property="og:url" content="https://aniujual.github.io/fravora/" />
+  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
+  <meta property="og:image:alt" content="Fravora digital photo frame showing a full-screen photo with time, weather, and radio overlays." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fravora – Photo Frame & Radio" />
+  <meta name="twitter:description" content="Fravora is an Android digital photo frame app for NAS/SMB, local folders, and cloud photos with radio, overlays, and voice control. Works offline with local and NAS sources." />
+  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
+  <meta name="twitter:image:alt" content="Fravora digital photo frame showing a full-screen photo with time, weather, and radio overlays." />
+  <link rel="icon" type="image/png" href="images/fravora.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "Fravora",
+          "url": "https://aniujual.github.io/fravora/",
+          "logo": "https://aniujual.github.io/fravora/images/fravora.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "aniujual.dev@yahoo.com"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Fravora",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "Android",
+          "description": "Android digital photo frame app for NAS/SMB, local folders, and cloud photos with radio, overlays, and voice control.",
+          "url": "https://aniujual.github.io/fravora/",
+          "image": "https://aniujual.github.io/fravora/images/screen_frame1.png",
+          "downloadUrl": "https://play.google.com/store/apps/details?id=com.aniujual.fravora",
+          "installUrl": "https://play.google.com/store/apps/details?id=com.aniujual.fravora",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "aniujual"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Does it show ads?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Only if you choose to. Free users can watch a rewarded ad for temporary Pro access - the slideshow itself is never interrupted."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does it work offline?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Local and SMB/NAS sources work without internet. Scheduling and screen saver keep running as configured."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Fravora work as a NAS photo frame without internet?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Fravora works as an offline NAS photo frame when using local folders or SMB/NAS sources on your local network. Internet is only needed for cloud sources and online services like radio."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does it support SMB / NAS?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, on the free tier. Enter your share credentials in the app and pick which folders to include."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Will my photos be uploaded anywhere?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Photos are read from your local or SMB/NAS sources and never sent to Fravora servers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why is voice control a Pro feature?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It uses Google's Speech Recognition, which requires ongoing maintenance. Keeping it Pro helps sustain the free tier without forced ads."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What devices does it run on?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Any Android phone or tablet. Works best mounted or docked, but any device you want to repurpose as a frame will do."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -145,6 +258,27 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
     .hero-sub { font-size: 1.1rem; font-weight: 300; color: var(--muted); line-height: 1.7; margin-bottom: 2.5rem; }
+
+    .hero-trust {
+      margin-top: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+    }
+    .hero-trust span {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      padding: 0.28rem 0.62rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      line-height: 1;
+    }
 
     .cta-btn {
       display: inline-flex; align-items: center; gap: 0.6rem;
@@ -339,6 +473,19 @@
     .feature-icon { font-size: 1.75rem; margin-bottom: 1rem; display: block; }
     .feature-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; position: relative; }
     .feature-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; position: relative; }
+    .feature-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.95rem;
+      position: relative;
+      color: var(--accent2);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .feature-link:hover { color: var(--accent); transform: translateX(2px); }
 
     /* ── DIFFERENT ── */
     .different {
@@ -491,7 +638,7 @@
 
   <nav>
     <a class="nav-logo" href="index.html">
-      <img src="fravora.png" alt="Fravora logo" />
+      <img src="images/fravora.png" alt="Fravora logo" />
       <span>Fravora</span>
     </a>
     <div class="nav-links">
@@ -499,6 +646,7 @@
       <a href="manual.html">User Manual</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="data-deletion.html">Data Deletion</a>
+      <a href="release-notes.html">Release Notes</a>
       <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
     </div>
   </nav>
@@ -510,7 +658,7 @@
     <div class="orb orb3"></div>
     <div class="hero-content">
       <div class="hero-badge"><span>●</span> Android App</div>
-      <img src="fravora.png" alt="Fravora" class="hero-logo" />
+      <img src="images/fravora.png" alt="Fravora" class="hero-logo" />
       <h1>Your photos.<br /><em>Always on display.</em></h1>
       <p class="hero-sub">
         Turn your Android device into a beautiful, silent photo frame
@@ -521,6 +669,12 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2 2 0 0 0 2.14-.21l12.44-7.19-3.13-3.12-11.45 10.52zM20.65 9.22l-3.34-1.93-3.51 3.5 3.51 3.51 3.37-1.95a2 2 0 0 0-.03-3.13zM1 1.45A2 2 0 0 0 .5 2.87v18.27a2 2 0 0 0 .5 1.41L14.4 12 1 1.45zm13.39 9.14L2.82.38A2 2 0 0 0 1 .17L14.39 10.59l.01-4z"/></svg>
         Get it on Google Play
       </a>
+      <div class="hero-trust" aria-label="Trust highlights">
+        <span>No forced ads</span>
+        <span>Photos stay local</span>
+        <span>NAS/SMB support</span>
+        <span>Works offline</span>
+      </div>
     </div>
   </section>
 
@@ -533,7 +687,7 @@
       <div class="tv-mockup-wrap">
         <div class="tv-frame">
           <div class="tv-screen">
-            <img id="frameImg" src="screen_frame1.png" alt="Fravora frame showing a temple in Nara, Japan with weather and time overlays" />
+            <img id="frameImg" src="images/screen_frame1.png" alt="Android digital photo frame app screenshot showing Nara, Japan with weather and time overlays" />
           </div>
         </div>
         <div class="tv-stand"></div>
@@ -566,7 +720,7 @@
       <div class="screenshot-panel active" id="tab-radio">
         <div class="tablet-mockup">
           <div class="tablet-screen">
-            <img src="screen_settings_radio.png" alt="Radio settings screen showing station favourites and scheduling" />
+            <img src="images/screen_settings_radio.png" alt="Radio settings screen showing station favourites and scheduling" />
           </div>
         </div>
         <div class="screenshot-desc">
@@ -578,7 +732,7 @@
       <div class="screenshot-panel" id="tab-overlays">
         <div class="tablet-mockup">
           <div class="tablet-screen">
-            <img src="screen_settings_overlays.png" alt="Overlays settings screen showing time, weather, and photo info toggles" />
+            <img src="images/screen_settings_overlays.png" alt="Overlays settings screen showing time, weather, and photo info toggles" />
           </div>
         </div>
         <div class="screenshot-desc">
@@ -590,7 +744,7 @@
       <div class="screenshot-panel" id="tab-layout">
         <div class="tablet-mockup">
           <div class="tablet-screen">
-            <img src="screen_settings_overlays2.png" alt="Overlay layout settings showing a 2x2 corner assignment grid" />
+            <img src="images/screen_settings_overlays2.png" alt="Overlay layout settings showing a 2x2 corner assignment grid" />
           </div>
         </div>
         <div class="screenshot-desc">
@@ -602,7 +756,7 @@
       <div class="screenshot-panel" id="tab-slideshow">
         <div class="tablet-mockup">
           <div class="tablet-screen">
-            <img src="screen_settings_slideshow.png" alt="Slideshow settings showing photo interval, order, transitions, and screen saver options" />
+            <img src="images/screen_settings_slideshow.png" alt="Slideshow settings showing photo interval, order, transitions, and screen saver options" />
           </div>
         </div>
         <div class="screenshot-desc">
@@ -614,7 +768,7 @@
       <div class="screenshot-panel" id="tab-voice">
         <div class="tablet-mockup">
           <div class="tablet-screen">
-            <img src="screen_settings_voice.png" alt="Voice control settings showing wake phrase, command categories, and listening window" />
+            <img src="images/screen_settings_voice.png" alt="Voice control settings showing wake phrase, command categories, and listening window" />
           </div>
         </div>
         <div class="screenshot-desc">
@@ -635,46 +789,55 @@
         <span class="feature-icon">🖼️</span>
         <h3>Smart Slideshow</h3>
         <p>Local folders, SMB/NAS shares, and supported cloud providers — one uninterrupted slideshow.</p>
+        <a class="feature-link" href="manual.html#slideshow">Open manual chapter →</a>
       </div>
       <div class="feature-card">
         <span class="feature-icon">📻</span>
         <h3>Built-in Radio</h3>
         <p>Stream radio stations while your photos play. Music and memories, together.</p>
+        <a class="feature-link" href="manual.html#radio">Open manual chapter →</a>
       </div>
       <div class="feature-card">
         <span class="feature-icon">🌤️</span>
         <h3>Weather Overlay</h3>
         <p>Live local weather at a glance, right on your frame. No phone needed.</p>
+        <a class="feature-link" href="manual.html#weather-forecast">Open manual chapter →</a>
       </div>
       <div class="feature-card">
         <span class="feature-icon">🎙️</span>
         <h3>Voice Control</h3>
         <p>Wake-phrase detection runs on-device with OpenWakeWord; command recognition uses Android SpeechRecognizer with clear visual feedback.</p>
+        <a class="feature-link" href="manual.html#voice">Open manual chapter →</a>
       </div>
       <div class="feature-card">
         <span class="feature-icon">📍</span>
         <h3>Metadata Overlay</h3>
         <p>Date and location pulled from EXIF — privately, locally, beautifully.</p>
+        <a class="feature-link" href="manual.html#overlays">Open manual chapter →</a>
       </div>
       <div class="feature-card">
         <span class="feature-icon">⏰</span>
         <h3>Smart Scheduling</h3>
         <p>The frame turns on and off on your schedule. Set it once, forget it.</p>
+        <a class="feature-link" href="manual.html#slideshow">Open manual chapter →</a>
       </div>
       <div class="feature-card">
         <span class="feature-icon">📅</span>
         <h3>Calendar (Pro)</h3>
         <p>Tap the clock/date overlay to open a full-screen calendar with events, recurrence, and reminders.</p>
+        <a class="feature-link" href="manual.html#calendar">Open manual chapter →</a>
       </div>
       <div class="feature-card">
         <span class="feature-icon">☁️</span>
         <h3>Cloud Sources</h3>
         <p>Supported cloud sources: Google Photos, Microsoft OneDrive, Dropbox, and Immich. Free includes 1 cloud connection with base limits; Pro expands cloud limits across all supported cloud providers.</p>
+        <a class="feature-link" href="manual.html#sources">Open manual chapter →</a>
       </div>
       <div class="feature-card">
         <span class="feature-icon">🙈</span>
         <h3>Hidden Photos</h3>
         <p>Hide photos per album or globally without deleting. Unhide anytime.</p>
+        <a class="feature-link" href="manual.html#albums">Open manual chapter →</a>
       </div>
     </div>
   </section>
@@ -810,6 +973,13 @@
       </div>
       <div class="faq-item">
         <button class="faq-q">
+          Does Fravora work as a NAS photo frame without internet?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Yes. Fravora works as an offline NAS photo frame when using local folders or SMB/NAS sources on your local network. Internet is only needed for cloud sources and online services like radio.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
           Does it support SMB / NAS?
           <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
@@ -856,7 +1026,7 @@
 
   <footer>
     <div class="footer-left">
-      <img src="fravora.png" alt="" />
+      <img src="images/fravora.png" alt="" />
       <span>© 2026 Fravora</span>
     </div>
     <div class="footer-links">
@@ -864,6 +1034,7 @@
       <a href="manual.html">User Manual</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="data-deletion.html">Data Deletion</a>
+      <a href="release-notes.html">Release Notes</a>
     </div>
   </footer>
 
@@ -893,8 +1064,8 @@
 
     // Frame photo switcher
     const frameImages = [
-      { src: 'screen_frame1.png', caption: 'Nara, Japan — weather overlay, clock, and now-playing radio info all in one glance' },
-      { src: 'screen_frame2.png', caption: 'Kyoto, Japan — Nijo Castle garden. Radio station and current song shown at the top' },
+      { src: 'images/screen_frame1.png', caption: 'Nara, Japan — weather overlay, clock, and now-playing radio info all in one glance' },
+      { src: 'images/screen_frame2.png', caption: 'Kyoto, Japan — Nijo Castle garden. Radio station and current song shown at the top' },
     ];
     const frameImg = document.getElementById('frameImg');
     const frameCaption = document.getElementById('frameCaption');

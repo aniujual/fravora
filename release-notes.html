@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Release Notes – Fravora</title>
+  <meta name="description" content="Latest Fravora release notes, feature additions, and bug fixes from the app changelog." />
+  <link rel="canonical" href="https://aniujual.github.io/fravora/release-notes.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Fravora" />
+  <meta property="og:title" content="Release Notes – Fravora" />
+  <meta property="og:description" content="Latest Fravora release notes, feature additions, and bug fixes from the app changelog." />
+  <meta property="og:url" content="https://aniujual.github.io/fravora/release-notes.html" />
+  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
+  <meta property="og:image:alt" content="Fravora digital photo frame showing a full-screen photo with time, weather, and radio overlays." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Release Notes – Fravora" />
+  <meta name="twitter:description" content="Latest Fravora release notes, feature additions, and bug fixes from the app changelog." />
+  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
+  <meta name="twitter:image:alt" content="Fravora digital photo frame showing a full-screen photo with time, weather, and radio overlays." />
+  <link rel="icon" type="image/png" href="images/fravora.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0e0b14;
+      --bg2: #13101c;
+      --surface: #1c1728;
+      --border: #2e2640;
+      --accent: #9b5de5;
+      --accent2: #c77dff;
+      --green: #4ade80;
+      --red: #f87171;
+      --text: #e8e0f5;
+      --muted: #8b7fa8;
+      --nav-bg: rgba(14, 11, 20, 0.85);
+    }
+    [data-theme="light"] {
+      --bg: #f5f0ff;
+      --bg2: #ede6ff;
+      --surface: #ffffff;
+      --border: #d4c8f0;
+      --accent: #7c3aed;
+      --accent2: #9b5de5;
+      --green: #16a34a;
+      --red: #dc2626;
+      --text: #1a1033;
+      --muted: #6b5b8a;
+      --nav-bg: rgba(245, 240, 255, 0.88);
+    }
+
+    html { scroll-behavior: smooth; overflow-y: scroll; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 64px;
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.6rem;
+      text-decoration: none;
+    }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .nav-logo span {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700; font-size: 1.15rem;
+      color: var(--text); letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 0.25rem; }
+    .nav-links a {
+      text-decoration: none; color: var(--muted);
+      font-size: 0.9rem; font-weight: 500;
+      padding: 0.4rem 0.85rem; border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); background: var(--surface); }
+    .theme-btn {
+      margin-left: 0.75rem;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--muted); width: 36px; height: 36px; border-radius: 8px;
+      cursor: pointer; font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .theme-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+    .page-header {
+      padding: 8rem 2rem 3rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg2);
+    }
+    .page-header h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+    .page-header p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .content {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    .release-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .release-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .release-head h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+    .build-tag {
+      color: var(--accent2);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .release-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .release-block {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+    .release-block h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .release-block.features h3 { color: var(--green); }
+    .release-block.fixes h3 { color: var(--accent2); }
+    .release-block ul {
+      padding-left: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .release-block li {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+    .release-block li::marker { color: var(--accent); }
+    .release-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.75;
+      margin-top: 1rem;
+    }
+    .release-note a {
+      color: var(--accent2);
+      text-decoration: underline;
+      text-decoration-color: rgba(199,125,255,0.35);
+    }
+
+    footer {
+      padding: 2.5rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+      border-top: 1px solid var(--border);
+      max-width: 1100px; margin: 0 auto;
+    }
+    .footer-left {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.85rem; color: var(--muted);
+    }
+    .footer-left img { width: 22px; height: 22px; border-radius: 5px; }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    footer a {
+      font-size: 0.85rem; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 740px) {
+      nav { padding: 0 1rem; }
+      .nav-links a { padding: 0.4rem 0.5rem; font-size: 0.85rem; }
+      .content { padding: 2.25rem 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="images/fravora.png" alt="Fravora logo" />
+      <span>Fravora</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="manual.html">User Manual</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="data-deletion.html">Data Deletion</a>
+      <a href="release-notes.html" class="active">Release Notes</a>
+      <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>Release Notes</h1>
+    <p>Recent Fravora updates, feature additions, and bug fixes, published from the app changelog so the website stays aligned with the real product.</p>
+  </div>
+
+  <div class="content">
+    <div class="release-card">
+      <div class="release-head">
+        <h2>Version 1.0.8</h2>
+        <div class="build-tag">vc29</div>
+      </div>
+      <div class="release-grid">
+        <div class="release-block fixes">
+          <h3>Bug Fixes</h3>
+          <ul>
+            <li>Fixed slideshow gesture handling so post-swipe movement no longer triggers false single-tap menu opens that blocked expected swipe/zoom behavior.</li>
+            <li>Fixed free-tier transition enforcement so downgrades always use None (hard cut) and never keep slide animation from prior PRO settings.</li>
+            <li>Fixed None transition rendering to lock to the active pager page, preventing slide-like motion from leaking through in free tier.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-card">
+      <div class="release-head">
+        <h2>Version 1.0.7</h2>
+        <div class="build-tag">vc28</div>
+      </div>
+      <div class="release-grid">
+        <div class="release-block features">
+          <h3>Features</h3>
+          <ul>
+            <li>Added Image backdrop style option None so Fit mode can leave empty screen areas untouched with no backdrop fill.</li>
+            <li>Changed first-run defaults: slideshow running hours now start disabled, and free tier always uses Image backdrop None.</li>
+            <li>Added a one-time AI translation notice when switching to Local language for the first time; later Local-language switches apply directly.</li>
+          </ul>
+        </div>
+        <div class="release-block fixes">
+          <h3>Bug Fixes</h3>
+          <ul>
+            <li>Fixed production Support-screen crash from malformed positional format specifiers by hardening app-version and PRO label formatting arguments.</li>
+            <li>Fixed Transition effect None to perform hard cuts with no slide motion between photos.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-card">
+      <div class="release-head">
+        <h2>Version 1.0.6</h2>
+        <div class="build-tag">vc27</div>
+      </div>
+      <div class="release-grid">
+        <div class="release-block fixes">
+          <h3>Bug Fixes</h3>
+          <ul>
+            <li>Fixed a Settings crash by loading Sources format-template strings with context resources instead of Compose stringResource empty-arg formatting.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-card">
+      <div class="release-head">
+        <h2>Version 1.0.5</h2>
+        <div class="build-tag">vc26</div>
+      </div>
+      <div class="release-grid">
+        <div class="release-block features">
+          <h3>Features</h3>
+          <ul>
+            <li>Moved app update alerts to the in-frame strip with 24h periodic checks and a per-version acknowledgement guard to avoid repeated prompts.</li>
+            <li>Support now shows only the app version name in the App version row and no longer displays versionCode.</li>
+            <li>Added Immich cloud source with URL plus API key connection, album targets, scan integration, and runtime image loading and caching.</li>
+            <li>Switched Amazon flavor rewarded ads to APS and scoped AdMob SDK and manifest wiring to Google Play flavor only.</li>
+          </ul>
+        </div>
+        <div class="release-block fixes">
+          <h3>Bug Fixes</h3>
+          <ul>
+            <li>Fixed the Support update-check dialog text so it correctly says You are using the latest version of Fravora.</li>
+            <li>Fixed new images so they merge into the slideshow only after closing the preview; Random and Smart Shuffle append at the tail while other orders use their sort rule.</li>
+            <li>Fixed Amazon flavor update checks to skip Play in-app updates and route manual checks in Settings and the in-frame strip to Amazon Appstore.</li>
+            <li>Fixed Amazon store-launch errors by detecting missing Amazon Appstore app and showing a user message instead of crashing.</li>
+            <li>Fixed unreachable-share dialog actions by adding Retry now and changing the mislabeled cache-settings button text to Open Sources.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-card">
+      <div class="release-head">
+        <h2>Version 1.0.3</h2>
+        <div class="build-tag">vc24</div>
+      </div>
+      <div class="release-grid">
+        <div class="release-block fixes">
+          <h3>Bug Fixes</h3>
+          <ul>
+            <li>Fixed permanent PRO purchase copy to use store-neutral billing wording so Amazon flavor no longer shows Google Play-specific messages.</li>
+            <li>Fixed TV monetization text to remove rewarded-ad references when ad-based temporary PRO is unavailable on Android TV, Google TV, and Fire TV.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-card">
+      <div class="release-head">
+        <h2>Version 1.0.2</h2>
+        <div class="build-tag">vc23</div>
+      </div>
+      <div class="release-grid">
+        <div class="release-block features">
+          <h3>Features</h3>
+          <ul>
+            <li>Added Amazon Fire TV compatibility declaration for the Amazon flavor so the app can be listed for Fire TV devices.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-card">
+      <div class="release-head">
+        <h2>Version 1.0.1</h2>
+        <div class="build-tag">vc22</div>
+      </div>
+      <div class="release-grid">
+        <div class="release-block features">
+          <h3>Features</h3>
+          <ul>
+            <li>Added Dropbox cloud integration with OAuth sign-in, folder targeting, slideshow scan and load support, and hidden-photo handling in Settings.</li>
+            <li>Added Android and Google TV support with leanback launcher, banner, and D-pad UX.</li>
+            <li>Added on-screen speech recognition text display during voice command listening with adaptive positioning and a user-configurable toggle in Settings.</li>
+            <li>Extended weather forecast hourly view from 12 hours to 24 hours for better future weather visibility.</li>
+            <li>Added a tap-open calendar overlay on the date and time widget with month swipe, configurable week start, and event add, edit, and delete support.</li>
+            <li>Added swipe navigation in weather detail views and a PRO-only Image backdrop setting in Slideshow.</li>
+          </ul>
+        </div>
+        <div class="release-block fixes">
+          <h3>Bug Fixes</h3>
+          <ul>
+            <li>Fixed metadata overlay duplication and related location and landmark normalization issues.</li>
+            <li>Fixed clear-image-cache behavior so closing Settings keeps the same slideshow photo instead of auto-advancing.</li>
+            <li>Fixed metadata sidecar staleness handling so cached metadata updates only when needed.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-card">
+      <div class="release-head">
+        <h2>Version 1.0</h2>
+        <div class="build-tag">vc21 to vc15 highlights</div>
+      </div>
+      <div class="release-grid">
+        <div class="release-block features">
+          <h3>Highlights</h3>
+          <ul>
+            <li>Added slideshow zoom navigator, richer metadata overlays, weather forecast overlay, direct manual links, and remembered Settings scroll position.</li>
+            <li>Added Google Photos and OneDrive cloud sources, hidden photo controls, album image details, and improved folder picking.</li>
+            <li>Added encrypted SMB credential storage, anti-tamper enforcement, non-blocking radio failure indicators, and better crash diagnostics.</li>
+            <li>Added Keep Screen Awake, radio background playback, lockscreen controls, unified notification strip, and automatic update checks.</li>
+          </ul>
+        </div>
+        <div class="release-block fixes">
+          <h3>Bug Fixes</h3>
+          <ul>
+            <li>Fixed hidden overlay positioning, SMB outage fallback issues, payment outcome handling, language picker detection, and station warning dismissal behavior.</li>
+            <li>Fixed low-storage slideshow stalls and false unreachable-share warnings during cache-write blocks.</li>
+            <li>Fixed Now Playing positioning issues and aligned notification-strip behavior with in-frame overlays.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="release-note">These notes are summarized from the source app changelog. For deeper setup help, see the <a href="manual.html">User Manual</a>.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <img src="images/fravora.png" alt="" />
+      <span>© 2026 Fravora</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="manual.html">User Manual</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="data-deletion.html">Data Deletion</a>
+      <a href="release-notes.html">Release Notes</a>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('themeBtn');
+    const html = document.documentElement;
+    const saved = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', saved);
+    btn.textContent = saved === 'dark' ? '☀️' : '🌙';
+
+    btn.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      btn.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>

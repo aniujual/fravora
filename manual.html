@@ -3,8 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fravora user manual with setup, gestures, overlays, radio, voice control, storage/status alerts, support tools, PRO features, and troubleshooting." />
+  <meta name="description" content="Fravora user manual for Android digital photo frame setup with NAS/SMB, cloud sources, overlays, radio, voice control, and troubleshooting." />
+  <link rel="canonical" href="https://aniujual.github.io/fravora/manual.html" />
   <title>User Manual – Fravora</title>
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Fravora" />
+  <meta property="og:title" content="User Manual – Fravora" />
+  <meta property="og:description" content="Fravora user manual with setup, gestures, overlays, radio, voice control, storage/status alerts, support tools, PRO features, and troubleshooting." />
+  <meta property="og:url" content="https://aniujual.github.io/fravora/manual.html" />
+  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_settings_slideshow.png" />
+  <meta property="og:image:alt" content="Fravora slideshow settings screen showing interval, order, transitions, and scheduling options." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="User Manual – Fravora" />
+  <meta name="twitter:description" content="Fravora user manual with setup, gestures, overlays, radio, voice control, storage/status alerts, support tools, PRO features, and troubleshooting." />
+  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_settings_slideshow.png" />
+  <meta name="twitter:image:alt" content="Fravora slideshow settings screen showing interval, order, transitions, and scheduling options." />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -15,6 +28,118 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the fastest way to set up Fravora?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Add at least one source in Settings > Sources. Create an album in Settings > Albums and attach source folders. Enable the album for playback. Set photo interval and display mode in Settings > Slideshow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I use hidden frame features like zoom, panning, and quick radio controls?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In frame view, double tap to zoom, pinch to zoom smoothly, and drag to pan while zoomed. The ambient logo supports single-tap play/pause and double-tap station search. The weather overlay opens the detailed forecast, the clock/date overlay opens the calendar, and the new images badge opens the new-images viewer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "No photos are showing",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Confirm at least one album exists and is enabled for playback. Check that the album has at least one source folder attached. If photos are in nested folders, enable Include subfolders where available. Wait for the initial scan to complete."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "All photos are hidden / slideshow is blank",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Go to Settings > Albums > Hidden photos and unhide the images you want to show. Album counters display visible, hidden, and total counts to help identify the issue."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "SMB / NAS share won't connect",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Verify the host/share path using hostname/sharename format with no smb:// prefix. Check your credentials, try guest access if allowed, increase Network Retry Count for unstable links, and ensure the device is on the same local network as the NAS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Google Photos import is blocked or storage keeps filling up",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Free up storage space on the device, increase Google Photos headroom in Sources, clear the Google Photos cache if old picks are stale, and watch the cloud status icons in the frame notification strip for blocked, partial recovery, or full recovery states."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Radio station won't play",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fravora shows the specific failure reason: timeout, network issue, access denied, unavailable stream, or unsupported format. Try a different station if the stream is down, or check your internet connection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do some stations show warning icons in Radio settings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Those are session-only station failure indicators. They mark stations that failed during the current app run so you can avoid unstable streams quickly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Voice control won't enable or hears only one command",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Install Speech Services by Google if needed, set it as the default voice input, grant microphone permission, complete the activation disclaimer, enable Wait for follow-up for multi-step interactions, and increase the Command window if commands time out too quickly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I keep radio playing when the screen is off?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enable Background playback in radio settings, then use lockscreen or notification controls to manage playback without reopening the app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I run slideshow and radio on different schedules?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Slideshow running hours and radio running hours are separate, so you can keep background audio active on a different timetable than image playback."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Screen keeps turning off during slideshow",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enable Keep Screen Awake in Settings > Appearance. Also check the device display timeout setting because some Android versions override app-level wake locks at aggressive timeout values."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "PRO features disappeared after an ad session expired",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Temporary PRO access from rewarded ads expires after the granted time. Your PRO settings are saved and will be automatically restored the next time you activate PRO, either via another ad or a permanent purchase."
+          }
+        }
+      ]
+    }
+  </script>
   <style>
     :root {
       --bg: #0e0b14;
@@ -617,7 +742,7 @@
 <!-- TOP NAV -->
 <nav class="topnav">
   <a class="topnav-logo" href="index.html">
-    <img src="fravora.png" alt="Fravora" />
+    <img src="images/fravora.png" alt="Fravora" />
     <span>Fravora</span>
   </a>
   <div class="topnav-links">
@@ -625,6 +750,7 @@
     <a href="manual.html" class="active">User Manual</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="data-deletion.html">Data Deletion</a>
+    <a href="release-notes.html">Release Notes</a>
     <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
     <button class="mobile-menu-btn" onclick="toggleSidebar()" id="menuBtn">☰ Menu</button>
   </div>
@@ -1050,7 +1176,7 @@
         <div class="setting-row"><span class="setting-name">Feature Request</span><span class="setting-desc">Use <strong>Settings → Support → Feature Request</strong> to share ideas for improvements or new features.</span></div>
         <div class="setting-row"><span class="setting-name">In-frame update alerts</span><span class="setting-desc">Update availability can appear in the in-frame notification strip with periodic checks and per-version acknowledgement to avoid repeated prompts.</span></div>
         <div class="setting-row"><span class="setting-name">Check for Updates</span><span class="setting-desc">Use <strong>Settings → Support → Check for Updates</strong> to verify you have the latest version. Store routing is automatic (Google Play or Amazon Appstore, depending on build flavor).</span></div>
-        <div class="setting-row"><span class="setting-name">Release Notes</span><span class="setting-desc">Open <strong>Settings → Support → Release Notes</strong> to review what changed in your currently installed version.</span></div>
+        <div class="setting-row"><span class="setting-name">Release Notes</span><span class="setting-desc">Open <strong>Settings → Support → Release Notes</strong> to review what changed in your currently installed version, or browse the website release archive at <a href="release-notes.html" style="color:var(--accent-bright)">Release Notes</a>.</span></div>
         <div class="setting-row"><span class="setting-name">Roadmap</span><span class="setting-desc">Open <strong>Settings → Support → Roadmap</strong> to see planned features and known issues under active work.</span></div>
         <div class="setting-row"><span class="setting-name">Replay Onboarding</span><span class="setting-desc">Re-run the 8-step first-launch onboarding flow anytime from <strong>Settings → Support → Replay Onboarding</strong>.</span></div>
       </div>
@@ -1429,7 +1555,7 @@
 
 <footer>
   <a class="foot-logo" href="index.html">
-    <img src="fravora.png" alt="Fravora" />
+    <img src="images/fravora.png" alt="Fravora" />
     © 2026 Fravora
   </a>
   <div class="foot-links">
@@ -1437,6 +1563,7 @@
     <a href="manual.html">User Manual</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="data-deletion.html">Data Deletion</a>
+    <a href="release-notes.html">Release Notes</a>
   </div>
 </footer>
 
