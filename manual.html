@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fravora user manual for Android digital photo frame setup with NAS/SMB, cloud sources, overlays, radio, voice control, and troubleshooting." />
+  <meta name="description" content="Fravora: Photo Frame & Radio user manual for Android digital photo frame setup with NAS/SMB, cloud sources, overlays, radio, voice control, and troubleshooting." />
   <link rel="canonical" href="https://aniujual.github.io/fravora/manual.html" />
-  <title>User Manual – Fravora</title>
+  <title>User Manual – Fravora: Photo Frame & Radio</title>
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Fravora" />
-  <meta property="og:title" content="User Manual – Fravora" />
-  <meta property="og:description" content="Fravora user manual with setup, gestures, overlays, radio, voice control, storage/status alerts, support tools, PRO features, and troubleshooting." />
+  <meta property="og:title" content="User Manual – Fravora: Photo Frame & Radio" />
+  <meta property="og:description" content="Fravora: Photo Frame & Radio user manual with setup, gestures, overlays, radio, voice control, storage/status alerts, support tools, PRO features, and troubleshooting." />
   <meta property="og:url" content="https://aniujual.github.io/fravora/manual.html" />
   <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_settings_slideshow.png" />
   <meta property="og:image:alt" content="Fravora slideshow settings screen showing interval, order, transitions, and scheduling options." />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="User Manual – Fravora" />
-  <meta name="twitter:description" content="Fravora user manual with setup, gestures, overlays, radio, voice control, storage/status alerts, support tools, PRO features, and troubleshooting." />
+  <meta name="twitter:title" content="User Manual – Fravora: Photo Frame & Radio" />
+  <meta name="twitter:description" content="Fravora: Photo Frame & Radio user manual with setup, gestures, overlays, radio, voice control, storage/status alerts, support tools, PRO features, and troubleshooting." />
   <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_settings_slideshow.png" />
   <meta name="twitter:image:alt" content="Fravora slideshow settings screen showing interval, order, transitions, and scheduling options." />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
@@ -241,6 +241,7 @@
       display: flex;
       align-items: center;
       gap: 0.25rem;
+      overflow-x: auto;
     }
     .topnav-links a {
       color: var(--text-muted);
@@ -710,9 +711,13 @@
       font-size: 14px;
     }
 
+    @media (max-width: 900px) {
+      .topnav-links > a { display: none; }
+      .mobile-menu-btn { display: flex; align-items: center; gap: 6px; }
+    }
+
     @media (max-width: 640px) {
       .topnav { padding: 0 1rem; }
-      .topnav-links a { padding: 0.4rem 0.5rem; font-size: 0.85rem; }
       .layout { padding: 0 16px; gap: 0; }
       .sidebar { display: none; width: 0; }
       .sidebar.open {
@@ -729,7 +734,6 @@
         padding: 20px 20px 80px;
       }
       .sidebar.open .sidebar-inner { position: static; max-height: none; }
-      .mobile-menu-btn { display: flex; align-items: center; gap: 6px; }
       .content-header h1 { font-size: 24px; }
       .feature-grid { grid-template-columns: 1fr; }
       .compare-table { font-size: 13px; }
@@ -740,21 +744,8 @@
 <body>
 
 <!-- TOP NAV -->
-<nav class="topnav">
-  <a class="topnav-logo" href="index.html">
-    <img src="images/fravora.png" alt="Fravora" />
-    <span>Fravora</span>
-  </a>
-  <div class="topnav-links">
-    <a href="index.html">Home</a>
-    <a href="manual.html" class="active">User Manual</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="data-deletion.html">Data Deletion</a>
-    <a href="release-notes.html">Release Notes</a>
-    <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
-    <button class="mobile-menu-btn" onclick="toggleSidebar()" id="menuBtn">☰ Menu</button>
-  </div>
-</nav>
+<div id="manualTopNavMount"></div>
+<script src="shared-nav.js"></script>
 
 <!-- LAYOUT -->
 <div class="layout">
@@ -1553,19 +1544,8 @@
   </main>
 </div>
 
-<footer>
-  <a class="foot-logo" href="index.html">
-    <img src="images/fravora.png" alt="Fravora" />
-    © 2026 Fravora
-  </a>
-  <div class="foot-links">
-    <a href="mailto:aniujual.dev@yahoo.com">Contact</a>
-    <a href="manual.html">User Manual</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="data-deletion.html">Data Deletion</a>
-    <a href="release-notes.html">Release Notes</a>
-  </div>
-</footer>
+<div id="siteFooterMount" data-base=""></div>
+  <script src="shared-footer.js"></script>
 
 <script>
     // Theme toggle

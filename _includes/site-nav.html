@@ -1,0 +1,19 @@
+<nav>
+  <a class="nav-logo" href="{{ include.base }}index.html">
+    <img src="{{ include.base }}images/fravora.png" alt="Fravora logo" />
+    <span>Fravora</span>
+  </a>
+  <button class="nav-toggle" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">☰</button>
+  <div class="nav-links" id="siteNav">
+    <a{% if include.active == 'home' %} class="active"{% endif %} href="{{ include.base }}index.html">Home</a>
+    <a{% if include.active == 'features' %} class="active"{% endif %} href="{{ include.base }}features.html">Features</a>
+    <a{% if include.active == 'how-it-works' %} class="active"{% endif %} href="{{ include.base }}how-it-works.html">How It Works</a>
+    <a{% if include.active == 'download' %} class="active"{% endif %} href="{{ include.base }}download.html">Download</a>
+    <a{% if include.active == 'blog' %} class="active"{% endif %} href="{{ include.base }}blog/index.html">Blog</a>
+    <a{% if include.active == 'manual' %} class="active"{% endif %} href="{{ include.base }}manual.html">User Manual</a>
+    <a{% if include.active == 'privacy' %} class="active"{% endif %} href="{{ include.base }}privacy.html">Privacy Policy</a>
+    <a{% if include.active == 'data-deletion' %} class="active"{% endif %} href="{{ include.base }}data-deletion.html">Data Deletion</a>
+    <a{% if include.active == 'release-notes' %} class="active"{% endif %} href="{{ include.base }}release-notes.html">Release Notes</a>
+    <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+  </div>
+</nav>

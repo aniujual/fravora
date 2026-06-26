@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fravora: Photo Frame & Radio Blog - Android Photo Frame Guides</title>
+  <meta name="description" content="Read Fravora: Photo Frame & Radio blog guides on reusing Android tablets and display devices, building smart photo frames, and comparing digital photo frame apps." />
+  <link rel="canonical" href="https://aniujual.github.io/fravora/blog/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fravora: Photo Frame & Radio Blog - Android Photo Frame Guides" />
+  <meta property="og:description" content="Read Fravora: Photo Frame & Radio blog guides on reusing Android tablets and display devices, building smart photo frames, and comparing digital photo frame apps." />
+  <meta property="og:url" content="https://aniujual.github.io/fravora/blog/index.html" />
+  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
+  <meta property="og:image:alt" content="Fravora digital frame display preview." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fravora: Photo Frame & Radio Blog - Android Photo Frame Guides" />
+  <meta name="twitter:description" content="Read Fravora: Photo Frame & Radio blog guides on reusing Android tablets and display devices, building smart photo frames, and comparing digital photo frame apps." />
+  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
+  <meta name="twitter:image:alt" content="Fravora digital frame display preview." />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Fravora Blog",
+      "url": "https://aniujual.github.io/fravora/blog/index.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fravora: Photo Frame & Radio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aniujual.github.io/fravora/images/fravora.png"
+        }
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aniujual.github.io/fravora/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://aniujual.github.io/fravora/blog/index.html"
+        }
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://aniujual.github.io/fravora/blog/reuse-old-android-tablet.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://aniujual.github.io/fravora/blog/smart-photo-frame-at-home.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://aniujual.github.io/fravora/blog/photo-frame-apps-compared-2026.html"
+        }
+      ]
+    }
+  </script>
+  <link rel="icon" type="image/png" href="../images/fravora.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-CQF87DK78N');
+  </script>
+  <style>
+    :root {
+      --bg: #0e0b14;
+      --surface: #1c1728;
+      --border: #2e2640;
+      --accent: #9b5de5;
+      --accent2: #c77dff;
+      --text: #e8e0f5;
+      --muted: #8b7fa8;
+      --nav-bg: rgba(14,11,20,0.85);
+    }
+    [data-theme="light"] {
+      --bg: #f5f0ff;
+      --surface: #ffffff;
+      --border: #d4c8f0;
+      --accent: #7c3aed;
+      --accent2: #9b5de5;
+      --text: #1a1033;
+      --muted: #6b5b8a;
+      --nav-bg: rgba(245,240,255,0.88);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border); background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.55rem;
+      font-family: 'Syne', sans-serif; text-decoration: none; color: var(--text);
+    }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .nav-logo span {
+      font-weight: 800; letter-spacing: 0.3px; font-size: 1.05rem;
+      line-height: 1;
+    }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+    .nav-links a {
+      text-decoration: none; color: var(--muted); font-size: 0.85rem;
+      border: 1px solid var(--border); padding: 0.3rem 0.65rem; border-radius: 999px;
+    }
+    .nav-links a.active, .nav-links a:hover { color: var(--text); border-color: var(--accent); }
+    .theme-btn {
+      border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+      width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
+    }
+    .nav-toggle {
+      display: none;
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 1.05rem;
+      align-items: center;
+      justify-content: center;
+    }
+    main { max-width: 980px; margin: 0 auto; padding: 2.2rem 1rem 4rem; }
+    h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 5vw, 2.7rem); margin-bottom: 0.75rem; }
+    .lead { color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+    .grid {
+      display: grid; gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    article {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.1rem;
+    }
+    article h2 { font-family: 'Syne', sans-serif; font-size: 1.02rem; margin-bottom: 0.45rem; }
+    article p { color: var(--muted); line-height: 1.62; font-size: 0.9rem; margin-bottom: 0.7rem; }
+    article a { color: var(--accent2); text-decoration: none; font-weight: 600; font-size: 0.86rem; }
+    footer {
+      max-width: 980px; margin: 0 auto; padding: 0 1rem 2rem;
+      display: flex; flex-wrap: wrap; gap: 0.8rem; color: var(--muted); font-size: 0.85rem;
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent2); }
+    @media (max-width: 900px) {
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.45rem;
+        padding: 0.75rem 1rem 1rem;
+        background: var(--nav-bg);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(10px);
+        max-height: calc(100vh - 64px);
+        overflow-y: auto;
+      }
+      .nav-links.open { display: flex; }
+      .theme-btn { margin-top: 0.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="siteNavMount" data-base="../" data-active="blog"></div>
+  <script src="../shared-nav.js"></script>
+
+  <main>
+    <h1>Blog: digital photo frame app guides</h1>
+    <p class="lead">Long-tail guides for people searching how to repurpose Android devices, compare digital photo frame apps, and build a smart photo frame setup.</p>
+
+    <section class="grid" aria-label="Fravora blog articles">
+      <article>
+        <h2>Best ways to reuse an old Android tablet</h2>
+        <p>Practical home-use ideas and a complete workflow for turning an old tablet into a dedicated photo frame display.</p>
+        <a href="reuse-old-android-tablet.html">Read article</a>
+      </article>
+      <article>
+        <h2>How to create a smart photo frame at home</h2>
+        <p>Mounting, power, scheduling, and control tips for a dependable DIY smart frame using existing Android hardware.</p>
+        <a href="smart-photo-frame-at-home.html">Read article</a>
+      </article>
+      <article>
+        <h2>Digital photo frame apps compared: 2026 guide</h2>
+        <p>A practical comparison framework to evaluate offline support, privacy, voice control, reliability, and long-term usability.</p>
+        <a href="photo-frame-apps-compared-2026.html">Read article</a>
+      </article>
+    </section>
+  </main>
+
+  <div id="siteFooterMount" data-base="../"></div>
+  <script src="../shared-footer.js"></script>
+
+  <script>
+    const btn = document.getElementById('themeBtn');
+    const html = document.documentElement;
+    const navToggleBtn = document.getElementById('navToggleBtn');
+    const navLinks = document.getElementById('siteNav');
+    const saved = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', saved);
+    btn.textContent = saved === 'dark' ? '☀️' : '🌙';
+    btn.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      btn.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+
+    if (navToggleBtn && navLinks) {
+      const closeNav = () => {
+        navLinks.classList.remove('open');
+        navToggleBtn.setAttribute('aria-expanded', 'false');
+      };
+      navToggleBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => closeNav());
+      });
+      document.addEventListener('click', (event) => {
+        if (!navLinks.contains(event.target) && !navToggleBtn.contains(event.target)) closeNav();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeNav();
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 900) closeNav();
+      });
+    }
+  </script>
+</body>
+</html>

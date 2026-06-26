@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How It Works - Fravora: Photo Frame & Radio Android Setup</title>
+  <meta name="description" content="Learn how to turn an Android tablet or display device into a digital photo frame with Fravora: Photo Frame & Radio in minutes, including offline and NAS setup options." />
+  <link rel="canonical" href="https://aniujual.github.io/fravora/how-it-works.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How It Works - Fravora: Photo Frame & Radio Android Setup" />
+  <meta property="og:description" content="Learn how to turn an Android tablet or display device into a digital photo frame with Fravora: Photo Frame & Radio in minutes, including offline and NAS setup options." />
+  <meta property="og:url" content="https://aniujual.github.io/fravora/how-it-works.html" />
+  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
+  <meta property="og:image:alt" content="Fravora frame view showing a photo with overlays." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How It Works - Fravora: Photo Frame & Radio Android Setup" />
+  <meta name="twitter:description" content="Learn how to turn an Android tablet or display device into a digital photo frame with Fravora: Photo Frame & Radio in minutes, including offline and NAS setup options." />
+  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
+  <meta name="twitter:image:alt" content="Fravora frame view showing a photo with overlays." />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aniujual.github.io/fravora/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How It Works",
+          "item": "https://aniujual.github.io/fravora/how-it-works.html"
+        }
+      ]
+    }
+  </script>
+  <link rel="icon" type="image/png" href="images/fravora.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-CQF87DK78N');
+  </script>
+  <style>
+    :root {
+      --bg: #0e0b14;
+      --surface: #1c1728;
+      --border: #2e2640;
+      --accent: #9b5de5;
+      --accent2: #c77dff;
+      --text: #e8e0f5;
+      --muted: #8b7fa8;
+      --nav-bg: rgba(14,11,20,0.85);
+    }
+    [data-theme="light"] {
+      --bg: #f5f0ff;
+      --surface: #ffffff;
+      --border: #d4c8f0;
+      --accent: #7c3aed;
+      --accent2: #9b5de5;
+      --text: #1a1033;
+      --muted: #6b5b8a;
+      --nav-bg: rgba(245,240,255,0.88);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border); background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.55rem;
+      font-family: 'Syne', sans-serif; text-decoration: none; color: var(--text);
+    }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .nav-logo span {
+      font-weight: 800; letter-spacing: 0.3px; font-size: 1.05rem;
+      line-height: 1;
+    }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+    .nav-links a {
+      text-decoration: none; color: var(--muted); font-size: 0.85rem;
+      border: 1px solid var(--border); padding: 0.3rem 0.65rem; border-radius: 999px;
+    }
+    .nav-links a.active, .nav-links a:hover { color: var(--text); border-color: var(--accent); }
+    .theme-btn {
+      border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+      width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
+    }
+    .nav-toggle {
+      display: none;
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 1.05rem;
+      align-items: center;
+      justify-content: center;
+    }
+    main { max-width: 900px; margin: 0 auto; padding: 2.1rem 1rem 4rem; }
+    h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 5vw, 2.7rem); margin-bottom: 0.8rem; }
+    .intro { color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+    .steps { display: grid; gap: 0.9rem; }
+    .step {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1rem;
+    }
+    .step h2 { font-family: 'Syne', sans-serif; font-size: 1rem; margin-bottom: 0.45rem; }
+    .step p { color: var(--muted); line-height: 1.65; font-size: 0.93rem; }
+    .step ul { margin-top: 0.55rem; padding-left: 1.1rem; color: var(--muted); }
+    .step li { margin-bottom: 0.38rem; }
+    .faq-like {
+      margin-top: 1.6rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+    .faq-like h2 { font-family: 'Syne', sans-serif; font-size: 1rem; margin-bottom: 0.4rem; }
+    .faq-like p { color: var(--muted); line-height: 1.65; font-size: 0.92rem; margin-bottom: 0.55rem; }
+    .links { margin-top: 0.8rem; display: flex; gap: 0.55rem; flex-wrap: wrap; }
+    .links a {
+      text-decoration: none; color: var(--accent2); font-weight: 600; font-size: 0.86rem;
+      border: 1px solid var(--border); border-radius: 999px; padding: 0.34rem 0.65rem;
+    }
+    footer {
+      max-width: 900px; margin: 0 auto; padding: 0 1rem 2rem;
+      display: flex; flex-wrap: wrap; gap: 0.8rem; color: var(--muted); font-size: 0.85rem;
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent2); }
+    @media (max-width: 900px) {
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.45rem;
+        padding: 0.75rem 1rem 1rem;
+        background: var(--nav-bg);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(10px);
+        max-height: calc(100vh - 64px);
+        overflow-y: auto;
+      }
+      .nav-links.open { display: flex; }
+      .theme-btn { margin-top: 0.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="siteNavMount" data-base="" data-active="how-it-works"></div>
+  <script src="shared-nav.js"></script>
+
+  <main>
+    <h1>How to turn your tablet into a digital photo frame</h1>
+    <p class="intro">Fravora setup is built for speed. Most users can move from install to a running slideshow in under 10 minutes, whether they use local folders, NAS/SMB, or cloud sources.</p>
+
+    <section class="steps" aria-label="Fravora setup process">
+      <article class="step">
+        <h2>Step 1: Install and open Fravora</h2>
+        <p>Download Fravora from Google Play and grant photo and media permissions so the app can read your selected sources.</p>
+      </article>
+      <article class="step">
+        <h2>Step 2: Add photo sources</h2>
+        <p>Choose one or more source types based on your setup:</p>
+        <ul>
+          <li>Local folders for fully offline photo playback</li>
+          <li>NAS/SMB shares for home network storage</li>
+          <li>Supported cloud providers for remote libraries</li>
+        </ul>
+      </article>
+      <article class="step">
+        <h2>Step 3: Build your slideshow profile</h2>
+        <p>Set interval, transition style, display mode, and daily running hours. You can keep the frame always-on or schedule active windows.</p>
+      </article>
+      <article class="step">
+        <h2>Step 4: Configure overlays and controls</h2>
+        <p>Enable only the overlays you want: clock, weather, metadata, and now-playing. If needed, activate voice controls for hands-free operation.</p>
+      </article>
+      <article class="step">
+        <h2>Step 5: Dock your device and run</h2>
+        <p>Mount the device, keep power connected, and set display timeout behavior for continuous use. Your Android device now works as a smart photo frame alternative.</p>
+      </article>
+    </section>
+
+    <section class="faq-like">
+      <h2>Can I use an old Android tablet as a photo frame?</h2>
+      <p>Yes. Older Android tablets are perfect for dedicated frame displays in homes and offices. Fravora works well with offline folders and scheduled playback on older hardware.</p>
+      <h2>Is Fravora an offline photo viewer for Android?</h2>
+      <p>Yes. Local and NAS/SMB sources can run without internet, which is ideal for privacy-focused setups.</p>
+      <div class="links">
+        <a href="download.html">Download instructions</a>
+        <a href="features.html">Feature overview</a>
+        <a href="manual.html">Manual and troubleshooting</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooterMount" data-base=""></div>
+  <script src="shared-footer.js"></script>
+
+  <script>
+    const btn = document.getElementById('themeBtn');
+    const html = document.documentElement;
+    const navToggleBtn = document.getElementById('navToggleBtn');
+    const navLinks = document.getElementById('siteNav');
+    const saved = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', saved);
+    btn.textContent = saved === 'dark' ? '☀️' : '🌙';
+    btn.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      btn.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+
+    if (navToggleBtn && navLinks) {
+      const closeNav = () => {
+        navLinks.classList.remove('open');
+        navToggleBtn.setAttribute('aria-expanded', 'false');
+      };
+      navToggleBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => closeNav());
+      });
+      document.addEventListener('click', (event) => {
+        if (!navLinks.contains(event.target) && !navToggleBtn.contains(event.target)) closeNav();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeNav();
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 900) closeNav();
+      });
+    }
+  </script>
+</body>
+</html>
