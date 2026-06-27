@@ -2,6 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>How It Works - Fravora: Photo Frame & Radio Android Setup</title>
   <meta name="description" content="Learn how to turn an Android tablet or display device into a digital photo frame with Fravora: Photo Frame & Radio in minutes, including offline and NAS setup options." />
@@ -10,13 +11,13 @@
   <meta property="og:title" content="How It Works - Fravora: Photo Frame & Radio Android Setup" />
   <meta property="og:description" content="Learn how to turn an Android tablet or display device into a digital photo frame with Fravora: Photo Frame & Radio in minutes, including offline and NAS setup options." />
   <meta property="og:url" content="https://aniujual.github.io/fravora/how-it-works.html" />
-  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
-  <meta property="og:image:alt" content="Fravora frame view showing a photo with overlays." />
+  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_settings_slideshow.png" />
+  <meta property="og:image:alt" content="Fravora Android photo frame app slideshow settings showing interval, order, transitions, and scheduling options." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How It Works - Fravora: Photo Frame & Radio Android Setup" />
   <meta name="twitter:description" content="Learn how to turn an Android tablet or display device into a digital photo frame with Fravora: Photo Frame & Radio in minutes, including offline and NAS setup options." />
-  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
-  <meta name="twitter:image:alt" content="Fravora frame view showing a photo with overlays." />
+  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_settings_slideshow.png" />
+  <meta name="twitter:image:alt" content="Fravora Android photo frame app slideshow settings showing interval, order, transitions, and scheduling options." />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -214,19 +215,8 @@
   <script src="shared-footer.js"></script>
 
   <script>
-    const btn = document.getElementById('themeBtn');
-    const html = document.documentElement;
     const navToggleBtn = document.getElementById('navToggleBtn');
     const navLinks = document.getElementById('siteNav');
-    const saved = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', saved);
-    btn.textContent = saved === 'dark' ? '☀️' : '🌙';
-    btn.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      btn.textContent = next === 'dark' ? '☀️' : '🌙';
-    });
 
     if (navToggleBtn && navLinks) {
       const closeNav = () => {

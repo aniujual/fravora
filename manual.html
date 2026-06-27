@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Fravora: Photo Frame & Radio user manual for Android digital photo frame setup with NAS/SMB, cloud sources, overlays, radio, voice control, and troubleshooting." />
   <link rel="canonical" href="https://aniujual.github.io/fravora/manual.html" />
@@ -1548,18 +1549,6 @@
   <script src="shared-footer.js"></script>
 
 <script>
-    // Theme toggle
-    const themeBtn = document.getElementById('themeBtn');
-    const html = document.documentElement;
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
-    themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
-    themeBtn.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
-    });
   // Sidebar toggle for mobile
   function toggleSidebar() {
     const s = document.getElementById('sidebar');

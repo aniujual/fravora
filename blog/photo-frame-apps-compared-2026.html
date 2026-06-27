@@ -2,6 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Digital Photo Frame Apps Compared: 2026 Guide - Fravora: Photo Frame & Radio Blog</title>
   <meta name="description" content="Compare digital photo frame apps in 2026 using practical criteria: offline support, voice control, privacy, source options, and long-term reliability." />
@@ -240,19 +241,8 @@
   <script src="../shared-footer.js"></script>
 
   <script>
-    const btn = document.getElementById('themeBtn');
-    const html = document.documentElement;
     const navToggleBtn = document.getElementById('navToggleBtn');
     const navLinks = document.getElementById('siteNav');
-    const saved = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', saved);
-    btn.textContent = saved === 'dark' ? '☀️' : '🌙';
-    btn.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      btn.textContent = next === 'dark' ? '☀️' : '🌙';
-    });
 
     if (navToggleBtn && navLinks) {
       const closeNav = () => {

@@ -2,22 +2,23 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>Fravora: Photo Frame & Radio - Digital Photo Frame App for Android</title>
+  <title>Fravora - Android Digital Photo Frame App | NAS, Radio, Voice</title>
   <meta name="description" content="Fravora: Photo Frame & Radio is a digital photo frame app for Android with offline slideshow support, voice controls, NAS/SMB folders, and radio. Turn Android tablets and display devices into smart photo frames." />
   <link rel="canonical" href="https://aniujual.github.io/fravora/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Fravora" />
-  <meta property="og:title" content="Fravora: Photo Frame & Radio - Digital Photo Frame App for Android" />
+  <meta property="og:title" content="Fravora - Android Digital Photo Frame App | NAS, Radio, Voice" />
   <meta property="og:description" content="Fravora: Photo Frame & Radio is a digital photo frame app for Android with offline slideshow support, voice controls, NAS/SMB folders, and radio. Turn Android tablets and display devices into smart photo frames." />
   <meta property="og:url" content="https://aniujual.github.io/fravora/" />
   <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
   <meta property="og:image:alt" content="Fravora digital photo frame showing a full-screen photo with time, weather, and radio overlays." />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Fravora: Photo Frame & Radio - Digital Photo Frame App for Android" />
+  <meta name="twitter:title" content="Fravora - Android Digital Photo Frame App | NAS, Radio, Voice" />
   <meta name="twitter:description" content="Fravora: Photo Frame & Radio is a digital photo frame app for Android with offline slideshow support, voice controls, NAS/SMB folders, and radio. Turn Android tablets and display devices into smart photo frames." />
   <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
   <meta name="twitter:image:alt" content="Fravora digital photo frame showing a full-screen photo with time, weather, and radio overlays." />
@@ -142,6 +143,38 @@
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes. Older Android tablets can run Fravora as an offline photo frame with local folders, scheduled playback, and optional overlays."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Fravora work with Synology or QNAP NAS?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Fravora connects to Synology and QNAP NAS over standard SMB shares, so you can keep photos on your local network and run an offline slideshow."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the best free digital photo frame app for Android?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "If you want an Android photo frame app with no forced slideshow ads, offline playback, and NAS support, Fravora's free tier is built for that setup."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I turn a Fire tablet into a photo frame with Fravora?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, on compatible Amazon Fire tablets. Fravora can run as a dedicated photo frame display with local folders, NAS/SMB sources, and scheduled playback."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need a cloud subscription to use Fravora?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Fravora works as an offline digital photo frame using local folders and SMB/NAS shares, so you can run it without a cloud subscription."
               }
             }
           ]
@@ -590,6 +623,24 @@
       max-width: 980px;
       margin: 0 auto;
     }
+    .intent-copy {
+      padding: 0 2rem 4rem;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .intent-copy .copy-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.35rem;
+    }
+    .intent-copy p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.72;
+      margin-bottom: 0.9rem;
+    }
+    .intent-copy p:last-child { margin-bottom: 0; }
     .seo-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -807,6 +858,7 @@
       <p class="hero-sub">
         Turn your Android tablet or Android display device into a smart photo frame with
         offline slideshow playback, NAS/SMB support, voice control, and radio.
+        Supports Synology and QNAP NAS plus Google Photos, Microsoft OneDrive, Dropbox, and Immich.
         Built for 24/7 display with zero forced interruptions.
       </p>
       <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.aniujual.fravora" target="_blank" rel="noopener">
@@ -819,6 +871,14 @@
         <span>NAS/SMB support</span>
         <span>Works offline</span>
       </div>
+    </div>
+  </section>
+
+  <section class="intent-copy" aria-label="Why people choose Fravora">
+    <p class="section-label">Why people choose Fravora</p>
+    <div class="copy-card">
+      <p>Fravora is an Android digital photo frame app for people who want to repurpose an old Android tablet instead of buying another screen. It is designed for always-on home displays, kitchen counters, and wall-mounted setups where reliability matters more than social features. Many users move to Fravora after testing other frame apps that force ads into slideshow playback, lock core settings behind subscriptions, or require uploading personal photos to a third-party cloud.</p>
+      <p>With Fravora, you can run an offline digital photo frame using local folders or SMB network shares from Synology and QNAP NAS devices, with no cloud subscription required. If you want cloud access, supported providers include Google Photos, Microsoft OneDrive, Dropbox, and Immich. The goal is simple: keep your photos under your control while still getting practical features like radio, weather overlays, and voice control on Android.</p>
     </div>
   </section>
 
@@ -917,7 +977,7 @@
       <div class="screenshot-panel active" id="tab-radio">
         <div class="tablet-mockup">
           <div class="tablet-screen">
-            <img src="images/screen_settings_radio.png" alt="Radio settings screen showing station favourites and scheduling" />
+            <img src="images/screen_settings_radio.png" alt="Fravora Android photo frame app radio settings screen showing station favourites and scheduling" loading="lazy" decoding="async" />
           </div>
         </div>
         <div class="screenshot-desc">
@@ -929,7 +989,7 @@
       <div class="screenshot-panel" id="tab-overlays">
         <div class="tablet-mockup">
           <div class="tablet-screen">
-            <img src="images/screen_settings_overlays.png" alt="Overlays settings screen showing time, weather, and photo info toggles" />
+            <img src="images/screen_settings_overlays.png" alt="Fravora Android photo frame app overlays settings screen showing time, weather, and photo info toggles" loading="lazy" decoding="async" />
           </div>
         </div>
         <div class="screenshot-desc">
@@ -941,7 +1001,7 @@
       <div class="screenshot-panel" id="tab-layout">
         <div class="tablet-mockup">
           <div class="tablet-screen">
-            <img src="images/screen_settings_overlays2.png" alt="Overlay layout settings showing a 2x2 corner assignment grid" />
+            <img src="images/screen_settings_overlays2.png" alt="Fravora Android photo frame app overlay layout settings showing a 2x2 corner assignment grid" loading="lazy" decoding="async" />
           </div>
         </div>
         <div class="screenshot-desc">
@@ -953,7 +1013,7 @@
       <div class="screenshot-panel" id="tab-slideshow">
         <div class="tablet-mockup">
           <div class="tablet-screen">
-            <img src="images/screen_settings_slideshow.png" alt="Slideshow settings showing photo interval, order, transitions, and screen saver options" />
+            <img src="images/screen_settings_slideshow.png" alt="Fravora Android photo frame app slideshow settings showing photo interval, order, transitions, and screen saver options" loading="lazy" decoding="async" />
           </div>
         </div>
         <div class="screenshot-desc">
@@ -965,7 +1025,7 @@
       <div class="screenshot-panel" id="tab-voice">
         <div class="tablet-mockup">
           <div class="tablet-screen">
-            <img src="images/screen_settings_voice.png" alt="Voice control settings showing wake phrase, command categories, and listening window" />
+            <img src="images/screen_settings_voice.png" alt="Fravora Android photo frame app voice control settings showing wake phrase, command categories, and listening window" loading="lazy" decoding="async" />
           </div>
         </div>
         <div class="screenshot-desc">
@@ -1224,6 +1284,34 @@
         </button>
         <div class="faq-a">Absolutely. Older Android tablets work well as dedicated frame displays, especially with Fravora offline playback and scheduling.</div>
       </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Does Fravora work with Synology or QNAP NAS?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Yes. Fravora connects to Synology and QNAP NAS over standard SMB shares, so your photos can stay on your local network while the slideshow runs offline.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          What's the best free digital photo frame app for Android?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">If you want a free Android photo frame app with no forced slideshow ads, offline playback, and NAS support, Fravora's free tier is built for that use case.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Can I turn a Fire tablet into a photo frame with Fravora?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Yes, on compatible Amazon Fire tablets. Fravora can run as a dedicated photo frame display with local folders, NAS/SMB sources, and scheduled playback.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Do I need a cloud subscription to use Fravora?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">No. Fravora works as an offline digital photo frame using local folders and SMB/NAS shares, so you can run it without a cloud subscription.</div>
+      </div>
     </div>
   </section>
 
@@ -1247,20 +1335,8 @@
   <script src="shared-footer.js"></script>
 
   <script>
-    // Theme toggle
-    const btn = document.getElementById('themeBtn');
-    const html = document.documentElement;
     const navToggleBtn = document.getElementById('navToggleBtn');
     const navLinks = document.getElementById('siteNav');
-    const saved = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', saved);
-    btn.textContent = saved === 'dark' ? '☀️' : '🌙';
-    btn.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      btn.textContent = next === 'dark' ? '☀️' : '🌙';
-    });
 
     if (navToggleBtn && navLinks) {
       const closeNav = () => {

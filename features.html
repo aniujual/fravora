@@ -2,6 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fravora: Photo Frame & Radio Features - Digital Photo Frame App for Android</title>
   <meta name="description" content="Explore Fravora: Photo Frame & Radio features for Android digital photo frame setups: offline playback, NAS/SMB sources, voice control, overlays, scheduling, and radio." />
@@ -10,13 +11,13 @@
   <meta property="og:title" content="Fravora: Photo Frame & Radio Features - Digital Photo Frame App for Android" />
   <meta property="og:description" content="Explore Fravora: Photo Frame & Radio features for Android digital photo frame setups: offline playback, NAS/SMB sources, voice control, overlays, scheduling, and radio." />
   <meta property="og:url" content="https://aniujual.github.io/fravora/features.html" />
-  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_settings_slideshow.png" />
-  <meta property="og:image:alt" content="Fravora slideshow settings screen on Android." />
+  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_settings_overlays.png" />
+  <meta property="og:image:alt" content="Fravora Android photo frame app overlays settings showing time, weather, and photo info options." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Fravora: Photo Frame & Radio Features - Digital Photo Frame App for Android" />
   <meta name="twitter:description" content="Explore Fravora: Photo Frame & Radio features for Android digital photo frame setups: offline playback, NAS/SMB sources, voice control, overlays, scheduling, and radio." />
-  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_settings_slideshow.png" />
-  <meta name="twitter:image:alt" content="Fravora slideshow settings screen on Android." />
+  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_settings_overlays.png" />
+  <meta name="twitter:image:alt" content="Fravora Android photo frame app overlays settings showing time, weather, and photo info options." />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -210,19 +211,8 @@
   <script src="shared-footer.js"></script>
 
   <script>
-    const btn = document.getElementById('themeBtn');
-    const html = document.documentElement;
     const navToggleBtn = document.getElementById('navToggleBtn');
     const navLinks = document.getElementById('siteNav');
-    const saved = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', saved);
-    btn.textContent = saved === 'dark' ? '☀️' : '🌙';
-    btn.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      btn.textContent = next === 'dark' ? '☀️' : '🌙';
-    });
 
     if (navToggleBtn && navLinks) {
       const closeNav = () => {

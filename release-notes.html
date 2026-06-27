@@ -2,6 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
@@ -14,13 +15,13 @@
   <meta property="og:title" content="Release Notes – Fravora: Photo Frame & Radio" />
   <meta property="og:description" content="Latest Fravora: Photo Frame & Radio release notes, feature additions, and bug fixes from the app changelog." />
   <meta property="og:url" content="https://aniujual.github.io/fravora/release-notes.html" />
-  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
-  <meta property="og:image:alt" content="Fravora digital photo frame showing a full-screen photo with time, weather, and radio overlays." />
+  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame2.png" />
+  <meta property="og:image:alt" content="Fravora digital photo frame showing a full-screen photo with radio now-playing overlay and weather information." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Release Notes – Fravora: Photo Frame & Radio" />
   <meta name="twitter:description" content="Latest Fravora: Photo Frame & Radio release notes, feature additions, and bug fixes from the app changelog." />
-  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
-  <meta name="twitter:image:alt" content="Fravora digital photo frame showing a full-screen photo with time, weather, and radio overlays." />
+  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame2.png" />
+  <meta name="twitter:image:alt" content="Fravora digital photo frame showing a full-screen photo with radio now-playing overlay and weather information." />
   <link rel="icon" type="image/png" href="images/fravora.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -441,20 +442,8 @@
   <script src="shared-footer.js"></script>
 
   <script>
-    const btn = document.getElementById('themeBtn');
-    const html = document.documentElement;
     const navToggleBtn = document.getElementById('navToggleBtn');
     const navLinks = document.getElementById('siteNav');
-    const saved = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', saved);
-    btn.textContent = saved === 'dark' ? '☀️' : '🌙';
-
-    btn.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      btn.textContent = next === 'dark' ? '☀️' : '🌙';
-    });
 
     if (navToggleBtn && navLinks) {
       const closeNav = () => {
