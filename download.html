@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Download Fravora: Photo Frame & Radio - Android Digital Photo Frame App</title>
-  <meta name="description" content="Download Fravora: Photo Frame & Radio from Google Play and set up your Android tablet or display device as a digital photo frame with offline playback and voice controls." />
+  <title>Download Fravora: Digital Photo Frame for Android</title>
+  <meta name="description" content="Download Fravora: Digital Photo Frame from Google Play or the Amazon Appstore and set up your Android tablet as a smart photo frame with Google Photos, NAS, radio, weather, and offline playback." />
   <link rel="canonical" href="https://aniujual.github.io/fravora/download.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Download Fravora: Photo Frame & Radio - Android Digital Photo Frame App" />
-  <meta property="og:description" content="Download Fravora: Photo Frame & Radio from Google Play and set up your Android tablet or display device as a digital photo frame with offline playback and voice controls." />
+  <meta property="og:title" content="Download Fravora: Digital Photo Frame for Android" />
+  <meta property="og:description" content="Download Fravora: Digital Photo Frame from Google Play or the Amazon Appstore and set up your Android tablet as a smart photo frame with Google Photos, NAS, radio, weather, and offline playback." />
   <meta property="og:url" content="https://aniujual.github.io/fravora/download.html" />
   <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame2.png" />
   <meta property="og:image:alt" content="Fravora frame view with radio and weather overlays." />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Download Fravora: Photo Frame & Radio - Android Digital Photo Frame App" />
-  <meta name="twitter:description" content="Download Fravora: Photo Frame & Radio from Google Play and set up your Android tablet or display device as a digital photo frame with offline playback and voice controls." />
+  <meta name="twitter:title" content="Download Fravora: Digital Photo Frame for Android" />
+  <meta name="twitter:description" content="Download Fravora: Digital Photo Frame from Google Play or the Amazon Appstore and set up your Android tablet as a smart photo frame with Google Photos, NAS, radio, weather, and offline playback." />
   <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame2.png" />
   <meta name="twitter:image:alt" content="Fravora frame view with radio and weather overlays." />
   <script type="application/ld+json">
@@ -134,16 +134,29 @@
       text-align: center;
     }
     .cta {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
       text-decoration: none;
       color: #fff;
       background: var(--accent);
       border-radius: 10px;
       padding: 0.7rem 1.15rem;
       font-weight: 600;
-      margin-top: 0.65rem;
+      min-width: 280px;
+      flex: 1 1 280px;
+      max-width: 360px;
     }
     .cta:hover { background: var(--accent2); }
+    .cta svg { width: 18px; height: 18px; }
+    .store-links {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 0.65rem;
+    }
     .links { margin-top: 0.95rem; display: flex; gap: 0.55rem; justify-content: center; flex-wrap: wrap; }
     .links a {
       text-decoration: none; color: var(--accent2); font-weight: 600; font-size: 0.86rem;
@@ -181,16 +194,17 @@
   <script src="shared-nav.js"></script>
 
   <main>
-    <h1>Download Fravora and start your photo frame setup</h1>
-    <p class="lead">Fravora is available on Google Play for Android tablets and display devices. You can start with local folders and expand to NAS/SMB or cloud sources later.</p>
+    <h1>Download Fravora and start your smart photo frame</h1>
+    <p class="lead">Fravora is available on Google Play and the Amazon Appstore for Android tablets and display devices. Start with local folders or Google Photos, then expand to NAS/SMB, radio, weather overlays, and voice controls later.</p>
 
     <section class="box">
       <h2>Compatibility overview</h2>
-      <p>Fravora is built for Android devices used as dedicated displays. It works especially well on tablets, docked devices, and wall-mounted screens.</p>
+      <p>Fravora is built for Android devices used as dedicated displays. It works especially well on tablets, docked devices, wall-mounted screens, and repurposed Fire tablets.</p>
       <ul>
         <li>Android tablet and display device support</li>
-        <li>Local, NAS/SMB, and supported cloud sources</li>
+        <li>Google Photos, local, NAS/SMB, and supported cloud sources</li>
         <li>Offline slideshow support with local and NAS paths</li>
+        <li>No subscription required for core photo frame use</li>
       </ul>
     </section>
 
@@ -205,14 +219,23 @@
         <li>Add at least one photo source</li>
         <li>Create or select an album for playback</li>
         <li>Set slideshow interval and display mode</li>
-        <li>Optionally enable overlays and voice control</li>
+        <li>Optionally enable weather, radio, overlays, and voice control</li>
       </ul>
     </section>
 
     <section class="cta-wrap">
-      <h2>Install Fravora from Google Play</h2>
-      <p>Download the app and turn your Android device into a digital photo frame in minutes.</p>
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.aniujual.fravora" target="_blank" rel="noopener">Get it on Google Play</a>
+      <h2>Install Fravora from your preferred app store</h2>
+      <p>Download the app and turn your Android device into a digital photo frame in minutes with no forced ads and no subscription requirement.</p>
+      <div class="store-links">
+        <a class="cta" href="https://play.google.com/store/apps/details?id=com.aniujual.fravora" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76a2 2 0 0 0 2.14-.21l12.44-7.19-3.13-3.12-11.45 10.52zM20.65 9.22l-3.34-1.93-3.51 3.5 3.51 3.51 3.37-1.95a2 2 0 0 0-.03-3.13zM1 1.45A2 2 0 0 0 .5 2.87v18.27a2 2 0 0 0 .5 1.41L14.4 12 1 1.45zm13.39 9.14L2.82.38A2 2 0 0 0 1 .17L14.39 10.59l.01-4z"/></svg>
+          Get it on Google Play
+        </a>
+        <a class="cta" href="https://www.amazon.com/dp/B0H45FCGX6" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 7.25A2.25 2.25 0 0 1 8.25 5h7.5A2.25 2.25 0 0 1 18 7.25V9h.75A1.25 1.25 0 0 1 20 10.25v7.5A2.25 2.25 0 0 1 17.75 20h-11.5A2.25 2.25 0 0 1 4 17.75v-7.5A1.25 1.25 0 0 1 5.25 9H6V7.25zm1.5 0V9h9V7.25a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0-.75.75zm-2 3.25v7.25c0 .414.336.75.75.75h11.5a.75.75 0 0 0 .75-.75V10.5H5.5z"/></svg>
+          Get it on Amazon Appstore
+        </a>
+      </div>
       <div class="links">
         <a href="how-it-works.html">How it works</a>
         <a href="features.html">Feature overview</a>

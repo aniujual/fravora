@@ -7,19 +7,19 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>Fravora - Android Digital Photo Frame App | NAS, Radio, Voice</title>
-  <meta name="description" content="Fravora: Photo Frame & Radio is a digital photo frame app for Android with offline slideshow support, voice controls, NAS/SMB folders, and radio. Turn Android tablets and display devices into smart photo frames." />
+  <title>Fravora: Digital Photo Frame | Android App for Google Photos, NAS, Weather & Radio</title>
+  <meta name="description" content="Fravora: Digital Photo Frame is a smart Android photo frame app with Google Photos slideshow support, NAS/SMB, weather, radio, and offline playback. No subscription required." />
   <link rel="canonical" href="https://aniujual.github.io/fravora/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Fravora" />
-  <meta property="og:title" content="Fravora - Android Digital Photo Frame App | NAS, Radio, Voice" />
-  <meta property="og:description" content="Fravora: Photo Frame & Radio is a digital photo frame app for Android with offline slideshow support, voice controls, NAS/SMB folders, and radio. Turn Android tablets and display devices into smart photo frames." />
+  <meta property="og:title" content="Fravora: Digital Photo Frame | Android App for Google Photos, NAS, Weather & Radio" />
+  <meta property="og:description" content="Fravora: Digital Photo Frame is a smart Android photo frame app with Google Photos slideshow support, NAS/SMB, weather, radio, and offline playback. No subscription required." />
   <meta property="og:url" content="https://aniujual.github.io/fravora/" />
   <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
   <meta property="og:image:alt" content="Fravora digital photo frame showing a full-screen photo with time, weather, and radio overlays." />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Fravora - Android Digital Photo Frame App | NAS, Radio, Voice" />
-  <meta name="twitter:description" content="Fravora: Photo Frame & Radio is a digital photo frame app for Android with offline slideshow support, voice controls, NAS/SMB folders, and radio. Turn Android tablets and display devices into smart photo frames." />
+  <meta name="twitter:title" content="Fravora: Digital Photo Frame | Android App for Google Photos, NAS, Weather & Radio" />
+  <meta name="twitter:description" content="Fravora: Digital Photo Frame is a smart Android photo frame app with Google Photos slideshow support, NAS/SMB, weather, radio, and offline playback. No subscription required." />
   <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
   <meta name="twitter:image:alt" content="Fravora digital photo frame showing a full-screen photo with time, weather, and radio overlays." />
   <link rel="icon" type="image/png" href="images/fravora.png" />
@@ -43,11 +43,23 @@
         },
         {
           "@type": "SoftwareApplication",
-          "name": "Fravora: Photo Frame & Radio",
+          "name": "Fravora: Digital Photo Frame",
           "applicationCategory": "MultimediaApplication",
           "operatingSystem": "Android",
-          "description": "Android digital photo frame app for NAS/SMB, local folders, and cloud photos with radio, overlays, and voice control.",
+          "description": "Android digital photo frame app with Google Photos slideshow support, local folders, SMB/NAS, radio, weather overlays, and voice control.",
+          "featureList": [
+            "Google Photos slideshow support",
+            "Offline local and SMB/NAS playback",
+            "Built-in internet radio",
+            "Live weather and clock overlays",
+            "Smart scheduling for 24/7 displays",
+            "Voice control with on-device wake phrase detection"
+          ],
           "url": "https://aniujual.github.io/fravora/",
+          "sameAs": [
+            "https://play.google.com/store/apps/details?id=com.aniujual.fravora",
+            "https://www.amazon.com/dp/B0H45FCGX6"
+          ],
           "image": "https://aniujual.github.io/fravora/images/screen_frame1.png",
           "downloadUrl": "https://play.google.com/store/apps/details?id=com.aniujual.fravora",
           "installUrl": "https://play.google.com/store/apps/details?id=com.aniujual.fravora",
@@ -67,10 +79,26 @@
           "mainEntity": [
             {
               "@type": "Question",
+              "name": "Does Fravora support Google Photos slideshows?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Fravora supports Google Photos as a cloud source alongside local folders, SMB/NAS shares, Microsoft OneDrive, Dropbox, and Immich."
+              }
+            },
+            {
+              "@type": "Question",
               "name": "Does it show ads?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Only if you choose to. Free users can watch a rewarded ad for temporary Pro access - the slideshow itself is never interrupted."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I show weather and radio on top of my photos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Fravora can display live weather, a clock, photo metadata, and now-playing radio information over your slideshow."
               }
             },
             {
@@ -360,6 +388,13 @@
     }
     .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px var(--glow); background: var(--accent2); }
     .cta-btn svg { width: 18px; height: 18px; }
+    .store-cta {
+      justify-content: center;
+      min-width: 320px;
+      flex: 1 1 320px;
+      max-width: 390px;
+      border: 1px solid transparent;
+    }
     .cta-btn.outline {
       background: transparent; border: 1px solid var(--accent); color: var(--accent);
       box-shadow: none;
@@ -854,17 +889,23 @@
     <div class="hero-content">
       <div class="hero-badge"><span>●</span> Android App</div>
       <img src="images/fravora.png" alt="Fravora" class="hero-logo" />
-      <h1>Digital Photo Frame App for Android<br /><em>Fravora</em></h1>
+      <h1>Fravora: <em>Digital Photo Frame</em><br />for Android devices</h1>
       <p class="hero-sub">
-        Turn your Android tablet or Android display device into a smart photo frame with
-        offline slideshow playback, NAS/SMB support, voice control, and radio.
-        Supports Synology and QNAP NAS plus Google Photos, Microsoft OneDrive, Dropbox, and Immich.
-        Built for 24/7 display with zero forced interruptions.
+        Turn any Android device into a smart digital photo frame with Google Photos slideshow support,
+        offline local and NAS playback, built-in radio, live weather, and voice control.
+        Ideal for tablets, phones, Fire tablets, TV and display devices, with support for Synology and QNAP NAS plus Google Photos, Microsoft OneDrive, Dropbox, and Immich.
+        No subscription required and no forced slideshow ads.
       </p>
-      <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.aniujual.fravora" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2 2 0 0 0 2.14-.21l12.44-7.19-3.13-3.12-11.45 10.52zM20.65 9.22l-3.34-1.93-3.51 3.5 3.51 3.51 3.37-1.95a2 2 0 0 0-.03-3.13zM1 1.45A2 2 0 0 0 .5 2.87v18.27a2 2 0 0 0 .5 1.41L14.4 12 1 1.45zm13.39 9.14L2.82.38A2 2 0 0 0 1 .17L14.39 10.59l.01-4z"/></svg>
-        Get it on Google Play
-      </a>
+      <div class="cta-group">
+        <a class="cta-btn store-cta" href="https://play.google.com/store/apps/details?id=com.aniujual.fravora" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2 2 0 0 0 2.14-.21l12.44-7.19-3.13-3.12-11.45 10.52zM20.65 9.22l-3.34-1.93-3.51 3.5 3.51 3.51 3.37-1.95a2 2 0 0 0-.03-3.13zM1 1.45A2 2 0 0 0 .5 2.87v18.27a2 2 0 0 0 .5 1.41L14.4 12 1 1.45zm13.39 9.14L2.82.38A2 2 0 0 0 1 .17L14.39 10.59l.01-4z"/></svg>
+          Get it on Google Play
+        </a>
+        <a class="cta-btn store-cta" href="https://www.amazon.com/dp/B0H45FCGX6" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 7.25A2.25 2.25 0 0 1 8.25 5h7.5A2.25 2.25 0 0 1 18 7.25V9h.75A1.25 1.25 0 0 1 20 10.25v7.5A2.25 2.25 0 0 1 17.75 20h-11.5A2.25 2.25 0 0 1 4 17.75v-7.5A1.25 1.25 0 0 1 5.25 9H6V7.25zm1.5 0V9h9V7.25a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0-.75.75zm-2 3.25v7.25c0 .414.336.75.75.75h11.5a.75.75 0 0 0 .75-.75V10.5H5.5z"/></svg>
+          Get it on Amazon Appstore
+        </a>
+      </div>
       <div class="hero-trust" aria-label="Trust highlights">
         <span>No forced ads</span>
         <span>Photos stay local</span>
@@ -877,8 +918,8 @@
   <section class="intent-copy" aria-label="Why people choose Fravora">
     <p class="section-label">Why people choose Fravora</p>
     <div class="copy-card">
-      <p>Fravora is an Android digital photo frame app for people who want to repurpose an old Android tablet instead of buying another screen. It is designed for always-on home displays, kitchen counters, and wall-mounted setups where reliability matters more than social features. Many users move to Fravora after testing other frame apps that force ads into slideshow playback, lock core settings behind subscriptions, or require uploading personal photos to a third-party cloud.</p>
-      <p>With Fravora, you can run an offline digital photo frame using local folders or SMB network shares from Synology and QNAP NAS devices, with no cloud subscription required. If you want cloud access, supported providers include Google Photos, Microsoft OneDrive, Dropbox, and Immich. The goal is simple: keep your photos under your control while still getting practical features like radio, weather overlays, and voice control on Android.</p>
+      <p>Fravora is an Android digital photo frame app for people who want to repurpose an existing Android device instead of buying another screen. It is built for always-on home displays, kitchen counters, wall-mounted tablets, repurposed phones, Fire tablets, and dedicated smart frame setups where reliability matters more than social features. Many users land here after testing frame apps that interrupt slideshows with ads, hide useful settings behind subscriptions, or require uploading personal photos to a third-party cloud.</p>
+      <p>With Fravora, you can run a Google Photos slideshow, mix in local folders or SMB network shares from Synology and QNAP NAS devices, and keep an offline photo frame running even when internet drops. You also get built-in radio, live weather, clock and metadata overlays, hidden photo controls, and optional voice commands, while keeping your photos under your control.</p>
     </div>
   </section>
 
@@ -889,7 +930,11 @@
     <div class="seo-grid">
       <article class="seo-card">
         <h2>Best digital photo frame app</h2>
-        <p>Fravora is designed as an appliance-style frame app: local-first photos, no forced ads, and schedule-based playback for always-on screens. It works with local folders, NAS/SMB shares, and supported cloud sources.</p>
+        <p>Fravora is designed as an appliance-style frame app: local-first photos, no forced ads, no subscription requirement, and schedule-based playback for always-on screens. It works with local folders, NAS/SMB shares, Google Photos, and other supported cloud sources.</p>
+      </article>
+      <article class="seo-card">
+        <h2>Google Photos slideshow app for Android</h2>
+        <p>Use Google Photos as one of your slideshow sources alongside local folders and SMB/NAS shares. Fravora is built for users who want cloud convenience without losing local-first options.</p>
       </article>
       <article class="seo-card">
         <h2>Voice-controlled slideshow app</h2>
@@ -901,7 +946,7 @@
       </article>
       <article class="seo-card">
         <h2>Smart photo frame alternative</h2>
-        <p>Instead of buying dedicated hardware, repurpose the Android tablet or display device you already own. Fravora gives you smart overlays, scheduling, and reliable playback in one app.</p>
+        <p>Instead of buying dedicated hardware, repurpose the Android tablet, Fire tablet, or Android display device you already own. Fravora gives you smart overlays, scheduling, and reliable playback in one app.</p>
       </article>
     </div>
     <div class="seo-links" aria-label="Fravora internal links">
@@ -1045,7 +1090,7 @@
       <div class="feature-card">
         <span class="feature-icon">🖼️</span>
         <h3>Smart Slideshow</h3>
-        <p>Local folders, SMB/NAS shares, and supported cloud providers — one uninterrupted slideshow.</p>
+        <p>Local folders, SMB/NAS shares, and supported cloud providers including Google Photos, Microsoft OneDrive, Dropbox, and Immich in one uninterrupted slideshow.</p>
         <a class="feature-link" href="manual.html#slideshow">Open manual chapter →</a>
       </div>
       <div class="feature-card">
@@ -1057,7 +1102,7 @@
       <div class="feature-card">
         <span class="feature-icon">🌤️</span>
         <h3>Weather Overlay</h3>
-        <p>Live local weather at a glance, right on your frame. No extra device needed.</p>
+        <p>Live local weather at a glance, right on your frame, alongside clock and photo info overlays. No extra device needed.</p>
         <a class="feature-link" href="manual.html#weather-forecast">Open manual chapter →</a>
       </div>
       <div class="feature-card">
@@ -1143,8 +1188,8 @@
         <div class="diff-card">
           <div class="diff-icon">🎛️</div>
           <div>
-            <h4>No nag screens</h4>
-            <p>Free tier is genuinely usable. Pro is there when you want it.</p>
+            <h4>No subscription pressure</h4>
+            <p>Free tier is genuinely usable, and Pro is a one-time upgrade when you want more.</p>
           </div>
         </div>
       </div>
@@ -1216,10 +1261,24 @@
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q">
+          Does Fravora support Google Photos slideshows?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Yes. Fravora supports Google Photos as a cloud source alongside local folders, SMB/NAS shares, Microsoft OneDrive, Dropbox, and Immich.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
           Does it show ads?
           <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-a">Only if you choose to. Free users can watch a rewarded ad for temporary Pro access — the slideshow itself is never interrupted.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Can I show weather and radio on top of my photos?
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Yes. Fravora can display live weather, a clock, photo metadata, and now-playing radio information over your slideshow.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">
@@ -1320,9 +1379,13 @@
     <h2>Ready to bring your photos to life?</h2>
     <p>Free to download. No account required. Works in minutes.</p>
     <div class="cta-group">
-      <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.aniujual.fravora" target="_blank" rel="noopener">
+      <a class="cta-btn store-cta" href="https://play.google.com/store/apps/details?id=com.aniujual.fravora" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2 2 0 0 0 2.14-.21l12.44-7.19-3.13-3.12-11.45 10.52zM20.65 9.22l-3.34-1.93-3.51 3.5 3.51 3.51 3.37-1.95a2 2 0 0 0-.03-3.13zM1 1.45A2 2 0 0 0 .5 2.87v18.27a2 2 0 0 0 .5 1.41L14.4 12 1 1.45zm13.39 9.14L2.82.38A2 2 0 0 0 1 .17L14.39 10.59l.01-4z"/></svg>
         Get it on Google Play
+      </a>
+      <a class="cta-btn store-cta" href="https://www.amazon.com/dp/B0H45FCGX6" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 7.25A2.25 2.25 0 0 1 8.25 5h7.5A2.25 2.25 0 0 1 18 7.25V9h.75A1.25 1.25 0 0 1 20 10.25v7.5A2.25 2.25 0 0 1 17.75 20h-11.5A2.25 2.25 0 0 1 4 17.75v-7.5A1.25 1.25 0 0 1 5.25 9H6V7.25zm1.5 0V9h9V7.25a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0-.75.75zm-2 3.25v7.25c0 .414.336.75.75.75h11.5a.75.75 0 0 0 .75-.75V10.5H5.5z"/></svg>
+        Get it on Amazon Appstore
       </a>
       <a class="cta-btn outline" href="manual.html">User Manual</a>
       <a class="cta-btn outline" href="privacy.html">Privacy Policy</a>
