@@ -269,6 +269,53 @@
   <div class="content">
     <div class="release-card">
       <div class="release-head">
+        <h2>Version 1.0.10</h2>
+        <div class="build-tag">vc31</div>
+      </div>
+      <div class="release-grid">
+        <div class="release-block features">
+          <h3>Features</h3>
+          <ul>
+            <li>Added a one-time 1-hour PRO trial for new users, automatically granted on first app launch.</li>
+            <li>Added a temporary PRO countdown timer that appears while trial or ad-rewarded PRO access is active.</li>
+            <li>Overhauled onboarding with guided source setup, album creation, and optional radio selection for a complete first-run setup.</li>
+          </ul>
+        </div>
+        <div class="release-block fixes">
+          <h3>Bug Fixes</h3>
+          <ul>
+            <li>Hardened Google Play purchase launch with lifecycle and debounce guards, preflight refresh, and one transient retry to reduce rare billing startup crashes.</li>
+            <li>Fixed notification-strip icons disappearing on PRO/free tier changes by preserving badge and warning state across tier-driven scope refreshes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-card">
+      <div class="release-head">
+        <h2>Version 1.0.9</h2>
+        <div class="build-tag">vc30</div>
+      </div>
+      <div class="release-grid">
+        <div class="release-block features">
+          <h3>Features</h3>
+          <ul>
+            <li>Added network-share reconnect retry interval options (1/5/10/15/30/60 minutes or Never) for unreachable selected SMB shares.</li>
+            <li>Improved outage behavior so slideshows keep running with currently displayable and cached photos during network-share outages.</li>
+          </ul>
+        </div>
+        <div class="release-block fixes">
+          <h3>Bug Fixes</h3>
+          <ul>
+            <li>Fixed stale unreachable-share warning icon state so it clears after reconnect scans confirm shares are reachable again.</li>
+            <li>Fixed outage recovery behavior so reconnect does not trigger false new-images alerts.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-card">
+      <div class="release-head">
         <h2>Version 1.0.8</h2>
         <div class="build-tag">vc29</div>
       </div>
