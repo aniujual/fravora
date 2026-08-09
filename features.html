@@ -38,6 +38,34 @@
       ]
     }
   </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Fravora support Google Photos?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fravora connects to Google Photos using the official Google Photos Picker. You select specific photos or albums, which are downloaded and cached on the device for offline slideshow playback. Internet is only needed when syncing new picks." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Fravora display photos from a NAS or home network share?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fravora connects directly to NAS devices and Windows shares over SMB. You browse and select folders on the network share, and photos are cached locally for continuous playback even during temporary network outages." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Fravora show weather on the photo frame?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes (PRO feature). The weather overlay shows the current temperature and conditions on top of photos. Tapping it opens a full-screen forecast with 24-hour hourly and 7-day views. Location is determined via device GPS." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Fravora mix multiple photo sources in one slideshow?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. A single Fravora album can combine Google Photos picks, NAS/SMB folders, local device folders, OneDrive folders, Dropbox folders, and Immich albums. All sources rotate together in the slideshow." }
+        }
+      ]
+    }
+  </script>
   <link rel="icon" type="image/png" href="images/fravora.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -247,6 +275,9 @@
         <a href="how-it-works.html">See setup steps</a>
         <a href="download.html">Install Fravora</a>
         <a href="manual.html">Read full manual</a>
+        <a href="blog/digital-photo-frame-weather-overlay.html">Weather overlay guide</a>
+        <a href="blog/google-photos-digital-photo-frame.html">Google Photos guide</a>
+        <a href="blog/immich-photo-frame-android.html">Immich guide</a>
       </div>
     </section>
   </main>

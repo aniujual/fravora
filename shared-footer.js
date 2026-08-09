@@ -68,6 +68,7 @@
           '<a href="' + base + 'how-it-works.html">How It Works</a>' +
           '<a href="' + base + 'download.html">Download</a>' +
           '<a href="' + base + 'blog/index.html">Blog</a>' +
+          '<a href="' + base + 'glossary.html">Glossary</a>' +
           '<a href="' + base + 'privacy.html">Privacy Policy</a>' +
           '<a href="' + base + 'data-deletion.html">Data Deletion</a>' +
           '<a href="' + base + 'release-notes.html">Release Notes</a>' +
