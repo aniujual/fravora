@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
+  <script>(function(){try{var t=localStorage.getItem('fravora-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fravora: Digital Photo Frame user manual for Android photo frame setup with Google Photos, NAS/SMB, overlays, radio, voice control, and troubleshooting." />
+  <meta name="description" content="Fravora: Digital Photo Frame user manual for Android photo frame setup with Google Photos, NAS/SMB, overlays, radio, music playlists, voice control, and troubleshooting." />
   <link rel="canonical" href="https://aniujual.github.io/fravora/manual.html" />
   <title>User Manual – Fravora: Digital Photo Frame</title>
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Fravora" />
   <meta property="og:title" content="User Manual – Fravora: Digital Photo Frame" />
-  <meta property="og:description" content="Fravora: Digital Photo Frame user manual with setup, gestures, overlays, radio, voice control, storage alerts, support tools, PRO features, and troubleshooting." />
+  <meta property="og:description" content="Fravora: Digital Photo Frame user manual with setup, gestures, overlays, radio, music playlists, voice control, storage alerts, support tools, PRO features, and troubleshooting." />
   <meta property="og:url" content="https://aniujual.github.io/fravora/manual.html" />
   <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_settings_slideshow.png" />
   <meta property="og:image:alt" content="Fravora slideshow settings screen showing interval, order, transitions, and scheduling options." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="User Manual – Fravora: Digital Photo Frame" />
-  <meta name="twitter:description" content="Fravora: Digital Photo Frame user manual with setup, gestures, overlays, radio, voice control, storage alerts, support tools, PRO features, and troubleshooting." />
+  <meta name="twitter:description" content="Fravora: Digital Photo Frame user manual with setup, gestures, overlays, radio, music playlists, voice control, storage alerts, support tools, PRO features, and troubleshooting." />
   <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_settings_slideshow.png" />
   <meta name="twitter:image:alt" content="Fravora slideshow settings screen showing interval, order, transitions, and scheduling options." />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
@@ -92,7 +92,7 @@
         },
         {
           "@type": "Question",
-          "name": "Why do some stations show warning icons in Radio settings?",
+          "name": "Why do some stations show warning icons in Audio settings?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Those are session-only station failure indicators. They mark stations that failed during the current app run so you can avoid unstable streams quickly."
@@ -111,7 +111,7 @@
           "name": "How do I keep radio playing when the screen is off?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Enable Background playback in radio settings, then use lockscreen or notification controls to manage playback without reopening the app."
+            "text": "Enable Background playback in Audio settings (PRO), then use lockscreen or notification controls to manage playback without reopening the app."
           }
         },
         {
@@ -770,7 +770,7 @@
           <li><a href="#slideshow" onclick="closeSidebar()"><span class="icon">▶️</span>Slideshow</a></li>
           <li><a href="#appearance" onclick="closeSidebar()"><span class="icon">🎨</span>Appearance</a></li>
           <li><a href="#overlays" onclick="closeSidebar()"><span class="icon">✨</span>Overlays</a></li>
-          <li><a href="#radio" onclick="closeSidebar()"><span class="icon">📻</span>Radio</a></li>
+          <li><a href="#audio" onclick="closeSidebar()"><span class="icon">🎵</span>Audio</a></li>
           <li><a href="#voice" onclick="closeSidebar()"><span class="icon">🎙️</span>Voice Control<span class="pro-badge">PRO</span></a></li>
           <li><a href="#support" onclick="closeSidebar()"><span class="icon">💬</span>Support</a></li>
         </ul>
@@ -1026,19 +1026,19 @@
       </div>
     </section>
 
-    <!-- RADIO -->
-    <section class="section" id="radio">
+    <!-- AUDIO -->
+    <section class="section" id="audio">
       <div class="section-header">
-        <div class="section-icon">📻</div>
+        <div class="section-icon">🎵</div>
         <div>
           <div class="section-number">07</div>
-          <h2>Radio</h2>
+          <h2>Audio</h2>
         </div>
       </div>
 
-      <p>Fravora includes built-in internet radio that plays alongside your slideshow. Find stations by name, genre, or country in seconds.</p>
+      <p>Fravora's Audio section has two tabs: <strong>Radio</strong> for internet streaming stations and <strong>Music</strong> for local folder-based playlists. Both share running-hours scheduling, background playback, and lockscreen controls.</p>
 
-      <h3>Basic Playback (Free)</h3>
+      <h3>Radio — Basic Playback (Free)</h3>
       <div class="settings-list">
         <div class="setting-row"><span class="setting-name">Search</span><span class="setting-desc">Search for stations by name, genre, language, or country. Free tier has a daily search limit.</span><span class="free-tag">FREE</span></div>
         <div class="setting-row"><span class="setting-name">Play / Pause / Stop</span><span class="setting-desc">Manual controls available at all times during the session.</span><span class="free-tag">FREE</span></div>
@@ -1047,24 +1047,41 @@
         <div class="setting-row"><span class="setting-name">Recently played list</span><span class="setting-desc">Recently played history remains visible in the UI but is locked on Free.</span><span class="free-tag">FREE</span></div>
       </div>
 
-      <h3>PRO Radio Features</h3>
+      <h3>Radio — PRO Features</h3>
       <div class="settings-list">
         <div class="setting-row"><span class="setting-name">Station persistence</span><span class="setting-desc">Your last station is remembered across app restarts — no need to search again.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Favorites</span><span class="setting-desc">Save stations to a favorites list for quick access.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Unlimited search</span><span class="setting-desc">No daily search limit.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Advanced filters</span><span class="setting-desc">Filter by country code, language, genre tag, and minimum bitrate to find better streams faster.</span><span class="pro-tag">PRO</span></div>
-        <div class="setting-row"><span class="setting-name">Recently played</span><span class="setting-desc">History of the last 3 stations (deduped by URL) with per-item remove actions in Settings → Radio.</span><span class="pro-tag">PRO</span></div>
+        <div class="setting-row"><span class="setting-name">Recently played</span><span class="setting-desc">History of the last 3 stations (deduped by URL) with per-item remove actions in Settings → Audio.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Station failure tracking</span><span class="setting-desc">Session-only warning icons appear next to stations that failed to play, helping you quickly spot unstable streams.</span></div>
         <div class="setting-row"><span class="setting-name">Auto-play on select</span><span class="setting-desc">Tapping a station in search results starts playback immediately.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Auto-play on app start</span><span class="setting-desc">Optionally resume radio automatically when Fravora launches.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Background playback</span><span class="setting-desc">Radio keeps playing when the screen turns off or another app is in the foreground.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Lockscreen controls</span><span class="setting-desc">Play/pause and previous/next station from the Android notification shade and lockscreen.</span><span class="pro-tag">PRO</span></div>
-        <div class="setting-row"><span class="setting-name">Radio Running Hours</span><span class="setting-desc">Set when radio auto-starts and stops, with optional per-day custom schedules.</span><span class="pro-tag">PRO</span></div>
+        <div class="setting-row"><span class="setting-name">Audio Running Hours</span><span class="setting-desc">Set when audio auto-starts and stops, with optional per-day custom schedules. Applies to both Radio and Music.</span><span class="pro-tag">PRO</span></div>
       </div>
 
       <div class="callout warn">
         <span class="callout-icon">⚠️</span>
         <div class="callout-body">If a station fails to load, Fravora shows the specific reason: <strong>timeout</strong>, <strong>network issue</strong>, <strong>access denied</strong>, <strong>unavailable stream</strong>, or <strong>unsupported format</strong>. Try a different station or check your connection.</div>
+      </div>
+
+      <h3>Music — Basic Playback (Free)</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">Create playlist</span><span class="setting-desc">Create one named playlist on Free. The Create Playlist row shows a lock icon once the cap is reached.</span><span class="free-tag">FREE</span></div>
+        <div class="setting-row"><span class="setting-name">Add Folder / Add Files</span><span class="setting-desc">Add whole folders (recursively scanned via the system file picker) or individual files. Supported formats: mp3, m4a, aac, flac, ogg, opus, wav, amr.</span><span class="free-tag">FREE</span></div>
+        <div class="setting-row"><span class="setting-name">Refresh Now</span><span class="setting-desc">Manual rescan that reports Added / Removed / Re-linked track counts.</span><span class="free-tag">FREE</span></div>
+        <div class="setting-row"><span class="setting-name">Deduplication</span><span class="setting-desc">Always on in Free — duplicate tracks are filtered by content identity (filename + size + date + tags). Cannot be disabled on Free.</span><span class="free-tag">FREE</span></div>
+        <div class="setting-row"><span class="setting-name">Missing access recovery</span><span class="setting-desc">Alerts when folders lose storage permission, with Restore Access and Remove Missing Folders actions.</span><span class="free-tag">FREE</span></div>
+      </div>
+
+      <h3>Music — PRO Features</h3>
+      <div class="settings-list">
+        <div class="setting-row"><span class="setting-name">Unlimited playlists</span><span class="setting-desc">Create as many named playlists as you need.</span><span class="pro-tag">PRO</span></div>
+        <div class="setting-row"><span class="setting-name">Automatic background scanning</span><span class="setting-desc">Periodic rescans on a configurable interval (5/10/15/30/60/120 minutes, default 15). Free tier is manual-refresh only.</span><span class="pro-tag">PRO</span></div>
+        <div class="setting-row"><span class="setting-name">Sort Mode</span><span class="setting-desc">Discovery (default), Song (title A-Z), Artist, Filename, Date Added to Disk, Date Added to Playlist, and Shuffle with a Reshuffle button.</span><span class="pro-tag">PRO</span></div>
+        <div class="setting-row"><span class="setting-name">Disable deduplication</span><span class="setting-desc">Turn off duplicate filtering if you want the same track in multiple playlists.</span><span class="pro-tag">PRO</span></div>
       </div>
     </section>
 
@@ -1147,7 +1164,7 @@
 
       <div class="callout tip">
         <span class="callout-icon">💡</span>
-        <div class="callout-body">If no station is configured and you say "play radio", Fravora opens <strong>Settings → Radio</strong> automatically so you can pick one.</div>
+        <div class="callout-body">If no station is configured and you say "play radio", Fravora opens <strong>Settings → Audio</strong> automatically so you can pick one.</div>
       </div>
     </section>
 
@@ -1360,7 +1377,7 @@
           <tr><td class="label">Bouncing standby clock</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">New images overlay badge &amp; viewer</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
 
-          <tr class="section-row"><td colspan="3">Radio</td></tr>
+          <tr class="section-row"><td colspan="3">Audio — Radio</td></tr>
           <tr><td class="label">Search & play stations</td><td><span class="check">✓</span> (limited)</td><td><span class="check">✓</span> unlimited</td></tr>
           <tr><td class="label">Station persistence</td><td>Session only</td><td>Across restarts</td></tr>
           <tr><td class="label">Favorites</td><td>Visible (locked)</td><td><span class="check">✓</span></td></tr>
@@ -1369,7 +1386,15 @@
           <tr><td class="label">Station failure tracking</td><td><span class="check">✓</span> (session)</td><td><span class="check">✓</span> (session)</td></tr>
           <tr><td class="label">Background playback</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td class="label">Lockscreen media controls</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td class="label">Radio running hours</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">Audio running hours</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+
+          <tr class="section-row"><td colspan="3">Audio — Music</td></tr>
+          <tr><td class="label">Playlists</td><td>1 playlist</td><td>Unlimited</td></tr>
+          <tr><td class="label">Add Folder / Add Files</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">Manual refresh / rescan</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">Automatic background scanning</td><td><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td class="label">Sort mode</td><td>Discovery only</td><td>6 modes + Shuffle</td></tr>
+          <tr><td class="label">Deduplication</td><td>Always on (locked)</td><td>Configurable</td></tr>
 
           <tr class="section-row"><td colspan="3">Overlays</td></tr>
           <tr><td class="label">Clock overlay</td><td><span class="check">✓</span> (fixed position)</td><td><span class="check">✓</span> (any position)</td></tr>
@@ -1493,7 +1518,7 @@
       </details>
 
       <details class="trouble-item">
-        <summary class="trouble-q">Why do some stations show warning icons in Radio settings?</summary>
+        <summary class="trouble-q">Why do some stations show warning icons in Audio settings?</summary>
         <div class="trouble-a">
           Those are session-only station failure indicators. They mark stations that failed during the current app run so you can avoid unstable streams quickly.
         </div>
@@ -1516,7 +1541,7 @@
       <details class="trouble-item">
         <summary class="trouble-q">How do I keep radio playing when the screen is off?</summary>
         <div class="trouble-a">
-          Enable <strong>Background playback</strong> in radio settings (PRO), then use lockscreen or notification controls to manage playback without reopening the app.
+          Enable <strong>Background playback</strong> in Audio settings (PRO), then use lockscreen or notification controls to manage playback without reopening the app.
         </div>
       </details>
 

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <script>(function(){try{var t=localStorage.getItem('fravora-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Photos Digital Photo Frame on Android: Setup Guide</title>
+  <meta name="description" content="Turn any Android tablet into a Google Photos digital photo frame. Step-by-step setup for connecting Google Photos, managing picks, scheduling, and adding weather overlays." />
+  <link rel="canonical" href="https://aniujual.github.io/fravora/blog/google-photos-digital-photo-frame.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Google Photos Digital Photo Frame on Android: Setup Guide" />
+  <meta property="og:description" content="Turn any Android tablet into a Google Photos digital photo frame. Step-by-step setup for connecting Google Photos, managing picks, scheduling, and adding weather overlays." />
+  <meta property="og:url" content="https://aniujual.github.io/fravora/blog/google-photos-digital-photo-frame.html" />
+  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
+  <meta property="og:image:alt" content="Android tablet showing a Google Photos slideshow as a digital photo frame." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Google Photos Digital Photo Frame on Android: Setup Guide" />
+  <meta name="twitter:description" content="Turn any Android tablet into a Google Photos digital photo frame. Step-by-step setup for connecting Google Photos, managing picks, scheduling, and adding weather overlays." />
+  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
+  <meta name="twitter:image:alt" content="Android tablet showing a Google Photos slideshow as a digital photo frame." />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Google Photos Digital Photo Frame on Android: Setup Guide",
+      "description": "Turn any Android tablet into a Google Photos digital photo frame. Step-by-step setup for connecting Google Photos, managing picks, scheduling, and adding weather overlays.",
+      "image": "https://aniujual.github.io/fravora/images/screen_frame1.png",
+      "author": {
+        "@type": "Person",
+        "name": "aniujual"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fravora: Digital Photo Frame",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aniujual.github.io/fravora/images/fravora.png"
+        }
+      },
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09",
+      "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/google-photos-digital-photo-frame.html"
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aniujual.github.io/fravora/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://aniujual.github.io/fravora/blog/index.html" },
+        { "@type": "ListItem", "position": 3, "name": "Google Photos Digital Photo Frame on Android", "item": "https://aniujual.github.io/fravora/blog/google-photos-digital-photo-frame.html" }
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I use Google Photos as a digital photo frame?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Apps like Fravora connect to Google Photos using the official Google Photos Picker. You hand-pick the photos you want on the frame, and the app stores and displays them as a slideshow." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a Google Photos photo frame need internet all the time?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not continuously. Once photos are downloaded and cached on the device, the slideshow runs from local storage. Internet is only needed when syncing new picks." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many Google Photos can I display on a digital frame?",
+          "acceptedAnswer": { "@type": "Answer", "text": "There is no hard limit on the number of photos. The app caches images on the device using a configurable disk cache (up to 2GB) and manages storage automatically, pruning older images as needed." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I mix Google Photos with local photos on the same frame?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can combine Google Photos picks with local device folders and NAS/SMB sources in a single album, and they all play together in the slideshow." }
+        }
+      ]
+    }
+  </script>
+  <link rel="icon" type="image/png" href="../images/fravora.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CQF87DK78N');
+  </script>
+  <style>
+    :root {
+      --bg: #0e0b14;
+      --surface: #1c1728;
+      --border: #2e2640;
+      --accent: #9b5de5;
+      --accent2: #c77dff;
+      --text: #e8e0f5;
+      --muted: #8b7fa8;
+      --nav-bg: rgba(14,11,20,0.85);
+    }
+    [data-theme="light"] {
+      --bg: #f5f0ff;
+      --surface: #ffffff;
+      --border: #d4c8f0;
+      --accent: #7c3aed;
+      --accent2: #9b5de5;
+      --text: #1a1033;
+      --muted: #6b5b8a;
+      --nav-bg: rgba(245,240,255,0.88);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border); background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.55rem; font-family: 'Syne', sans-serif; text-decoration: none; color: var(--text); }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .nav-logo span { font-weight: 800; letter-spacing: 0.3px; font-size: 1.05rem; line-height: 1; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.85rem; border: 1px solid var(--border); padding: 0.3rem 0.65rem; border-radius: 999px; }
+    .nav-links a.active, .nav-links a:hover { color: var(--text); border-color: var(--accent); }
+    .theme-btn { border: 1px solid var(--border); background: var(--surface); color: var(--muted); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; }
+    .nav-toggle { display: none; width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; font-size: 1.05rem; align-items: center; justify-content: center; }
+    main { max-width: 860px; margin: 0 auto; padding: 2.2rem 1rem 4rem; }
+    h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.7rem, 5vw, 2.6rem); margin-bottom: 0.7rem; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    p { color: var(--muted); line-height: 1.75; margin-bottom: 0.9rem; }
+    h2 { font-family: 'Syne', sans-serif; font-size: 1.05rem; margin: 1.2rem 0 0.5rem; }
+    ol, ul { color: var(--muted); margin: 0.5rem 0 0.8rem; padding-left: 1.2rem; }
+    li { margin-bottom: 0.45rem; }
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1rem; margin-top: 1rem; }
+    .links { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .links a { text-decoration: none; color: var(--accent2); font-weight: 600; font-size: 0.86rem; border: 1px solid var(--border); border-radius: 999px; padding: 0.32rem 0.62rem; }
+    footer { max-width: 860px; margin: 0 auto; padding: 0 1rem 2rem; display: flex; flex-wrap: wrap; gap: 0.8rem; color: var(--muted); font-size: 0.85rem; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent2); }
+    @media (max-width: 900px) {
+      .nav-toggle { display: inline-flex; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0.45rem; padding: 0.75rem 1rem 1rem; background: var(--nav-bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(10px); max-height: calc(100vh - 64px); overflow-y: auto; }
+      .nav-links.open { display: flex; }
+      .theme-btn { margin-top: 0.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="siteNavMount" data-base="../" data-active="blog"></div>
+  <script src="../shared-nav.js"></script>
+
+  <main>
+    <h1>Google Photos digital photo frame on Android</h1>
+    <p class="meta">Updated August 9, 2026 · 8 min read</p>
+
+    <p>Google Photos is where most people store their photos. If you want those photos displayed on a dedicated frame in your home, you don't need to buy proprietary hardware. An Android tablet running the right app can act as a full Google Photos digital photo frame — with slideshow scheduling, weather overlays, and offline caching.</p>
+
+    <h2>What you need</h2>
+    <ul>
+      <li>An Android tablet, Fire tablet, or any Android display device</li>
+      <li>A Google account with photos in Google Photos</li>
+      <li>A frame app that connects to Google Photos (Fravora uses the official Google Photos Picker API)</li>
+    </ul>
+
+    <h2>How connecting Google Photos actually works</h2>
+    <p>Most Google Photos integrations on Android use the official Google Photos Picker, which lets you hand-pick the specific photos or albums you want on the frame. The app downloads and caches those picks locally on the device. This approach respects Google's API limits and keeps your full photo library private — the app only ever sees what you explicitly selected.</p>
+    <p>Once downloaded, the slideshow runs entirely from the device cache. You don't need a live internet connection for the photos to display. The frame only needs internet when you add new picks or the app re-syncs to check for updates.</p>
+
+    <h2>Setup: what the onboarding covers</h2>
+    <p>When you first launch Fravora, the onboarding guides you through the full setup. Here is what it covers for a Google Photos frame:</p>
+    <ol>
+      <li>Choose <strong>Google Photos</strong> as your source type.</li>
+      <li>The Google Photos Picker opens. Select the photos or albums you want on the frame and confirm.</li>
+      <li>Name your album and assign the Google Photos source to it.</li>
+      <li>The frame begins downloading your picks and starts the slideshow — setup is done.</li>
+    </ol>
+    <p>To add more Google Photos connections, other cloud sources, or local/NAS folders later, go to <strong>Settings → Sources</strong>.</p>
+
+    <h2>Managing your photo picks</h2>
+    <p>You can add more photos to an existing pick set without starting over — just tap <strong>Pick Now</strong> from the album source row to open the Picker again and append new selections. To remove all picks for a connection and start fresh, use the <strong>Clear Picked Photos</strong> action on the source.</p>
+    <p>Photos you have hidden on the frame are protected during re-import — if a pick was previously hidden, it stays excluded even after a resync.</p>
+
+    <h2>Storage and caching</h2>
+    <p>Google Photos picks are stored in a dedicated cache folder, separate from the regular image cache, so they are not evicted when other images cycle through. You can configure a minimum storage headroom (from 256 MB up to 32 GB depending on your device) to ensure the device never runs out of space. If space gets critically low, the app prunes the oldest picks automatically.</p>
+    <p>The regular image cache is configurable from 128 MB to 2 GB. If your device has limited storage, keep the cache smaller and let the app re-download photos as needed.</p>
+
+    <h2>Mixing Google Photos with other sources</h2>
+    <p>You are not limited to Google Photos only. A single album can combine Google Photos picks with local device folders and NAS/SMB network shares. This is useful if you keep older photos on a home server and newer ones in Google Photos — both play together in the same slideshow rotation.</p>
+
+    <h2>Scheduling and standby</h2>
+    <p>Set running hours so the frame only displays photos during the times you are home and awake. Outside those hours the screen shows a standby clock or goes fully black, and the device stays tappable so you can open the menu anytime. A bouncing standby clock is available on PRO to prevent OLED burn-in.</p>
+
+    <div class="panel">
+      <h2>Free vs PRO for Google Photos frames</h2>
+      <p>The free tier supports one Google Photos connection and one album. You can pick photos, cache them, and run a full slideshow with scheduling at no cost. PRO unlocks multiple cloud connections, multiple albums, include-subfolders for other sources, transition effects, and cinematic motion effects.</p>
+
+      <h2>Common questions</h2>
+      <p><strong>Does the frame update automatically when I add new photos to Google Photos?</strong> Only picks you explicitly select through the Picker appear on the frame. The frame does not auto-sync your entire Google Photos library — you control exactly what is displayed.</p>
+      <p><strong>What happens if Google Photos is unreachable?</strong> Already-cached picks continue displaying normally. The frame only needs internet to download newly added picks.</p>
+      <p><strong>Can I use multiple Google accounts?</strong> Yes on PRO — you can connect multiple Google Photos accounts and assign each to different albums or mix them in the same album.</p>
+    </div>
+
+    <div class="links">
+      <a href="../download.html">Get Fravora</a>
+      <a href="../features.html">All features</a>
+      <a href="../manual.html">User manual</a>
+      <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
+      <a href="android-tablet-photo-frame.html">Tablet setup guide</a>
+    </div>
+  </main>
+
+  <div id="siteFooterMount" data-base="../"></div>
+  <script src="../shared-footer.js"></script>
+
+  <script>
+    const navToggleBtn = document.getElementById('navToggleBtn');
+    const navLinks = document.getElementById('siteNav');
+    if (navToggleBtn && navLinks) {
+      const closeNav = () => { navLinks.classList.remove('open'); navToggleBtn.setAttribute('aria-expanded', 'false'); };
+      navToggleBtn.addEventListener('click', () => { const isOpen = navLinks.classList.toggle('open'); navToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false'); });
+      navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => closeNav()); });
+      document.addEventListener('click', (event) => { if (!navLinks.contains(event.target) && !navToggleBtn.contains(event.target)) closeNav(); });
+      document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeNav(); });
+      window.addEventListener('resize', () => { if (window.innerWidth > 900) closeNav(); });
+    }
+  </script>
+</body>
+</html>

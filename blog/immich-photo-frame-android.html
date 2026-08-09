@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <script>(function(){try{var t=localStorage.getItem('fravora-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Immich Digital Photo Frame on Android: Setup Guide</title>
+  <meta name="description" content="Use your self-hosted Immich server as an Android digital photo frame source. Connect via API key, pick albums, cache photos locally, and run a private offline slideshow." />
+  <link rel="canonical" href="https://aniujual.github.io/fravora/blog/immich-photo-frame-android.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Immich Digital Photo Frame on Android: Setup Guide" />
+  <meta property="og:description" content="Use your self-hosted Immich server as an Android digital photo frame source. Connect via API key, pick albums, cache photos locally, and run a private offline slideshow." />
+  <meta property="og:url" content="https://aniujual.github.io/fravora/blog/immich-photo-frame-android.html" />
+  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
+  <meta property="og:image:alt" content="Android tablet displaying a slideshow from a self-hosted Immich photo server." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Immich Digital Photo Frame on Android: Setup Guide" />
+  <meta name="twitter:description" content="Use your self-hosted Immich server as an Android digital photo frame source. Connect via API key, pick albums, cache photos locally, and run a private offline slideshow." />
+  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
+  <meta name="twitter:image:alt" content="Android tablet displaying a slideshow from a self-hosted Immich photo server." />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Immich Digital Photo Frame on Android: Setup Guide",
+      "description": "Use your self-hosted Immich server as an Android digital photo frame source. Connect via API key, pick albums, cache photos locally, and run a private offline slideshow.",
+      "image": "https://aniujual.github.io/fravora/images/screen_frame1.png",
+      "author": {
+        "@type": "Person",
+        "name": "aniujual"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fravora: Digital Photo Frame",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aniujual.github.io/fravora/images/fravora.png"
+        }
+      },
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09",
+      "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/immich-photo-frame-android.html"
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aniujual.github.io/fravora/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://aniujual.github.io/fravora/blog/index.html" },
+        { "@type": "ListItem", "position": 3, "name": "Immich Digital Photo Frame on Android", "item": "https://aniujual.github.io/fravora/blog/immich-photo-frame-android.html" }
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I use Immich as a digital photo frame source?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fravora connects to a self-hosted Immich server using its URL and an API key. You pick specific Immich albums as slideshow sources, and the app caches photos locally on the Android device for offline playback." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the Immich photo frame work without internet?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Once photos are downloaded to the device cache, the slideshow runs entirely from local storage. Internet or local network access is only needed when syncing new photos from Immich albums." }
+        },
+        {
+          "@type": "Question",
+          "name": "What Immich server setups are supported?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Any Immich server accessible by URL works — including a home server on the local network, a Synology or QNAP NAS running Immich in Docker, a Raspberry Pi, TrueNAS SCALE, or a self-hosted VPS with a public domain." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I mix Immich albums with Google Photos or NAS sources on the same frame?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. A single Fravora album can combine Immich album targets with Google Photos picks, NAS/SMB folder targets, local device folders, and OneDrive or Dropbox folders. All sources rotate together in the slideshow." }
+        }
+      ]
+    }
+  </script>
+  <link rel="icon" type="image/png" href="../images/fravora.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CQF87DK78N');
+  </script>
+  <style>
+    :root {
+      --bg: #0e0b14;
+      --surface: #1c1728;
+      --border: #2e2640;
+      --accent: #9b5de5;
+      --accent2: #c77dff;
+      --text: #e8e0f5;
+      --muted: #8b7fa8;
+      --nav-bg: rgba(14,11,20,0.85);
+    }
+    [data-theme="light"] {
+      --bg: #f5f0ff;
+      --surface: #ffffff;
+      --border: #d4c8f0;
+      --accent: #7c3aed;
+      --accent2: #9b5de5;
+      --text: #1a1033;
+      --muted: #6b5b8a;
+      --nav-bg: rgba(245,240,255,0.88);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border); background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.55rem; font-family: 'Syne', sans-serif; text-decoration: none; color: var(--text); }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .nav-logo span { font-weight: 800; letter-spacing: 0.3px; font-size: 1.05rem; line-height: 1; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.85rem; border: 1px solid var(--border); padding: 0.3rem 0.65rem; border-radius: 999px; }
+    .nav-links a.active, .nav-links a:hover { color: var(--text); border-color: var(--accent); }
+    .theme-btn { border: 1px solid var(--border); background: var(--surface); color: var(--muted); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; }
+    .nav-toggle { display: none; width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; font-size: 1.05rem; align-items: center; justify-content: center; }
+    main { max-width: 860px; margin: 0 auto; padding: 2.2rem 1rem 4rem; }
+    h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.7rem, 5vw, 2.6rem); margin-bottom: 0.7rem; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    p { color: var(--muted); line-height: 1.75; margin-bottom: 0.9rem; }
+    h2 { font-family: 'Syne', sans-serif; font-size: 1.05rem; margin: 1.2rem 0 0.5rem; }
+    ol, ul { color: var(--muted); margin: 0.5rem 0 0.8rem; padding-left: 1.2rem; }
+    li { margin-bottom: 0.45rem; }
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1rem; margin-top: 1rem; }
+    .links { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .links a { text-decoration: none; color: var(--accent2); font-weight: 600; font-size: 0.86rem; border: 1px solid var(--border); border-radius: 999px; padding: 0.32rem 0.62rem; }
+    footer { max-width: 860px; margin: 0 auto; padding: 0 1rem 2rem; display: flex; flex-wrap: wrap; gap: 0.8rem; color: var(--muted); font-size: 0.85rem; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent2); }
+    @media (max-width: 900px) {
+      .nav-toggle { display: inline-flex; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0.45rem; padding: 0.75rem 1rem 1rem; background: var(--nav-bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(10px); max-height: calc(100vh - 64px); overflow-y: auto; }
+      .nav-links.open { display: flex; }
+      .theme-btn { margin-top: 0.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="siteNavMount" data-base="../" data-active="blog"></div>
+  <script src="../shared-nav.js"></script>
+
+  <main>
+    <h1>Immich digital photo frame on Android</h1>
+    <p class="meta">Updated August 9, 2026 · 8 min read</p>
+
+    <p>Immich is a self-hosted photo and video management server — essentially a private Google Photos that runs on hardware you own. If you already have Immich running, you can use it as the photo source for an Android digital photo frame without sending your photos to any external service. The frame pulls directly from your Immich server, caches photos locally, and runs the slideshow entirely on your network.</p>
+
+    <h2>Why Immich is ideal for a self-hosted photo frame</h2>
+    <ul>
+      <li><strong>Complete privacy:</strong> Photos live on your hardware. Nothing leaves your network unless you choose to expose your server externally.</li>
+      <li><strong>Album-based control:</strong> Immich organises photos into albums. You pick specific albums for the frame — family trips, a curated favourites album, a specific year — rather than dumping your entire library onto the display.</li>
+      <li><strong>No per-device limits:</strong> Unlike Google Photos with its storage quotas, your Immich library is limited only by your own storage hardware.</li>
+      <li><strong>Works on your local network:</strong> The frame connects to your Immich server over Wi-Fi. No internet connection is required if the server is on your home network.</li>
+    </ul>
+
+    <h2>What you need before connecting</h2>
+    <ul>
+      <li>A running Immich server accessible by URL from the Android device (local IP, hostname, or domain)</li>
+      <li>An Immich API key — generate one in Immich under Account Settings → API Keys</li>
+      <li>At least one Immich album containing the photos you want on the frame</li>
+      <li>An Android tablet or display device running Fravora</li>
+    </ul>
+
+    <h2>Setup: what the onboarding covers</h2>
+    <p>When you first launch Fravora, the onboarding guides you through connecting your first source. Here is what it covers for an Immich connection:</p>
+    <ol>
+      <li>Choose <strong>Immich</strong> as your source type.</li>
+      <li>Enter your Immich server URL. For a local server this is typically <code>http://192.168.x.x:2283</code> or <code>http://immich.local:2283</code>. For an externally accessible server, use your domain with HTTPS.</li>
+      <li>Paste your Immich API key into the API Key field.</li>
+      <li>Tap <strong>Test Connection</strong>. Fravora contacts your server, verifies the key, and confirms access before saving.</li>
+      <li>The album picker opens. Select the Immich album or albums you want displayed on the frame.</li>
+      <li>Name your slideshow album and assign the Immich source to it. The frame begins downloading and displaying your photos — setup is done.</li>
+    </ol>
+    <p>To add more Immich connections or other source types later, go to <strong>Settings → Sources</strong>.</p>
+
+    <h2>How to generate an Immich API key</h2>
+    <ol>
+      <li>Open your Immich web interface and log in.</li>
+      <li>Click your avatar in the top-right corner and go to <strong>Account Settings</strong>.</li>
+      <li>Scroll to the <strong>API Keys</strong> section and click <strong>New API Key</strong>.</li>
+      <li>Give it a name (e.g. "Photo Frame") and copy the generated key. You will only see the key once — paste it into Fravora immediately.</li>
+    </ol>
+
+    <h2>Caching and offline behaviour</h2>
+    <p>Fravora caches downloaded Immich photos on the device using the standard image cache (configurable from 128 MB to 2 GB). Once a photo is cached, it displays without contacting the server. This means short network outages — a router reboot, a NAS going to sleep, a brief Wi-Fi drop — do not interrupt the slideshow. The frame picks up new photos from Immich on the next scheduled scan.</p>
+
+    <h2>Mixing Immich with other sources</h2>
+    <p>Immich does not have to be your only photo source. A single Fravora album can combine Immich album targets with local device folders, NAS/SMB shares, Google Photos picks, OneDrive folders, and Dropbox folders. All sources rotate together in the slideshow. A common setup for self-hosters is Immich for recently imported photos plus a NAS SMB share for the older organised archive — both playing from the same frame.</p>
+
+    <h2>Recommended album strategy</h2>
+    <p>Rather than pointing the frame at your entire Immich library, create a dedicated <strong>Frame</strong> album in Immich and curate it. Add photos you want displayed, remove ones you do not. This keeps the slideshow intentional — not a raw dump of every camera import — and makes it easy to update what the frame shows without touching the frame app itself. You can add more albums from Immich as additional sources within the same Fravora album if you want broader coverage.</p>
+
+    <div class="panel">
+      <h2>Common Immich server setups that work</h2>
+      <p><strong>Synology NAS with Docker:</strong> Run Immich in Docker Compose on a Synology NAS. The frame connects via the NAS local IP and the Immich port. This is one of the most popular self-hosting setups and works reliably on the local network.</p>
+      <p><strong>QNAP with Container Station:</strong> Similar to Synology — deploy Immich containers via Container Station and connect via local IP.</p>
+      <p><strong>TrueNAS SCALE:</strong> Immich can be deployed as a TrueNAS application. The frame connects via the TrueNAS host IP and Immich's port.</p>
+      <p><strong>Raspberry Pi or home server:</strong> A bare-metal Linux server running Immich works the same way. Use the server's local IP address as the connection URL.</p>
+      <p><strong>VPS with a public domain:</strong> If your Immich server is accessible on the internet via a domain with HTTPS, the frame can connect from anywhere — useful if the frame is on a different network from the server, such as a frame at a relative's house showing your photos.</p>
+
+      <h2>Troubleshooting connection issues</h2>
+      <p><strong>Test Connection fails:</strong> Double-check the URL format — include the port number if Immich is not on port 80 or 443. Confirm the API key was copied correctly with no trailing spaces. If your server uses a self-signed certificate, make sure the Android device trusts it or use HTTP on a local network.</p>
+      <p><strong>Photos not appearing:</strong> Confirm the selected albums contain photos and the API key user has access to those albums. In Immich, album visibility is per-user — the API key inherits the permissions of the account it belongs to.</p>
+    </div>
+
+    <div class="links">
+      <a href="../download.html">Get Fravora</a>
+      <a href="../features.html">All features</a>
+      <a href="../manual.html">User manual</a>
+      <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
+      <a href="google-photos-digital-photo-frame.html">Google Photos guide</a>
+      <a href="android-tablet-photo-frame.html">Tablet setup guide</a>
+    </div>
+  </main>
+
+  <div id="siteFooterMount" data-base="../"></div>
+  <script src="../shared-footer.js"></script>
+
+  <script>
+    const navToggleBtn = document.getElementById('navToggleBtn');
+    const navLinks = document.getElementById('siteNav');
+    if (navToggleBtn && navLinks) {
+      const closeNav = () => { navLinks.classList.remove('open'); navToggleBtn.setAttribute('aria-expanded', 'false'); };
+      navToggleBtn.addEventListener('click', () => { const isOpen = navLinks.classList.toggle('open'); navToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false'); });
+      navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => closeNav()); });
+      document.addEventListener('click', (event) => { if (!navLinks.contains(event.target) && !navToggleBtn.contains(event.target)) closeNav(); });
+      document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeNav(); });
+      window.addEventListener('resize', () => { if (window.innerWidth > 900) closeNav(); });
+    }
+  </script>
+</body>
+</html>

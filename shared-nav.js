@@ -1,5 +1,5 @@
 (function () {
-  var THEME_KEY = 'theme';
+  var THEME_KEY = 'fravora-theme';
   var WINDOW_THEME_PREFIX = 'fravora-theme:';
 
   function isValidTheme(value) {
