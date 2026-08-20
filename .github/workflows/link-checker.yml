@@ -31,5 +31,6 @@ jobs:
             --no-progress
             --exclude 'https://fonts\.googleapis\.com'
             --exclude 'https://fonts\.gstatic\.com'
+            --exclude 'https://www\.amazon\.com'
             './_site/**/*.html'
           fail: true
