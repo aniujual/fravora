@@ -1,0 +1,18 @@
+title: Fravora - Digital Photo Frame App
+description: Smart Android digital photo frame with NAS/SMB, local, and cloud slideshows.
+url: "https://aniujual.github.io"
+baseurl: "/fravora"
+
+markdown: kramdown
+theme: minima # Or none if you want full control, but let's stick to basics
+exclude:
+  - .artifacts
+  - .idea
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - 2-week-roadmap.md
+  - SEARCH_CONSOLE_INDEXING_CHECKLIST.md
+  - LOCAL_CONTENT_SOURCES.md
+  - update-sitemap-dates.ps1

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <script src="{{ site.baseurl }}/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+
+  {% if page.og_image %}
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/{{ page.og_image }}" />
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/{{ page.og_image }}" />
+  {% endif %}
+
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/images/fravora.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/global.css" />
+
+  {% if page.extra_css %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/{{ page.extra_css }}" />
+  {% endif %}
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CQF87DK78N');
+  </script>
+</head>
+<body>
+
+  {% include site-nav.html base=site.baseurl active=page.active_nav %}
+
+  {{ content }}
+
+  {% include site-footer.html base=site.baseurl %}
+
+  <script src="{{ site.baseurl }}/js/main.js"></script>
+  {% if page.extra_js %}
+  <script src="{{ site.baseurl }}/js/{{ page.extra_js }}"></script>
+  {% endif %}
+</body>
+</html>
