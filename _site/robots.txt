@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://aniujual.github.io/fravora/sitemap.xml
