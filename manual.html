@@ -44,7 +44,7 @@
         },
         {
           "@type": "Question",
-          "name": "How do I use hidden frame features like zoom, panning, and quick radio controls?",
+          "name": "How do I use hidden frame features like zoom, panning, and quick audio controls?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "In frame view, double tap to zoom, pinch to zoom smoothly, and drag to pan while zoomed. The ambient logo supports single-tap play/pause and double-tap station search. The weather overlay opens the detailed forecast, the clock/date overlay opens the calendar, and the new images badge opens the new-images viewer."
@@ -108,7 +108,7 @@
         },
         {
           "@type": "Question",
-          "name": "How do I keep radio playing when the screen is off?",
+          "name": "How do I keep audio playing when the screen is off?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Enable Background playback in Audio settings (PRO), then use lockscreen or notification controls to manage playback without reopening the app."
@@ -116,10 +116,10 @@
         },
         {
           "@type": "Question",
-          "name": "Can I run slideshow and radio on different schedules?",
+          "name": "Can I run slideshow and audio on different schedules?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Slideshow running hours and radio running hours are separate, so you can keep background audio active on a different timetable than image playback."
+            "text": "Yes. Fravora has separate running-hours settings for the slideshow and for audio, so you can keep background audio active on a different timetable than image playback."
           }
         },
         {
@@ -797,7 +797,7 @@
       <div class="badge">📖 Documentation</div>
       <h1>User Manual</h1>
       <p>Everything you need to set up, personalize, and get the most out of Fravora, from first launch to advanced gestures and voice workflows.</p>
-      <div class="meta">Last updated: June 24, 2026 · Based on current app implementation</div>
+      <div class="meta">Last updated: August 20, 2026 · Based on current app implementation</div>
     </div>
 
     <!-- QUICK START -->
@@ -1009,8 +1009,8 @@
         <div class="setting-row"><span class="setting-name">Clock</span><span class="setting-desc">Shows the current time with configurable size and time/date format.</span><span class="free-tag">FREE</span></div>
         <div class="setting-row"><span class="setting-name">Weather</span><span class="setting-desc">Live local weather overlay. Requires location permission.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Photo metadata</span><span class="setting-desc">Shows taken date, location, and available landmark names from EXIF data. Processed locally.</span><span class="pro-tag">PRO</span></div>
-        <div class="setting-row"><span class="setting-name">Now Playing</span><span class="setting-desc">Scrolling marquee with current station and song information while radio is active.</span><span class="pro-tag">PRO</span></div>
-        <div class="setting-row"><span class="setting-name">Ambient logo</span><span class="setting-desc">Pulsing Fravora icon that also acts as a quick radio interaction target.</span><span class="pro-tag">PRO</span></div>
+        <div class="setting-row"><span class="setting-name">Now Playing</span><span class="setting-desc">Scrolling marquee with current station and song information while audio is active.</span><span class="pro-tag">PRO</span></div>
+        <div class="setting-row"><span class="setting-name">Ambient logo</span><span class="setting-desc">Pulsing Fravora icon that also acts as a quick audio interaction target.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Photo index</span><span class="setting-desc">Shows current photo position in album (for example 42 / 500) with independent sizing controls.</span><span class="pro-tag">PRO</span></div>
         <div class="setting-row"><span class="setting-name">Anti burn-in</span><span class="setting-desc">Periodically micro-shifts overlays and varies opacity to protect OLED displays.</span><span class="pro-tag">PRO</span></div>
       </div>
@@ -1133,8 +1133,8 @@
 
       <h3>Command Categories</h3>
       <div class="settings-list">
-        <div class="setting-row"><span class="setting-name">Radio play commands</span><span class="setting-desc">Examples: <code>play/start/turn on/switch on/resume/unpause/begin/launch/enable/activate/open/run radio</code>.</span></div>
-        <div class="setting-row"><span class="setting-name">Radio stop commands</span><span class="setting-desc">Examples: <code>stop/pause/turn off/switch off/end/close/disable/deactivate radio</code>.</span></div>
+        <div class="setting-row"><span class="setting-name">Audio & Music play commands</span><span class="setting-desc">Examples: <code>play/start/turn on radio</code>, <code>play music</code>, <code>launch music</code>, <code>resume radio</code>, <code>begin music</code>.</span></div>
+        <div class="setting-row"><span class="setting-name">Audio & Music stop commands</span><span class="setting-desc">Examples: <code>stop/pause radio</code>, <code>turn off music</code>, <code>switch off radio</code>, <code>disable music</code>.</span></div>
         <div class="setting-row"><span class="setting-name">Slideshow commands</span><span class="setting-desc">Examples: <code>play/start/turn on/resume slideshow</code> and <code>pause/stop/turn off/end slideshow</code>.</span></div>
         <div class="setting-row"><span class="setting-name">Assistant volume commands</span><span class="setting-desc">Examples: <code>increase volume</code>, <code>decrease volume</code>, <code>set volume to 40</code>, <code>mute</code>, and <code>unmute</code>.</span></div>
         <div class="setting-row"><span class="setting-name">Disable voice control</span><span class="setting-desc">Examples: <code>stop/disable/turn off/switch off/end/close/deactivate voice control</code> (also works with <code>voice</code> shorthand).</span></div>
@@ -1143,6 +1143,7 @@
       <h3>Command Behavior</h3>
       <div class="settings-list">
         <div class="setting-row"><span class="setting-name">Wait for follow-up</span><span class="setting-desc">Keeps listening briefly after a command so you can issue another one without saying the wake phrase again.</span></div>
+        <div class="setting-row"><span class="setting-name">Video integration</span><span class="setting-desc">Video audio automatically pauses or ducks while the frame is listening for a wake word, and resumes once recognition is complete.</span></div>
         <div class="setting-row"><span class="setting-name">Command window</span><span class="setting-desc">Adjust how long Fravora listens for a command (3 to 7 seconds).</span></div>
         <div class="setting-row"><span class="setting-name">Runtime feature gating</span><span class="setting-desc">Radio, slideshow, and assistant commands only run when their corresponding Voice settings toggles are enabled.</span></div>
       </div>
@@ -1219,7 +1220,7 @@
 
       <h3>Overlay Interactions</h3>
       <div class="settings-list">
-        <div class="setting-row"><span class="setting-name">Ambient logo tap</span><span class="setting-desc">Single tap toggles radio play/pause.</span></div>
+        <div class="setting-row"><span class="setting-name">Ambient logo tap</span><span class="setting-desc">Single tap toggles audio play/pause.</span></div>
         <div class="setting-row"><span class="setting-name">Ambient logo double tap</span><span class="setting-desc">Opens radio station search immediately.</span></div>
         <div class="setting-row"><span class="setting-name">Ambient logo animation</span><span class="setting-desc">The icon breathes during playback and subtly pulses with bass intensity.</span></div>
         <div class="setting-row"><span class="setting-name">Weather overlay tap</span><span class="setting-desc">Opens a detailed weather forecast overlay with 24-hour and 7-day views.</span></div>
@@ -1454,12 +1455,12 @@
       </details>
 
       <details class="trouble-item">
-        <summary class="trouble-q">How do I use hidden frame features like zoom, panning, and quick radio controls?</summary>
+        <summary class="trouble-q">How do I use hidden frame features like zoom, panning, and quick audio controls?</summary>
         <div class="trouble-a">
           In frame view, these shortcuts work as "hidden" interactions:
           <ul>
             <li><strong>Double tap</strong> to zoom, <strong>pinch</strong> to zoom smoothly, and <strong>drag</strong> to pan while zoomed.</li>
-            <li><strong>Ambient logo:</strong> single tap toggles radio play/pause, and double tap opens station search.</li>
+            <li><strong>Ambient logo:</strong> single tap toggles audio play/pause, and double tap opens station search.</li>
             <li><strong>Weather overlay:</strong> tap to open detailed weather forecast (24-hour and 7-day views, PRO).</li>
             <li><strong>Clock/date overlay:</strong> tap to open the full-screen calendar (PRO).</li>
             <li><strong>New images badge:</strong> tap to open the new-images viewer when fresh photos are detected.</li>
@@ -1539,16 +1540,16 @@
       </details>
 
       <details class="trouble-item">
-        <summary class="trouble-q">How do I keep radio playing when the screen is off?</summary>
+        <summary class="trouble-q">How do I keep audio playing when the screen is off?</summary>
         <div class="trouble-a">
           Enable <strong>Background playback</strong> in Audio settings (PRO), then use lockscreen or notification controls to manage playback without reopening the app.
         </div>
       </details>
 
       <details class="trouble-item">
-        <summary class="trouble-q">Can I run slideshow and radio on different schedules?</summary>
+        <summary class="trouble-q">Can I run slideshow and audio on different schedules?</summary>
         <div class="trouble-a">
-          Yes. Slideshow running hours and radio running hours are separate, so you can keep background audio active on a different timetable than image playback.
+          Yes. Slideshow running hours and audio running hours are separate, so you can keep background audio active on a different timetable than image playback.
         </div>
       </details>
 

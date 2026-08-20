@@ -269,6 +269,93 @@
   <div class="content">
     <div class="release-card">
       <div class="release-head">
+        <h2>Version 1.1.2</h2>
+        <div class="build-tag">vc10048</div>
+      </div>
+      <div class="release-grid">
+        <div class="release-block features">
+          <h3>Features</h3>
+          <ul>
+            <li>Added video support (MOV, MP4, MKV, and more) — albums can now include videos alongside photos with seamless playback integration.</li>
+            <li>Added per-album video controls: toggle video inclusion, set maximum duration and file size limits, and choose audio policy (Mute, Duck, or Play) for background music scenarios.</li>
+            <li>Overhauled music playlist system with hierarchical, rule-based syncing and a new tree-view Sync Inspector.</li>
+            <li>Added high-performance music library syncing directly from SMB/NAS network shares.</li>
+            <li>Redesigned Settings as a Premium Dashboard with a modern card-based layout, high-elevation containers, and a unified iconography system with themed circular icon backdrops.</li>
+            <li>Unified Audio section with dedicated Radio and Music tabs and per-tab state memory.</li>
+            <li>Added modern Android media controls with a system notification bar card for background playback and media resumption.</li>
+            <li>Integrated video playback with voice control — video audio pauses automatically during wake-word listening windows.</li>
+            <li>Added real-time progress indicators in Album and Source settings during active background media discovery.</li>
+            <li>Added usage summaries to storage source cards showing dependent Album and Playlist counts.</li>
+            <li>Added Right-to-Enter D-pad support for settings rows so DPAD Right opens actions.</li>
+            <li>Onboarding now probes sources and albums for actual media before enabling Next, with a spinner during probing and album editing in step 2.</li>
+          </ul>
+        </div>
+        <div class="release-block fixes">
+          <h3>Bug Fixes</h3>
+          <ul>
+            <li>Fixed TV local-folder add flow to avoid SAF dead-ends by using a custom picker first on TV with resilient fallback handling on non-TV.</li>
+            <li>Fixed MediaStore image folder discovery on some TV builds by adding a Files.Media fallback when image bucket metadata is missing.</li>
+            <li>Fixed in-frame menu Escape/Back handling so dismiss keys close the menu without exiting the app.</li>
+            <li>Fixed slideshow keyboard navigation on TV and emulator so Left/Right arrows reliably move to previous/next photo.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-card">
+      <div class="release-head">
+        <h2>Version 1.1.1</h2>
+        <div class="build-tag">vc10044</div>
+      </div>
+      <div class="release-grid">
+        <div class="release-block features">
+          <h3>Features</h3>
+          <ul>
+            <li>Added hardware-aware gating: the app now detects missing microphones or GPS and shows informative dialogs when attempting to enable dependent features.</li>
+            <li>Migrated Albums, Sources, and Calendar data to a Room database, replacing legacy storage for better performance and reliability.</li>
+            <li>Enhanced accessibility with descriptive TalkBack labels and optimized touch targets (48dp+) for main navigation elements.</li>
+          </ul>
+        </div>
+        <div class="release-block fixes">
+          <h3>Bug Fixes</h3>
+          <ul>
+            <li>Restored support for devices without microphones or GPS (such as many Android TV boxes) by marking those hardware features as not required.</li>
+            <li>Fixed Android TV launcher icon and banner quality issues by deploying high-resolution assets and implementing TV-specific resource overrides.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-card">
+      <div class="release-head">
+        <h2>Version 1.1.0</h2>
+        <div class="build-tag">vc10040</div>
+      </div>
+      <div class="release-grid">
+        <div class="release-block features">
+          <h3>Features</h3>
+          <ul>
+            <li>Added PRO-only Cinematic Effect in Slideshow: Ken Burns pan-and-zoom animation synchronized with the global pause/resume state.</li>
+            <li>Added PRO-only Cinematic Speed control (Fast, Normal, Slow).</li>
+            <li>Enhanced Android TV experience with optimized D-pad navigation, clear visual focus indicators, and intelligent auto-focus during onboarding.</li>
+            <li>Refined overlay default sizes for new installations: clock (small), weather (medium), photo info (large), artist info (large).</li>
+          </ul>
+        </div>
+        <div class="release-block fixes">
+          <h3>Bug Fixes</h3>
+          <ul>
+            <li>Updated Google Play Billing Library to version 9.1.0 and hardened the purchase launch flow.</li>
+            <li>Fixed SMB folder picker to verify credentials before opening, preventing invalid root-folder additions.</li>
+            <li>Fixed a visual defect in the free-tier None transition where images were partially clipped during manual swipes.</li>
+            <li>Redesigned Android TV banner and icon as high-quality vector resources to meet Google Play quality guidelines.</li>
+            <li>Resolved an Android TV interaction issue where buttons occasionally required a double-press of the remote center button.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="release-card">
+      <div class="release-head">
         <h2>Version 1.0.10</h2>
         <div class="build-tag">vc31</div>
       </div>

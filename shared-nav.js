@@ -211,6 +211,7 @@
           navLink(active, 'download', base + 'download.html', 'Download') +
           navLink(active, 'blog', base + 'blog/index.html', 'Blog') +
           navLink(active, 'manual', base + 'manual.html', 'User Manual') +
+          navLink(active, 'glossary', base + 'glossary.html', 'Glossary') +
           navLink(active, 'privacy', base + 'privacy.html', 'Privacy Policy') +
           navLink(active, 'data-deletion', base + 'data-deletion.html', 'Data Deletion') +
           navLink(active, 'release-notes', base + 'release-notes.html', 'Release Notes') +

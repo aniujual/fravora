@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <script>(function(){try{var t=localStorage.getItem('fravora-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self-Hosted Photo Frame: Immich vs. Local SMB Compared | Fravora Blog</title>
+  <meta name="description" content="Compare self-hosted photo frame options for Android. Learn when to use Immich's API integration vs standard SMB/NAS sharing for a private memory display." />
+  <link rel="canonical" href="https://aniujual.github.io/fravora/blog/self-hosted-photo-frame-immich-smb.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Self-Hosted Photo Frame: Immich vs. Local SMB Compared | Fravora" />
+  <meta property="og:description" content="Compare self-hosted photo frame options for Android. Learn when to use Immich's API integration vs standard SMB/NAS sharing for a private memory display." />
+  <meta property="og:url" content="https://aniujual.github.io/fravora/blog/self-hosted-photo-frame-immich-smb.html" />
+  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame2.png" />
+  <meta property="og:image:alt" content="Fravora Android photo frame app showing full-screen photo." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Self-Hosted Photo Frame: Immich vs. Local SMB Compared | Fravora" />
+  <meta name="twitter:description" content="Compare self-hosted photo frame options for Android. Learn when to use Immich's API integration vs standard SMB/NAS sharing for a private memory display." />
+  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame2.png" />
+  <meta name="twitter:image:alt" content="Fravora Android photo frame app showing full-screen photo." />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Self-Hosted Photo Frame: Immich vs. Local SMB Compared",
+      "description": "Compare self-hosted photo frame options for Android. Learn when to use Immich's API integration vs standard SMB/NAS sharing for a private memory display.",
+      "image": "https://aniujual.github.io/fravora/images/screen_frame2.png",
+      "author": {
+        "@type": "Person",
+        "name": "aniujual"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fravora: Digital Photo Frame",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aniujual.github.io/fravora/images/fravora.png"
+        }
+      },
+      "datePublished": "2026-08-20",
+      "dateModified": "2026-08-20",
+      "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/self-hosted-photo-frame-immich-smb.html"
+    }
+  </script>
+  <link rel="icon" type="image/png" href="../images/fravora.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CQF87DK78N');
+  </script>
+  <style>
+    :root {
+      --bg: #0e0b14;
+      --surface: #1c1728;
+      --border: #2e2640;
+      --accent: #9b5de5;
+      --accent2: #c77dff;
+      --text: #e8e0f5;
+      --muted: #8b7fa8;
+      --nav-bg: rgba(14,11,20,0.85);
+    }
+    [data-theme="light"] {
+      --bg: #f5f0ff;
+      --surface: #ffffff;
+      --border: #d4c8f0;
+      --accent: #7c3aed;
+      --accent2: #9b5de5;
+      --text: #1a1033;
+      --muted: #6b5b8a;
+      --nav-bg: rgba(245,240,255,0.88);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border); background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.55rem;
+      font-family: 'Syne', sans-serif; text-decoration: none; color: var(--text);
+    }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .nav-logo span {
+      font-weight: 800; letter-spacing: 0.3px; font-size: 1.05rem;
+      line-height: 1;
+    }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+    .nav-links a {
+      text-decoration: none; color: var(--muted); font-size: 0.85rem;
+      border: 1px solid var(--border); padding: 0.3rem 0.65rem; border-radius: 999px;
+    }
+    .nav-links a.active, .nav-links a:hover { color: var(--text); border-color: var(--accent); }
+    .theme-btn {
+      border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+      width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
+    }
+    .nav-toggle {
+      display: none;
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 1.05rem;
+      align-items: center;
+      justify-content: center;
+    }
+    main { max-width: 860px; margin: 0 auto; padding: 2.2rem 1rem 4rem; }
+    h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.7rem, 5vw, 2.6rem); margin-bottom: 0.7rem; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    p { color: var(--muted); line-height: 1.75; margin-bottom: 0.9rem; }
+    h2 { font-family: 'Syne', sans-serif; font-size: 1.05rem; margin: 1.2rem 0 0.5rem; }
+    ul { color: var(--muted); margin: 0.5rem 0 0.8rem; padding-left: 1.1rem; }
+    li { margin-bottom: 0.4rem; }
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.1rem; margin-top: 1rem; }
+    .links { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .links a {
+      text-decoration: none; color: var(--accent2); font-weight: 600; font-size: 0.86rem;
+      border: 1px solid var(--border); border-radius: 999px; padding: 0.32rem 0.62rem;
+    }
+    footer {
+      max-width: 860px; margin: 0 auto; padding: 0 1rem 2rem;
+      display: flex; flex-wrap: wrap; gap: 0.8rem; color: var(--muted); font-size: 0.85rem;
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent2); }
+    @media (max-width: 900px) {
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.45rem;
+        padding: 0.75rem 1rem 1rem;
+        background: var(--nav-bg);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(10px);
+        max-height: calc(100vh - 64px);
+        overflow-y: auto;
+      }
+      .nav-links.open { display: flex; }
+      .theme-btn { margin-top: 0.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="siteNavMount" data-base="../" data-active="blog"></div>
+  <script src="../shared-nav.js"></script>
+
+  <main>
+    <h1>Self-Hosted Photo Frame: Immich vs. Local SMB Compared</h1>
+    <p class="meta">Published August 20, 2026 · 8 min read</p>
+    <p>Privacy-conscious users are increasingly moving away from cloud-locked photo frames like Nixplay or Aura in favor of self-hosted solutions. For Android tablet users, the two most popular ways to feed a frame are <strong>Immich</strong> (API-based) and <strong>Local SMB/NAS</strong> (file-based). Here is how they compare and which one fits your setup.</p>
+
+    <h2>1. The Immich API Approach</h2>
+    <p>Immich has quickly become the favorite open-source alternative to Google Photos. Fravora connects to your self-hosted Immich server using your URL and an API key. This approach is best if you already use Immich as your primary photo management tool.</p>
+    <ul>
+      <li><strong>Pros</strong>: Access to Immich's rich metadata, easy album-based selection, and high-performance loading over the API.</li>
+      <li><strong>Cons</strong>: Requires an active Immich instance and a stable network connection to your server for initial syncs.</li>
+    </ul>
+
+    <h2>2. The Local SMB / NAS Approach</h2>
+    <p>This is the "classic" way to run an offline photo frame. You share a folder on your Synology, QNAP, or Windows PC over the SMB protocol, and Fravora reads the files directly. This approach is best if your photos are just "files in folders" and you want maximum simplicity.</p>
+    <ul>
+      <li><strong>Pros</strong>: Works fully offline, no API management needed, and compatible with almost any networked storage.</li>
+      <li><strong>Cons</strong>: Lacks the organizational features of a dedicated photo manager; you rely purely on folder structure.</li>
+    </ul>
+
+    <div class="panel">
+      <h2>Which one should you choose?</h2>
+      <p><strong>Choose Immich if</strong>: You want a Google Photos-like experience but on your own hardware. You enjoy using a web UI or mobile app to curate "Frame" albums that automatically sync to your device.</p>
+      <p><strong>Choose SMB if</strong>: You just want to point Fravora at a <code>/Photos</code> folder on your NAS and let it run. It's the most resilient option for dedicated offline frames that might lose internet access for long periods.</p>
+    </div>
+
+    <h2>Mixing the Best of Both Worlds</h2>
+    <p>One of Fravora's unique strengths is that you don't have to choose. A single album in Fravora can combine an Immich album, an SMB folder from your NAS, and even a local "Favorites" folder from your tablet's SD card. They all rotate together in one seamless slideshow.</p>
+
+    <div class="links">
+      <a href="immich-photo-frame-android.html">Immich setup guide</a>
+      <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
+      <a href="synology-nas-photo-frame-android.html">Synology specific guide</a>
+      <a href="../manual.html#sources">Sources manual chapter</a>
+    </div>
+  </main>
+
+  <div id="siteFooterMount" data-base="../"></div>
+  <script src="../shared-footer.js"></script>
+
+  <script>
+    const navToggleBtn = document.getElementById('navToggleBtn');
+    const navLinks = document.getElementById('siteNav');
+
+    if (navToggleBtn && navLinks) {
+      const closeNav = () => {
+        navLinks.classList.remove('open');
+        navToggleBtn.setAttribute('aria-expanded', 'false');
+      };
+      navToggleBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => closeNav());
+      });
+      document.addEventListener('click', (event) => {
+        if (!navLinks.contains(event.target) && !navToggleBtn.contains(event.target)) closeNav();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeNav();
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 900) closeNav();
+      });
+    }
+  </script>
+</body>
+</html>

@@ -54,29 +54,6 @@
       ]
     }
   </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "url": "https://aniujual.github.io/fravora/blog/reuse-old-android-tablet.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "url": "https://aniujual.github.io/fravora/blog/smart-photo-frame-at-home.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "url": "https://aniujual.github.io/fravora/blog/photo-frame-apps-compared-2026.html"
-        }
-      ]
-    }
-  </script>
   <link rel="icon" type="image/png" href="../images/fravora.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -187,6 +164,8 @@
       .nav-links.open { display: flex; }
       .theme-btn { margin-top: 0.35rem; }
     }
+    .section-label { font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin: 2rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); }
+    .section-label:first-of-type { margin-top: 0; }
   </style>
 </head>
 <body>
@@ -195,9 +174,10 @@
 
   <main>
     <h1>Blog: digital photo frame app guides</h1>
-    <p class="lead">Guides for people searching how to build a Google Photos digital photo frame, use a NAS as a photo frame source, repurpose an Android tablet, compare digital photo frame apps, and set up smart home displays.</p>
+    <p class="lead">Setup guides, feature deep-dives, source-specific walkthroughs, and competitor comparisons for Android digital photo frames.</p>
 
-    <section class="grid" aria-label="Fravora blog articles">
+    <p class="section-label">Setup guides</p>
+    <section class="grid" aria-label="Setup guides">
       <article>
         <h2>Best ways to reuse an old Android tablet</h2>
         <p>Practical home-use ideas and a complete workflow for turning an old tablet into a dedicated digital photo frame display.</p>
@@ -209,19 +189,62 @@
         <a href="smart-photo-frame-at-home.html">Read article</a>
       </article>
       <article>
-        <h2>Digital photo frame apps compared: 2026 guide</h2>
-        <p>A practical comparison framework to evaluate offline support, privacy, Google Photos and NAS flexibility, voice control, and long-term usability.</p>
-        <a href="photo-frame-apps-compared-2026.html">Read article</a>
+        <h2>How to turn an Android tablet into a digital photo frame</h2>
+        <p>Hardware setup, always-on display configuration, photo source options, overlays, and long-term reliability tips for any Android or Fire tablet.</p>
+        <a href="android-tablet-photo-frame.html">Read article</a>
       </article>
+      <article>
+        <h2>Digital photo frame app with no subscription</h2>
+        <p>Run a full digital photo frame on Android indefinitely at no ongoing cost. What the free tier covers, what PRO adds as a one-time purchase, and how it compares to subscription-based alternatives.</p>
+        <a href="digital-photo-frame-no-subscription.html">Read article</a>
+      </article>
+      <article>
+        <h2>Repurposing Fire Tablets as Smart Home Calendars</h2>
+        <p>Turn your Amazon Fire tablet into an always-on smart home calendar and photo frame with Fravora. Support for events, recurrence, and reminder alerts.</p>
+        <a href="fire-tablet-smart-calendar.html">Read article</a>
+      </article>
+    </section>
+
+    <p class="section-label">Photo sources</p>
+    <section class="grid" aria-label="Photo source guides">
       <article>
         <h2>Google Photos digital photo frame on Android</h2>
         <p>How to connect Google Photos to an Android frame, manage your picked photos, handle storage, and keep the slideshow running offline.</p>
         <a href="google-photos-digital-photo-frame.html">Read article</a>
       </article>
       <article>
+        <h2>NAS and SMB photo frame on Android</h2>
+        <p>Display photos directly from a Synology, QNAP, or Windows network share on an Android frame — with outage recovery and no cloud upload required.</p>
+        <a href="nas-smb-photo-frame-android.html">Read article</a>
+      </article>
+      <article>
+        <h2>Synology NAS digital photo frame on Android</h2>
+        <p>Synology-specific setup: enable SMB in DSM, create a read-only frame user, connect Fravora, and handle NAS sleep and outage recovery.</p>
+        <a href="synology-nas-photo-frame-android.html">Read article</a>
+      </article>
+      <article>
+        <h2>Immich digital photo frame on Android</h2>
+        <p>Connect your self-hosted Immich server to an Android frame using an API key. Pick albums, cache photos locally, and run a fully private slideshow on your own hardware.</p>
+        <a href="immich-photo-frame-android.html">Read article</a>
+      </article>
+      <article>
+        <h2>Self-Hosted Photo Frame: Immich vs. Local SMB Compared</h2>
+        <p>Compare self-hosted photo frame options for Android. Learn when to use Immich's API integration vs standard SMB/NAS sharing for a private memory display.</p>
+        <a href="self-hosted-photo-frame-immich-smb.html">Read article</a>
+      </article>
+    </section>
+
+    <p class="section-label">Features</p>
+    <section class="grid" aria-label="Feature guides">
+      <article>
         <h2>Digital photo frame with internet radio</h2>
-        <p>Play internet radio stations and local music playlists alongside your photo slideshow, with a now-playing overlay, background playback, lockscreen controls, and separate audio scheduling.</p>
+        <p>Play internet radio stations and local music playlists alongside your photo slideshow, with a now-playing overlay, background playback, and separate audio scheduling.</p>
         <a href="digital-photo-frame-internet-radio.html">Read article</a>
+      </article>
+      <article>
+        <h2>Build a High-Performance Music Frame with NAS & Android</h2>
+        <p>Learn how to sync your music library from Synology or QNAP NAS to an Android photo frame using SMB, hierarchical playlists, and Fravora's Sync Inspector.</p>
+        <a href="nas-music-frame-android.html">Read article</a>
       </article>
       <article>
         <h2>Voice-controlled digital photo frame on Android</h2>
@@ -234,19 +257,23 @@
         <a href="digital-photo-frame-weather-overlay.html">Read article</a>
       </article>
       <article>
-        <h2>Immich digital photo frame on Android</h2>
-        <p>Connect your self-hosted Immich server to an Android frame using an API key. Pick albums, cache photos locally, and run a fully private slideshow on your own hardware.</p>
-        <a href="immich-photo-frame-android.html">Read article</a>
+        <h2>Digital photo frame with calendar: events and reminders</h2>
+        <p>Tap the clock overlay to open a full-screen calendar with events, recurrence, and reminder alerts shown as a coloured glow on the frame border.</p>
+        <a href="digital-photo-frame-calendar.html">Read article</a>
+      </article>
+    </section>
+
+    <p class="section-label">Comparisons and alternatives</p>
+    <section class="grid" aria-label="Comparison articles">
+      <article>
+        <h2>Digital photo frame apps compared: 2026 guide</h2>
+        <p>A practical comparison framework to evaluate offline support, privacy, Google Photos and NAS flexibility, voice control, and long-term usability.</p>
+        <a href="photo-frame-apps-compared-2026.html">Read article</a>
       </article>
       <article>
-        <h2>NAS and SMB photo frame on Android</h2>
-        <p>Display photos directly from a Synology, QNAP, or Windows network share on an Android frame — with outage recovery and no cloud upload required.</p>
-        <a href="nas-smb-photo-frame-android.html">Read article</a>
-      </article>
-      <article>
-        <h2>How to turn an Android tablet into a digital photo frame</h2>
-        <p>Hardware setup, always-on display configuration, photo source options, overlays, and long-term reliability tips for any Android or Fire tablet.</p>
-        <a href="android-tablet-photo-frame.html">Read article</a>
+        <h2>Google Photos slideshow vs dedicated photo frame app</h2>
+        <p>What the built-in Google Photos slideshow can and cannot do, and when a dedicated app gives you scheduling, NAS sources, overlays, and reliability it cannot match.</p>
+        <a href="google-photos-slideshow-vs-photo-frame-app.html">Read article</a>
       </article>
       <article>
         <h2>Fotoo alternative for Android: Fravora vs Fotoo compared</h2>
@@ -254,7 +281,7 @@
         <a href="fravora-vs-fotoo.html">Read article</a>
       </article>
       <article>
-        <h2>Fravora vs Frameo: digital photo frame comparison</h2>
+        <h2>Frameo alternative for Android: Fravora vs Frameo compared</h2>
         <p>Frameo's family-push model vs owner-controlled sources. The fundamental difference between the two, and which fits your actual use case.</p>
         <a href="fravora-vs-frameo.html">Read article</a>
       </article>
@@ -267,11 +294,6 @@
         <h2>Aura Frame alternative: Fravora vs Aura Frame compared</h2>
         <p>Premium hardware and family sharing vs Android flexibility, no subscription, and self-hosted photo sources. Which setup fits your long-term needs?</p>
         <a href="fravora-vs-aura-frame.html">Read article</a>
-      </article>
-      <article>
-        <h2>Google Photos slideshow vs dedicated photo frame app</h2>
-        <p>What the built-in Google Photos slideshow can and cannot do, and when a dedicated photo frame app gives you scheduling, NAS sources, overlays, and reliability it cannot match.</p>
-        <a href="google-photos-slideshow-vs-photo-frame-app.html">Read article</a>
       </article>
     </section>
   </main>

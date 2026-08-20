@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <script>(function(){try{var t=localStorage.getItem('fravora-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repurposing Fire Tablets as Smart Home Calendars | Fravora Blog</title>
+  <meta name="description" content="Turn your Amazon Fire tablet into an always-on smart home calendar and photo frame with Fravora. Support for events, recurrence, and reminder alerts." />
+  <link rel="canonical" href="https://aniujual.github.io/fravora/blog/fire-tablet-smart-calendar.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Repurposing Fire Tablets as Smart Home Calendars | Fravora" />
+  <meta property="og:description" content="Turn your Amazon Fire tablet into an always-on smart home calendar and photo frame with Fravora. Support for events, recurrence, and reminder alerts." />
+  <meta property="og:url" content="https://aniujual.github.io/fravora/blog/fire-tablet-smart-calendar.html" />
+  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_settings_overlays.png" />
+  <meta property="og:image:alt" content="Fravora Android photo frame app calendar and overlay settings." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Repurposing Fire Tablets as Smart Home Calendars | Fravora" />
+  <meta name="twitter:description" content="Turn your Amazon Fire tablet into an always-on smart home calendar and photo frame with Fravora. Support for events, recurrence, and reminder alerts." />
+  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_settings_overlays.png" />
+  <meta name="twitter:image:alt" content="Fravora Android photo frame app calendar and overlay settings." />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Repurposing Fire Tablets as Smart Home Calendars",
+      "description": "Turn your Amazon Fire tablet into an always-on smart home calendar and photo frame with Fravora. Support for events, recurrence, and reminder alerts.",
+      "image": "https://aniujual.github.io/fravora/images/screen_settings_overlays.png",
+      "author": {
+        "@type": "Person",
+        "name": "aniujual"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fravora: Digital Photo Frame",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aniujual.github.io/fravora/images/fravora.png"
+        }
+      },
+      "datePublished": "2026-08-20",
+      "dateModified": "2026-08-20",
+      "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/fire-tablet-smart-calendar.html"
+    }
+  </script>
+  <link rel="icon" type="image/png" href="../images/fravora.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CQF87DK78N');
+  </script>
+  <style>
+    :root {
+      --bg: #0e0b14;
+      --surface: #1c1728;
+      --border: #2e2640;
+      --accent: #9b5de5;
+      --accent2: #c77dff;
+      --text: #e8e0f5;
+      --muted: #8b7fa8;
+      --nav-bg: rgba(14,11,20,0.85);
+    }
+    [data-theme="light"] {
+      --bg: #f5f0ff;
+      --surface: #ffffff;
+      --border: #d4c8f0;
+      --accent: #7c3aed;
+      --accent2: #9b5de5;
+      --text: #1a1033;
+      --muted: #6b5b8a;
+      --nav-bg: rgba(245,240,255,0.88);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border); background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.55rem;
+      font-family: 'Syne', sans-serif; text-decoration: none; color: var(--text);
+    }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .nav-logo span {
+      font-weight: 800; letter-spacing: 0.3px; font-size: 1.05rem;
+      line-height: 1;
+    }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+    .nav-links a {
+      text-decoration: none; color: var(--muted); font-size: 0.85rem;
+      border: 1px solid var(--border); padding: 0.3rem 0.65rem; border-radius: 999px;
+    }
+    .nav-links a.active, .nav-links a:hover { color: var(--text); border-color: var(--accent); }
+    .theme-btn {
+      border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+      width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
+    }
+    .nav-toggle {
+      display: none;
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 1.05rem;
+      align-items: center;
+      justify-content: center;
+    }
+    main { max-width: 860px; margin: 0 auto; padding: 2.2rem 1rem 4rem; }
+    h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.7rem, 5vw, 2.6rem); margin-bottom: 0.7rem; }
+    .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    p { color: var(--muted); line-height: 1.75; margin-bottom: 0.9rem; }
+    h2 { font-family: 'Syne', sans-serif; font-size: 1.05rem; margin: 1.2rem 0 0.5rem; }
+    ul { color: var(--muted); margin: 0.5rem 0 0.8rem; padding-left: 1.1rem; }
+    li { margin-bottom: 0.4rem; }
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.1rem; margin-top: 1rem; }
+    .links { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .links a {
+      text-decoration: none; color: var(--accent2); font-weight: 600; font-size: 0.86rem;
+      border: 1px solid var(--border); border-radius: 999px; padding: 0.32rem 0.62rem;
+    }
+    footer {
+      max-width: 860px; margin: 0 auto; padding: 0 1rem 2rem;
+      display: flex; flex-wrap: wrap; gap: 0.8rem; color: var(--muted); font-size: 0.85rem;
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent2); }
+    @media (max-width: 900px) {
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.45rem;
+        padding: 0.75rem 1rem 1rem;
+        background: var(--nav-bg);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(10px);
+        max-height: calc(100vh - 64px);
+        overflow-y: auto;
+      }
+      .nav-links.open { display: flex; }
+      .theme-btn { margin-top: 0.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="siteNavMount" data-base="../" data-active="blog"></div>
+  <script src="../shared-nav.js"></script>
+
+  <main>
+    <h1>Repurposing Fire Tablets as Smart Home Calendars</h1>
+    <p class="meta">Published August 20, 2026 · 6 min read</p>
+    <p>Amazon Fire tablets are often discounted and make for excellent entry-level smart home hardware. While they are marketed for media consumption, their always-on display potential makes them perfect for a <strong>Smart Home Calendar</strong> and photo frame setup.</p>
+
+    <h2>The "Kitchen Dashboard" Use Case</h2>
+    <p>A Fire tablet mounted in a kitchen or high-traffic area can do much more than show photos. With Fravora PRO, you can turn that tablet into a full-screen interactive calendar. Whether it's tracking school events, work deadlines, or grocery reminders, having a dedicated physical screen ensures the family stays in sync.</p>
+
+    <h2>Calendar Features Tailored for Smart Frames</h2>
+    <ul>
+      <li><strong>Tap-to-Open Overlay</strong>: Simply tap the clock/date overlay on your slideshow to open the full-screen calendar.</li>
+      <li><strong>Event Reminders with Visual Alerts</strong>: When an event arrives, Fravora shows a colored frame glow (Yellow for 1 hour, Orange for 15 minutes) and can play an audible sound alert.</li>
+      <li><strong>Recurrence & Multi-Select</strong>: Manage repeat events easily and perform bulk deletions using the intuitive multi-select day view.</li>
+      <li><strong>Daily Digests</strong>: Automatically groups morning and evening events into summary notifications to help you plan your day.</li>
+    </ul>
+
+    <div class="panel">
+      <h2>Fire Tablet Setup Checklist</h2>
+      <ul>
+        <li>Install Fravora from the <strong>Amazon Appstore</strong> (optimized for Fire tablets).</li>
+        <li>Enable <strong>Keep Screen Awake</strong> in Settings → Appearance.</li>
+        <li>Configure your <strong>Running Hours</strong> to match when you are home.</li>
+        <li>Activate <strong>PRO</strong> to unlock the calendar overlay and event reminders.</li>
+        <li>Mount your tablet using a dedicated stand or wall-mount bracket for an integrated look.</li>
+      </ul>
+      <p>By using the PRO calendar features, your Fire tablet becomes a functional piece of smart home infrastructure rather than just another tablet sitting in a drawer.</p>
+    </div>
+
+    <h2>Burn-In Protection for Always-On Screens</h2>
+    <p>If you're using a newer Fire tablet with an AMOLED-style screen (or just want to be extra careful), Fravora PRO includes <strong>Anti-Burn-In</strong> effects. This periodically shifts your calendar and overlays by a few pixels, protecting the display from long-term image retention during those always-on dashboard sessions.</p>
+
+    <div class="links">
+      <a href="../manual.html#calendar">Calendar manual chapter</a>
+      <a href="reuse-old-android-tablet.html">Reuse old tablet guide</a>
+      <a href="smart-photo-frame-at-home.html">Smart frame setup guide</a>
+      <a href="digital-photo-frame-calendar.html">General calendar guide</a>
+    </div>
+  </main>
+
+  <div id="siteFooterMount" data-base="../"></div>
+  <script src="../shared-footer.js"></script>
+
+  <script>
+    const navToggleBtn = document.getElementById('navToggleBtn');
+    const navLinks = document.getElementById('siteNav');
+
+    if (navToggleBtn && navLinks) {
+      const closeNav = () => {
+        navLinks.classList.remove('open');
+        navToggleBtn.setAttribute('aria-expanded', 'false');
+      };
+      navToggleBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => closeNav());
+      });
+      document.addEventListener('click', (event) => {
+        if (!navLinks.contains(event.target) && !navToggleBtn.contains(event.target)) closeNav();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeNav();
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 900) closeNav();
+      });
+    }
+  </script>
+</body>
+</html>
