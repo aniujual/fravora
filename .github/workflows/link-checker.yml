@@ -14,8 +14,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build
+
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.9.0
         with:
-          args: --verbose --no-progress './**/*.html'
+          args: >-
+            --verbose
+            --no-progress
+            --exclude 'https://fonts\.googleapis\.com'
+            --exclude 'https://fonts\.gstatic\.com'
+            './_site/**/*.html'
           fail: true

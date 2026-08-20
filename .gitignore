@@ -6,7 +6,10 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Optional: if you ever add a build step
+# Build artifacts
+_site/
+.jekyll-cache/
+.jekyll-metadata
 node_modules/
 dist/
 
