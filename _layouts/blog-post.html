@@ -3,5 +3,18 @@ layout: default
 ---
 
 <main>
-  {{ content }}
+  <div class="content-header" style="text-align: center; margin-bottom: 3rem;">
+    <h1 style="font-family:'Syne'; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 0.5rem;">{{ page.title }}</h1>
+    {% if page.date %}
+    <p class="meta" style="color: var(--muted); font-size: 0.9rem;">Published on {{ page.date | date: "%B %d, %Y" }}</p>
+    {% endif %}
+  </div>
+
+  <div class="blog-content" style="color: var(--muted); line-height: 1.8; font-size: 1rem;">
+    {{ content }}
+  </div>
+
+  <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center;">
+    <a href="{{ site.baseurl }}/blog/index.html" style="color: var(--accent2); text-decoration: none; font-weight: 600;">← Back to Blog</a>
+  </div>
 </main>

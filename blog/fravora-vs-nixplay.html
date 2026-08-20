@@ -1,166 +1,95 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <script>(function(){try{var t=localStorage.getItem('fravora-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nixplay Alternative for Android: Fravora vs Nixplay Compared</title>
-  <meta name="description" content="Looking for a Nixplay alternative? Fravora runs on any Android tablet with no subscription, full NAS and offline support, Google Photos, weather, voice control, and radio." />
-  <link rel="canonical" href="https://aniujual.github.io/fravora/blog/fravora-vs-nixplay.html" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="Nixplay Alternative for Android: Fravora vs Nixplay Compared" />
-  <meta property="og:description" content="Looking for a Nixplay alternative? Fravora runs on any Android tablet with no subscription, full NAS and offline support, Google Photos, weather, voice control, and radio." />
-  <meta property="og:url" content="https://aniujual.github.io/fravora/blog/fravora-vs-nixplay.html" />
-  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
-  <meta property="og:image:alt" content="Fravora digital photo frame running on an Android tablet." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Nixplay Alternative for Android: Fravora vs Nixplay Compared" />
-  <meta name="twitter:description" content="Looking for a Nixplay alternative? Fravora runs on any Android tablet with no subscription, full NAS and offline support, Google Photos, weather, voice control, and radio." />
-  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame1.png" />
-  <meta name="twitter:image:alt" content="Fravora digital photo frame running on an Android tablet." />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Nixplay Alternative for Android: Fravora vs Nixplay Compared",
-      "description": "Looking for a Nixplay alternative? Fravora runs on any Android tablet with no subscription, full NAS and offline support, Google Photos, weather, voice control, and radio.",
-      "image": "https://aniujual.github.io/fravora/images/screen_frame1.png",
-      "author": { "@type": "Person", "name": "aniujual" },
-      "publisher": { "@type": "Organization", "name": "Fravora: Digital Photo Frame", "logo": { "@type": "ImageObject", "url": "https://aniujual.github.io/fravora/images/fravora.png" } },
-      "datePublished": "2026-08-09",
-      "dateModified": "2026-08-09",
-      "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/fravora-vs-nixplay.html"
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aniujual.github.io/fravora/" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://aniujual.github.io/fravora/blog/index.html" },
-        { "@type": "ListItem", "position": 3, "name": "Fravora vs Nixplay", "item": "https://aniujual.github.io/fravora/blog/fravora-vs-nixplay.html" }
-      ]
-    }
-  </script>
-  <link rel="icon" type="image/png" href="../images/fravora.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-CQF87DK78N');</script>
-  <style>
-    :root { --bg:#0e0b14;--surface:#1c1728;--border:#2e2640;--accent:#9b5de5;--accent2:#c77dff;--text:#e8e0f5;--muted:#8b7fa8;--nav-bg:rgba(14,11,20,0.85); }
-    [data-theme="light"] { --bg:#f5f0ff;--surface:#ffffff;--border:#d4c8f0;--accent:#7c3aed;--accent2:#9b5de5;--text:#1a1033;--muted:#6b5b8a;--nav-bg:rgba(245,240,255,0.88); }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
-    nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:0.9rem 1.2rem;border-bottom:1px solid var(--border);background:var(--nav-bg);backdrop-filter:blur(10px);}
-    .nav-logo{display:flex;align-items:center;gap:0.55rem;font-family:'Syne',sans-serif;text-decoration:none;color:var(--text);}
-    .nav-logo img{width:32px;height:32px;border-radius:8px;}
-    .nav-logo span{font-weight:800;letter-spacing:0.3px;font-size:1.05rem;line-height:1;}
-    .nav-links{display:flex;flex-wrap:wrap;gap:0.4rem;align-items:center;}
-    .nav-links a{text-decoration:none;color:var(--muted);font-size:0.85rem;border:1px solid var(--border);padding:0.3rem 0.65rem;border-radius:999px;}
-    .nav-links a.active,.nav-links a:hover{color:var(--text);border-color:var(--accent);}
-    .theme-btn{border:1px solid var(--border);background:var(--surface);color:var(--muted);width:34px;height:34px;border-radius:8px;cursor:pointer;}
-    .nav-toggle{display:none;width:34px;height:34px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;font-size:1.05rem;align-items:center;justify-content:center;}
-    main{max-width:860px;margin:0 auto;padding:2.2rem 1rem 4rem;}
-    h1{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,5vw,2.6rem);margin-bottom:0.7rem;}
-    .meta{color:var(--muted);font-size:0.85rem;margin-bottom:1rem;}
-    p{color:var(--muted);line-height:1.75;margin-bottom:0.9rem;}
-    h2{font-family:'Syne',sans-serif;font-size:1.05rem;margin:1.2rem 0 0.5rem;}
-    ul{color:var(--muted);margin:0.5rem 0 0.8rem;padding-left:1.2rem;}
-    li{margin-bottom:0.45rem;}
-    table{width:100%;border-collapse:collapse;margin:0.8rem 0;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
-    th,td{padding:0.65rem 0.8rem;border-bottom:1px solid var(--border);text-align:left;color:var(--muted);font-size:0.9rem;}
-    th{color:var(--text);font-family:'Syne',sans-serif;}
-    tr:last-child td{border-bottom:none;}
-    .check{color:#4ade80;}
-    .cross{color:var(--muted);opacity:0.5;}
-    .panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1rem;margin-top:1rem;}
-    .links{margin-top:1rem;display:flex;flex-wrap:wrap;gap:0.5rem;}
-    .links a{text-decoration:none;color:var(--accent2);font-weight:600;font-size:0.86rem;border:1px solid var(--border);border-radius:999px;padding:0.32rem 0.62rem;}
-    footer{max-width:860px;margin:0 auto;padding:0 1rem 2rem;display:flex;flex-wrap:wrap;gap:0.8rem;color:var(--muted);font-size:0.85rem;}
-    footer a{color:var(--muted);text-decoration:none;}
-    footer a:hover{color:var(--accent2);}
-    @media(max-width:900px){.nav-toggle{display:inline-flex;}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0.45rem;padding:0.75rem 1rem 1rem;background:var(--nav-bg);border-bottom:1px solid var(--border);backdrop-filter:blur(10px);max-height:calc(100vh - 64px);overflow-y:auto;}.nav-links.open{display:flex;}.theme-btn{margin-top:0.35rem;}}
-  </style>
-</head>
-<body>
-  <div id="siteNavMount" data-base="../" data-active="blog"></div>
-  <script src="../shared-nav.js"></script>
+---
+layout: blog-post
+title: "Nixplay Alternative for Android: Fravora vs Nixplay Compared"
+description: "Looking for a Nixplay alternative? Fravora runs on any Android tablet with no subscription, full NAS and offline support, Google Photos, weather, voice control, and radio."
+og_image: "images/screen_frame1.webp"
+active_nav: "blog"
+---
 
-  <main>
-    <h1>Nixplay alternative for Android: Fravora vs Nixplay compared</h1>
-    <p class="meta">Updated August 9, 2026 · 7 min read</p>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Nixplay Alternative for Android: Fravora vs Nixplay Compared",
+    "description": "Looking for a Nixplay alternative? Fravora runs on any Android tablet with no subscription, full NAS and offline support, Google Photos, weather, voice control, and radio.",
+    "image": "https://aniujual.github.io/fravora/images/screen_frame1.webp",
+    "author": { "@type": "Person", "name": "aniujual" },
+    "publisher": { "@type": "Organization", "name": "Fravora: Digital Photo Frame", "logo": { "@type": "ImageObject", "url": "https://aniujual.github.io/fravora/images/fravora.png" } },
+    "datePublished": "2026-08-09",
+    "dateModified": "2026-08-09",
+    "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/fravora-vs-nixplay.html"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aniujual.github.io/fravora/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://aniujual.github.io/fravora/blog/index.html" },
+      { "@type": "ListItem", "position": 3, "name": "Fravora vs Nixplay", "item": "https://aniujual.github.io/fravora/blog/fravora-vs-nixplay.html" }
+    ]
+  }
+</script>
 
-    <h2>Is Fravora a good Nixplay alternative?</h2>
-    <p>If you are looking for a Nixplay alternative to avoid the annual subscription, gain NAS and offline support, or keep your photos off a third-party cloud, Fravora covers all of those directly. It runs on any Android tablet you already own, has no subscription, and supports Google Photos, NAS/SMB, Immich, weather, voice control, and radio alongside the slideshow. The hardware you buy is yours independently of the app.</p>
+<h2>Is Fravora a good Nixplay alternative?</h2>
+<p>If you are looking for a Nixplay alternative to avoid the annual subscription, gain NAS and offline support, or keep your photos off a third-party cloud, Fravora covers all of those directly. It runs on any Android tablet you already own, has no subscription, and supports Google Photos, NAS/SMB, Immich, weather, voice control, and radio alongside the slideshow. The hardware you buy is yours independently of the app.</p>
 
-    <p>Nixplay is one of the most recognised digital photo frame brands — purpose-built hardware with a polished app and family sharing features. Fravora takes a different approach: it runs on Android hardware you already own, supports offline NAS sources, and requires no ongoing subscription. This comparison focuses on the practical differences that matter for long-term use.</p>
+<p>Nixplay is one of the most recognised digital photo frame brands — purpose-built hardware with a polished app and family sharing features. Fravora takes a different approach: it runs on Android hardware you already own, supports offline NAS sources, and requires no ongoing subscription. This comparison focuses on the practical differences that matter for long-term use.</p>
 
-    <h2>At a glance</h2>
-    <table>
-      <thead><tr><th>Feature</th><th>Fravora</th><th>Nixplay</th></tr></thead>
-      <tbody>
-        <tr><td>Hardware required</td><td>Any Android tablet you own</td><td>Nixplay-branded frame (purchase required)</td></tr>
-        <tr><td>Subscription</td><td>None — one-time PRO purchase or free tier</td><td>Required for full features (annual fee)</td></tr>
-        <tr><td>NAS / SMB support</td><td><span class="check">✓</span> Full SMB with folder picker and outage recovery</td><td><span class="cross">—</span> Not supported</td></tr>
-        <tr><td>Offline playback</td><td><span class="check">✓</span> Local folders and cached NAS/cloud</td><td>Limited — primarily cloud-dependent</td></tr>
-        <tr><td>Google Photos</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>Immich support</td><td><span class="check">✓</span> Self-hosted via API key</td><td><span class="cross">—</span></td></tr>
-        <tr><td>Weather overlay</td><td><span class="check">✓</span> (PRO)</td><td><span class="cross">—</span></td></tr>
-        <tr><td>Voice control</td><td><span class="check">✓</span> Wake word + commands (PRO)</td><td><span class="cross">—</span></td></tr>
-        <tr><td>Radio / music</td><td><span class="check">✓</span> Internet radio + local music playlists</td><td><span class="cross">—</span></td></tr>
-        <tr><td>Privacy / local-only mode</td><td><span class="check">✓</span> Fully offline with NAS or local folders</td><td>Photos go through Nixplay cloud servers</td></tr>
-      </tbody>
-    </table>
+<h2>At a glance</h2>
+<table class="comp-table">
+  <thead><tr><th>Feature</th><th>Fravora</th><th>Nixplay</th></tr></thead>
+  <tbody>
+    <tr><td>Hardware required</td><td>Any Android tablet you own</td><td>Nixplay-branded frame (purchase required)</td></tr>
+    <tr><td>Subscription</td><td>None — one-time PRO purchase or free tier</td><td>Required for full features (annual fee)</td></tr>
+    <tr><td>NAS / SMB support</td><td><span class="check">✓</span> Full SMB with folder picker and outage recovery</td><td><span class="cross">—</span> Not supported</td></tr>
+    <tr><td>Offline playback</td><td><span class="check">✓</span> Local folders and cached NAS/cloud</td><td>Limited — primarily cloud-dependent</td></tr>
+    <tr><td>Google Photos</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+    <tr><td>Immich support</td><td><span class="check">✓</span> Self-hosted via API key</td><td><span class="cross">—</span></td></tr>
+    <tr><td>Weather overlay</td><td><span class="check">✓</span> (PRO)</td><td><span class="cross">—</span></td></tr>
+    <tr><td>Voice control</td><td><span class="check">✓</span> Wake word + commands (PRO)</td><td><span class="cross">—</span></td></tr>
+    <tr><td>Radio / music</td><td><span class="check">✓</span> Internet radio + local music playlists</td><td><span class="cross">—</span></td></tr>
+    <tr><td>Privacy / local-only mode</td><td><span class="check">✓</span> Fully offline with NAS or local folders</td><td>Photos go through Nixplay cloud servers</td></tr>
+  </tbody>
+</table>
 
-    <h2>Hardware: purpose-built vs Android tablet</h2>
-    <p>Nixplay frames are purpose-built: they ship with a display, stand, and remote, ready to plug in. If you want a frame with no setup friction and a polished physical product, that is the appeal. The trade-off is that you are locked to their hardware, their software, and their pricing decisions going forward.</p>
-    <p>Fravora runs on any Android tablet — one you already own, an older device you retired, or a new budget tablet. The display quality depends on what hardware you choose, which can be significantly better than a Nixplay frame at the same price point. You control the hardware and the software independently.</p>
+<h2>Hardware: purpose-built vs Android tablet</h2>
+<p>Nixplay frames are purpose-built: they ship with a display, stand, and remote, ready to plug in. If you want a frame with no setup friction and a polished physical product, that is the appeal. The trade-off is that you are locked to their hardware, their software, and their pricing decisions going forward.</p>
+<p>Fravora runs on any Android tablet — one you already own, an older device you retired, or a new budget tablet. The display quality depends on what hardware you choose, which can be significantly better than a Nixplay frame at the same price point. You control the hardware and the software independently.</p>
 
-    <h2>Subscription cost</h2>
-    <p>Nixplay requires an annual subscription to use the frame beyond basic functionality. The cost adds up over the lifetime of the device. Fravora has no subscription — the free tier covers the core frame experience with no time limit, and PRO is a one-time purchase. The total cost of a Fravora setup (tablet + one-time PRO) is typically lower than a Nixplay frame plus a few years of subscription, and the hardware is reusable for other purposes.</p>
+<h2>Subscription cost</h2>
+<p>Nixplay requires an annual subscription to use the frame beyond basic functionality. The cost adds up over the lifetime of the device. Fravora has no subscription — the free tier covers the core frame experience with no time limit, and PRO is a one-time purchase. The total cost of a Fravora setup (tablet + one-time PRO) is typically lower than a Nixplay frame plus a few years of subscription, and the hardware is reusable for other purposes.</p>
 
-    <h2>Offline and NAS support</h2>
-    <p>This is the most significant functional difference. Nixplay is designed around cloud photo delivery — photos are uploaded to Nixplay's servers and streamed to the frame. There is no support for local network storage or NAS. If Nixplay's servers have downtime, or if your internet connection is interrupted, the frame stops working.</p>
-    <p>Fravora connects directly to NAS devices and Windows file shares over SMB. Photos are cached locally on the device and the slideshow continues even during network outages. For home setups with a NAS or for users who keep photos on local storage, this is a capability Nixplay simply does not offer.</p>
+<h2>Offline and NAS support</h2>
+<p>This is the most significant functional difference. Nixplay is designed around cloud photo delivery — photos are uploaded to Nixplay's servers and streamed to the frame. There is no support for local network storage or NAS. If Nixplay's servers have downtime, or if your internet connection is interrupted, the frame stops working.</p>
+<p>Fravora connects directly to NAS devices and Windows file shares over SMB. Photos are cached locally on the device and the slideshow continues even during network outages. For home setups with a NAS or for users who keep photos on local storage, this is a capability Nixplay simply does not offer.</p>
 
-    <h2>Privacy</h2>
-    <p>When you use Nixplay, your photos are uploaded to and stored on Nixplay's cloud infrastructure. For many people this is acceptable, but for users with family photos, personal archives, or a general preference for keeping files on their own hardware, it is a meaningful consideration. Fravora with local or NAS sources keeps photos entirely within your home network — no external upload, no third-party cloud dependency.</p>
+<h2>Privacy</h2>
+<p>When you use Nixplay, your photos are uploaded to and stored on Nixplay's cloud infrastructure. For many people this is acceptable, but for users with family photos, personal archives, or a general preference for keeping files on their own hardware, it is a meaningful consideration. Fravora with local or NAS sources keeps photos entirely within your home network — no external upload, no third-party cloud dependency.</p>
 
-    <h2>Who Nixplay is better for</h2>
-    <ul>
-      <li>You want a plug-and-play physical frame with minimal setup</li>
-      <li>Your photos are already in the cloud and you want easy family sharing with no technical configuration</li>
-      <li>You prefer dedicated hardware with a built-in stand over repurposing a tablet</li>
-    </ul>
+<h2>Who Nixplay is better for</h2>
+<ul>
+  <li>You want a plug-and-play physical frame with minimal setup</li>
+  <li>Your photos are already in the cloud and you want easy family sharing with no technical configuration</li>
+  <li>You prefer dedicated hardware with a built-in stand over repurposing a tablet</li>
+</ul>
 
-    <h2>Who Fravora is better for</h2>
-    <ul>
-      <li>You have an Android tablet you want to repurpose as a frame</li>
-      <li>You store photos on a NAS, local server, or local folders and want no cloud dependency</li>
-      <li>You want to avoid a recurring subscription</li>
-      <li>You want weather, radio, music, voice control, or Immich support alongside your photos</li>
-      <li>Privacy matters and you want photos to stay on your own hardware</li>
-    </ul>
+<h2>Who Fravora is better for</h2>
+<ul>
+  <li>You have an Android tablet you want to repurpose as a frame</li>
+  <li>You store photos on a NAS, local server, or local folders and want no cloud dependency</li>
+  <li>You want to avoid a recurring subscription</li>
+  <li>You want weather, radio, music, voice control, or Immich support alongside your photos</li>
+  <li>Privacy matters and you want photos to stay on your own hardware</li>
+</ul>
 
-    <div class="links">
-      <a href="../download.html">Get Fravora</a>
-      <a href="../features.html">All features</a>
-      <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
-      <a href="android-tablet-photo-frame.html">Tablet setup guide</a>
-      <a href="fravora-vs-aura-frame.html">Fravora vs Aura Frame</a>
-      <a href="fravora-vs-frameo.html">Fravora vs Frameo</a>
-      <a href="fravora-vs-fotoo.html">Fravora vs Fotoo</a>
-    </div>
-  </main>
-
-  <div id="siteFooterMount" data-base="../"></div>
-  <script src="../shared-footer.js"></script>
-  <script>
-    const navToggleBtn=document.getElementById('navToggleBtn');const navLinks=document.getElementById('siteNav');
-    if(navToggleBtn&&navLinks){const closeNav=()=>{navLinks.classList.remove('open');navToggleBtn.setAttribute('aria-expanded','false');};navToggleBtn.addEventListener('click',()=>{const isOpen=navLinks.classList.toggle('open');navToggleBtn.setAttribute('aria-expanded',isOpen?'true':'false');});navLinks.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>closeNav());});document.addEventListener('click',(event)=>{if(!navLinks.contains(event.target)&&!navToggleBtn.contains(event.target))closeNav();});document.addEventListener('keydown',(event)=>{if(event.key==='Escape')closeNav();});window.addEventListener('resize',()=>{if(window.innerWidth>900)closeNav();});}
-  </script>
-</body>
-</html>
+<div class="links">
+  <a href="../download.html">Get Fravora</a>
+  <a href="../features.html">All features</a>
+  <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
+  <a href="android-tablet-photo-frame.html">Tablet setup guide</a>
+  <a href="fravora-vs-aura-frame.html">Fravora vs Aura Frame</a>
+  <a href="fravora-vs-frameo.html">Fravora vs Frameo</a>
+  <a href="fravora-vs-fotoo.html">Fravora vs Fotoo</a>
+</div>

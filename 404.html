@@ -1,67 +1,66 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <script>(function(){try{var t=localStorage.getItem('fravora-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page Not Found | Fravora: Digital Photo Frame</title>
-  <meta name="robots" content="noindex" />
-  <link rel="icon" type="image/png" href="images/fravora.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #0e0b14;
-      --surface: #1c1728;
-      --border: #2e2640;
-      --accent: #9b5de5;
-      --accent2: #c77dff;
-      --text: #e8e0f5;
-      --muted: #8b7fa8;
-      --nav-bg: rgba(14,11,20,0.85);
-    }
-    [data-theme="light"] {
-      --bg: #f5f0ff;
-      --surface: #ffffff;
-      --border: #d4c8f0;
-      --accent: #7c3aed;
-      --accent2: #9b5de5;
-      --text: #1a1033;
-      --muted: #6b5b8a;
-      --nav-bg: rgba(245,240,255,0.88);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 1rem; }
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem 2rem; max-width: 480px; width: 100%; text-align: center; }
-    .logo { display: flex; align-items: center; justify-content: center; gap: 0.55rem; margin-bottom: 1.5rem; text-decoration: none; color: var(--text); }
-    .logo img { width: 36px; height: 36px; border-radius: 9px; }
-    .logo span { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.15rem; }
-    h1 { font-family: 'Syne', sans-serif; font-size: 1.4rem; margin-bottom: 0.6rem; }
-    p { color: var(--muted); line-height: 1.65; font-size: 0.95rem; margin-bottom: 1.5rem; }
-    .links { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
-    .links a { text-decoration: none; color: var(--accent2); font-weight: 600; font-size: 0.86rem; border: 1px solid var(--border); border-radius: 999px; padding: 0.38rem 0.75rem; transition: border-color 0.2s; }
-    .links a:hover { border-color: var(--accent); }
-    .code { font-family: 'Syne', sans-serif; font-size: 4rem; font-weight: 800; color: var(--accent); opacity: 0.25; line-height: 1; margin-bottom: 1rem; }
-  </style>
-</head>
-<body>
+---
+layout: default
+title: "Page Not Found | Fravora: Digital Photo Frame"
+robots: "noindex"
+---
+
+<style>
+  .error-page {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+  }
+  .code {
+    font-family: 'Syne', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--accent);
+    opacity: 0.25;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .links a {
+    text-decoration: none;
+    color: var(--accent2);
+    font-weight: 600;
+    font-size: 0.86rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.38rem 0.75rem;
+    transition: border-color 0.2s;
+  }
+  .links a:hover { border-color: var(--accent); }
+</style>
+
+<div class="error-page">
   <div class="card">
-    <a class="logo" href="index.html">
-      <img src="images/fravora.png" alt="Fravora logo" />
-      <span>Fravora</span>
-    </a>
     <div class="code">404</div>
     <h1>Page not found</h1>
     <p>This page doesn't exist or has moved. Head back to one of these:</p>
     <div class="links">
-      <a href="index.html">Home</a>
-      <a href="features.html">Features</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="download.html">Download</a>
-      <a href="blog/index.html">Blog</a>
-      <a href="manual.html">User Manual</a>
+      <a href="{{ site.baseurl }}/index.html">Home</a>
+      <a href="{{ site.baseurl }}/features.html">Features</a>
+      <a href="{{ site.baseurl }}/how-it-works.html">How It Works</a>
+      <a href="{{ site.baseurl }}/download.html">Download</a>
+      <a href="{{ site.baseurl }}/blog/index.html">Blog</a>
+      <a href="{{ site.baseurl }}/manual.html">User Manual</a>
     </div>
   </div>
-</body>
-</html>
+</div>

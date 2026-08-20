@@ -1,328 +1,161 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <script>(function(){try{var t=localStorage.getItem('fravora-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fravora: Digital Photo Frame Features | Google Photos, NAS, Weather, Radio</title>
-  <meta name="description" content="Explore Fravora: Digital Photo Frame features for Android: Google Photos slideshow support, offline NAS/SMB playback, weather overlays, radio, scheduling, and voice control." />
-  <link rel="canonical" href="https://aniujual.github.io/fravora/features.html" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="Fravora: Digital Photo Frame Features | Google Photos, NAS, Weather, Radio" />
-  <meta property="og:description" content="Explore Fravora: Digital Photo Frame features for Android: Google Photos slideshow support, offline NAS/SMB playback, weather overlays, radio, scheduling, and voice control." />
-  <meta property="og:url" content="https://aniujual.github.io/fravora/features.html" />
-  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_settings_overlays.png" />
-  <meta property="og:image:alt" content="Fravora Android photo frame app overlays settings showing time, weather, and photo info options." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Fravora: Digital Photo Frame Features | Google Photos, NAS, Weather, Radio" />
-  <meta name="twitter:description" content="Explore Fravora: Digital Photo Frame features for Android: Google Photos slideshow support, offline NAS/SMB playback, weather overlays, radio, scheduling, and voice control." />
-  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_settings_overlays.png" />
-  <meta name="twitter:image:alt" content="Fravora Android photo frame app overlays settings showing time, weather, and photo info options." />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://aniujual.github.io/fravora/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Features",
-          "item": "https://aniujual.github.io/fravora/features.html"
-        }
-      ]
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Does Fravora support Google Photos?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fravora connects to Google Photos using the official Google Photos Picker. You select specific photos or albums, which are downloaded and cached on the device for offline slideshow playback. Internet is only needed when syncing new picks." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can Fravora display photos from a NAS or home network share?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fravora connects directly to NAS devices and Windows shares over SMB. You browse and select folders on the network share, and photos are cached locally for continuous playback even during temporary network outages." }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Fravora show weather on the photo frame?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes (PRO feature). The weather overlay shows the current temperature and conditions on top of photos. Tapping it opens a full-screen forecast with 24-hour hourly and 7-day views. Location is determined via device GPS." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can Fravora mix multiple photo sources in one slideshow?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. A single Fravora album can combine Google Photos picks, NAS/SMB folders, local device folders, OneDrive folders, Dropbox folders, and Immich albums. All sources rotate together in the slideshow." }
-        }
-      ]
-    }
-  </script>
-  <link rel="icon" type="image/png" href="images/fravora.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
-    gtag('js', new Date());
-    gtag('config', 'G-CQF87DK78N');
-  </script>
-  <style>
-    :root {
-      --bg: #0e0b14;
-      --bg2: #13101c;
-      --surface: #1c1728;
-      --border: #2e2640;
-      --accent: #9b5de5;
-      --accent2: #c77dff;
-      --text: #e8e0f5;
-      --muted: #8b7fa8;
-      --nav-bg: rgba(14,11,20,0.85);
-    }
-    [data-theme="light"] {
-      --bg: #f5f0ff;
-      --bg2: #ede6ff;
-      --surface: #ffffff;
-      --border: #d4c8f0;
-      --accent: #7c3aed;
-      --accent2: #9b5de5;
-      --text: #1a1033;
-      --muted: #6b5b8a;
-      --nav-bg: rgba(245,240,255,0.88);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
-    nav {
-      position: sticky; top: 0; z-index: 10;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border); background: var(--nav-bg);
-      backdrop-filter: blur(10px);
-    }
-    .nav-logo {
-      display: flex; align-items: center; gap: 0.55rem;
-      font-family: 'Syne', sans-serif; text-decoration: none; color: var(--text);
-    }
-    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
-    .nav-logo span {
-      font-weight: 800; letter-spacing: 0.3px; font-size: 1.05rem;
-      line-height: 1;
-    }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
-    .nav-links a {
-      text-decoration: none; color: var(--muted); font-size: 0.85rem;
-      border: 1px solid var(--border); padding: 0.3rem 0.65rem; border-radius: 999px;
-    }
-    .nav-links a.active, .nav-links a:hover { color: var(--text); border-color: var(--accent); }
-    .theme-btn {
-      border: 1px solid var(--border); background: var(--surface); color: var(--muted);
-      width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
-    }
-    .nav-toggle {
-      display: none;
-      width: 34px; height: 34px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--muted);
-      cursor: pointer;
-      font-size: 1.05rem;
-      align-items: center;
-      justify-content: center;
-    }
-    main { max-width: 980px; margin: 0 auto; padding: 2.2rem 1rem 4rem; }
-    h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 5vw, 2.8rem); margin-bottom: 0.8rem; }
-    .lead { color: var(--muted); font-size: 1.02rem; line-height: 1.7; margin-bottom: 2rem; }
-    .grid {
-      display: grid; gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    }
-    article {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 14px; padding: 1.1rem;
-    }
-    h2 { font-family: 'Syne', sans-serif; font-size: 1.05rem; margin-bottom: 0.55rem; }
-    p { color: var(--muted); line-height: 1.65; font-size: 0.92rem; }
-    .keyword {
-      margin-top: 2rem; background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 14px; padding: 1.2rem;
-    }
-    .keyword h2 { font-size: 1.2rem; margin-bottom: 0.65rem; }
-    .links { margin-top: 1rem; display: flex; gap: 0.55rem; flex-wrap: wrap; }
-    .links a {
-      text-decoration: none; color: var(--accent2); font-weight: 600; font-size: 0.86rem;
-      border: 1px solid var(--border); border-radius: 999px; padding: 0.34rem 0.65rem;
-    }
-    footer {
-      max-width: 980px; margin: 0 auto; padding: 0 1rem 2rem;
-      display: flex; flex-wrap: wrap; gap: 0.8rem; color: var(--muted); font-size: 0.85rem;
-    }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--accent2); }
-    @media (max-width: 900px) {
-      .nav-toggle { display: inline-flex; }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%; left: 0; right: 0;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.45rem;
-        padding: 0.75rem 1rem 1rem;
-        background: var(--nav-bg);
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(10px);
-        max-height: calc(100vh - 64px);
-        overflow-y: auto;
-      }
-      .nav-links.open { display: flex; }
-      .theme-btn { margin-top: 0.35rem; }
-    }
-  </style>
-</head>
-<body>
-  <div id="siteNavMount" data-base="" data-active="features"></div>
-  <script src="shared-nav.js"></script>
+---
+layout: default
+title: "Fravora: Digital Photo Frame Features | Google Photos, NAS, Weather, Radio"
+description: "Explore Fravora: Digital Photo Frame features for Android: Google Photos slideshow support, offline NAS/SMB playback, weather overlays, radio, scheduling, and voice control."
+og_image: "images/screen_settings_overlays.webp"
+active_nav: "features"
+---
 
-  <main>
-    <h1>Smart digital photo frame features for Android</h1>
-    <p class="lead">Fravora focuses on reliable full-screen playback for tablets and dedicated Android display devices. Build a Google Photos slideshow, run an offline NAS photo frame, and add weather, audio, and voice control without subscription pressure.</p>
+<main>
+  <div style="text-align: center; margin-bottom: 4rem;">
+    <h1 style="font-family:'Syne'; font-size: clamp(2rem, 6vw, 3.2rem); margin-bottom: 1rem;">Smart digital photo frame features</h1>
+    <p class="lead" style="margin: 0; color: var(--muted); font-size: 1.1rem; line-height: 1.7;">Reliable full-screen playback for tablets and dedicated display devices. Build a Google Photos slideshow, run an offline NAS photo frame, and add weather, audio, and voice control.</p>
+  </div>
 
-    <section class="grid" aria-label="Fravora features overview">
-      <article>
-        <h2>Offline photo viewer for Android</h2>
-        <p>Use local folders and NAS/SMB shares on your network for private, internet-free playback. Your setup keeps running even when internet drops.</p>
-      </article>
-      <article>
-        <h2>Google Photos slideshow support</h2>
-        <p>Add Google Photos as a cloud source when you want remote access, while still keeping local and NAS sources in the same frame setup.</p>
-      </article>
-      <article>
-        <h2>First-launch onboarding + starter PRO trial</h2>
-        <p>New users get a guided first-run setup flow and a one-time 1-hour PRO trial, so you can configure sources, albums, and optional radio quickly.</p>
-      </article>
-      <article>
-        <h2>Voice-controlled slideshow app</h2>
-        <p>Use wake phrase and command recognition to control slideshow and audio hands-free. Ideal for wall-mounted or hard-to-reach devices.</p>
-      </article>
-      <article>
-        <h2>Smart scheduling</h2>
-        <p>Set daily running hours so your frame wakes and sleeps automatically. Great for kitchens, offices, and living rooms.</p>
-      </article>
-      <article>
-        <h2>Audio with now-playing overlays</h2>
-        <p>Play internet radio stations or local music playlists while photos run, with station and track information shown in overlay zones you control.</p>
-      </article>
-      <article>
-        <h2>Metadata and weather overlays</h2>
-        <p>Show clock, weather, photo metadata, and now-playing details only where you want, with adjustable size and layout settings.</p>
-      </article>
-      <article>
-        <h2>Cloud and local in one frame</h2>
-        <p>Mix Google Photos, OneDrive, Dropbox, and Immich with local folders and NAS paths in one album. Multiple accounts per provider are supported.</p>
-      </article>
-      <article>
-        <h2>SMB outage recovery controls</h2>
-        <p>Set NAS reconnect retry intervals and keep playback running from available photos during network outages, with warning badges that clear after recovery scans.</p>
-      </article>
-      <article>
-        <h2>Local and NAS music playlists</h2>
-        <p>Create folder-based playlists from device storage, SD cards, or directly from SMB/NAS network shares. High-performance syncing with a hierarchical "Sync Inspector" ensures your music library stays aligned with your storage.</p>
-      </article>
-      <article>
-        <h2>In-app calendar with reminders</h2>
-        <p>Tap the clock overlay to open a full-screen calendar. Create and edit events with recurrence, all-day support, and per-event reminders that show a frame glow and sound alert when the time arrives.</p>
-      </article>
-      <article>
-        <h2>Cinematic slideshow effects</h2>
-        <p>Add motion to photos with Ken Burns pan-and-zoom, Drift pan-only, and Vignette Pulse breathing effects that stay synchronized with the global pause/resume state. Combine with ten transition styles — Slide, Cube, Crossfade, Parallax, and more.</p>
-      </article>
-      <article>
-        <h2>Image backdrop styles</h2>
-        <p>In Fit mode, fill the letterbox or pillarbox area with None, Gradient, Solid, Mirrored, or Themed fill instead of a plain background, keeping the frame looking polished at any aspect ratio.</p>
-      </article>
-      <article>
-        <h2>Hidden photos management</h2>
-        <p>Hide individual photos from a single album or all albums without deleting them. A dedicated thumbnail browser lets you review and unhide photos, with batch unhide and import-time protection for Google Photos picks.</p>
-      </article>
-      <article>
-        <h2>OLED burn-in protection</h2>
-        <p>A bouncing standby clock prevents static image retention during off-hours. The anti-burn-in overlay effect periodically micro-shifts clock, weather, and metadata positions and varies their opacity every 60 seconds.</p>
-      </article>
-      <article>
-        <h2>Premium Dashboard UI</h2>
-        <p>A modern card-based layout with high-elevation containers and a unified iconography system. Themed circular icon backdrops and dynamic tinting provide a polished, consistent experience across all settings.</p>
-      </article>
-      <article>
-        <h2>Advanced metadata and geocoding</h2>
-        <p>Show POI names (e.g., "Eiffel Tower") instead of just coordinates with Enhanced Landmark Lookup. Advanced geocoding strips redundant suffixes for clean, readable photo overlays.</p>
-      </article>
-      <article>
-        <h2>Storage Headroom Guard</h2>
-        <p>Proactive storage management with a configurable headroom floor. The app estimates download sizes and prunes cache oldest-first to prevent Google Photos imports from filling your device.</p>
-      </article>
-      <article>
-        <h2>OneDrive, Dropbox, and Immich support</h2>
-        <p>Connect OneDrive or Dropbox via OAuth and pick specific folders as slideshow sources. Self-hosted Immich servers connect via URL and API key. Mix any combination of cloud providers with local and NAS sources in a single album.</p>
-      </article>
-      <article>
-        <h2>Video support in slideshow</h2>
-        <p>Play videos alongside photos in the same album rotation. Supports MOV, MP4, MKV, and more. Per-album controls let you set maximum duration, file size limits, and audio policy (mute, duck, or play) for background music scenarios.</p>
-      </article>
-    </section>
+  <section class="feature-grid">
+    <div class="feature-card">
+      <span class="feature-icon">🖼️</span>
+      <h3>Offline photo viewer</h3>
+      <p>Use local folders and NAS/SMB shares for private, internet-free playback. Your setup keeps running even when internet drops.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">☁️</span>
+      <h3>Google Photos support</h3>
+      <p>Add Google Photos as a source when you want remote access, while still keeping local and NAS sources in the same frame setup.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🚀</span>
+      <h3>First-launch onboarding + starter PRO trial</h3>
+      <p>New users get guided setup for sources and first album, plus a one-time 1-hour PRO trial to explore advanced controls quickly.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🎙️</span>
+      <h3>Voice-controlled</h3>
+      <p>Use wake phrase and command recognition to control slideshow and audio hands-free. Ideal for wall-mounted devices.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">⏰</span>
+      <h3>Smart scheduling</h3>
+      <p>Set daily running hours so your frame wakes and sleeps automatically. Great for kitchens, offices, and living rooms.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">📻</span>
+      <h3>Audio & Overlays</h3>
+      <p>Play internet radio while photos run, with station track info and live weather overlays in corners you control.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🌤️</span>
+      <h3>Metadata and weather overlays</h3>
+      <p>Show clock, weather, photo metadata, and now-playing details where you want, with adjustable size and layout behavior.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🧩</span>
+      <h3>Cloud and local in one frame</h3>
+      <p>Mix Google Photos, OneDrive, Dropbox, and Immich with local folders and NAS paths in the same album workflow.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">📶</span>
+      <h3>SMB outage recovery controls</h3>
+      <p>Set NAS reconnect retry intervals and keep playback running from available media while connectivity recovers.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🎵</span>
+      <h3>Local and NAS music playlists</h3>
+      <p>Create folder-based playlists from device storage, SD card, or SMB/NAS shares, with high-performance sync tools.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">📅</span>
+      <h3>Calendar & Reminders</h3>
+      <p>Tap the clock to open a full-screen calendar. Manage events and reminders with visual glow alerts on the frame.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🎥</span>
+      <h3>Video Support</h3>
+      <p>Play videos alongside photos in the same album rotation with per-album audio policies (Mute, Duck, or Play).</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">✨</span>
+      <h3>Cinematic Effects</h3>
+      <p>Add motion to photos with Ken Burns, Drift, and Vignette Pulse. Combine with ten transition styles like Cube or Parallax.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🪄</span>
+      <h3>Image backdrop styles</h3>
+      <p>In Fit mode, style letterbox and pillarbox space with None, Gradient, Solid, Mirrored, or Themed fills.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🙈</span>
+      <h3>Hidden photos management</h3>
+      <p>Hide photos per album or globally without deleting them, then review and unhide later using dedicated controls.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🛡️</span>
+      <h3>OLED burn-in protection</h3>
+      <p>Bouncing standby clock and anti-burn-in micro-shift behaviors reduce static retention risk during long display sessions.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🧭</span>
+      <h3>Premium dashboard UI</h3>
+      <p>Modern card-based settings layout with consistent iconography and themed tinting for faster, clearer navigation.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">📍</span>
+      <h3>Landmark Metadata</h3>
+      <p>Show POI names (e.g., "Eiffel Tower") instead of just coordinates with enhanced EXIF geocoding and clean labels.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🧠</span>
+      <h3>Advanced metadata geocoding</h3>
+      <p>Enhanced location naming strips noisy suffixes and surfaces cleaner place names for readable on-frame metadata overlays.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">💾</span>
+      <h3>Storage Headroom Guard</h3>
+      <p>Proactive storage management estimates incoming media size and prunes cache oldest-first to avoid running out of space.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">☁️</span>
+      <h3>OneDrive, Dropbox, and Immich</h3>
+      <p>Connect multiple cloud providers and self-hosted Immich, then pick exact folders or albums to blend with local sources.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🎞️</span>
+      <h3>Transition variety</h3>
+      <p>Choose from multiple transition styles including Slide, Cube, Crossfade, Parallax, and more for smoother playback flow.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🔀</span>
+      <h3>Smart Shuffle</h3>
+      <p>Reduce burst-photo clumping by spacing similar shots apart, creating more balanced and natural-looking album rotation.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🎨</span>
+      <h3>Color schemes and themes</h3>
+      <p>Switch app theme and color accents to match room lighting and display mood while keeping readability strong.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">📺</span>
+      <h3>Android TV and Fire TV support</h3>
+      <p>Optimized controls and navigation for TV-class devices make always-on frame setups viable beyond tablets and phones.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🎛️</span>
+      <h3>Per-album playback controls</h3>
+      <p>Tune playback behavior per album, including video policy and source mix, to build exactly the frame experience you want.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">⏱️</span>
+      <h3>Fast setup and instant loading</h3>
+      <p>Designed for quick onboarding and responsive playback, so old and new Android hardware can become a frame in minutes.</p>
+    </div>
+  </section>
 
-    <section class="keyword">
-      <h2>Smart photo frame alternative without extra hardware</h2>
-      <p>Fravora turns the Android hardware you already own into a dedicated display. Instead of buying a proprietary frame, you can reuse existing tablets, Fire tablets, or Android display devices while keeping your photo files under your control.</p>
-      <div class="links">
-        <a href="how-it-works.html">See setup steps</a>
-        <a href="download.html">Install Fravora</a>
-        <a href="manual.html">Read full manual</a>
-        <a href="blog/digital-photo-frame-weather-overlay.html">Weather overlay guide</a>
-        <a href="blog/google-photos-digital-photo-frame.html">Google Photos guide</a>
-        <a href="blog/immich-photo-frame-android.html">Immich guide</a>
-      </div>
-    </section>
-  </main>
-
-  <div id="siteFooterMount" data-base=""></div>
-  <script src="shared-footer.js"></script>
-
-  <script>
-    const navToggleBtn = document.getElementById('navToggleBtn');
-    const navLinks = document.getElementById('siteNav');
-
-    if (navToggleBtn && navLinks) {
-      const closeNav = () => {
-        navLinks.classList.remove('open');
-        navToggleBtn.setAttribute('aria-expanded', 'false');
-      };
-      navToggleBtn.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('open');
-        navToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => closeNav());
-      });
-      document.addEventListener('click', (event) => {
-        if (!navLinks.contains(event.target) && !navToggleBtn.contains(event.target)) closeNav();
-      });
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') closeNav();
-      });
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 900) closeNav();
-      });
-    }
-  </script>
-</body>
-</html>
+  <section class="keyword box" style="margin-top: 5rem; text-align: center; background: var(--bg2);">
+    <h2 style="font-family:'Syne';">Smart photo frame alternative</h2>
+    <p>Fravora turns the Android hardware you already own into a dedicated display. Instead of buying a proprietary frame, you can reuse existing tablets or Fire tablets while keeping your photos private.</p>
+    <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a class="cta-btn" href="how-it-works.html" style="font-size: 0.9rem; padding: 0.7rem 1.5rem;">See setup steps</a>
+      <a class="cta-btn" href="download.html" style="font-size: 0.9rem; padding: 0.7rem 1.5rem;">Download Fravora</a>
+    </div>
+  </section>
+</main>

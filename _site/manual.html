@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <script src="/fravora/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Manual – Fravora: Digital Photo Frame</title>
+  <meta name="description" content="Fravora: Digital Photo Frame user manual for Android photo frame setup with Google Photos, NAS/SMB, overlays, radio, music playlists, voice control, and troubleshooting." />
+  <link rel="canonical" href="http://localhost:4000/fravora/manual.html" />
+
+  
+  <meta property="og:image" content="http://localhost:4000/fravora/images/screen_settings_slideshow.webp" />
+  <meta name="twitter:image" content="http://localhost:4000/fravora/images/screen_settings_slideshow.webp" />
+  
+
+  <link rel="icon" type="image/png" href="/fravora/images/fravora.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/fravora/css/global.css" />
+
+  
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CQF87DK78N');
+  </script>
+</head>
+<body>
+
+  <nav>
+  <a class="nav-logo" href="/fravora/index.html">
+    <img src="/fravora/images/fravora.png" alt="Fravora logo" />
+    <span>Fravora</span>
+  </a>
+  <button class="nav-toggle" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">☰</button>
+  <div class="nav-links" id="siteNav">
+    <a href="/fravora/index.html">Home</a>
+    <a href="/fravora/features.html">Features</a>
+    <a href="/fravora/how-it-works.html">How It Works</a>
+    <a href="/fravora/download.html">Download</a>
+    <a href="/fravora/blog/index.html">Blog</a>
+    <a class="active" href="/fravora/manual.html">User Manual</a>
+    <a href="/fravora/glossary.html">Glossary</a>
+    <a href="/fravora/privacy.html">Privacy Policy</a>
+    <a href="/fravora/data-deletion.html">Data Deletion</a>
+    <a href="/fravora/release-notes.html">Release Notes</a>
+    <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+  </div>
+</nav>
+
+
+  <div class="manual-layout">
+
+  <!-- SIDEBAR (Menu) -->
+  <aside class="manual-sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="search-container" style="margin-bottom: 20px;">
+        <input type="text" id="manualSearch" placeholder="Search manual..." style="width:100%; padding:8px 12px; border-radius:8px; border:1px solid var(--border); background:var(--surface); color:var(--text); font-size:14px;" />
+        <div id="searchResults" style="display:none; position:absolute; background:var(--bg2); border:1px solid var(--border); border-radius:8px; max-height:400px; overflow-y:auto; z-index:100; width:260px; box-shadow:0 10px 25px rgba(0,0,0,0.5);"></div>
+      </div>
+
+      <div class="sidebar-label">Getting Started</div>
+      <ul class="sidebar-nav">
+        <li><a href="#quick-start">🚀 Quick Start</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Settings</div>
+      <ul class="sidebar-nav">
+        <li><a href="#sources">🗂️ Sources</a></li>
+        <li><a href="#albums">🖼️ Albums</a></li>
+        <li><a href="#slideshow">▶️ Slideshow</a></li>
+        <li><a href="#appearance">🎨 Appearance</a></li>
+        <li><a href="#overlays">✨ Overlays</a></li>
+        <li><a href="#audio">🎵 Audio</a></li>
+        <li><a href="#voice">🎙️ Voice Control</a></li>
+        <li><a href="#support">💬 Support</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Reference</div>
+      <ul class="sidebar-nav">
+        <li><a href="#frame-interactions">🖐️ Frame Interactions</a></li>
+        <li><a href="#weather-forecast">🌦️ Weather Forecast</a></li>
+        <li><a href="#calendar">📅 Calendar</a></li>
+        <li><a href="#pro">⭐ Free vs PRO</a></li>
+        <li><a href="#faq">🔧 FAQ & Troubleshooting</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="manual-content">
+
+    <div class="content-header" style="margin-bottom: 64px; border-bottom: 1px solid var(--border); padding-bottom: 48px;">
+      <div class="badge" style="display:inline-block; background:rgba(155,93,229,0.1); color:var(--accent2); padding:6px 16px; border-radius:999px; font-size:0.75rem; font-weight:800; margin-bottom:1.5rem; text-transform:uppercase; letter-spacing:0.1em; border: 1px solid var(--glow);">📖 Documentation</div>
+      <h1 style="font-family:'Syne'; font-size: clamp(2.5rem, 6vw, 3.5rem); margin-bottom: 1.5rem; line-height: 1.1;">User Manual</h1>
+      <p style="color:var(--muted); line-height:1.8; font-size: 1.15rem; max-width: 700px;">Everything you need to set up, personalize, and get the most out of Fravora, from first launch to advanced gestures and voice workflows.</p>
+    </div>
+
+    <!-- QUICK START -->
+    <section class="section" id="quick-start">
+      <h2>🚀 Quick Start</h2>
+      <p style="margin-bottom: 20px;">Go from install to your first running slideshow in five first-launch onboarding steps:</p>
+      <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:12px; color:var(--muted); line-height:1.7;">
+        <li>Open Fravora and complete <strong>first-launch onboarding</strong>. You can replay it anytime from <strong>Settings → Support → Replay Onboarding</strong>.</li>
+        <li>During onboarding, choose at least one photo source: local folder, SMB/NAS share, Google Photos, Microsoft OneDrive, Dropbox, or Immich.</li>
+        <li>Finish onboarding album setup by creating your first album and attaching your selected folders or cloud collections.</li>
+        <li>In <strong>Settings → Slideshow</strong>, set your preferred interval, display mode, and optional running hours.</li>
+        <li>Return to the frame view. The slideshow starts automatically once images are found.</li>
+      </ul>
+      <p class="callout" style="margin-top: 1rem;">If nothing appears, check the in-app guidance cards. They explain missing albums, empty sources, or sources that have not been scanned yet.</p>
+    </section>
+
+    <!-- SOURCES -->
+    <section class="section" id="sources">
+      <h2>🗂️ Sources</h2>
+      <p style="margin-bottom: 20px;">Sources define where your photos come from. Fravora supports local folders, network shares, and cloud services. Add your sources first, then attach them to albums.</p>
+
+      <div class="box">
+        <h2>Network Shares (SMB / NAS)</h2>
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li>Host/share format is <code>hostname/sharename</code> (no <code>smb://</code> prefix required).</li>
+          <li>Test connection checks host/share path and credentials before saving.</li>
+          <li>Username and password are optional, including guest access and domain-qualified users.</li>
+          <li>After connecting, select one or more folders from the share to activate it.</li>
+          <li><strong>Network Retry Count</strong> controls how many times Fravora retries failed image loads before marking them unavailable.</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Local Folders</h2>
+        <p>Add folders from internal storage, SD card, or USB media using Android's system picker. Fravora stores only the access grants required for playback.</p>
+        <p style="margin-top: 0.8rem;"><strong>PRO:</strong> Albums can reference multiple local folders. Free tier is limited to one local folder per album.</p>
+      </div>
+
+      <div class="box">
+        <h2>Cloud Sources</h2>
+        <p>Supported cloud providers are Google Photos, Microsoft OneDrive, Dropbox, and Immich. The source flow is unified, so setup is consistent across providers.</p>
+        <ul style="padding-left: 1.2rem; margin-top: 0.7rem; display:flex; flex-direction:column; gap:10px;">
+          <li>Free tier includes one cloud connection with base limits.</li>
+          <li>PRO expands cloud limits across all supported providers.</li>
+          <li>You can re-link or switch cloud accounts without rebuilding all albums.</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Cache & Storage</h2>
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li><strong>Image Cache Size:</strong> 128 MB to 2 GB with automatic pruning.</li>
+          <li><strong>Low Storage Alert:</strong> warns when configured cache exceeds available storage.</li>
+          <li><strong>Scan Interval (PRO):</strong> 5 to 120 minutes for periodic source refreshes.</li>
+          <li><strong>Google Photos headroom:</strong> reserves device free-space before downloading cloud items.</li>
+          <li><strong>Clear Cache:</strong> available for image cache and Google Photos cache.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ALBUMS -->
+    <section class="section" id="albums">
+      <h2>🖼️ Albums</h2>
+      <p>Albums are the playback collections Fravora scans for slideshow images. You can create multiple albums and enable or disable each one independently.</p>
+      <div class="box" style="margin-top:20px;">
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li><strong>Create album:</strong> name it, then attach SMB folders, local folders, and/or cloud collections.</li>
+          <li><strong>Enable for playback:</strong> only enabled albums are included in slideshow rotation.</li>
+          <li><strong>Include subfolders:</strong> recursive folder scanning for deeper imports (PRO).</li>
+          <li><strong>Image counters:</strong> each album shows visible, hidden, and total image counts.</li>
+          <li><strong>Hidden photos:</strong> hide photos globally or per album and restore them later from <strong>Settings → Albums → Hidden photos</strong>.</li>
+        </ul>
+      </div>
+      <p class="callout" style="margin-top: 1rem;">If all photos in enabled albums are hidden, Fravora shows a blank slideshow until some images are unhidden.</p>
+    </section>
+
+    <!-- SLIDESHOW -->
+    <section id="slideshow" class="section">
+      <h2>▶️ Slideshow</h2>
+      <div class="box">
+        <h2>Playback settings</h2>
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li><strong>Photo Interval:</strong> 10 to 600 seconds.</li>
+          <li><strong>Image Order:</strong> Date Added, Taken Date, Album Order, File Name, Random, or Smart Shuffle (PRO).</li>
+          <li><strong>Smart Shuffle (PRO):</strong> reduces back-to-back similar shots by recognizing burst-like file/time patterns.</li>
+          <li><strong>Display Mode:</strong> Fit (no crop) or Fill (edge crop).</li>
+          <li><strong>Image Backdrop Style (PRO):</strong> styles empty letterbox areas in Fit mode.</li>
+          <li><strong>Transition Effects:</strong> Free is hard cut only; PRO adds 10+ transitions and transition speed control.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>Running hours & standby</h2>
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li>Daily running window with start/end times.</li>
+          <li>Custom day-by-day schedule support.</li>
+          <li>Standby style outside running hours: large clock or full black screen.</li>
+          <li>Bouncing standby clock for OLED burn-in reduction (PRO).</li>
+        </ul>
+      </div>
+      <p class="callout">If an SMB share goes offline, Fravora continues with reachable sources and cached photos, then exposes quick Retry/Open Sources actions when intervention is needed.</p>
+    </section>
+
+    <!-- APPEARANCE -->
+    <section id="appearance" class="section">
+      <h2>🎨 Appearance</h2>
+      <div class="box">
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li><strong>App Theme:</strong> System, Light, or Dark.</li>
+          <li><strong>App Color Scheme (PRO):</strong> seven complete UI themes.</li>
+          <li><strong>App Language:</strong> follow system language or force a selected language.</li>
+          <li><strong>App Font Size (PRO):</strong> Small, Medium, or Large.</li>
+          <li><strong>Fullscreen Mode:</strong> hides system bars for a true frame look.</li>
+          <li><strong>Keep Screen Awake:</strong> prevents sleep while Fravora is foregrounded.</li>
+          <li><strong>TV Compatibility:</strong> supports Android/Google TV and Amazon Fire TV launchers.</li>
+          <li><strong>Settings Photo Background (PRO):</strong> blurred current photo as Settings backdrop.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- OVERLAYS -->
+    <section id="overlays" class="section">
+      <h2>✨ Overlays</h2>
+      <p>Overlays are information layers shown on top of photos during playback. Each one can be enabled, sized, and positioned independently.</p>
+      <div class="box">
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li><strong>Clock:</strong> configurable time/date display (free).</li>
+          <li><strong>Weather:</strong> live local weather overlay with forecast details (PRO).</li>
+          <li><strong>Photo metadata:</strong> taken date, location, and landmarks from EXIF (PRO).</li>
+          <li><strong>Now Playing:</strong> scrolling station/song info while audio is active (PRO).</li>
+          <li><strong>Ambient logo:</strong> pulsing Fravora icon and quick audio control target (PRO).</li>
+          <li><strong>Photo index:</strong> current position indicator, such as 42 / 500 (PRO).</li>
+          <li><strong>Anti burn-in:</strong> micro-shifts overlays and adjusts opacity over time (PRO).</li>
+        </ul>
+      </div>
+      <p class="callout"><strong>Overlay Layout (PRO):</strong> assign weather, clock, metadata, and logo to a 2x2 corner grid with collision-safe placement. On Free, clock position remains fixed.</p>
+    </section>
+
+    <!-- AUDIO -->
+    <section id="audio" class="section">
+      <h2>🎵 Audio</h2>
+      <p>Audio has two tabs: <strong>Radio</strong> for internet streams and <strong>Music</strong> for local playlists. Both share running-hours scheduling, background playback options, and media controls.</p>
+
+      <div class="box">
+        <h2>Radio (Free + PRO)</h2>
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li>Search by station name, genre, language, or country. Free has a daily search cap.</li>
+          <li>Play/Pause/Stop controls are always available.</li>
+          <li>Free keeps station selection during the current app session; PRO persists across restarts.</li>
+          <li>PRO unlocks favorites, recently played history, advanced filters, unlimited search, and auto-play options.</li>
+          <li>PRO enables background playback and lockscreen/notification media controls.</li>
+          <li>Fravora marks failed stations in-session so unstable streams are easy to avoid.</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Music playlists (Free + PRO)</h2>
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li>Free supports one playlist; PRO supports unlimited playlists.</li>
+          <li>Add whole folders recursively or individual files (MP3, M4A, AAC, FLAC, OGG, OPUS, WAV, AMR).</li>
+          <li>Manual refresh reports Added/Removed/Re-linked tracks.</li>
+          <li>Free keeps deduplication always on; PRO can disable deduplication.</li>
+          <li>PRO adds automatic background scanning with configurable intervals and expanded sort modes.</li>
+        </ul>
+      </div>
+
+      <p class="callout">If a station fails, Fravora surfaces the reason directly: timeout, network issue, access denied, unavailable stream, or unsupported format.</p>
+    </section>
+
+    <!-- VOICE -->
+    <section id="voice" class="section">
+      <h2>🎙️ Voice Control</h2>
+      <p class="callout"><strong>PRO feature.</strong> Voice control requires microphone permission and an Android speech recognition service (typically Speech Services by Google).</p>
+      <div class="box">
+        <h2>Setup</h2>
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li>Install and set Speech Services by Google (or another voice service) as default voice input.</li>
+          <li>Grant microphone permission in <strong>Settings → Voice</strong>.</li>
+          <li>Enable Voice Control and complete the first-time safety disclaimer acknowledgement.</li>
+          <li>Choose wake phrase and optional feedback sound, then enable command categories you want.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>Command behavior</h2>
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li>Wake phrases: <strong>Hello Frame</strong> and <strong>Hello Fravora</strong>.</li>
+          <li>Supports slideshow, radio/music, volume, and disable-voice commands.</li>
+          <li><strong>Wait for follow-up</strong> keeps listening briefly for multi-step interactions.</li>
+          <li>Command window is adjustable (3 to 7 seconds).</li>
+          <li>Runtime feature gating executes commands only when corresponding Voice toggles are enabled.</li>
+          <li>Video audio can pause/duck automatically while listening and resume after recognition.</li>
+        </ul>
+      </div>
+      <p style="color: var(--muted);">Visual feedback: blue frame means listening, green means command accepted, red means recognition unavailable/failed.</p>
+    </section>
+
+    <!-- SUPPORT -->
+    <section id="support" class="section">
+      <h2>💬 Support</h2>
+      <div class="box">
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li><strong>User Manual:</strong> open from <strong>Settings → Support → User Manual</strong>.</li>
+          <li><strong>Report an Issue:</strong> sends a detailed email report with app/device version context.</li>
+          <li><strong>Feature Request:</strong> submit product ideas directly from the app.</li>
+          <li><strong>Check for Updates:</strong> routes to Google Play or Amazon Appstore automatically by build flavor.</li>
+          <li><strong>Release Notes:</strong> review version changes in-app or on the website archive.</li>
+          <li><strong>Roadmap:</strong> view planned features and active known issues.</li>
+          <li><strong>Replay Onboarding:</strong> restart the complete onboarding flow anytime.</li>
+        </ul>
+      </div>
+      <p class="callout">Support contact: <a href="mailto:aniujual.dev@yahoo.com" style="color:var(--accent2);">aniujual.dev@yahoo.com</a>. For policies, see <a href="privacy.html" style="color:var(--accent2);">Privacy</a> and <a href="data-deletion.html" style="color:var(--accent2);">Data Deletion</a>.</p>
+    </section>
+
+    <!-- FRAME INTERACTIONS -->
+    <section id="frame-interactions" class="section">
+      <h2>🖐️ Frame Interactions</h2>
+      <p>Fravora includes touch and overlay interactions that are faster than opening settings for frequent actions.</p>
+      <div class="box">
+        <h2>Slideshow gestures</h2>
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li>Single tap opens the in-frame menu (when not zoomed).</li>
+          <li>Double tap toggles 2x zoom around the tap point, then resets.</li>
+          <li>Pinch-to-zoom and one-finger pan work for detailed inspection.</li>
+          <li>Swipe left/right navigates photos; swipe is locked while zoomed to avoid accidental skips.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>Overlay interactions & status</h2>
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li>Ambient logo single tap toggles audio play/pause; double tap opens station search.</li>
+          <li>Weather overlay opens detailed forecast views.</li>
+          <li>Clock/date overlay opens full-screen calendar (PRO).</li>
+          <li>Zoom navigator mini-map appears while zoomed.</li>
+          <li>Badges indicate network outages, app updates, Google Photos storage state, and newly discovered images.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- WEATHER FORECAST -->
+    <section id="weather-forecast" class="section">
+      <h2>🌦️ Weather Forecast</h2>
+      <p class="callout"><strong>PRO feature.</strong> Tap the weather overlay in frame view to open full-screen forecast details.</p>
+      <div class="box">
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li>24-hour hourly strip plus 7-day daily forecast cards.</li>
+          <li>Swipe navigation inside hour/day detail views.</li>
+          <li>Forecast colors adapt to app theme and weather context.</li>
+          <li>Slideshow timer pauses while forecast is open and resumes after close.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CALENDAR -->
+    <section id="calendar" class="section">
+      <h2>📅 Calendar</h2>
+      <p class="callout"><strong>PRO feature.</strong> Tap the clock/date overlay in frame view to open the full-screen calendar.</p>
+      <div class="box">
+        <h2>Views & events</h2>
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li>Month swipe navigation and day-detail browsing.</li>
+          <li>Configurable week start for month grid layout.</li>
+          <li>Create, edit, and delete events with all-day support.</li>
+          <li>Recurring events with edit scopes and skip-date exclusions.</li>
+          <li>Per-event reminders: digest, 1-hour, and 15-minute options.</li>
+          <li>Reminder actions include Snooze, Dismiss, Delete, and Close.</li>
+          <li>Long-press day multi-select with bulk delete for faster cleanup.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FREE VS PRO -->
+    <section id="pro" class="section">
+      <h2>⭐ Free vs PRO</h2>
+      <p>The free tier is fully usable for daily photo frame operation. PRO removes limits and unlocks advanced capabilities with a one-time purchase (no subscription).</p>
+      <div class="box">
+        <h2>Free includes</h2>
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li>Uninterrupted slideshow, scheduling, and one album/source baseline setup.</li>
+          <li>Local folders, NAS/SMB support, and one cloud connection baseline.</li>
+          <li>Clock overlay, hidden-photo controls, and core radio playback/search.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>PRO unlocks</h2>
+        <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
+          <li>Expanded source/album/cloud limits and recursive include-subfolders.</li>
+          <li>Smart Shuffle, transition effects, transition speed, and backdrop styles.</li>
+          <li>Weather/metadata/now-playing/ambient overlays plus anti burn-in.</li>
+          <li>Background audio, favorites/history, advanced station filters, and unlimited music playlists.</li>
+          <li>Voice control, calendar, color schemes, font sizing, and advanced UI controls.</li>
+        </ul>
+      </div>
+      <p class="callout">Temporary PRO can also be enabled via rewarded ads. When temporary PRO expires, PRO preferences are preserved and restored automatically on reactivation.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <h2>🔧 FAQ & Troubleshooting</h2>
+
+      <details class="box" style="padding: 0; overflow: hidden;">
+        <summary style="cursor:pointer; padding: 1rem 1.2rem; font-family:'Syne';">What is the fastest way to set up Fravora?</summary>
+        <div style="padding: 0 1.2rem 1.2rem; color: var(--muted);">
+          Complete first-launch onboarding, confirm your album is enabled, and set interval/display mode in <strong>Settings → Slideshow</strong>.
+        </div>
+      </details>
+
+      <details class="box" style="padding: 0; overflow: hidden;">
+        <summary style="cursor:pointer; padding: 1rem 1.2rem; font-family:'Syne';">No photos are showing</summary>
+        <div style="padding: 0 1.2rem 1.2rem; color: var(--muted);">
+          Ensure an enabled album exists, at least one folder/source is attached, and initial scanning has completed.
+        </div>
+      </details>
+
+      <details class="box" style="padding: 0; overflow: hidden;">
+        <summary style="cursor:pointer; padding: 1rem 1.2rem; font-family:'Syne';">All photos are hidden / slideshow is blank</summary>
+        <div style="padding: 0 1.2rem 1.2rem; color: var(--muted);">
+          Open <strong>Settings → Albums → Hidden photos</strong> and unhide selected items. Use visible/hidden/total counters to verify recovery.
+        </div>
+      </details>
+
+      <details class="box" style="padding: 0; overflow: hidden;">
+        <summary style="cursor:pointer; padding: 1rem 1.2rem; font-family:'Syne';">SMB / NAS share will not connect</summary>
+        <div style="padding: 0 1.2rem 1.2rem; color: var(--muted);">
+          Use <code>hostname/sharename</code>, verify credentials, test guest access if supported, increase retry count for unstable links, and confirm local network reachability.
+        </div>
+      </details>
+
+      <details class="box" style="padding: 0; overflow: hidden;">
+        <summary style="cursor:pointer; padding: 1rem 1.2rem; font-family:'Syne';">Google Photos import is blocked or storage keeps filling up</summary>
+        <div style="padding: 0 1.2rem 1.2rem; color: var(--muted);">
+          Free up storage, increase Google Photos headroom, clear stale cloud cache, and watch status icons for blocked/partial/full recovery states.
+        </div>
+      </details>
+
+      <details class="box" style="padding: 0; overflow: hidden;">
+        <summary style="cursor:pointer; padding: 1rem 1.2rem; font-family:'Syne';">Voice control is not enabling reliably</summary>
+        <div style="padding: 0 1.2rem 1.2rem; color: var(--muted);">
+          Install Speech Services by Google, set it as default voice input, grant microphone permission, complete disclaimer acknowledgement, and increase command window if needed.
+        </div>
+      </details>
+
+      <details class="box" style="padding: 0; overflow: hidden;">
+        <summary style="cursor:pointer; padding: 1rem 1.2rem; font-family:'Syne';">Screen turns off during slideshow</summary>
+        <div style="padding: 0 1.2rem 1.2rem; color: var(--muted);">
+          Enable <strong>Keep Screen Awake</strong> in Appearance and review device-level display timeout/battery optimizations.
+        </div>
+      </details>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // Simple scroll spy to highlight active menu item
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+  const MANUAL_SCROLL_OFFSET = 84;
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', event => {
+      const href = link.getAttribute('href');
+      if (!href || !href.startsWith('#')) return;
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      event.preventDefault();
+      const y = target.getBoundingClientRect().top + window.scrollY - MANUAL_SCROLL_OFFSET;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+      history.replaceState(null, '', href);
+    });
+  });
+
+  function onScroll() {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if (window.scrollY >= sectionTop - 120) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener('scroll', onScroll);
+</script>
+
+
+  <footer>
+  <div class="footer-left">
+    <img src="/fravora/images/fravora.png" alt="" />
+    <span>© 2026 aniujual software</span>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:aniujual.dev@yahoo.com">Contact</a>
+    <a href="/fravora/manual.html">User Manual</a>
+    <a href="/fravora/features.html">Features</a>
+    <a href="/fravora/how-it-works.html">How It Works</a>
+    <a href="/fravora/download.html">Download</a>
+    <a href="/fravora/blog/index.html">Blog</a>
+    <a href="/fravora/glossary.html">Glossary</a>
+    <a href="/fravora/privacy.html">Privacy Policy</a>
+    <a href="/fravora/data-deletion.html">Data Deletion</a>
+    <a href="/fravora/release-notes.html">Release Notes</a>
+  </div>
+</footer>
+
+
+  <script src="/fravora/js/main.js"></script>
+  
+  <script src="/fravora/js/search.js"></script>
+  
+</body>
+</html>

@@ -1,259 +1,98 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <script>(function(){try{var t=localStorage.getItem('fravora-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to Create a Smart Photo Frame at Home | Fravora Blog</title>
-  <meta name="description" content="Build a smart photo frame at home using an Android tablet with practical setup steps for Google Photos, NAS, scheduling, weather overlays, and offline playback." />
-  <link rel="canonical" href="https://aniujual.github.io/fravora/blog/smart-photo-frame-at-home.html" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="How to Create a Smart Photo Frame at Home | Fravora" />
-  <meta property="og:description" content="Build a smart photo frame at home using an Android tablet with practical setup steps for Google Photos, NAS, scheduling, weather overlays, and offline playback." />
-  <meta property="og:url" content="https://aniujual.github.io/fravora/blog/smart-photo-frame-at-home.html" />
-  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame2.png" />
-  <meta property="og:image:alt" content="Smart photo frame setup example using Fravora." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="How to Create a Smart Photo Frame at Home | Fravora" />
-  <meta name="twitter:description" content="Build a smart photo frame at home using an Android tablet with practical setup steps for Google Photos, NAS, scheduling, weather overlays, and offline playback." />
-  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame2.png" />
-  <meta name="twitter:image:alt" content="Smart photo frame setup example using Fravora." />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "How to Create a Smart Photo Frame at Home",
-      "description": "Build a smart photo frame at home using an Android tablet with practical setup steps for Google Photos, NAS, scheduling, weather overlays, and offline playback.",
-      "image": "https://aniujual.github.io/fravora/images/screen_frame2.png",
-      "author": {
-        "@type": "Person",
-        "name": "aniujual"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Fravora: Digital Photo Frame",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://aniujual.github.io/fravora/images/fravora.png"
-        }
-      },
-      "datePublished": "2026-06-27",
-      "dateModified": "2026-06-27",
-      "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/smart-photo-frame-at-home.html"
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://aniujual.github.io/fravora/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "https://aniujual.github.io/fravora/blog/index.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "How to Create a Smart Photo Frame at Home",
-          "item": "https://aniujual.github.io/fravora/blog/smart-photo-frame-at-home.html"
-        }
-      ]
-    }
-  </script>
-  <link rel="icon" type="image/png" href="../images/fravora.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
-    gtag('js', new Date());
-    gtag('config', 'G-CQF87DK78N');
-  </script>
-  <style>
-    :root {
-      --bg: #0e0b14;
-      --surface: #1c1728;
-      --border: #2e2640;
-      --accent: #9b5de5;
-      --accent2: #c77dff;
-      --text: #e8e0f5;
-      --muted: #8b7fa8;
-      --nav-bg: rgba(14,11,20,0.85);
-    }
-    [data-theme="light"] {
-      --bg: #f5f0ff;
-      --surface: #ffffff;
-      --border: #d4c8f0;
-      --accent: #7c3aed;
-      --accent2: #9b5de5;
-      --text: #1a1033;
-      --muted: #6b5b8a;
-      --nav-bg: rgba(245,240,255,0.88);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
-    nav {
-      position: sticky; top: 0; z-index: 10;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border); background: var(--nav-bg);
-      backdrop-filter: blur(10px);
-    }
-    .nav-logo {
-      display: flex; align-items: center; gap: 0.55rem;
-      font-family: 'Syne', sans-serif; text-decoration: none; color: var(--text);
-    }
-    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
-    .nav-logo span {
-      font-weight: 800; letter-spacing: 0.3px; font-size: 1.05rem;
-      line-height: 1;
-    }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
-    .nav-links a {
-      text-decoration: none; color: var(--muted); font-size: 0.85rem;
-      border: 1px solid var(--border); padding: 0.3rem 0.65rem; border-radius: 999px;
-    }
-    .nav-links a.active, .nav-links a:hover { color: var(--text); border-color: var(--accent); }
-    .theme-btn {
-      border: 1px solid var(--border); background: var(--surface); color: var(--muted);
-      width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
-    }
-    .nav-toggle {
-      display: none;
-      width: 34px; height: 34px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--muted);
-      cursor: pointer;
-      font-size: 1.05rem;
-      align-items: center;
-      justify-content: center;
-    }
-    main { max-width: 860px; margin: 0 auto; padding: 2.2rem 1rem 4rem; }
-    h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.7rem, 5vw, 2.6rem); margin-bottom: 0.7rem; }
-    .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
-    p { color: var(--muted); line-height: 1.75; margin-bottom: 0.9rem; }
-    h2 { font-family: 'Syne', sans-serif; font-size: 1.05rem; margin: 1.2rem 0 0.5rem; }
-    ol { color: var(--muted); margin: 0.5rem 0 0.8rem; padding-left: 1.2rem; }
-    li { margin-bottom: 0.45rem; }
-    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1rem; margin-top: 1rem; }
-    .links { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .links a {
-      text-decoration: none; color: var(--accent2); font-weight: 600; font-size: 0.86rem;
-      border: 1px solid var(--border); border-radius: 999px; padding: 0.32rem 0.62rem;
-    }
-    footer {
-      max-width: 860px; margin: 0 auto; padding: 0 1rem 2rem;
-      display: flex; flex-wrap: wrap; gap: 0.8rem; color: var(--muted); font-size: 0.85rem;
-    }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--accent2); }
-    @media (max-width: 900px) {
-      .nav-toggle { display: inline-flex; }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%; left: 0; right: 0;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.45rem;
-        padding: 0.75rem 1rem 1rem;
-        background: var(--nav-bg);
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(10px);
-        max-height: calc(100vh - 64px);
-        overflow-y: auto;
+---
+layout: blog-post
+title: "How to Create a Smart Photo Frame at Home | Fravora Blog"
+description: "Build a smart photo frame at home using an Android tablet with practical setup steps for Google Photos, NAS, scheduling, weather overlays, and offline playback."
+og_image: "images/screen_frame2.webp"
+active_nav: "blog"
+---
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Create a Smart Photo Frame at Home",
+    "description": "Build a smart photo frame at home using an Android tablet with practical setup steps for Google Photos, NAS, scheduling, weather overlays, and offline playback.",
+    "image": "https://aniujual.github.io/fravora/images/screen_frame2.webp",
+    "author": {
+      "@type": "Person",
+      "name": "aniujual"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Fravora: Digital Photo Frame",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://aniujual.github.io/fravora/images/fravora.png"
       }
-      .nav-links.open { display: flex; }
-      .theme-btn { margin-top: 0.35rem; }
-    }
-  </style>
-</head>
-<body>
-  <div id="siteNavMount" data-base="../" data-active="blog"></div>
-  <script src="../shared-nav.js"></script>
+    },
+    "datePublished": "2026-06-27",
+    "dateModified": "2026-06-27",
+    "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/smart-photo-frame-at-home.html"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://aniujual.github.io/fravora/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://aniujual.github.io/fravora/blog/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How to Create a Smart Photo Frame at Home",
+        "item": "https://aniujual.github.io/fravora/blog/smart-photo-frame-at-home.html"
+      }
+    ]
+  }
+</script>
 
-  <main>
-    <h1>How to create a smart photo frame at home</h1>
-    <p class="meta">Updated June 27, 2026 · 7 min read</p>
-    <p>A smart photo frame setup is less about buying hardware and more about making your display dependable. With an Android tablet and the right app settings, you can run a 24/7 family display with Google Photos, NAS, weather overlays, and minimal maintenance.</p>
+<h1>How to create a smart photo frame at home</h1>
+<p class="meta">Updated June 27, 2026 · 7 min read</p>
+<p>A smart photo frame setup is less about buying hardware and more about making your display dependable. With an Android tablet and the right app settings, you can run a 24/7 family display with Google Photos, NAS, weather overlays, and minimal maintenance.</p>
 
-    <h2>What you need</h2>
-    <ol>
-      <li>An Android tablet or dedicated display device with stable charging</li>
-      <li>A stand or wall mount in a visible location</li>
-      <li>Your photo source strategy: Google Photos, local folders, NAS/SMB, or other cloud sources</li>
-      <li>A frame app that supports scheduling and clean overlays</li>
-    </ol>
+<h2>What you need</h2>
+<ol>
+  <li>An Android tablet or dedicated display device with stable charging</li>
+  <li>A stand or wall mount in a visible location</li>
+  <li>Your photo source strategy: Google Photos, local folders, NAS/SMB, or other cloud sources</li>
+  <li>A frame app that supports scheduling and clean overlays</li>
+</ol>
 
-    <h2>Setup workflow that avoids common failures</h2>
-    <ol>
-      <li>Install Fravora and complete the first-launch onboarding — it guides you through adding a photo source (Google Photos, local folders, NAS, or other cloud providers) and creating your first album, so your frame is running before you leave the setup flow.</li>
-      <li>Choose placement first, then solve cable routing and power.</li>
-      <li>Disable aggressive battery optimization for your frame app.</li>
-      <li>Set slideshow schedule to match your daily routine.</li>
-      <li>Keep overlays minimal so photos remain the focus.</li>
-      <li>Test overnight stability before mounting permanently.</li>
-    </ol>
+<h2>Setup workflow that avoids common failures</h2>
+<ol>
+  <li>Install Fravora and complete the first-launch onboarding — it guides you through adding a photo source (Google Photos, local folders, NAS, or other cloud providers) and creating your first album, so your frame is running before you leave the setup flow.</li>
+  <li>Choose placement first, then solve cable routing and power.</li>
+  <li>Disable aggressive battery optimization for your frame app.</li>
+  <li>Set slideshow schedule to match your daily routine.</li>
+  <li>Keep overlays minimal so photos remain the focus.</li>
+  <li>Test overnight stability before mounting permanently.</li>
+</ol>
 
-    <div class="panel">
-      <h2>Why offline support matters</h2>
-      <p>If your slideshow relies only on cloud access, temporary internet issues can leave a blank screen. An offline photo viewer for Android with local or NAS support keeps your display running reliably.</p>
+<div class="panel">
+  <h2>Why offline support matters</h2>
+  <p>If your slideshow relies only on cloud access, temporary internet issues can leave a blank screen. An offline photo viewer for Android with local or NAS support keeps your display running reliably.</p>
 
-      <h2>Voice control as a quality-of-life upgrade</h2>
-      <p>For kitchen or hallway displays, voice control lets you skip photos or adjust playback without touching the device, which is useful when the frame is mounted high.</p>
-    </div>
+  <h2>Voice control as a quality-of-life upgrade</h2>
+  <p>For kitchen or hallway displays, voice control lets you skip photos or adjust playback without touching the device, which is useful when the frame is mounted high.</p>
+</div>
 
-    <div class="links">
-      <a href="../how-it-works.html">Detailed setup page</a>
-      <a href="../features.html">Feature details</a>
-      <a href="photo-frame-apps-compared-2026.html">App comparison guide</a>
-      <a href="android-tablet-photo-frame.html">Full tablet setup guide</a>
-      <a href="google-photos-digital-photo-frame.html">Google Photos guide</a>
-      <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
-      <a href="digital-photo-frame-weather-overlay.html">Add weather to your frame</a>
-    </div>
-  </main>
-
-  <div id="siteFooterMount" data-base="../"></div>
-  <script src="../shared-footer.js"></script>
-
-  <script>
-    const navToggleBtn = document.getElementById('navToggleBtn');
-    const navLinks = document.getElementById('siteNav');
-
-    if (navToggleBtn && navLinks) {
-      const closeNav = () => {
-        navLinks.classList.remove('open');
-        navToggleBtn.setAttribute('aria-expanded', 'false');
-      };
-      navToggleBtn.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('open');
-        navToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => closeNav());
-      });
-      document.addEventListener('click', (event) => {
-        if (!navLinks.contains(event.target) && !navToggleBtn.contains(event.target)) closeNav();
-      });
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') closeNav();
-      });
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 900) closeNav();
-      });
-    }
-  </script>
-</body>
-</html>
+<div class="links">
+  <a href="../how-it-works.html">Detailed setup page</a>
+  <a href="../features.html">Feature details</a>
+  <a href="photo-frame-apps-compared-2026.html">App comparison guide</a>
+  <a href="android-tablet-photo-frame.html">Full tablet setup guide</a>
+  <a href="google-photos-digital-photo-frame.html">Google Photos guide</a>
+  <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
+  <a href="digital-photo-frame-weather-overlay.html">Add weather to your frame</a>
+</div>

@@ -1,247 +1,143 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <script>(function(){try{var t=localStorage.getItem('fravora-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How to Turn an Android Tablet Into a Digital Photo Frame</title>
-  <meta name="description" content="Step-by-step guide to turning any Android or Amazon Fire tablet into a dedicated digital photo frame: hardware setup, always-on display, scheduling, photo sources, and overlays." />
-  <link rel="canonical" href="https://aniujual.github.io/fravora/blog/android-tablet-photo-frame.html" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="How to Turn an Android Tablet Into a Digital Photo Frame" />
-  <meta property="og:description" content="Step-by-step guide to turning any Android or Amazon Fire tablet into a dedicated digital photo frame: hardware setup, always-on display, scheduling, photo sources, and overlays." />
-  <meta property="og:url" content="https://aniujual.github.io/fravora/blog/android-tablet-photo-frame.html" />
-  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame2.png" />
-  <meta property="og:image:alt" content="Android tablet mounted on a wall running as a digital photo frame." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="How to Turn an Android Tablet Into a Digital Photo Frame" />
-  <meta name="twitter:description" content="Step-by-step guide to turning any Android or Amazon Fire tablet into a dedicated digital photo frame: hardware setup, always-on display, scheduling, photo sources, and overlays." />
-  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame2.png" />
-  <meta name="twitter:image:alt" content="Android tablet mounted on a wall running as a digital photo frame." />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "How to Turn an Android Tablet Into a Digital Photo Frame",
-      "description": "Step-by-step guide to turning any Android or Amazon Fire tablet into a dedicated digital photo frame: hardware setup, always-on display, scheduling, photo sources, and overlays.",
-      "image": "https://aniujual.github.io/fravora/images/screen_frame2.png",
-      "author": {
-        "@type": "Person",
-        "name": "aniujual"
+---
+layout: blog-post
+title: "How to Turn an Android Tablet Into a Digital Photo Frame"
+description: "Step-by-step guide to turning any Android or Amazon Fire tablet into a dedicated digital photo frame: hardware setup, always-on display, scheduling, photo sources, and overlays."
+og_image: "images/screen_frame2.webp"
+active_nav: "blog"
+---
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Turn an Android Tablet Into a Digital Photo Frame",
+    "description": "Step-by-step guide to turning any Android or Amazon Fire tablet into a dedicated digital photo frame: hardware setup, always-on display, scheduling, photo sources, and overlays.",
+    "image": "https://aniujual.github.io/fravora/images/screen_frame2.webp",
+    "author": {
+      "@type": "Person",
+      "name": "aniujual"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Fravora: Digital Photo Frame",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://aniujual.github.io/fravora/images/fravora.png"
+      }
+    },
+    "datePublished": "2026-08-09",
+    "dateModified": "2026-08-09",
+    "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/android-tablet-photo-frame.html"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aniujual.github.io/fravora/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://aniujual.github.io/fravora/blog/index.html" },
+      { "@type": "ListItem", "position": 3, "name": "How to Turn an Android Tablet Into a Digital Photo Frame", "item": "https://aniujual.github.io/fravora/blog/android-tablet-photo-frame.html" }
+    ]
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can any Android tablet be used as a digital photo frame?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Any Android tablet running Android 8 or later can run a digital photo frame app. Older tablets work well as dedicated frames since you are not running heavy apps on them. Amazon Fire tablets also work via the Amazon Appstore." }
       },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Fravora: Digital Photo Frame",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://aniujual.github.io/fravora/images/fravora.png"
-        }
+      {
+        "@type": "Question",
+        "name": "How do I keep an Android tablet screen on all the time for a photo frame?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Enable Keep Screen Awake in the frame app settings, and disable aggressive battery optimisation for the app in Android Settings → Battery → App battery usage. For tablets left on a charger permanently, also disable any sleep-when-charging limits in Developer Options." }
       },
-      "datePublished": "2026-08-09",
-      "dateModified": "2026-08-09",
-      "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/android-tablet-photo-frame.html"
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aniujual.github.io/fravora/" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://aniujual.github.io/fravora/blog/index.html" },
-        { "@type": "ListItem", "position": 3, "name": "How to Turn an Android Tablet Into a Digital Photo Frame", "item": "https://aniujual.github.io/fravora/blog/android-tablet-photo-frame.html" }
-      ]
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Can any Android tablet be used as a digital photo frame?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Any Android tablet running Android 8 or later can run a digital photo frame app. Older tablets work well as dedicated frames since you are not running heavy apps on them. Amazon Fire tablets also work via the Amazon Appstore." }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I keep an Android tablet screen on all the time for a photo frame?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Enable Keep Screen Awake in the frame app settings, and disable aggressive battery optimisation for the app in Android Settings → Battery → App battery usage. For tablets left on a charger permanently, also disable any sleep-when-charging limits in Developer Options." }
-        },
-        {
-          "@type": "Question",
-          "name": "Does a photo frame app drain the tablet battery?",
-          "acceptedAnswer": { "@type": "Answer", "text": "If the tablet is plugged in permanently, battery drain is not a concern. For tablets on battery only, use the running-hours scheduling feature to turn the display off during night hours, which significantly reduces battery use." }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Amazon Fire tablet work as a digital photo frame?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fravora is available on the Amazon Appstore and works on Fire tablets. All core features including Google Photos, local folders, scheduling, and overlays work on Fire OS." }
-        }
-      ]
-    }
-  </script>
-  <link rel="icon" type="image/png" href="../images/fravora.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CQF87DK78N');
-  </script>
-  <style>
-    :root {
-      --bg: #0e0b14;
-      --surface: #1c1728;
-      --border: #2e2640;
-      --accent: #9b5de5;
-      --accent2: #c77dff;
-      --text: #e8e0f5;
-      --muted: #8b7fa8;
-      --nav-bg: rgba(14,11,20,0.85);
-    }
-    [data-theme="light"] {
-      --bg: #f5f0ff;
-      --surface: #ffffff;
-      --border: #d4c8f0;
-      --accent: #7c3aed;
-      --accent2: #9b5de5;
-      --text: #1a1033;
-      --muted: #6b5b8a;
-      --nav-bg: rgba(245,240,255,0.88);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
-    nav {
-      position: sticky; top: 0; z-index: 10;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border); background: var(--nav-bg);
-      backdrop-filter: blur(10px);
-    }
-    .nav-logo { display: flex; align-items: center; gap: 0.55rem; font-family: 'Syne', sans-serif; text-decoration: none; color: var(--text); }
-    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
-    .nav-logo span { font-weight: 800; letter-spacing: 0.3px; font-size: 1.05rem; line-height: 1; }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
-    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.85rem; border: 1px solid var(--border); padding: 0.3rem 0.65rem; border-radius: 999px; }
-    .nav-links a.active, .nav-links a:hover { color: var(--text); border-color: var(--accent); }
-    .theme-btn { border: 1px solid var(--border); background: var(--surface); color: var(--muted); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; }
-    .nav-toggle { display: none; width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; font-size: 1.05rem; align-items: center; justify-content: center; }
-    main { max-width: 860px; margin: 0 auto; padding: 2.2rem 1rem 4rem; }
-    h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.7rem, 5vw, 2.6rem); margin-bottom: 0.7rem; }
-    .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
-    p { color: var(--muted); line-height: 1.75; margin-bottom: 0.9rem; }
-    h2 { font-family: 'Syne', sans-serif; font-size: 1.05rem; margin: 1.2rem 0 0.5rem; }
-    ol, ul { color: var(--muted); margin: 0.5rem 0 0.8rem; padding-left: 1.2rem; }
-    li { margin-bottom: 0.45rem; }
-    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1rem; margin-top: 1rem; }
-    .links { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .links a { text-decoration: none; color: var(--accent2); font-weight: 600; font-size: 0.86rem; border: 1px solid var(--border); border-radius: 999px; padding: 0.32rem 0.62rem; }
-    footer { max-width: 860px; margin: 0 auto; padding: 0 1rem 2rem; display: flex; flex-wrap: wrap; gap: 0.8rem; color: var(--muted); font-size: 0.85rem; }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--accent2); }
-    @media (max-width: 900px) {
-      .nav-toggle { display: inline-flex; }
-      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0.45rem; padding: 0.75rem 1rem 1rem; background: var(--nav-bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(10px); max-height: calc(100vh - 64px); overflow-y: auto; }
-      .nav-links.open { display: flex; }
-      .theme-btn { margin-top: 0.35rem; }
-    }
-  </style>
-</head>
-<body>
-  <div id="siteNavMount" data-base="../" data-active="blog"></div>
-  <script src="../shared-nav.js"></script>
+      {
+        "@type": "Question",
+        "name": "Does a photo frame app drain the tablet battery?",
+        "acceptedAnswer": { "@type": "Answer", "text": "If the tablet is plugged in permanently, battery drain is not a concern. For tablets on battery only, use the running-hours scheduling feature to turn the display off during night hours, which significantly reduces battery use." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Amazon Fire tablet work as a digital photo frame?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fravora is available on the Amazon Appstore and works on Fire tablets. All core features including Google Photos, local folders, scheduling, and overlays work on Fire OS." }
+      }
+    ]
+  }
+</script>
 
-  <main>
-    <h1>How to turn an Android tablet into a digital photo frame</h1>
-    <p class="meta">Updated August 9, 2026 · 10 min read</p>
+<h1>How to turn an Android tablet into a digital photo frame</h1>
+<p class="meta">Updated August 9, 2026 · 10 min read</p>
 
-    <p>Buying a dedicated digital photo frame means paying for locked-down hardware with limited source options and recurring subscription fees. An Android tablet you already own — or one you can pick up cheaply — gives you far more control: any photo source, any layout, scheduled playback, weather overlays, and no annual fee.</p>
+<p>Buying a dedicated digital photo frame means paying for locked-down hardware with limited source options and recurring subscription fees. An Android tablet you already own — or one you can pick up cheaply — gives you far more control: any photo source, any layout, scheduled playback, weather overlays, and no annual fee.</p>
 
-    <h2>Which Android tablets work best</h2>
-    <p>Almost any Android tablet running Android 8 or later works. For a dedicated always-on frame the key specs are screen quality and charging stability, not processing power. Good options across price ranges:</p>
-    <ul>
-      <li><strong>Amazon Fire tablets (HD 8, HD 10):</strong> Inexpensive, widely available, and supported via the Amazon Appstore. Good for fixed wall or shelf mounting. Fire OS works well for always-on use.</li>
-      <li><strong>Samsung Galaxy Tab A series:</strong> Reliable build quality, good display brightness, and standard Android that supports the full Google ecosystem including Google Photos.</li>
-      <li><strong>Lenovo Tab series:</strong> Competitive pricing with solid displays. Good for budget builds.</li>
-      <li><strong>Old tablets you already own:</strong> A tablet that is too slow for general use often still has a perfectly capable display. Dedicated frame use is not demanding.</li>
-    </ul>
+<h2>Which Android tablets work best</h2>
+<p>Almost any Android tablet running Android 8 or later works. For a dedicated always-on frame the key specs are screen quality and charging stability, not processing power. Good options across price ranges:</p>
+<ul>
+  <li><strong>Amazon Fire tablets (HD 8, HD 10):</strong> Inexpensive, widely available, and supported via the Amazon Appstore. Good for fixed wall or shelf mounting. Fire OS works well for always-on use.</li>
+  <li><strong>Samsung Galaxy Tab A series:</strong> Reliable build quality, good display brightness, and standard Android that supports the full Google ecosystem including Google Photos.</li>
+  <li><strong>Lenovo Tab series:</strong> Competitive pricing with solid displays. Good for budget builds.</li>
+  <li><strong>Old tablets you already own:</strong> A tablet that is too slow for general use often still has a perfectly capable display. Dedicated frame use is not demanding.</li>
+</ul>
 
-    <h2>Hardware setup</h2>
-    <ol>
-      <li><strong>Choose your location first.</strong> Decide whether the tablet will sit on a shelf, stand on a desk, or mount on a wall. Route your power cable before committing to a position.</li>
-      <li><strong>Get a stand or mount.</strong> For shelf or desk: any tablet stand works. For walls: adhesive mounts or slim VESA adapters designed for tablets keep cables hidden.</li>
-      <li><strong>Use a permanent power source.</strong> The tablet should stay plugged in. Use a short, right-angle USB cable to keep the connection tidy and reduce stress on the port.</li>
-      <li><strong>Disable battery optimisation for the frame app.</strong> Go to Android Settings → Apps → Fravora → Battery → Unrestricted. This prevents the system from killing the app during idle periods.</li>
-      <li><strong>Disable screen timeout.</strong> The frame app handles screen-on state via its own Keep Screen Awake setting. You can also set the system display timeout to the maximum or use Developer Options to keep the screen awake while charging.</li>
-    </ol>
+<h2>Hardware setup</h2>
+<ol>
+  <li><strong>Choose your location first.</strong> Decide whether the tablet will sit on a shelf, stand on a desk, or mount on a wall. Route your power cable before committing to a position.</li>
+  <li><strong>Get a stand or mount.</strong> For shelf or desk: any tablet stand works. For walls: adhesive mounts or slim VESA adapters designed for tablets keep cables hidden.</li>
+  <li><strong>Use a permanent power source.</strong> The tablet should stay plugged in. Use a short, right-angle USB cable to keep the connection tidy and reduce stress on the port.</li>
+  <li><strong>Disable battery optimisation for the frame app.</strong> Go to Android Settings → Apps → Fravora → Battery → Unrestricted. This prevents the system from killing the app during idle periods.</li>
+  <li><strong>Disable screen timeout.</strong> The frame app handles screen-on state via its own Keep Screen Awake setting. You can also set the system display timeout to the maximum or use Developer Options to keep the screen awake while charging.</li>
+</ol>
 
-    <h2>App setup in Fravora</h2>
-    <p>When you first launch Fravora, the onboarding walks you through choosing a photo source — local folders, Google Photos, NAS, Immich, or any other supported type — and creating your first album. Your frame is already showing photos by the time onboarding finishes. After that, fine-tune the display settings:</p>
-    <ol>
-      <li>Enable <strong>Fullscreen Mode</strong> in Settings → Appearance to hide the status bar and navigation buttons for a clean display.</li>
-      <li>Enable <strong>Keep Screen Awake</strong> in Settings → Appearance so the display stays on during slideshow hours.</li>
-      <li>Set <strong>Running Hours</strong> in Settings → Slideshow so the frame wakes and sleeps on your schedule. Outside those hours the screen shows a standby clock or goes black.</li>
-      <li>To add more photo sources or source types, go to <strong>Settings → Sources</strong>.</li>
-    </ol>
+<h2>App setup in Fravora</h2>
+<p>When you first launch Fravora, the onboarding walks you through choosing a photo source — local folders, Google Photos, NAS, Immich, or any other supported type — and creating your first album. Your frame is already showing photos by the time onboarding finishes. After that, fine-tune the display settings:</p>
+<ol>
+  <li>Enable <strong>Fullscreen Mode</strong> in Settings → Appearance to hide the status bar and navigation buttons for a clean display.</li>
+  <li>Enable <strong>Keep Screen Awake</strong> in Settings → Appearance so the display stays on during slideshow hours.</li>
+  <li>Set <strong>Running Hours</strong> in Settings → Slideshow so the frame wakes and sleeps on your schedule. Outside those hours the screen shows a standby clock or goes black.</li>
+  <li>To add more photo sources or source types, go to <strong>Settings → Sources</strong>.</li>
+</ol>
 
-    <h2>Choosing your photo sources</h2>
-    <p>The right source depends on where your photos live. You can use any combination:</p>
-    <ul>
-      <li><strong>Local device folders:</strong> Copy photos to the tablet's storage or SD card and add those folders as sources. Completely offline, no accounts needed.</li>
-      <li><strong>Google Photos:</strong> Use the official Google Photos Picker to select which photos appear on the frame. Photos are cached locally and display without a live internet connection once downloaded.</li>
-      <li><strong>NAS / SMB network share:</strong> Connect directly to a Synology, QNAP, or Windows share on your home network. Photos stay on your NAS and are served over Wi-Fi.</li>
-      <li><strong>OneDrive, Dropbox, or Immich:</strong> Pick specific cloud folders or Immich albums as sources. Useful if your photo library lives in another cloud service.</li>
-    </ul>
+<h2>Choosing your photo sources</h2>
+<p>The right source depends on where your photos live. You can use any combination:</p>
+<ul>
+  <li><strong>Local device folders:</strong> Copy photos to the tablet's storage or SD card and add those folders as sources. Completely offline, no accounts needed.</li>
+  <li><strong>Google Photos:</strong> Use the official Google Photos Picker to select which photos appear on the frame. Photos are cached locally and display without a live internet connection once downloaded.</li>
+  <li><strong>NAS / SMB network share:</strong> Connect directly to a Synology, QNAP, or Windows share on your home network. Photos stay on your NAS and are served over Wi-Fi.</li>
+  <li><strong>OneDrive, Dropbox, or Immich:</strong> Pick specific cloud folders or Immich albums as sources. Useful if your photo library lives in another cloud service.</li>
+</ul>
 
-    <h2>Display and overlay settings</h2>
-    <p>Fravora gives you control over what appears on top of photos. Useful settings for a home display:</p>
-    <ul>
-      <li><strong>Clock overlay:</strong> Shows the current time. Position it in any corner at small, medium, or large size.</li>
-      <li><strong>Weather overlay (PRO):</strong> Shows current temperature and conditions. Requires GPS permission or a manually set location.</li>
-      <li><strong>Photo metadata (PRO):</strong> Shows when and where a photo was taken, with landmark name lookup for travel photos.</li>
-      <li><strong>Display Mode:</strong> Choose Fit (full photo visible) or Fill (zoom to cover the full screen). In Fit mode, choose a backdrop style — Mirrored or Gradient — to fill the letterbox area.</li>
-    </ul>
+<h2>Display and overlay settings</h2>
+<p>Fravora gives you control over what appears on top of photos. Useful settings for a home display:</p>
+<ul>
+  <li><strong>Clock overlay:</strong> Shows the current time. Position it in any corner at small, medium, or large size.</li>
+  <li><strong>Weather overlay (PRO):</strong> Shows current temperature and conditions. Requires GPS permission or a manually set location.</li>
+  <li><strong>Photo metadata (PRO):</strong> Shows when and where a photo was taken, with landmark name lookup for travel photos.</li>
+  <li><strong>Display Mode:</strong> Choose Fit (full photo visible) or Fill (zoom to cover the full screen). In Fit mode, choose a backdrop style — Mirrored or Gradient — to fill the letterbox area.</li>
+</ul>
 
-    <h2>Transition and motion effects (PRO)</h2>
-    <p>The free tier uses a hard cut between photos. PRO adds ten transition styles including Crossfade, Slide, Cube, and Parallax, plus cinematic motion effects — Ken Burns pan-and-zoom, Drift, and Vignette Pulse — that keep static photos feeling alive. Transition speed is also configurable.</p>
+<h2>Transition and motion effects (PRO)</h2>
+<p>The free tier uses a hard cut between photos. PRO adds ten transition styles including Crossfade, Slide, Cube, and Parallax, plus cinematic motion effects — Ken Burns pan-and-zoom, Drift, and Vignette Pulse — that keep static photos feeling alive. Transition speed is also configurable.</p>
 
-    <h2>OLED burn-in protection</h2>
-    <p>If your tablet has an OLED display, leaving static overlays in the same position 24/7 can cause image retention. Fravora's Anti-burn-in overlay effect (PRO) periodically micro-shifts overlay positions and varies their opacity. The Bouncing standby clock (PRO) prevents burn-in from a fixed clock position during off-hours.</p>
+<h2>OLED burn-in protection</h2>
+<p>If your tablet has an OLED display, leaving static overlays in the same position 24/7 can cause image retention. Fravora's Anti-burn-in overlay effect (PRO) periodically micro-shifts overlay positions and varies their opacity. The Bouncing standby clock (PRO) prevents burn-in from a fixed clock position during off-hours.</p>
 
-    <div class="panel">
-      <h2>Amazon Fire tablet notes</h2>
-      <p>Fire tablets run Fire OS, a modified Android fork. Fravora is available on the Amazon Appstore and supports all core features on Fire OS. Google Photos requires signing into a Google account, which Fire tablets support via a standard browser login during the Google Photos Picker flow. NAS/SMB connections work normally over Wi-Fi. Voice control using wake-word detection also works on Fire tablets.</p>
+<div class="panel">
+  <h2>Amazon Fire tablet notes</h2>
+  <p>Fire tablets run Fire OS, a modified Android fork. Fravora is available on the Amazon Appstore and supports all core features on Fire OS. Google Photos requires signing into a Google account, which Fire tablets support via a standard browser login during the Google Photos Picker flow. NAS/SMB connections work normally over Wi-Fi. Voice control using wake-word detection also works on Fire tablets.</p>
 
-      <h2>Keeping the frame running long-term</h2>
-      <p>The most common failure mode for always-on frames is the app being killed by the system. To prevent this: grant the frame app unrestricted battery access, disable any power-saving modes that restrict background apps, and set Fravora as the device's home app if you want it to restart automatically after a reboot. Use the running-hours schedule to give the device rest periods, which also extends display life.</p>
-    </div>
+  <h2>Keeping the frame running long-term</h2>
+  <p>The most common failure mode for always-on frames is the app being killed by the system. To prevent this: grant the frame app unrestricted battery access, disable any power-saving modes that restrict background apps, and set Fravora as the device's home app if you want it to restart automatically after a reboot. Use the running-hours schedule to give the device rest periods, which also extends display life.</p>
+</div>
 
-    <div class="links">
-      <a href="../download.html">Get Fravora</a>
-      <a href="../features.html">All features</a>
-      <a href="../how-it-works.html">Setup walkthrough</a>
-      <a href="google-photos-digital-photo-frame.html">Google Photos guide</a>
-      <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
-    </div>
-  </main>
-
-  <div id="siteFooterMount" data-base="../"></div>
-  <script src="../shared-footer.js"></script>
-
-  <script>
-    const navToggleBtn = document.getElementById('navToggleBtn');
-    const navLinks = document.getElementById('siteNav');
-    if (navToggleBtn && navLinks) {
-      const closeNav = () => { navLinks.classList.remove('open'); navToggleBtn.setAttribute('aria-expanded', 'false'); };
-      navToggleBtn.addEventListener('click', () => { const isOpen = navLinks.classList.toggle('open'); navToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false'); });
-      navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => closeNav()); });
-      document.addEventListener('click', (event) => { if (!navLinks.contains(event.target) && !navToggleBtn.contains(event.target)) closeNav(); });
-      document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeNav(); });
-      window.addEventListener('resize', () => { if (window.innerWidth > 900) closeNav(); });
-    }
-  </script>
-</body>
-</html>
+<div class="links">
+  <a href="../download.html">Get Fravora</a>
+  <a href="../features.html">All features</a>
+  <a href="../how-it-works.html">Setup walkthrough</a>
+  <a href="google-photos-digital-photo-frame.html">Google Photos guide</a>
+  <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
+</div>

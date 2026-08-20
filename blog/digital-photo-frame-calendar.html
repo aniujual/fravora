@@ -1,121 +1,68 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <script>(function(){try{var t=localStorage.getItem('fravora-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Photo Frame with Calendar: Events and Reminders on Android</title>
-  <meta name="description" content="Add a calendar to your Android digital photo frame: tap the clock overlay to open a full-screen monthly calendar with events, recurrence, and reminder alerts shown as a frame glow." />
-  <link rel="canonical" href="https://aniujual.github.io/fravora/blog/digital-photo-frame-calendar.html" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="Digital Photo Frame with Calendar: Events and Reminders on Android" />
-  <meta property="og:description" content="Add a calendar to your Android digital photo frame: tap the clock overlay to open a full-screen monthly calendar with events, recurrence, and reminder alerts shown as a frame glow." />
-  <meta property="og:url" content="https://aniujual.github.io/fravora/blog/digital-photo-frame-calendar.html" />
-  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_settings_overlays.png" />
-  <meta property="og:image:alt" content="Android digital photo frame with calendar and event reminders." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Digital Photo Frame with Calendar: Events and Reminders on Android" />
-  <meta name="twitter:description" content="Add a calendar to your Android digital photo frame: tap the clock overlay to open a full-screen monthly calendar with events, recurrence, and reminder alerts shown as a frame glow." />
-  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_settings_overlays.png" />
-  <meta name="twitter:image:alt" content="Android digital photo frame with calendar and event reminders." />
-  <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Digital Photo Frame with Calendar: Events and Reminders on Android","description":"Add a calendar to your Android digital photo frame: tap the clock overlay to open a full-screen monthly calendar with events, recurrence, and reminder alerts shown as a frame glow.","image":"https://aniujual.github.io/fravora/images/screen_settings_overlays.png","author":{"@type":"Person","name":"aniujual"},"publisher":{"@type":"Organization","name":"Fravora: Digital Photo Frame","logo":{"@type":"ImageObject","url":"https://aniujual.github.io/fravora/images/fravora.png"}},"datePublished":"2026-08-10","dateModified":"2026-08-10","mainEntityOfPage":"https://aniujual.github.io/fravora/blog/digital-photo-frame-calendar.html"}
-  </script>
-  <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aniujual.github.io/fravora/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://aniujual.github.io/fravora/blog/index.html"},{"@type":"ListItem","position":3,"name":"Digital Photo Frame with Calendar","item":"https://aniujual.github.io/fravora/blog/digital-photo-frame-calendar.html"}]}
-  </script>
-  <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can a digital photo frame show a calendar?","acceptedAnswer":{"@type":"Answer","text":"Yes, in Fravora for Android. The clock overlay shows the current date and time on top of photos. Tapping that overlay opens a full-screen monthly calendar where you can view, add, and manage events. Event reminders appear as a coloured frame glow with optional sound alerts."}},{"@type":"Question","name":"Does the photo frame calendar sync with Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"Not automatically — the calendar in Fravora is a standalone in-app calendar, not a sync of an external service. Events are created and managed directly within the app. This keeps it self-contained and works without internet access."}},{"@type":"Question","name":"How do reminders work on a digital photo frame?","acceptedAnswer":{"@type":"Answer","text":"In Fravora, event reminders show as a coloured glow on the frame border: yellow within 1 hour of the event (subtle glow), orange within 15 minutes (active glow with repeating sound alerts). A reminder summary dialog appears with Snooze, Dismiss, Delete, and Close options."}}]}
-  </script>
-  <link rel="icon" type="image/png" href="../images/fravora.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-CQF87DK78N');</script>
-  <style>
-    :root{--bg:#0e0b14;--surface:#1c1728;--border:#2e2640;--accent:#9b5de5;--accent2:#c77dff;--text:#e8e0f5;--muted:#8b7fa8;--nav-bg:rgba(14,11,20,0.85);}
-    [data-theme="light"]{--bg:#f5f0ff;--surface:#ffffff;--border:#d4c8f0;--accent:#7c3aed;--accent2:#9b5de5;--text:#1a1033;--muted:#6b5b8a;--nav-bg:rgba(245,240,255,0.88);}
-    *{box-sizing:border-box;margin:0;padding:0;}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
-    nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:0.9rem 1.2rem;border-bottom:1px solid var(--border);background:var(--nav-bg);backdrop-filter:blur(10px);}
-    .nav-logo{display:flex;align-items:center;gap:0.55rem;font-family:'Syne',sans-serif;text-decoration:none;color:var(--text);}
-    .nav-logo img{width:32px;height:32px;border-radius:8px;}.nav-logo span{font-weight:800;letter-spacing:0.3px;font-size:1.05rem;line-height:1;}
-    .nav-links{display:flex;flex-wrap:wrap;gap:0.4rem;align-items:center;}
-    .nav-links a{text-decoration:none;color:var(--muted);font-size:0.85rem;border:1px solid var(--border);padding:0.3rem 0.65rem;border-radius:999px;}
-    .nav-links a.active,.nav-links a:hover{color:var(--text);border-color:var(--accent);}
-    .theme-btn{border:1px solid var(--border);background:var(--surface);color:var(--muted);width:34px;height:34px;border-radius:8px;cursor:pointer;}
-    .nav-toggle{display:none;width:34px;height:34px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;font-size:1.05rem;align-items:center;justify-content:center;}
-    main{max-width:860px;margin:0 auto;padding:2.2rem 1rem 4rem;}
-    h1{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,5vw,2.6rem);margin-bottom:0.7rem;}
-    .meta{color:var(--muted);font-size:0.85rem;margin-bottom:1rem;}
-    p{color:var(--muted);line-height:1.75;margin-bottom:0.9rem;}
-    h2{font-family:'Syne',sans-serif;font-size:1.05rem;margin:1.2rem 0 0.5rem;}
-    ul{color:var(--muted);margin:0.5rem 0 0.8rem;padding-left:1.2rem;}li{margin-bottom:0.45rem;}
-    .panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1rem;margin-top:1rem;}
-    .links{margin-top:1rem;display:flex;flex-wrap:wrap;gap:0.5rem;}
-    .links a{text-decoration:none;color:var(--accent2);font-weight:600;font-size:0.86rem;border:1px solid var(--border);border-radius:999px;padding:0.32rem 0.62rem;}
-    footer{max-width:860px;margin:0 auto;padding:0 1rem 2rem;display:flex;flex-wrap:wrap;gap:0.8rem;color:var(--muted);font-size:0.85rem;}
-    footer a{color:var(--muted);text-decoration:none;}footer a:hover{color:var(--accent2);}
-    @media(max-width:900px){.nav-toggle{display:inline-flex;}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0.45rem;padding:0.75rem 1rem 1rem;background:var(--nav-bg);border-bottom:1px solid var(--border);backdrop-filter:blur(10px);max-height:calc(100vh - 64px);overflow-y:auto;}.nav-links.open{display:flex;}.theme-btn{margin-top:0.35rem;}}
-  </style>
-</head>
-<body>
-  <div id="siteNavMount" data-base="../" data-active="blog"></div>
-  <script src="../shared-nav.js"></script>
-  <main>
-    <h1>Digital photo frame with calendar: events and reminders on Android</h1>
-    <p class="meta">Updated August 10, 2026 · 6 min read</p>
-    <p>Most digital photo frames show photos. A frame mounted in a kitchen or hallway that also shows your schedule turns it into a useful household display. Fravora includes an in-app calendar as a PRO feature — accessible by tapping the clock overlay on the frame screen — with event creation, recurrence, and reminder alerts that show as a coloured glow on the frame border.</p>
+---
+layout: blog-post
+title: "Digital Photo Frame with Calendar: Events and Reminders on Android"
+description: "Add a calendar to your Android digital photo frame: tap the clock overlay to open a full-screen monthly calendar with events, recurrence, and reminder alerts shown as a frame glow."
+og_image: "images/screen_settings_overlays.webp"
+active_nav: "blog"
+---
 
-    <h2>How the calendar is accessed</h2>
-    <p>The calendar is not a separate app or screen — it lives behind the clock overlay. While the slideshow is running, tapping the clock or date widget opens a full-screen monthly calendar view without interrupting the photos. Closing the calendar returns to the slideshow exactly where it left off.</p>
-    <p>This design means the frame stays focused on photos during normal viewing, but the calendar is one tap away whenever you need to check or add something.</p>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BlogPosting","headline":"Digital Photo Frame with Calendar: Events and Reminders on Android","description":"Add a calendar to your Android digital photo frame: tap the clock overlay to open a full-screen monthly calendar with events, recurrence, and reminder alerts shown as a frame glow.","image":"https://aniujual.github.io/fravora/images/screen_settings_overlays.webp","author":{"@type":"Person","name":"aniujual"},"publisher":{"@type":"Organization","name":"Fravora: Digital Photo Frame","logo":{"@type":"ImageObject","url":"https://aniujual.github.io/fravora/images/fravora.png"}},"datePublished":"2026-08-10","dateModified":"2026-08-10","mainEntityOfPage":"https://aniujual.github.io/fravora/blog/digital-photo-frame-calendar.html"}
+</script>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aniujual.github.io/fravora/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://aniujual.github.io/fravora/blog/index.html"},{"@type":"ListItem","position":3,"name":"Digital Photo Frame with Calendar","item":"https://aniujual.github.io/fravora/blog/digital-photo-frame-calendar.html"}]}
+</script>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can a digital photo frame show a calendar?","acceptedAnswer":{"@type":"Answer","text":"Yes, in Fravora for Android. The clock overlay shows the current date and time on top of photos. Tapping that overlay opens a full-screen monthly calendar where you can view, add, and manage events. Event reminders appear as a coloured frame glow with optional sound alerts."}},{"@type":"Question","name":"Does the photo frame calendar sync with Google Calendar?","acceptedAnswer":{"@type":"Answer","text":"Not automatically — the calendar in Fravora is a standalone in-app calendar, not a sync of an external service. Events are created and managed directly within the app. This keeps it self-contained and works without internet access."}},{"@type":"Question","name":"How do reminders work on a digital photo frame?","acceptedAnswer":{"@type":"Answer","text":"In Fravora, event reminders show as a coloured glow on the frame border: yellow within 1 hour of the event (subtle glow), orange within 15 minutes (active glow with repeating sound alerts). A reminder summary dialog appears with Snooze, Dismiss, Delete, and Close options."}}]}
+</script>
 
-    <h2>What the calendar includes</h2>
-    <ul>
-      <li><strong>Monthly view:</strong> Swipe left and right to move between months. Days with events are marked</li>
-      <li><strong>Day view:</strong> Tap a day to see its events; swipe within the visible date range to move between days</li>
-      <li><strong>Event creation and editing:</strong> Add events with a title, date, time range, and all-day toggle</li>
-      <li><strong>Recurrence:</strong> Monthly-by-weekday recurrence with edit scopes — this occurrence, this and following, or the whole series</li>
-      <li><strong>Per-event reminders:</strong> Choose a digest reminder, 1-hour reminder, or 15-minute reminder for each event</li>
-      <li><strong>Multi-select delete:</strong> Long-press a day to enter selection mode for bulk deletion</li>
-      <li><strong>Week start preference:</strong> The monthly grid respects your configured first day of week</li>
-    </ul>
+<h1>Digital photo frame with calendar: events and reminders on Android</h1>
+<p class="meta">Updated August 10, 2026 · 6 min read</p>
+<p>Most digital photo frames show photos. A frame mounted in a kitchen or hallway that also shows your schedule turns it into a useful household display. Fravora includes an in-app calendar as a PRO feature — accessible by tapping the clock overlay on the frame screen — with event creation, recurrence, and reminder alerts that show as a coloured glow on the frame border.</p>
 
-    <h2>How reminders appear on the frame</h2>
-    <p>Reminders surface as a visual glow on the frame border, keeping the display ambient rather than intrusive:</p>
-    <ul>
-      <li><strong>Yellow glow:</strong> The event is within 1 hour. The glow is subtle — you notice it when you glance at the frame without it being disruptive</li>
-      <li><strong>Orange glow + sound:</strong> The event is within 15 minutes. The glow is more active and repeating sound alerts play. A reminder summary dialog appears on screen with Snooze, Dismiss, Delete, and Close options</li>
-      <li><strong>Daily digests:</strong> Upcoming events are grouped into a morning digest (09:00) and an evening digest (21:00) so you see what is coming without individual notifications for every item</li>
-    </ul>
+<h2>How the calendar is accessed</h2>
+<p>The calendar is not a separate app or screen — it lives behind the clock overlay. While the slideshow is running, tapping the clock or date widget opens a full-screen monthly calendar view without interrupting the photos. Closing the calendar returns to the slideshow exactly where it left off.</p>
+<p>This design means the frame stays focused on photos during normal viewing, but the calendar is one tap away whenever you need to check or add something.</p>
 
-    <h2>Setup</h2>
-    <p>The calendar is available as part of PRO. After completing the first-launch onboarding and activating PRO:</p>
-    <ul>
-      <li>Ensure the clock overlay is enabled in <strong>Settings → Overlays</strong></li>
-      <li>While the slideshow is running, tap the clock or date display on the frame</li>
-      <li>The full-screen calendar opens. Tap any day to add an event</li>
-    </ul>
+<h2>What the calendar includes</h2>
+<ul>
+  <li><strong>Monthly view:</strong> Swipe left and right to move between months. Days with events are marked</li>
+  <li><strong>Day view:</strong> Tap a day to see its events; swipe within the visible date range to move between days</li>
+  <li><strong>Event creation and editing:</strong> Add events with a title, date, time range, and all-day toggle</li>
+  <li><strong>Recurrence:</strong> Monthly-by-weekday recurrence with edit scopes — this occurrence, this and following, or the whole series</li>
+  <li><strong>Per-event reminders:</strong> Choose a digest reminder, 1-hour reminder, or 15-minute reminder for each event</li>
+  <li><strong>Multi-select delete:</strong> Long-press a day to enter selection mode for bulk deletion</li>
+  <li><strong>Week start preference:</strong> The monthly grid respects your configured first day of week</li>
+</ul>
 
-    <div class="panel">
-      <h2>Best use cases for a frame calendar</h2>
-      <p><strong>Kitchen display:</strong> A frame mounted at eye level in the kitchen is the natural place to check the day's schedule while making coffee. Events added here are visible to the whole household without needing to open a phone app.</p>
-      <p><strong>Family events and birthdays:</strong> Add recurring annual reminders for birthdays and anniversaries. The glow reminder appears on the frame the morning before, then again 15 minutes before — visible to anyone who walks past.</p>
-      <p><strong>Medication and routines:</strong> Recurring daily events with reminders use the same glow system, making the frame a subtle reminder display that does not require interaction to notice.</p>
-      <p><strong>Note on sync:</strong> The calendar is standalone within Fravora and does not sync with Google Calendar, Apple Calendar, or other external calendar services. Events are created and managed inside the app.</p>
-    </div>
+<h2>How reminders appear on the frame</h2>
+<p>Reminders surface as a visual glow on the frame border, keeping the display ambient rather than intrusive:</p>
+<ul>
+  <li><strong>Yellow glow:</strong> The event is within 1 hour. The glow is subtle — you notice it when you glance at the frame without it being disruptive</li>
+  <li><strong>Orange glow + sound:</strong> The event is within 15 minutes. The glow is more active and repeating sound alerts play. A reminder summary dialog appears on screen with Snooze, Dismiss, Delete, and Close options</li>
+  <li><strong>Daily digests:</strong> Upcoming events are grouped into a morning digest (09:00) and an evening digest (21:00) so you see what is coming without individual notifications for every item</li>
+</ul>
 
-    <div class="links">
-      <a href="../download.html">Get Fravora</a>
-      <a href="../features.html">All features</a>
-      <a href="digital-photo-frame-weather-overlay.html">Weather overlay guide</a>
-      <a href="smart-photo-frame-at-home.html">Smart frame at home</a>
-      <a href="android-tablet-photo-frame.html">Tablet setup guide</a>
-    </div>
-  </main>
-  <div id="siteFooterMount" data-base="../"></div>
-  <script src="../shared-footer.js"></script>
-  <script>const navToggleBtn=document.getElementById('navToggleBtn');const navLinks=document.getElementById('siteNav');if(navToggleBtn&&navLinks){const closeNav=()=>{navLinks.classList.remove('open');navToggleBtn.setAttribute('aria-expanded','false');};navToggleBtn.addEventListener('click',()=>{const isOpen=navLinks.classList.toggle('open');navToggleBtn.setAttribute('aria-expanded',isOpen?'true':'false');});navLinks.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>closeNav());});document.addEventListener('click',(event)=>{if(!navLinks.contains(event.target)&&!navToggleBtn.contains(event.target))closeNav();});document.addEventListener('keydown',(event)=>{if(event.key==='Escape')closeNav();});window.addEventListener('resize',()=>{if(window.innerWidth>900)closeNav();});}</script>
-</body>
-</html>
+<h2>Setup</h2>
+<p>The calendar is available as part of PRO. After completing the first-launch onboarding and activating PRO:</p>
+<ul>
+  <li>Ensure the clock overlay is enabled in <strong>Settings → Overlays</strong></li>
+  <li>While the slideshow is running, tap the clock or date display on the frame</li>
+  <li>The full-screen calendar opens. Tap any day to add an event</li>
+</ul>
+
+<div class="panel">
+  <h2>Best use cases for a frame calendar</h2>
+  <p><strong>Kitchen display:</strong> A frame mounted at eye level in the kitchen is the natural place to check the day's schedule while making coffee. Events added here are visible to the whole household without needing to open a phone app.</p>
+  <p><strong>Family events and birthdays:</strong> Add recurring annual reminders for birthdays and anniversaries. The glow reminder appears on the frame the morning before, then again 15 minutes before — visible to anyone who walks past.</p>
+  <p><strong>Medication and routines:</strong> Recurring daily events with reminders use the same glow system, making the frame a subtle reminder display that does not require interaction to notice.</p>
+  <p><strong>Note on sync:</strong> The calendar is standalone within Fravora and does not sync with Google Calendar, Apple Calendar, or other external calendar services. Events are created and managed inside the app.</p>
+</div>
+
+<div class="links">
+  <a href="../download.html">Get Fravora</a>
+  <a href="../features.html">All features</a>
+  <a href="digital-photo-frame-weather-overlay.html">Weather overlay guide</a>
+  <a href="smart-photo-frame-at-home.html">Smart frame at home</a>
+  <a href="android-tablet-photo-frame.html">Tablet setup guide</a>
+</div>

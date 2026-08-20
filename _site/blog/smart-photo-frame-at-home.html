@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <script src="/fravora/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Create a Smart Photo Frame at Home | Fravora Blog</title>
+  <meta name="description" content="Build a smart photo frame at home using an Android tablet with practical setup steps for Google Photos, NAS, scheduling, weather overlays, and offline playback." />
+  <link rel="canonical" href="http://localhost:4000/fravora/blog/smart-photo-frame-at-home.html" />
+
+  
+  <meta property="og:image" content="http://localhost:4000/fravora/images/screen_frame2.webp" />
+  <meta name="twitter:image" content="http://localhost:4000/fravora/images/screen_frame2.webp" />
+  
+
+  <link rel="icon" type="image/png" href="/fravora/images/fravora.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/fravora/css/global.css" />
+
+  
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CQF87DK78N');
+  </script>
+</head>
+<body>
+
+  <nav>
+  <a class="nav-logo" href="/fravora/index.html">
+    <img src="/fravora/images/fravora.png" alt="Fravora logo" />
+    <span>Fravora</span>
+  </a>
+  <button class="nav-toggle" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">☰</button>
+  <div class="nav-links" id="siteNav">
+    <a href="/fravora/index.html">Home</a>
+    <a href="/fravora/features.html">Features</a>
+    <a href="/fravora/how-it-works.html">How It Works</a>
+    <a href="/fravora/download.html">Download</a>
+    <a class="active" href="/fravora/blog/index.html">Blog</a>
+    <a href="/fravora/manual.html">User Manual</a>
+    <a href="/fravora/glossary.html">Glossary</a>
+    <a href="/fravora/privacy.html">Privacy Policy</a>
+    <a href="/fravora/data-deletion.html">Data Deletion</a>
+    <a href="/fravora/release-notes.html">Release Notes</a>
+    <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+  </div>
+</nav>
+
+
+  <main>
+  <div class="content-header" style="text-align: center; margin-bottom: 3rem;">
+    <h1 style="font-family:'Syne'; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 0.5rem;">How to Create a Smart Photo Frame at Home | Fravora Blog</h1>
+    
+  </div>
+
+  <div class="blog-content" style="color: var(--muted); line-height: 1.8; font-size: 1rem;">
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Create a Smart Photo Frame at Home",
+    "description": "Build a smart photo frame at home using an Android tablet with practical setup steps for Google Photos, NAS, scheduling, weather overlays, and offline playback.",
+    "image": "https://aniujual.github.io/fravora/images/screen_frame2.webp",
+    "author": {
+      "@type": "Person",
+      "name": "aniujual"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Fravora: Digital Photo Frame",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://aniujual.github.io/fravora/images/fravora.png"
+      }
+    },
+    "datePublished": "2026-06-27",
+    "dateModified": "2026-06-27",
+    "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/smart-photo-frame-at-home.html"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://aniujual.github.io/fravora/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://aniujual.github.io/fravora/blog/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How to Create a Smart Photo Frame at Home",
+        "item": "https://aniujual.github.io/fravora/blog/smart-photo-frame-at-home.html"
+      }
+    ]
+  }
+</script>
+
+<h1>How to create a smart photo frame at home</h1>
+<p class="meta">Updated June 27, 2026 · 7 min read</p>
+<p>A smart photo frame setup is less about buying hardware and more about making your display dependable. With an Android tablet and the right app settings, you can run a 24/7 family display with Google Photos, NAS, weather overlays, and minimal maintenance.</p>
+
+<h2>What you need</h2>
+<ol>
+  <li>An Android tablet or dedicated display device with stable charging</li>
+  <li>A stand or wall mount in a visible location</li>
+  <li>Your photo source strategy: Google Photos, local folders, NAS/SMB, or other cloud sources</li>
+  <li>A frame app that supports scheduling and clean overlays</li>
+</ol>
+
+<h2>Setup workflow that avoids common failures</h2>
+<ol>
+  <li>Install Fravora and complete the first-launch onboarding — it guides you through adding a photo source (Google Photos, local folders, NAS, or other cloud providers) and creating your first album, so your frame is running before you leave the setup flow.</li>
+  <li>Choose placement first, then solve cable routing and power.</li>
+  <li>Disable aggressive battery optimization for your frame app.</li>
+  <li>Set slideshow schedule to match your daily routine.</li>
+  <li>Keep overlays minimal so photos remain the focus.</li>
+  <li>Test overnight stability before mounting permanently.</li>
+</ol>
+
+<div class="panel">
+  <h2>Why offline support matters</h2>
+  <p>If your slideshow relies only on cloud access, temporary internet issues can leave a blank screen. An offline photo viewer for Android with local or NAS support keeps your display running reliably.</p>
+
+  <h2>Voice control as a quality-of-life upgrade</h2>
+  <p>For kitchen or hallway displays, voice control lets you skip photos or adjust playback without touching the device, which is useful when the frame is mounted high.</p>
+</div>
+
+<div class="links">
+  <a href="../how-it-works.html">Detailed setup page</a>
+  <a href="../features.html">Feature details</a>
+  <a href="photo-frame-apps-compared-2026.html">App comparison guide</a>
+  <a href="android-tablet-photo-frame.html">Full tablet setup guide</a>
+  <a href="google-photos-digital-photo-frame.html">Google Photos guide</a>
+  <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
+  <a href="digital-photo-frame-weather-overlay.html">Add weather to your frame</a>
+</div>
+
+  </div>
+
+  <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center;">
+    <a href="/fravora/blog/index.html" style="color: var(--accent2); text-decoration: none; font-weight: 600;">← Back to Blog</a>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="footer-left">
+    <img src="/fravora/images/fravora.png" alt="" />
+    <span>© 2026 aniujual software</span>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:aniujual.dev@yahoo.com">Contact</a>
+    <a href="/fravora/manual.html">User Manual</a>
+    <a href="/fravora/features.html">Features</a>
+    <a href="/fravora/how-it-works.html">How It Works</a>
+    <a href="/fravora/download.html">Download</a>
+    <a href="/fravora/blog/index.html">Blog</a>
+    <a href="/fravora/glossary.html">Glossary</a>
+    <a href="/fravora/privacy.html">Privacy Policy</a>
+    <a href="/fravora/data-deletion.html">Data Deletion</a>
+    <a href="/fravora/release-notes.html">Release Notes</a>
+  </div>
+</footer>
+
+
+  <script src="/fravora/js/main.js"></script>
+  
+</body>
+</html>

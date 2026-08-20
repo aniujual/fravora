@@ -1,332 +1,172 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <script>(function(){try{var t=localStorage.getItem('fravora-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fravora: Digital Photo Frame Blog | Android Tablet Photo Frame Guides</title>
-  <meta name="description" content="Read Fravora: Digital Photo Frame blog guides on reusing Android tablets, building Google Photos and NAS photo frames, and comparing digital photo frame apps." />
-  <link rel="canonical" href="https://aniujual.github.io/fravora/blog/index.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Fravora: Digital Photo Frame Blog | Android Tablet Photo Frame Guides" />
-  <meta property="og:description" content="Read Fravora: Digital Photo Frame blog guides on reusing Android tablets, building Google Photos and NAS photo frames, and comparing digital photo frame apps." />
-  <meta property="og:url" content="https://aniujual.github.io/fravora/blog/index.html" />
-  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_settings_radio.png" />
-  <meta property="og:image:alt" content="Fravora Android photo frame app radio settings showing station favourites and scheduling." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Fravora: Digital Photo Frame Blog | Android Tablet Photo Frame Guides" />
-  <meta name="twitter:description" content="Read Fravora: Digital Photo Frame blog guides on reusing Android tablets, building Google Photos and NAS photo frames, and comparing digital photo frame apps." />
-  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_settings_radio.png" />
-  <meta name="twitter:image:alt" content="Fravora Android photo frame app radio settings showing station favourites and scheduling." />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "Fravora Blog",
-      "url": "https://aniujual.github.io/fravora/blog/index.html",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Fravora: Digital Photo Frame",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://aniujual.github.io/fravora/images/fravora.png"
-        }
+---
+layout: default
+title: "Fravora: Digital Photo Frame Blog | Android Tablet Photo Frame Guides"
+description: "Read Fravora: Digital Photo Frame blog guides on reusing Android tablets, building Google Photos and NAS photo frames, and comparing digital photo frame apps."
+og_image: "images/screen_settings_radio.webp"
+active_nav: "blog"
+---
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Fravora Blog",
+    "url": "https://aniujual.github.io/fravora/blog/index.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Fravora: Digital Photo Frame",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://aniujual.github.io/fravora/images/fravora.png"
       }
     }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://aniujual.github.io/fravora/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "https://aniujual.github.io/fravora/blog/index.html"
-        }
-      ]
-    }
-  </script>
-  <link rel="icon" type="image/png" href="../images/fravora.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
-    gtag('js', new Date());
-    gtag('config', 'G-CQF87DK78N');
-  </script>
-  <style>
-    :root {
-      --bg: #0e0b14;
-      --surface: #1c1728;
-      --border: #2e2640;
-      --accent: #9b5de5;
-      --accent2: #c77dff;
-      --text: #e8e0f5;
-      --muted: #8b7fa8;
-      --nav-bg: rgba(14,11,20,0.85);
-    }
-    [data-theme="light"] {
-      --bg: #f5f0ff;
-      --surface: #ffffff;
-      --border: #d4c8f0;
-      --accent: #7c3aed;
-      --accent2: #9b5de5;
-      --text: #1a1033;
-      --muted: #6b5b8a;
-      --nav-bg: rgba(245,240,255,0.88);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
-    nav {
-      position: sticky; top: 0; z-index: 10;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border); background: var(--nav-bg);
-      backdrop-filter: blur(10px);
-    }
-    .nav-logo {
-      display: flex; align-items: center; gap: 0.55rem;
-      font-family: 'Syne', sans-serif; text-decoration: none; color: var(--text);
-    }
-    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
-    .nav-logo span {
-      font-weight: 800; letter-spacing: 0.3px; font-size: 1.05rem;
-      line-height: 1;
-    }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
-    .nav-links a {
-      text-decoration: none; color: var(--muted); font-size: 0.85rem;
-      border: 1px solid var(--border); padding: 0.3rem 0.65rem; border-radius: 999px;
-    }
-    .nav-links a.active, .nav-links a:hover { color: var(--text); border-color: var(--accent); }
-    .theme-btn {
-      border: 1px solid var(--border); background: var(--surface); color: var(--muted);
-      width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
-    }
-    .nav-toggle {
-      display: none;
-      width: 34px; height: 34px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--muted);
-      cursor: pointer;
-      font-size: 1.05rem;
-      align-items: center;
-      justify-content: center;
-    }
-    main { max-width: 980px; margin: 0 auto; padding: 2.2rem 1rem 4rem; }
-    h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 5vw, 2.7rem); margin-bottom: 0.75rem; }
-    .lead { color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
-    .grid {
-      display: grid; gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
-    article {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 14px; padding: 1.1rem;
-    }
-    article h2 { font-family: 'Syne', sans-serif; font-size: 1.02rem; margin-bottom: 0.45rem; }
-    article p { color: var(--muted); line-height: 1.62; font-size: 0.9rem; margin-bottom: 0.7rem; }
-    article a { color: var(--accent2); text-decoration: none; font-weight: 600; font-size: 0.86rem; }
-    footer {
-      max-width: 980px; margin: 0 auto; padding: 0 1rem 2rem;
-      display: flex; flex-wrap: wrap; gap: 0.8rem; color: var(--muted); font-size: 0.85rem;
-    }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--accent2); }
-    @media (max-width: 900px) {
-      .nav-toggle { display: inline-flex; }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%; left: 0; right: 0;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.45rem;
-        padding: 0.75rem 1rem 1rem;
-        background: var(--nav-bg);
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(10px);
-        max-height: calc(100vh - 64px);
-        overflow-y: auto;
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://aniujual.github.io/fravora/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://aniujual.github.io/fravora/blog/index.html"
       }
-      .nav-links.open { display: flex; }
-      .theme-btn { margin-top: 0.35rem; }
-    }
-    .section-label { font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin: 2rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); }
-    .section-label:first-of-type { margin-top: 0; }
-  </style>
-</head>
-<body>
-  <div id="siteNavMount" data-base="../" data-active="blog"></div>
-  <script src="../shared-nav.js"></script>
+    ]
+  }
+</script>
 
-  <main>
-    <h1>Blog: digital photo frame app guides</h1>
-    <p class="lead">Setup guides, feature deep-dives, source-specific walkthroughs, and competitor comparisons for Android digital photo frames.</p>
+<main>
+  <div style="text-align: center; margin-bottom: 5rem;">
+    <h1 style="font-family:'Syne'; font-size: clamp(2.5rem, 8vw, 4rem); line-height: 1.1; margin-bottom: 1.5rem;">Blog: digital photo frame app guides</h1>
+    <p class="lead" style="max-width: 800px; margin: 0 auto; color: var(--muted); font-size: 1.2rem; line-height: 1.7;">Setup guides, feature deep-dives, source-specific walkthroughs, and competitor comparisons for Android digital photo frames.</p>
+  </div>
 
-    <p class="section-label">Setup guides</p>
-    <section class="grid" aria-label="Setup guides">
-      <article>
-        <h2>Best ways to reuse an old Android tablet</h2>
-        <p>Practical home-use ideas and a complete workflow for turning an old tablet into a dedicated digital photo frame display.</p>
-        <a href="reuse-old-android-tablet.html">Read article</a>
-      </article>
-      <article>
-        <h2>How to create a smart photo frame at home</h2>
-        <p>Mounting, power, scheduling, and control tips for a dependable DIY smart frame using existing Android hardware.</p>
-        <a href="smart-photo-frame-at-home.html">Read article</a>
-      </article>
-      <article>
-        <h2>How to turn an Android tablet into a digital photo frame</h2>
-        <p>Hardware setup, always-on display configuration, photo source options, overlays, and long-term reliability tips for any Android or Fire tablet.</p>
-        <a href="android-tablet-photo-frame.html">Read article</a>
-      </article>
-      <article>
-        <h2>Digital photo frame app with no subscription</h2>
-        <p>Run a full digital photo frame on Android indefinitely at no ongoing cost. What the free tier covers, what PRO adds as a one-time purchase, and how it compares to subscription-based alternatives.</p>
-        <a href="digital-photo-frame-no-subscription.html">Read article</a>
-      </article>
-      <article>
-        <h2>Repurposing Fire Tablets as Smart Home Calendars</h2>
-        <p>Turn your Amazon Fire tablet into an always-on smart home calendar and photo frame with Fravora. Support for events, recurrence, and reminder alerts.</p>
-        <a href="fire-tablet-smart-calendar.html">Read article</a>
-      </article>
-    </section>
+  <p class="section-label">Setup guides</p>
+  <section class="grid" aria-label="Setup guides">
+    <article>
+      <h2>Best ways to reuse an old Android tablet</h2>
+      <p>Practical home-use ideas and a complete workflow for turning an old tablet into a dedicated digital photo frame display.</p>
+      <a href="reuse-old-android-tablet.html">Read article</a>
+    </article>
+    <article>
+      <h2>How to create a smart photo frame at home</h2>
+      <p>Mounting, power, scheduling, and control tips for a dependable DIY smart frame using existing Android hardware.</p>
+      <a href="smart-photo-frame-at-home.html">Read article</a>
+    </article>
+    <article>
+      <h2>How to turn an Android tablet into a digital photo frame</h2>
+      <p>Hardware setup, always-on display configuration, photo source options, overlays, and long-term reliability tips for any Android or Fire tablet.</p>
+      <a href="android-tablet-photo-frame.html">Read article</a>
+    </article>
+    <article>
+      <h2>Digital photo frame app with no subscription</h2>
+      <p>Run a full digital photo frame on Android indefinitely at no ongoing cost. What the free tier covers, what PRO adds as a one-time purchase, and how it compares to subscription-based alternatives.</p>
+      <a href="digital-photo-frame-no-subscription.html">Read article</a>
+    </article>
+    <article>
+      <h2>Repurposing Fire Tablets as Smart Home Calendars</h2>
+      <p>Turn your Amazon Fire tablet into an always-on smart home calendar and photo frame with Fravora. Support for events, recurrence, and reminder alerts.</p>
+      <a href="fire-tablet-smart-calendar.html">Read article</a>
+    </article>
+  </section>
 
-    <p class="section-label">Photo sources</p>
-    <section class="grid" aria-label="Photo source guides">
-      <article>
-        <h2>Google Photos digital photo frame on Android</h2>
-        <p>How to connect Google Photos to an Android frame, manage your picked photos, handle storage, and keep the slideshow running offline.</p>
-        <a href="google-photos-digital-photo-frame.html">Read article</a>
-      </article>
-      <article>
-        <h2>NAS and SMB photo frame on Android</h2>
-        <p>Display photos directly from a Synology, QNAP, or Windows network share on an Android frame — with outage recovery and no cloud upload required.</p>
-        <a href="nas-smb-photo-frame-android.html">Read article</a>
-      </article>
-      <article>
-        <h2>Synology NAS digital photo frame on Android</h2>
-        <p>Synology-specific setup: enable SMB in DSM, create a read-only frame user, connect Fravora, and handle NAS sleep and outage recovery.</p>
-        <a href="synology-nas-photo-frame-android.html">Read article</a>
-      </article>
-      <article>
-        <h2>Immich digital photo frame on Android</h2>
-        <p>Connect your self-hosted Immich server to an Android frame using an API key. Pick albums, cache photos locally, and run a fully private slideshow on your own hardware.</p>
-        <a href="immich-photo-frame-android.html">Read article</a>
-      </article>
-      <article>
-        <h2>Self-Hosted Photo Frame: Immich vs. Local SMB Compared</h2>
-        <p>Compare self-hosted photo frame options for Android. Learn when to use Immich's API integration vs standard SMB/NAS sharing for a private memory display.</p>
-        <a href="self-hosted-photo-frame-immich-smb.html">Read article</a>
-      </article>
-    </section>
+  <p class="section-label">Photo sources</p>
+  <section class="grid" aria-label="Photo source guides">
+    <article>
+      <h2>Google Photos digital photo frame on Android</h2>
+      <p>How to connect Google Photos to an Android frame, manage your picked photos, handle storage, and keep the slideshow running offline.</p>
+      <a href="google-photos-digital-photo-frame.html">Read article</a>
+    </article>
+    <article>
+      <h2>NAS and SMB photo frame on Android</h2>
+      <p>Display photos directly from a Synology, QNAP, or Windows network share on an Android frame — with outage recovery and no cloud upload required.</p>
+      <a href="nas-smb-photo-frame-android.html">Read article</a>
+    </article>
+    <article>
+      <h2>Synology NAS digital photo frame on Android</h2>
+      <p>Synology-specific setup: enable SMB in DSM, create a read-only frame user, connect Fravora, and handle NAS sleep and outage recovery.</p>
+      <a href="synology-nas-photo-frame-android.html">Read article</a>
+    </article>
+    <article>
+      <h2>Immich digital photo frame on Android</h2>
+      <p>Connect your self-hosted Immich server to an Android frame using an API key. Pick albums, cache photos locally, and run a fully private slideshow on your own hardware.</p>
+      <a href="immich-photo-frame-android.html">Read article</a>
+    </article>
+    <article>
+      <h2>Self-Hosted Photo Frame: Immich vs. Local SMB Compared</h2>
+      <p>Compare self-hosted photo frame options for Android. Learn when to use Immich's API integration vs standard SMB/NAS sharing for a private memory display.</p>
+      <a href="self-hosted-photo-frame-immich-smb.html">Read article</a>
+    </article>
+  </section>
 
-    <p class="section-label">Features</p>
-    <section class="grid" aria-label="Feature guides">
-      <article>
-        <h2>Digital photo frame with internet radio</h2>
-        <p>Play internet radio stations and local music playlists alongside your photo slideshow, with a now-playing overlay, background playback, and separate audio scheduling.</p>
-        <a href="digital-photo-frame-internet-radio.html">Read article</a>
-      </article>
-      <article>
-        <h2>Build a High-Performance Music Frame with NAS & Android</h2>
-        <p>Learn how to sync your music library from Synology or QNAP NAS to an Android photo frame using SMB, hierarchical playlists, and Fravora's Sync Inspector.</p>
-        <a href="nas-music-frame-android.html">Read article</a>
-      </article>
-      <article>
-        <h2>Voice-controlled digital photo frame on Android</h2>
-        <p>Wake phrase and command recognition for hands-free slideshow, radio, and volume control. Honest guide to what works, mic limitations, and the best setups for reliable recognition.</p>
-        <a href="voice-controlled-digital-photo-frame.html">Read article</a>
-      </article>
-      <article>
-        <h2>How to add weather to a digital photo frame</h2>
-        <p>Enable a live weather overlay on your Android frame: current temperature and conditions, full hourly and 7-day forecast on tap, and positioning alongside your other overlays.</p>
-        <a href="digital-photo-frame-weather-overlay.html">Read article</a>
-      </article>
-      <article>
-        <h2>Digital photo frame with calendar: events and reminders</h2>
-        <p>Tap the clock overlay to open a full-screen calendar with events, recurrence, and reminder alerts shown as a coloured glow on the frame border.</p>
-        <a href="digital-photo-frame-calendar.html">Read article</a>
-      </article>
-    </section>
+  <p class="section-label">Features</p>
+  <section class="grid" aria-label="Feature guides">
+    <article>
+      <h2>Digital photo frame with internet radio</h2>
+      <p>Play internet radio stations and local music playlists alongside your photo slideshow, with a now-playing overlay, background playback, and separate audio scheduling.</p>
+      <a href="digital-photo-frame-internet-radio.html">Read article</a>
+    </article>
+    <article>
+      <h2>Build a High-Performance Music Frame with NAS & Android</h2>
+      <p>Learn how to sync your music library from Synology or QNAP NAS to an Android photo frame using SMB, hierarchical playlists, and Fravora's Sync Inspector.</p>
+      <a href="nas-music-frame-android.html">Read article</a>
+    </article>
+    <article>
+      <h2>Voice-controlled digital photo frame on Android</h2>
+      <p>Wake phrase and command recognition for hands-free slideshow, radio, and volume control. Honest guide to what works, mic limitations, and the best setups for reliable recognition.</p>
+      <a href="voice-controlled-digital-photo-frame.html">Read article</a>
+    </article>
+    <article>
+      <h2>How to add weather to a digital photo frame</h2>
+      <p>Enable a live weather overlay on your Android frame: current temperature and conditions, full hourly and 7-day forecast on tap, and positioning alongside your other overlays.</p>
+      <a href="digital-photo-frame-weather-overlay.html">Read article</a>
+    </article>
+    <article>
+      <h2>Digital photo frame with calendar: events and reminders</h2>
+      <p>Tap the clock overlay to open a full-screen calendar with events, recurrence, and reminder alerts shown as a coloured glow on the frame border.</p>
+      <a href="digital-photo-frame-calendar.html">Read article</a>
+    </article>
+  </section>
 
-    <p class="section-label">Comparisons and alternatives</p>
-    <section class="grid" aria-label="Comparison articles">
-      <article>
-        <h2>Digital photo frame apps compared: 2026 guide</h2>
-        <p>A practical comparison framework to evaluate offline support, privacy, Google Photos and NAS flexibility, voice control, and long-term usability.</p>
-        <a href="photo-frame-apps-compared-2026.html">Read article</a>
-      </article>
-      <article>
-        <h2>Google Photos slideshow vs dedicated photo frame app</h2>
-        <p>What the built-in Google Photos slideshow can and cannot do, and when a dedicated app gives you scheduling, NAS sources, overlays, and reliability it cannot match.</p>
-        <a href="google-photos-slideshow-vs-photo-frame-app.html">Read article</a>
-      </article>
-      <article>
-        <h2>Fotoo alternative for Android: Fravora vs Fotoo compared</h2>
-        <p>Both support NAS and cloud sources — the differences are in licensing (free tier vs per-device purchase), voice control, radio, Immich support, and OLED burn-in protection.</p>
-        <a href="fravora-vs-fotoo.html">Read article</a>
-      </article>
-      <article>
-        <h2>Frameo alternative for Android: Fravora vs Frameo compared</h2>
-        <p>Frameo's family-push model vs owner-controlled sources. The fundamental difference between the two, and which fits your actual use case.</p>
-        <a href="fravora-vs-frameo.html">Read article</a>
-      </article>
-      <article>
-        <h2>Nixplay alternative for Android: Fravora vs Nixplay compared</h2>
-        <p>No subscription, NAS support, and offline playback vs cloud-dependent proprietary hardware. A practical comparison for people evaluating both options.</p>
-        <a href="fravora-vs-nixplay.html">Read article</a>
-      </article>
-      <article>
-        <h2>Aura Frame alternative: Fravora vs Aura Frame compared</h2>
-        <p>Premium hardware and family sharing vs Android flexibility, no subscription, and self-hosted photo sources. Which setup fits your long-term needs?</p>
-        <a href="fravora-vs-aura-frame.html">Read article</a>
-      </article>
-    </section>
-  </main>
-
-  <div id="siteFooterMount" data-base="../"></div>
-  <script src="../shared-footer.js"></script>
-
-  <script>
-    const navToggleBtn = document.getElementById('navToggleBtn');
-    const navLinks = document.getElementById('siteNav');
-
-    if (navToggleBtn && navLinks) {
-      const closeNav = () => {
-        navLinks.classList.remove('open');
-        navToggleBtn.setAttribute('aria-expanded', 'false');
-      };
-      navToggleBtn.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('open');
-        navToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => closeNav());
-      });
-      document.addEventListener('click', (event) => {
-        if (!navLinks.contains(event.target) && !navToggleBtn.contains(event.target)) closeNav();
-      });
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') closeNav();
-      });
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 900) closeNav();
-      });
-    }
-  </script>
-</body>
-</html>
+  <p class="section-label">Comparisons and alternatives</p>
+  <section class="grid" aria-label="Comparison articles">
+    <article>
+      <h2>Digital photo frame apps compared: 2026 guide</h2>
+      <p>A practical comparison framework to evaluate offline support, privacy, Google Photos and NAS flexibility, voice control, and long-term usability.</p>
+      <a href="photo-frame-apps-compared-2026.html">Read article</a>
+    </article>
+    <article>
+      <h2>Google Photos slideshow vs dedicated photo frame app</h2>
+      <p>What the built-in Google Photos slideshow can and cannot do, and when a dedicated app gives you scheduling, NAS sources, overlays, and reliability it cannot match.</p>
+      <a href="google-photos-slideshow-vs-photo-frame-app.html">Read article</a>
+    </article>
+    <article>
+      <h2>Fotoo alternative for Android: Fravora vs Fotoo compared</h2>
+      <p>Both support NAS and cloud sources — the differences are in licensing (free tier vs per-device purchase), voice control, radio, Immich support, and OLED burn-in protection.</p>
+      <a href="fravora-vs-fotoo.html">Read article</a>
+    </article>
+    <article>
+      <h2>Frameo alternative for Android: Fravora vs Frameo compared</h2>
+      <p>Frameo's family-push model vs owner-controlled sources. The fundamental difference between the two, and which fits your actual use case.</p>
+      <a href="fravora-vs-frameo.html">Read article</a>
+    </article>
+    <article>
+      <h2>Nixplay alternative for Android: Fravora vs Nixplay compared</h2>
+      <p>No subscription, NAS support, and offline playback vs cloud-dependent proprietary hardware. A practical comparison for people evaluating both options.</p>
+      <a href="fravora-vs-nixplay.html">Read article</a>
+    </article>
+    <article>
+      <h2>Aura Frame alternative: Fravora vs Aura Frame compared</h2>
+      <p>Premium hardware and family sharing vs Android flexibility, no subscription, and self-hosted photo sources. Which setup fits your long-term needs?</p>
+      <a href="fravora-vs-aura-frame.html">Read article</a>
+    </article>
+  </section>
+</main>

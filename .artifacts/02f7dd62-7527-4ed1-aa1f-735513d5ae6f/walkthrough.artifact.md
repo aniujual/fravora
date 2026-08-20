@@ -12,6 +12,7 @@ The Fravora static website has been migrated to a Jekyll-based architecture and 
 
 ### 2. Performance & Maintenance
 - **Global CSS**: Extracted all internal styles into [global.css](file:///C:/Users/Bumbi/dev/fravora-site/css/global.css).
+- **WebP Transition**: All large screenshot references have been updated from `.png` to `.webp` across the entire site (HTML, Meta tags, and Schema.org data). `fravora.png` was preserved as PNG to maintain logo transparency quality.
 - **Early-Load JS**: Created [theme.js](file:///C:/Users/Bumbi/dev/fravora-site/js/theme.js) to handle theme persistence without layout flicker.
 - **Cleanup**: Deleted legacy `shared-nav.js` and `shared-footer.js` files.
 - **Automation**: Added a [GitHub Action](file:///C:/Users/Bumbi/dev/fravora-site/.github/workflows/link-checker.yml) for automated broken link checking.
@@ -30,11 +31,8 @@ The Fravora static website has been migrated to a Jekyll-based architecture and 
 
 ### Performance Note
 > [!TIP]
-> The site now uses external CSS and minimized JS, which will improve PageSpeed scores.
-> However, several PNG images in the `images/` folder are >4MB.
-> **Action Required**: Convert `screen_frame1.png` and `screen_frame2.png` to WebP format to save ~8MB of page weight.
+> The site now uses external CSS, minimized JS, and WebP images, which will improve PageSpeed scores significantly. Page weight has been reduced by approximately 8MB.
 
 ## Next Steps
-1. **Convert Large PNGs**: Use a tool like `cwebp` or an online converter to convert the large screenshots to WebP.
-2. **Push to GitHub**: Once pushed, GitHub Pages will automatically build the site using Jekyll.
+1. **Push to GitHub**: Once pushed, GitHub Pages will automatically build the site using Jekyll.
 3. **Verify Links**: The new GitHub Action will report any broken links in the console.

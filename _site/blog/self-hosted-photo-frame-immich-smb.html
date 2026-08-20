@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <script src="/fravora/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self-Hosted Photo Frame: Immich vs. Local SMB Compared | Fravora Blog</title>
+  <meta name="description" content="Compare self-hosted photo frame options for Android. Learn when to use Immich's API integration vs standard SMB/NAS sharing for a private memory display." />
+  <link rel="canonical" href="http://localhost:4000/fravora/blog/self-hosted-photo-frame-immich-smb.html" />
+
+  
+  <meta property="og:image" content="http://localhost:4000/fravora/images/screen_frame2.webp" />
+  <meta name="twitter:image" content="http://localhost:4000/fravora/images/screen_frame2.webp" />
+  
+
+  <link rel="icon" type="image/png" href="/fravora/images/fravora.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/fravora/css/global.css" />
+
+  
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CQF87DK78N');
+  </script>
+</head>
+<body>
+
+  <nav>
+  <a class="nav-logo" href="/fravora/index.html">
+    <img src="/fravora/images/fravora.png" alt="Fravora logo" />
+    <span>Fravora</span>
+  </a>
+  <button class="nav-toggle" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">☰</button>
+  <div class="nav-links" id="siteNav">
+    <a href="/fravora/index.html">Home</a>
+    <a href="/fravora/features.html">Features</a>
+    <a href="/fravora/how-it-works.html">How It Works</a>
+    <a href="/fravora/download.html">Download</a>
+    <a class="active" href="/fravora/blog/index.html">Blog</a>
+    <a href="/fravora/manual.html">User Manual</a>
+    <a href="/fravora/glossary.html">Glossary</a>
+    <a href="/fravora/privacy.html">Privacy Policy</a>
+    <a href="/fravora/data-deletion.html">Data Deletion</a>
+    <a href="/fravora/release-notes.html">Release Notes</a>
+    <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+  </div>
+</nav>
+
+
+  <main>
+  <div class="content-header" style="text-align: center; margin-bottom: 3rem;">
+    <h1 style="font-family:'Syne'; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 0.5rem;">Self-Hosted Photo Frame: Immich vs. Local SMB Compared | Fravora Blog</h1>
+    
+  </div>
+
+  <div class="blog-content" style="color: var(--muted); line-height: 1.8; font-size: 1rem;">
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Self-Hosted Photo Frame: Immich vs. Local SMB Compared",
+    "description": "Compare self-hosted photo frame options for Android. Learn when to use Immich's API integration vs standard SMB/NAS sharing for a private memory display.",
+    "image": "https://aniujual.github.io/fravora/images/screen_frame2.webp",
+    "author": {
+      "@type": "Person",
+      "name": "aniujual"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Fravora: Digital Photo Frame",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://aniujual.github.io/fravora/images/fravora.png"
+      }
+    },
+    "datePublished": "2026-08-20",
+    "dateModified": "2026-08-20",
+    "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/self-hosted-photo-frame-immich-smb.html"
+  }
+</script>
+
+<h1>Self-Hosted Photo Frame: Immich vs. Local SMB Compared</h1>
+<p class="meta">Published August 20, 2026 · 8 min read</p>
+<p>Privacy-conscious users are increasingly moving away from cloud-locked photo frames like Nixplay or Aura in favor of self-hosted solutions. For Android tablet users, the two most popular ways to feed a frame are <strong>Immich</strong> (API-based) and <strong>Local SMB/NAS</strong> (file-based). Here is how they compare and which one fits your setup.</p>
+
+<h2>1. The Immich API Approach</h2>
+<p>Immich has quickly become the favorite open-source alternative to Google Photos. Fravora connects to your self-hosted Immich server using your URL and an API key. This approach is best if you already use Immich as your primary photo management tool.</p>
+<ul>
+  <li><strong>Pros</strong>: Access to Immich's rich metadata, easy album-based selection, and high-performance loading over the API.</li>
+  <li><strong>Cons</strong>: Requires an active Immich instance and a stable network connection to your server for initial syncs.</li>
+</ul>
+
+<h2>2. The Local SMB / NAS Approach</h2>
+<p>This is the "classic" way to run an offline photo frame. You share a folder on your Synology, QNAP, or Windows PC over the SMB protocol, and Fravora reads the files directly. This approach is best if your photos are just "files in folders" and you want maximum simplicity.</p>
+<ul>
+  <li><strong>Pros</strong>: Works fully offline, no API management needed, and compatible with almost any networked storage.</li>
+  <li><strong>Cons</strong>: Lacks the organizational features of a dedicated photo manager; you rely purely on folder structure.</li>
+</ul>
+
+<div class="panel">
+  <h2>Which one should you choose?</h2>
+  <p><strong>Choose Immich if</strong>: You want a Google Photos-like experience but on your own hardware. You enjoy using a web UI or mobile app to curate "Frame" albums that automatically sync to your device.</p>
+  <p><strong>Choose SMB if</strong>: You just want to point Fravora at a <code>/Photos</code> folder on your NAS and let it run. It's the most resilient option for dedicated offline frames that might lose internet access for long periods.</p>
+</div>
+
+<h2>Mixing the Best of Both Worlds</h2>
+<p>One of Fravora's unique strengths is that you don't have to choose. A single album in Fravora can combine an Immich album, an SMB folder from your NAS, and even a local "Favorites" folder from your tablet's SD card. They all rotate together in one seamless slideshow.</p>
+
+<div class="links">
+  <a href="immich-photo-frame-android.html">Immich setup guide</a>
+  <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
+  <a href="synology-nas-photo-frame-android.html">Synology specific guide</a>
+  <a href="../manual.html#sources">Sources manual chapter</a>
+</div>
+
+  </div>
+
+  <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center;">
+    <a href="/fravora/blog/index.html" style="color: var(--accent2); text-decoration: none; font-weight: 600;">← Back to Blog</a>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="footer-left">
+    <img src="/fravora/images/fravora.png" alt="" />
+    <span>© 2026 aniujual software</span>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:aniujual.dev@yahoo.com">Contact</a>
+    <a href="/fravora/manual.html">User Manual</a>
+    <a href="/fravora/features.html">Features</a>
+    <a href="/fravora/how-it-works.html">How It Works</a>
+    <a href="/fravora/download.html">Download</a>
+    <a href="/fravora/blog/index.html">Blog</a>
+    <a href="/fravora/glossary.html">Glossary</a>
+    <a href="/fravora/privacy.html">Privacy Policy</a>
+    <a href="/fravora/data-deletion.html">Data Deletion</a>
+    <a href="/fravora/release-notes.html">Release Notes</a>
+  </div>
+</footer>
+
+
+  <script src="/fravora/js/main.js"></script>
+  
+</body>
+</html>

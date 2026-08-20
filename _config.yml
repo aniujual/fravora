@@ -4,7 +4,7 @@ url: "https://aniujual.github.io"
 baseurl: "/fravora"
 
 markdown: kramdown
-theme: minima # Or none if you want full control, but let's stick to basics
+# theme: minima # Removed as we use custom layouts in _layouts/
 exclude:
   - .artifacts
   - .idea

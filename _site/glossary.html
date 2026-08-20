@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <script src="/fravora/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Photo Frame Glossary: NAS, SMB, Immich, and More</title>
+  <meta name="description" content="Plain-language definitions of technical terms used in digital photo frame setups: NAS, SMB, Immich, EXIF, Ken Burns, OLED burn-in, and more — with links to relevant features." />
+  <link rel="canonical" href="http://localhost:4000/fravora/glossary.html" />
+
+  
+  <meta property="og:image" content="http://localhost:4000/fravora/images/screen_settings_overlays.webp" />
+  <meta name="twitter:image" content="http://localhost:4000/fravora/images/screen_settings_overlays.webp" />
+  
+
+  <link rel="icon" type="image/png" href="/fravora/images/fravora.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/fravora/css/global.css" />
+
+  
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CQF87DK78N');
+  </script>
+</head>
+<body>
+
+  <nav>
+  <a class="nav-logo" href="/fravora/index.html">
+    <img src="/fravora/images/fravora.png" alt="Fravora logo" />
+    <span>Fravora</span>
+  </a>
+  <button class="nav-toggle" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">☰</button>
+  <div class="nav-links" id="siteNav">
+    <a href="/fravora/index.html">Home</a>
+    <a href="/fravora/features.html">Features</a>
+    <a href="/fravora/how-it-works.html">How It Works</a>
+    <a href="/fravora/download.html">Download</a>
+    <a href="/fravora/blog/index.html">Blog</a>
+    <a href="/fravora/manual.html">User Manual</a>
+    <a class="active" href="/fravora/glossary.html">Glossary</a>
+    <a href="/fravora/privacy.html">Privacy Policy</a>
+    <a href="/fravora/data-deletion.html">Data Deletion</a>
+    <a href="/fravora/release-notes.html">Release Notes</a>
+    <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+  </div>
+</nav>
+
+
+  <main>
+  <h1>Digital photo frame glossary</h1>
+  <p class="lead">Plain-language explanations of the technical terms that come up when setting up an Android digital photo frame. Each entry links to the relevant Fravora feature or guide where applicable.</p>
+
+  <div class="term" id="nas">
+    <div class="term-name">NAS <span class="term-abbr">Network Attached Storage</span></div>
+    <div class="term-def">A NAS is a storage device connected to your home network that other devices — including phones, computers, and photo frames — can access over Wi-Fi or Ethernet. Common NAS brands include Synology, QNAP, and TrueNAS. Using a NAS as a photo frame source means your photos never leave your home network and you are not limited by cloud storage quotas. Fravora connects to NAS devices via <a href="#smb">SMB</a>. See the <a href="blog/nas-smb-photo-frame-android.html">NAS photo frame setup guide</a>.</div>
+  </div>
+
+  <div class="term" id="smb">
+    <div class="term-name">SMB <span class="term-abbr">Server Message Block</span></div>
+    <div class="term-def">SMB is the network file-sharing protocol used by Windows, Synology, QNAP, TrueNAS, and most NAS devices. When Fravora connects to a "network share," it is using SMB to browse folders and download photos over your local network. No internet connection is required — SMB works entirely within your home network. Fravora supports credential formats including <code>DOMAIN\user</code> and <code>user@domain</code>.</div>
+  </div>
+
+  <div class="term" id="immich">
+    <div class="term-name">Immich</div>
+    <div class="term-def">Immich is a self-hosted photo and video management application — essentially a private Google Photos that runs on hardware you own (a home server, NAS, Raspberry Pi, or VPS). Immich organises photos into albums and provides a mobile app for uploading and browsing. Fravora connects to Immich servers using a URL and API key, letting you use your Immich albums as photo frame sources. See the <a href="blog/immich-photo-frame-android.html">Immich photo frame guide</a>.</div>
+  </div>
+
+  <div class="term" id="exif">
+    <div class="term-name">EXIF data</div>
+    <div class="term-def">EXIF (Exchangeable Image File Format) is metadata embedded in photo files by cameras and smartphones. It typically includes the date and time the photo was taken, the camera model, exposure settings, and GPS coordinates if location was enabled. Fravora's photo metadata overlay reads EXIF data to display when and where a photo was taken directly on the frame. The location coordinates are reverse-geocoded to show a city name or landmark.</div>
+  </div>
+
+  <div class="term" id="ken-burns">
+    <div class="term-name">Ken Burns effect</div>
+    <div class="term-def">A slow pan-and-zoom motion applied to a still photo, named after the documentary filmmaker who popularised it. On a photo frame it makes static images feel alive — the camera slowly zooms in and pans across the photo during the display interval. Fravora implements Ken Burns as a cinematic effect with a randomised 1.05–1.15× zoom range. It is a PRO feature available alongside Drift (pan-only) and Vignette Pulse.</div>
+  </div>
+
+  <div class="term" id="oled-burn-in">
+    <div class="term-name">OLED burn-in</div>
+    <div class="term-def">OLED displays produce light at the pixel level, and pixels that display the same content continuously can degrade faster than surrounding pixels, leaving a faint permanent "ghost" of that image — this is called burn-in. For a photo frame with a fixed clock or weather overlay in the same corner all day, burn-in is a real risk over months of use. Fravora addresses this with two features: a bouncing standby clock during off-hours that moves the display around the screen, and an anti-burn-in overlay effect (PRO) that periodically micro-shifts overlay positions and varies their opacity.</div>
+  </div>
+
+  <div class="term" id="slideshow-album">
+    <div class="term-name">Album (Fravora)</div>
+    <div class="term-def">In Fravora, an album is a named collection of photo source assignments that play together as a slideshow. One album might combine a NAS folder, a Google Photos pick set, and a local device folder — all rotating together. You can have multiple albums and switch between them, or enable multiple albums to play sequentially. Albums are created and managed under Settings → Albums.</div>
+  </div>
+
+  <div class="term" id="overlay">
+    <div class="term-name">Overlay</div>
+    <div class="term-def">An overlay is information displayed on top of the photo while the slideshow is running — without interrupting it. Fravora's overlays include the clock, weather, photo metadata (date and location), now-playing (radio/music station and track), photo index (current / total count), and the ambient logo. Each overlay can be positioned independently in a corner or center slot using the Overlay Layout grid. Overlays can be enabled, disabled, and resized independently.</div>
+  </div>
+
+  <div class="term" id="running-hours">
+    <div class="term-name">Running hours</div>
+    <div class="term-def">Running hours is a scheduled on/off window for the frame — the hours during which it displays photos. Outside the running hours, the frame enters standby: it either shows a large clock or goes fully black, but remains tappable to reach the menu. Fravora supports a simple start/end time for all days, or a custom per-day schedule. Separate running hours can be set for the slideshow and for audio (radio or music).</div>
+  </div>
+
+  <div class="term" id="saf">
+    <div class="term-name">SAF <span class="term-abbr">Storage Access Framework</span></div>
+    <div class="term-def">SAF is Android's built-in system for granting apps access to files and folders without giving blanket storage permission. When Fravora asks you to "Add Folder" for local sources or music playlists, it opens the Android file picker — that picker is SAF. SAF permissions are persistent: once you grant access to a folder, the app retains that access until you remove it, even across reboots. This is how Fravora can scan local folders and music libraries in the background without requiring broad storage access.</div>
+  </div>
+
+  <div class="term" id="smart-shuffle">
+    <div class="term-name">Smart Shuffle</div>
+    <div class="term-def">A PRO photo ordering mode in Fravora that improves on random shuffle by reducing back-to-back similar photos. It detects burst-style filenames (sequences of photos taken within seconds of each other) and similar capture timestamps, spacing them out across the rotation so the slideshow feels more varied. Standard random shuffle does not account for these patterns, which can cause the same event or burst sequence to appear clustered together.</div>
+  </div>
+
+  <div class="term" id="google-photos-picker">
+    <div class="term-name">Google Photos Picker</div>
+    <div class="term-def">The official Android system interface for selecting photos from Google Photos without giving an app access to your full library. When Fravora connects to Google Photos, it uses the Picker: you choose specific photos or albums, and only those selections are accessible to the app. Your full Google Photos library remains private. The Picker approach is more private than older Google Photos API integrations that required broad library access.</div>
+  </div>
+
+  <div class="links">
+    <a href="features.html">All features</a>
+    <a href="manual.html">User manual</a>
+    <a href="blog/nas-smb-photo-frame-android.html">NAS setup guide</a>
+    <a href="blog/immich-photo-frame-android.html">Immich guide</a>
+    <a href="blog/android-tablet-photo-frame.html">Tablet setup guide</a>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="footer-left">
+    <img src="/fravora/images/fravora.png" alt="" />
+    <span>© 2026 aniujual software</span>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:aniujual.dev@yahoo.com">Contact</a>
+    <a href="/fravora/manual.html">User Manual</a>
+    <a href="/fravora/features.html">Features</a>
+    <a href="/fravora/how-it-works.html">How It Works</a>
+    <a href="/fravora/download.html">Download</a>
+    <a href="/fravora/blog/index.html">Blog</a>
+    <a href="/fravora/glossary.html">Glossary</a>
+    <a href="/fravora/privacy.html">Privacy Policy</a>
+    <a href="/fravora/data-deletion.html">Data Deletion</a>
+    <a href="/fravora/release-notes.html">Release Notes</a>
+  </div>
+</footer>
+
+
+  <script src="/fravora/js/main.js"></script>
+  
+</body>
+</html>

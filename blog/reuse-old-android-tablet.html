@@ -1,255 +1,94 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <script>(function(){try{var t=localStorage.getItem('fravora-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reuse an Old Android Tablet as a Digital Photo Frame | Fravora Blog</title>
-  <meta name="description" content="Learn how to reuse an old Android tablet as a digital photo frame with Google Photos, offline NAS playback, weather overlays, and smart scheduling." />
-  <link rel="canonical" href="https://aniujual.github.io/fravora/blog/reuse-old-android-tablet.html" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="Reuse an Old Android Tablet as a Digital Photo Frame | Fravora" />
-  <meta property="og:description" content="Learn how to reuse an old Android tablet as a digital photo frame with Google Photos, offline NAS playback, weather overlays, and smart scheduling." />
-  <meta property="og:url" content="https://aniujual.github.io/fravora/blog/reuse-old-android-tablet.html" />
-  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_settings_overlays2.png" />
-  <meta property="og:image:alt" content="Fravora Android photo frame app overlay layout settings showing a 2x2 corner assignment grid on tablet." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Reuse an Old Android Tablet as a Digital Photo Frame | Fravora" />
-  <meta name="twitter:description" content="Learn how to reuse an old Android tablet as a digital photo frame with Google Photos, offline NAS playback, weather overlays, and smart scheduling." />
-  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_settings_overlays2.png" />
-  <meta name="twitter:image:alt" content="Fravora Android photo frame app overlay layout settings showing a 2x2 corner assignment grid on tablet." />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Best Ways to Reuse an Old Android Tablet",
-      "description": "Learn how to reuse an old Android tablet as a digital photo frame with Google Photos, offline NAS playback, weather overlays, and smart scheduling.",
-      "image": "https://aniujual.github.io/fravora/images/screen_frame1.png",
-      "author": {
-        "@type": "Person",
-        "name": "aniujual"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Fravora: Digital Photo Frame",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://aniujual.github.io/fravora/images/fravora.png"
-        }
-      },
-      "datePublished": "2026-06-27",
-      "dateModified": "2026-06-27",
-      "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/reuse-old-android-tablet.html"
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://aniujual.github.io/fravora/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "https://aniujual.github.io/fravora/blog/index.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Best Ways to Reuse an Old Android Tablet",
-          "item": "https://aniujual.github.io/fravora/blog/reuse-old-android-tablet.html"
-        }
-      ]
-    }
-  </script>
-  <link rel="icon" type="image/png" href="../images/fravora.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
-    gtag('js', new Date());
-    gtag('config', 'G-CQF87DK78N');
-  </script>
-  <style>
-    :root {
-      --bg: #0e0b14;
-      --surface: #1c1728;
-      --border: #2e2640;
-      --accent: #9b5de5;
-      --accent2: #c77dff;
-      --text: #e8e0f5;
-      --muted: #8b7fa8;
-      --nav-bg: rgba(14,11,20,0.85);
-    }
-    [data-theme="light"] {
-      --bg: #f5f0ff;
-      --surface: #ffffff;
-      --border: #d4c8f0;
-      --accent: #7c3aed;
-      --accent2: #9b5de5;
-      --text: #1a1033;
-      --muted: #6b5b8a;
-      --nav-bg: rgba(245,240,255,0.88);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); }
-    nav {
-      position: sticky; top: 0; z-index: 10;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border); background: var(--nav-bg);
-      backdrop-filter: blur(10px);
-    }
-    .nav-logo {
-      display: flex; align-items: center; gap: 0.55rem;
-      font-family: 'Syne', sans-serif; text-decoration: none; color: var(--text);
-    }
-    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
-    .nav-logo span {
-      font-weight: 800; letter-spacing: 0.3px; font-size: 1.05rem;
-      line-height: 1;
-    }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
-    .nav-links a {
-      text-decoration: none; color: var(--muted); font-size: 0.85rem;
-      border: 1px solid var(--border); padding: 0.3rem 0.65rem; border-radius: 999px;
-    }
-    .nav-links a.active, .nav-links a:hover { color: var(--text); border-color: var(--accent); }
-    .theme-btn {
-      border: 1px solid var(--border); background: var(--surface); color: var(--muted);
-      width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
-    }
-    .nav-toggle {
-      display: none;
-      width: 34px; height: 34px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--muted);
-      cursor: pointer;
-      font-size: 1.05rem;
-      align-items: center;
-      justify-content: center;
-    }
-    main { max-width: 860px; margin: 0 auto; padding: 2.2rem 1rem 4rem; }
-    h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.7rem, 5vw, 2.6rem); margin-bottom: 0.7rem; }
-    .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
-    p { color: var(--muted); line-height: 1.75; margin-bottom: 0.9rem; }
-    h2 { font-family: 'Syne', sans-serif; font-size: 1.05rem; margin: 1.2rem 0 0.5rem; }
-    ul { color: var(--muted); margin: 0.5rem 0 0.8rem; padding-left: 1.1rem; }
-    li { margin-bottom: 0.4rem; }
-    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1rem; margin-top: 1rem; }
-    .links { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .links a {
-      text-decoration: none; color: var(--accent2); font-weight: 600; font-size: 0.86rem;
-      border: 1px solid var(--border); border-radius: 999px; padding: 0.32rem 0.62rem;
-    }
-    footer {
-      max-width: 860px; margin: 0 auto; padding: 0 1rem 2rem;
-      display: flex; flex-wrap: wrap; gap: 0.8rem; color: var(--muted); font-size: 0.85rem;
-    }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--accent2); }
-    @media (max-width: 900px) {
-      .nav-toggle { display: inline-flex; }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%; left: 0; right: 0;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.45rem;
-        padding: 0.75rem 1rem 1rem;
-        background: var(--nav-bg);
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(10px);
-        max-height: calc(100vh - 64px);
-        overflow-y: auto;
+---
+layout: blog-post
+title: "Reuse an Old Android Tablet as a Digital Photo Frame | Fravora Blog"
+description: "Learn how to reuse an old Android tablet as a digital photo frame with Google Photos, offline NAS playback, weather overlays, and smart scheduling."
+og_image: "images/screen_settings_overlays2.webp"
+active_nav: "blog"
+---
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Best Ways to Reuse an Old Android Tablet",
+    "description": "Learn how to reuse an old Android tablet as a digital photo frame with Google Photos, offline NAS playback, weather overlays, and smart scheduling.",
+    "image": "https://aniujual.github.io/fravora/images/screen_frame1.webp",
+    "author": {
+      "@type": "Person",
+      "name": "aniujual"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Fravora: Digital Photo Frame",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://aniujual.github.io/fravora/images/fravora.png"
       }
-      .nav-links.open { display: flex; }
-      .theme-btn { margin-top: 0.35rem; }
-    }
-  </style>
-</head>
-<body>
-  <div id="siteNavMount" data-base="../" data-active="blog"></div>
-  <script src="../shared-nav.js"></script>
+    },
+    "datePublished": "2026-06-27",
+    "dateModified": "2026-06-27",
+    "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/reuse-old-android-tablet.html"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://aniujual.github.io/fravora/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://aniujual.github.io/fravora/blog/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Best Ways to Reuse an Old Android Tablet",
+        "item": "https://aniujual.github.io/fravora/blog/reuse-old-android-tablet.html"
+      }
+    ]
+  }
+</script>
 
-  <main>
-    <h1>Best ways to reuse an old Android tablet</h1>
-    <p class="meta">Updated June 27, 2026 · 6 min read</p>
-    <p>Old tablets are still useful if you give them a single, always-on job. One of the most practical options is turning that device into a digital photo frame display for your home with Google Photos, NAS, or offline local playback.</p>
+<h1>Best ways to reuse an old Android tablet</h1>
+<p class="meta">Updated June 27, 2026 · 6 min read</p>
+<p>Old tablets are still useful if you give them a single, always-on job. One of the most practical options is turning that device into a digital photo frame display for your home with Google Photos, NAS, or offline local playback.</p>
 
-    <h2>Top reuse ideas that still make sense in 2026</h2>
-    <ul>
-      <li>Kitchen display for recipes and family photos</li>
-      <li>Desk dashboard with calendar and weather</li>
-      <li>Bedside smart clock and photo slideshow</li>
-      <li>Living-room wall frame for daily memories</li>
-    </ul>
+<h2>Top reuse ideas that still make sense in 2026</h2>
+<ul>
+  <li>Kitchen display for recipes and family photos</li>
+  <li>Desk dashboard with calendar and weather</li>
+  <li>Bedside smart clock and photo slideshow</li>
+  <li>Living-room wall frame for daily memories</li>
+</ul>
 
-    <h2>Why a photo frame setup is usually the best choice</h2>
-    <p>Compared with ad-hoc tasks, a dedicated frame setup puts minimal strain on old hardware and provides visible value every day. You can run local content or a Google Photos slideshow, avoid forced ads, and keep power connected for reliable playback.</p>
+<h2>Why a photo frame setup is usually the best choice</h2>
+<p>Compared with ad-hoc tasks, a dedicated frame setup puts minimal strain on old hardware and provides visible value every day. You can run local content or a Google Photos slideshow, avoid forced ads, and keep power connected for reliable playback.</p>
 
-    <div class="panel">
-      <h2>Quick conversion checklist</h2>
-      <ul>
-        <li>Factory reset if the tablet is cluttered and slow</li>
-        <li>Install Fravora and complete first-launch onboarding to choose Google Photos, local, or NAS photo sources and create your first album</li>
-        <li>Set slideshow interval and active hours</li>
-        <li>Enable only the overlays you want</li>
-        <li>Use a stand or wall mount and keep charging continuous</li>
-      </ul>
-      <p>This gives you a smart photo frame for Android that works without buying dedicated frame hardware or paying for another subscription.</p>
-    </div>
+<div class="panel">
+  <h2>Quick conversion checklist</h2>
+  <ul>
+    <li>Factory reset if the tablet is cluttered and slow</li>
+    <li>Install Fravora and complete first-launch onboarding to choose Google Photos, local, or NAS photo sources and create your first album</li>
+    <li>Set slideshow interval and active hours</li>
+    <li>Enable only the overlays you want</li>
+    <li>Use a stand or wall mount and keep charging continuous</li>
+  </ul>
+  <p>This gives you a smart photo frame for Android that works without buying dedicated frame hardware or paying for another subscription.</p>
+</div>
 
-    <div class="links">
-      <a href="../how-it-works.html">How to set it up</a>
-      <a href="../download.html">Download Fravora</a>
-      <a href="photo-frame-apps-compared-2026.html">Compare frame apps</a>
-      <a href="android-tablet-photo-frame.html">Full tablet setup guide</a>
-      <a href="google-photos-digital-photo-frame.html">Google Photos guide</a>
-      <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
-    </div>
-  </main>
-
-  <div id="siteFooterMount" data-base="../"></div>
-  <script src="../shared-footer.js"></script>
-
-  <script>
-    const navToggleBtn = document.getElementById('navToggleBtn');
-    const navLinks = document.getElementById('siteNav');
-
-    if (navToggleBtn && navLinks) {
-      const closeNav = () => {
-        navLinks.classList.remove('open');
-        navToggleBtn.setAttribute('aria-expanded', 'false');
-      };
-      navToggleBtn.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('open');
-        navToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => closeNav());
-      });
-      document.addEventListener('click', (event) => {
-        if (!navLinks.contains(event.target) && !navToggleBtn.contains(event.target)) closeNav();
-      });
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') closeNav();
-      });
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 900) closeNav();
-      });
-    }
-  </script>
-</body>
-</html>
+<div class="links">
+  <a href="../how-it-works.html">How to set it up</a>
+  <a href="../download.html">Download Fravora</a>
+  <a href="photo-frame-apps-compared-2026.html">Compare frame apps</a>
+  <a href="android-tablet-photo-frame.html">Full tablet setup guide</a>
+  <a href="google-photos-digital-photo-frame.html">Google Photos guide</a>
+  <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
+</div>

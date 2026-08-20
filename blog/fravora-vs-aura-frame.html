@@ -1,165 +1,95 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <script>(function(){try{var t=localStorage.getItem('fravora-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}}());</script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aura Frame Alternative: Fravora vs Aura Frame Compared</title>
-  <meta name="description" content="Looking for an Aura Frame alternative? Fravora runs on any Android tablet with no subscription, full NAS and offline support, Google Photos, Immich, and weather overlays." />
-  <link rel="canonical" href="https://aniujual.github.io/fravora/blog/fravora-vs-aura-frame.html" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="Aura Frame Alternative: Fravora vs Aura Frame Compared" />
-  <meta property="og:description" content="Looking for an Aura Frame alternative? Fravora runs on any Android tablet with no subscription, full NAS and offline support, Google Photos, Immich, and weather overlays." />
-  <meta property="og:url" content="https://aniujual.github.io/fravora/blog/fravora-vs-aura-frame.html" />
-  <meta property="og:image" content="https://aniujual.github.io/fravora/images/screen_frame2.png" />
-  <meta property="og:image:alt" content="Fravora digital photo frame running on an Android tablet." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Aura Frame Alternative: Fravora vs Aura Frame Compared" />
-  <meta name="twitter:description" content="Looking for an Aura Frame alternative? Fravora runs on any Android tablet with no subscription, full NAS and offline support, Google Photos, Immich, and weather overlays." />
-  <meta name="twitter:image" content="https://aniujual.github.io/fravora/images/screen_frame2.png" />
-  <meta name="twitter:image:alt" content="Fravora digital photo frame running on an Android tablet." />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Aura Frame Alternative: Fravora vs Aura Frame Compared",
-      "description": "Looking for an Aura Frame alternative? Fravora runs on any Android tablet with no subscription, full NAS and offline support, Google Photos, Immich, and weather overlays.",
-      "image": "https://aniujual.github.io/fravora/images/screen_frame2.png",
-      "author": { "@type": "Person", "name": "aniujual" },
-      "publisher": { "@type": "Organization", "name": "Fravora: Digital Photo Frame", "logo": { "@type": "ImageObject", "url": "https://aniujual.github.io/fravora/images/fravora.png" } },
-      "datePublished": "2026-08-09",
-      "dateModified": "2026-08-09",
-      "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/fravora-vs-aura-frame.html"
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aniujual.github.io/fravora/" },
-        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://aniujual.github.io/fravora/blog/index.html" },
-        { "@type": "ListItem", "position": 3, "name": "Fravora vs Aura Frame", "item": "https://aniujual.github.io/fravora/blog/fravora-vs-aura-frame.html" }
-      ]
-    }
-  </script>
-  <link rel="icon" type="image/png" href="../images/fravora.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-CQF87DK78N');</script>
-  <style>
-    :root { --bg:#0e0b14;--surface:#1c1728;--border:#2e2640;--accent:#9b5de5;--accent2:#c77dff;--text:#e8e0f5;--muted:#8b7fa8;--nav-bg:rgba(14,11,20,0.85); }
-    [data-theme="light"] { --bg:#f5f0ff;--surface:#ffffff;--border:#d4c8f0;--accent:#7c3aed;--accent2:#9b5de5;--text:#1a1033;--muted:#6b5b8a;--nav-bg:rgba(245,240,255,0.88); }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
-    nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:0.9rem 1.2rem;border-bottom:1px solid var(--border);background:var(--nav-bg);backdrop-filter:blur(10px);}
-    .nav-logo{display:flex;align-items:center;gap:0.55rem;font-family:'Syne',sans-serif;text-decoration:none;color:var(--text);}
-    .nav-logo img{width:32px;height:32px;border-radius:8px;}
-    .nav-logo span{font-weight:800;letter-spacing:0.3px;font-size:1.05rem;line-height:1;}
-    .nav-links{display:flex;flex-wrap:wrap;gap:0.4rem;align-items:center;}
-    .nav-links a{text-decoration:none;color:var(--muted);font-size:0.85rem;border:1px solid var(--border);padding:0.3rem 0.65rem;border-radius:999px;}
-    .nav-links a.active,.nav-links a:hover{color:var(--text);border-color:var(--accent);}
-    .theme-btn{border:1px solid var(--border);background:var(--surface);color:var(--muted);width:34px;height:34px;border-radius:8px;cursor:pointer;}
-    .nav-toggle{display:none;width:34px;height:34px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;font-size:1.05rem;align-items:center;justify-content:center;}
-    main{max-width:860px;margin:0 auto;padding:2.2rem 1rem 4rem;}
-    h1{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,5vw,2.6rem);margin-bottom:0.7rem;}
-    .meta{color:var(--muted);font-size:0.85rem;margin-bottom:1rem;}
-    p{color:var(--muted);line-height:1.75;margin-bottom:0.9rem;}
-    h2{font-family:'Syne',sans-serif;font-size:1.05rem;margin:1.2rem 0 0.5rem;}
-    ul{color:var(--muted);margin:0.5rem 0 0.8rem;padding-left:1.2rem;}
-    li{margin-bottom:0.45rem;}
-    table{width:100%;border-collapse:collapse;margin:0.8rem 0;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
-    th,td{padding:0.65rem 0.8rem;border-bottom:1px solid var(--border);text-align:left;color:var(--muted);font-size:0.9rem;}
-    th{color:var(--text);font-family:'Syne',sans-serif;}
-    tr:last-child td{border-bottom:none;}
-    .check{color:#4ade80;}
-    .cross{color:var(--muted);opacity:0.5;}
-    .links{margin-top:1rem;display:flex;flex-wrap:wrap;gap:0.5rem;}
-    .links a{text-decoration:none;color:var(--accent2);font-weight:600;font-size:0.86rem;border:1px solid var(--border);border-radius:999px;padding:0.32rem 0.62rem;}
-    footer{max-width:860px;margin:0 auto;padding:0 1rem 2rem;display:flex;flex-wrap:wrap;gap:0.8rem;color:var(--muted);font-size:0.85rem;}
-    footer a{color:var(--muted);text-decoration:none;}
-    footer a:hover{color:var(--accent2);}
-    @media(max-width:900px){.nav-toggle{display:inline-flex;}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0.45rem;padding:0.75rem 1rem 1rem;background:var(--nav-bg);border-bottom:1px solid var(--border);backdrop-filter:blur(10px);max-height:calc(100vh - 64px);overflow-y:auto;}.nav-links.open{display:flex;}.theme-btn{margin-top:0.35rem;}}
-  </style>
-</head>
-<body>
-  <div id="siteNavMount" data-base="../" data-active="blog"></div>
-  <script src="../shared-nav.js"></script>
+---
+layout: blog-post
+title: "Aura Frame Alternative: Fravora vs Aura Frame Compared"
+description: "Looking for an Aura Frame alternative? Fravora runs on any Android tablet with no subscription, full NAS and offline support, Google Photos, Immich, and weather overlays."
+og_image: "images/screen_frame2.webp"
+active_nav: "blog"
+---
 
-  <main>
-    <h1>Aura Frame alternative: Fravora vs Aura Frame compared</h1>
-    <p class="meta">Updated August 9, 2026 · 7 min read</p>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Aura Frame Alternative: Fravora vs Aura Frame Compared",
+    "description": "Looking for an Aura Frame alternative? Fravora runs on any Android tablet with no subscription, full NAS and offline support, Google Photos, Immich, and weather overlays.",
+    "image": "https://aniujual.github.io/fravora/images/screen_frame2.webp",
+    "author": { "@type": "Person", "name": "aniujual" },
+    "publisher": { "@type": "Organization", "name": "Fravora: Digital Photo Frame", "logo": { "@type": "ImageObject", "url": "https://aniujual.github.io/fravora/images/fravora.png" } },
+    "datePublished": "2026-08-09",
+    "dateModified": "2026-08-09",
+    "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/fravora-vs-aura-frame.html"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aniujual.github.io/fravora/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://aniujual.github.io/fravora/blog/index.html" },
+      { "@type": "ListItem", "position": 3, "name": "Fravora vs Aura Frame", "item": "https://aniujual.github.io/fravora/blog/fravora-vs-aura-frame.html" }
+    ]
+  }
+</script>
 
-    <h2>Is Fravora a good Aura Frame alternative?</h2>
-    <p>If you are looking for an Aura Frame alternative to avoid the monthly subscription, gain NAS or offline support, or keep your photos off a third-party cloud, Fravora addresses all of those directly. It runs on any Android tablet you already own, has no subscription, and supports Google Photos, NAS/SMB, self-hosted Immich, weather overlays, voice control, and radio. You own the hardware independently of the app.</p>
+<h2>Is Fravora a good Aura Frame alternative?</h2>
+<p>If you are looking for an Aura Frame alternative to avoid the monthly subscription, gain NAS or offline support, or keep your photos off a third-party cloud, Fravora addresses all of those directly. It runs on any Android tablet you already own, has no subscription, and supports Google Photos, NAS/SMB, self-hosted Immich, weather overlays, voice control, and radio. You own the hardware independently of the app.</p>
 
-    <p>Aura Frame is a premium digital photo frame brand — high-quality displays, a polished companion app, and subscription-based cloud storage. Fravora is a photo frame app for Android tablets that supports offline NAS sources, self-hosted Immich, and a one-time purchase model. Both solve the same problem differently; which is better depends entirely on your priorities.</p>
+<p>Aura Frame is a premium digital photo frame brand — high-quality displays, a polished companion app, and subscription-based cloud storage. Fravora is a photo frame app for Android tablets that supports offline NAS sources, self-hosted Immich, and a one-time purchase model. Both solve the same problem differently; which is better depends entirely on your priorities.</p>
 
-    <h2>At a glance</h2>
-    <table>
-      <thead><tr><th>Feature</th><th>Fravora</th><th>Aura Frame</th></tr></thead>
-      <tbody>
-        <tr><td>Hardware required</td><td>Any Android tablet you own</td><td>Aura-branded frame (purchase required)</td></tr>
-        <tr><td>Subscription</td><td>None — free tier + optional one-time PRO</td><td>Required for storage and features</td></tr>
-        <tr><td>NAS / local storage</td><td><span class="check">✓</span> Full NAS/SMB + local folders</td><td><span class="cross">—</span> Cloud-only</td></tr>
-        <tr><td>Offline playback</td><td><span class="check">✓</span> Cached local and NAS photos</td><td>Limited — requires internet connection</td></tr>
-        <tr><td>Google Photos</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-        <tr><td>Immich / self-hosted</td><td><span class="check">✓</span></td><td><span class="cross">—</span></td></tr>
-        <tr><td>Weather overlay</td><td><span class="check">✓</span> (PRO)</td><td><span class="cross">—</span></td></tr>
-        <tr><td>Voice control</td><td><span class="check">✓</span> (PRO)</td><td><span class="cross">—</span></td></tr>
-        <tr><td>Photo stays on your hardware</td><td><span class="check">✓</span> with local/NAS sources</td><td>Uploaded to Aura cloud</td></tr>
-        <tr><td>Display quality</td><td>Depends on your tablet choice</td><td>Premium IPS display included</td></tr>
-      </tbody>
-    </table>
+<h2>At a glance</h2>
+<table class="comp-table">
+  <thead><tr><th>Feature</th><th>Fravora</th><th>Aura Frame</th></tr></thead>
+  <tbody>
+    <tr><td>Hardware required</td><td>Any Android tablet you own</td><td>Aura-branded frame (purchase required)</td></tr>
+    <tr><td>Subscription</td><td>None — free tier + optional one-time PRO</td><td>Required for storage and features</td></tr>
+    <tr><td>NAS / local storage</td><td><span class="check">✓</span> Full NAS/SMB + local folders</td><td><span class="cross">—</span> Cloud-only</td></tr>
+    <tr><td>Offline playback</td><td><span class="check">✓</span> Cached local and NAS photos</td><td>Limited — requires internet connection</td></tr>
+    <tr><td>Google Photos</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+    <tr><td>Immich / self-hosted</td><td><span class="check">✓</span></td><td><span class="cross">—</span></td></tr>
+    <tr><td>Weather overlay</td><td><span class="check">✓</span> (PRO)</td><td><span class="cross">—</span></td></tr>
+    <tr><td>Voice control</td><td><span class="check">✓</span> (PRO)</td><td><span class="cross">—</span></td></tr>
+    <tr><td>Photo stays on your hardware</td><td><span class="check">✓</span> with local/NAS sources</td><td>Uploaded to Aura cloud</td></tr>
+    <tr><td>Display quality</td><td>Depends on your tablet choice</td><td>Premium IPS display included</td></tr>
+  </tbody>
+</table>
 
-    <h2>What Aura Frame does well</h2>
-    <p>Aura Frame's hardware is genuinely premium — high-resolution IPS displays with accurate colour, designed specifically to look good showing photos. The Aura app makes it easy for family members to contribute photos, and the facial recognition feature can prioritise showing faces automatically. If you want a frame that looks like a piece of furniture and requires minimal technical configuration, Aura delivers on that.</p>
+<h2>What Aura Frame does well</h2>
+<p>Aura Frame's hardware is genuinely premium — high-resolution IPS displays with accurate colour, designed specifically to look good showing photos. The Aura app makes it easy for family members to contribute photos, and the facial recognition feature can prioritise showing faces automatically. If you want a frame that looks like a piece of furniture and requires minimal technical configuration, Aura delivers on that.</p>
 
-    <h2>The subscription question</h2>
-    <p>Aura Frame requires a monthly or annual subscription. Over three to five years of ownership, the subscription cost compounds significantly on top of the hardware purchase price. Fravora has no subscription — the free tier covers basic frame use indefinitely, and PRO is a one-time purchase. If you already own a tablet, the total Fravora cost is a fraction of a comparable Aura setup.</p>
+<h2>The subscription question</h2>
+<p>Aura Frame requires a monthly or annual subscription. Over three to five years of ownership, the subscription cost compounds significantly on top of the hardware purchase price. Fravora has no subscription — the free tier covers basic frame use indefinitely, and PRO is a one-time purchase. If you already own a tablet, the total Fravora cost is a fraction of a comparable Aura setup.</p>
 
-    <h2>Cloud dependency and privacy</h2>
-    <p>Aura stores photos on its own cloud infrastructure. Photos are uploaded from your phone and served to the frame through Aura's servers. For users with sensitive family photos, large libraries they prefer to keep local, or a general principle of not relying on a third-party service to keep their photos accessible, this is worth considering — Aura's future pricing or service changes could affect your frame.</p>
-    <p>Fravora with NAS or local folder sources keeps photos entirely within your home. Nothing is uploaded, and the frame continues working even if internet is down or if Fravora's servers are unreachable.</p>
+<h2>Cloud dependency and privacy</h2>
+<p>Aura stores photos on its own cloud infrastructure. Photos are uploaded from your phone and served to the frame through Aura's servers. For users with sensitive family photos, large libraries they prefer to keep local, or a general principle of not relying on a third-party service to keep their photos accessible, this is worth considering — Aura's future pricing or service changes could affect your frame.</p>
+<p>Fravora with NAS or local folder sources keeps photos entirely within your home. Nothing is uploaded, and the frame continues working even if internet is down or if Fravora's servers are unreachable.</p>
 
-    <h2>Source flexibility</h2>
-    <p>Aura connects to your phone's camera roll and to a limited set of cloud photo sources. Fravora supports a broader mix: local device folders, NAS/SMB shares, Google Photos, OneDrive, Dropbox, and self-hosted Immich servers. You can combine all of these in a single slideshow album, rotating through photos from multiple sources simultaneously.</p>
+<h2>Source flexibility</h2>
+<p>Aura connects to your phone's camera roll and to a limited set of cloud photo sources. Fravora supports a broader mix: local device folders, NAS/SMB shares, Google Photos, OneDrive, Dropbox, and self-hosted Immich servers. You can combine all of these in a single slideshow album, rotating through photos from multiple sources simultaneously.</p>
 
-    <h2>Extra features on the frame</h2>
-    <p>Aura is a photo frame — it shows photos. Fravora extends that: weather overlay with full forecast, clock, photo metadata with landmark lookup, internet radio with now-playing info, local music playlists, and voice control. For a kitchen or living room display where you want more than just photos, these features change what the frame can do.</p>
+<h2>Extra features on the frame</h2>
+<p>Aura is a photo frame — it shows photos. Fravora extends that: weather overlay with full forecast, clock, photo metadata with landmark lookup, internet radio with now-playing info, local music playlists, and voice control. For a kitchen or living room display where you want more than just photos, these features change what the frame can do.</p>
 
-    <h2>Who Aura Frame is better for</h2>
-    <ul>
-      <li>You want premium dedicated hardware with a high-quality display out of the box</li>
-      <li>Easy family photo sharing is the primary use case</li>
-      <li>You prefer a subscription model with no setup complexity</li>
-    </ul>
+<h2>Who Aura Frame is better for</h2>
+<ul>
+  <li>You want premium dedicated hardware with a high-quality display out of the box</li>
+  <li>Easy family photo sharing is the primary use case</li>
+  <li>You prefer a subscription model with no setup complexity</li>
+</ul>
 
-    <h2>Who Fravora is better for</h2>
-    <ul>
-      <li>You have an Android tablet and want to avoid buying new hardware</li>
-      <li>You store photos on a NAS, local drive, or self-hosted Immich server</li>
-      <li>You want no subscription and no reliance on a third-party cloud</li>
-      <li>You want extra features: weather, radio, music, voice control, or scheduling</li>
-    </ul>
+<h2>Who Fravora is better for</h2>
+<ul>
+  <li>You have an Android tablet and want to avoid buying new hardware</li>
+  <li>You store photos on a NAS, local drive, or self-hosted Immich server</li>
+  <li>You want no subscription and no reliance on a third-party cloud</li>
+  <li>You want extra features: weather, radio, music, voice control, or scheduling</li>
+</ul>
 
-    <div class="links">
-      <a href="../download.html">Get Fravora</a>
-      <a href="../features.html">All features</a>
-      <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
-      <a href="android-tablet-photo-frame.html">Tablet setup guide</a>
-      <a href="fravora-vs-nixplay.html">Fravora vs Nixplay</a>
-      <a href="fravora-vs-frameo.html">Fravora vs Frameo</a>
-    </div>
-  </main>
-
-  <div id="siteFooterMount" data-base="../"></div>
-  <script src="../shared-footer.js"></script>
-  <script>
-    const navToggleBtn=document.getElementById('navToggleBtn');const navLinks=document.getElementById('siteNav');
-    if(navToggleBtn&&navLinks){const closeNav=()=>{navLinks.classList.remove('open');navToggleBtn.setAttribute('aria-expanded','false');};navToggleBtn.addEventListener('click',()=>{const isOpen=navLinks.classList.toggle('open');navToggleBtn.setAttribute('aria-expanded',isOpen?'true':'false');});navLinks.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>closeNav());});document.addEventListener('click',(event)=>{if(!navLinks.contains(event.target)&&!navToggleBtn.contains(event.target))closeNav();});document.addEventListener('keydown',(event)=>{if(event.key==='Escape')closeNav();});window.addEventListener('resize',()=>{if(window.innerWidth>900)closeNav();});}
-  </script>
-</body>
-</html>
+<div class="links">
+  <a href="../download.html">Get Fravora</a>
+  <a href="../features.html">All features</a>
+  <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
+  <a href="android-tablet-photo-frame.html">Tablet setup guide</a>
+  <a href="fravora-vs-nixplay.html">Fravora vs Nixplay</a>
+  <a href="fravora-vs-frameo.html">Fravora vs Frameo</a>
+</div>

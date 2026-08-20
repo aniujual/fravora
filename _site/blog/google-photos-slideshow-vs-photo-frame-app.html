@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <script src="/fravora/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Photos Slideshow vs Dedicated Photo Frame App: What's the Difference?</title>
+  <meta name="description" content="Google Photos slideshow vs a dedicated Android photo frame app: compare scheduling, NAS support, overlays, offline playback, and long-running reliability for always-on displays." />
+  <link rel="canonical" href="http://localhost:4000/fravora/blog/google-photos-slideshow-vs-photo-frame-app.html" />
+
+  
+  <meta property="og:image" content="http://localhost:4000/fravora/images/screen_settings_overlays.webp" />
+  <meta name="twitter:image" content="http://localhost:4000/fravora/images/screen_settings_overlays.webp" />
+  
+
+  <link rel="icon" type="image/png" href="/fravora/images/fravora.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/fravora/css/global.css" />
+
+  
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CQF87DK78N');
+  </script>
+</head>
+<body>
+
+  <nav>
+  <a class="nav-logo" href="/fravora/index.html">
+    <img src="/fravora/images/fravora.png" alt="Fravora logo" />
+    <span>Fravora</span>
+  </a>
+  <button class="nav-toggle" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">☰</button>
+  <div class="nav-links" id="siteNav">
+    <a href="/fravora/index.html">Home</a>
+    <a href="/fravora/features.html">Features</a>
+    <a href="/fravora/how-it-works.html">How It Works</a>
+    <a href="/fravora/download.html">Download</a>
+    <a class="active" href="/fravora/blog/index.html">Blog</a>
+    <a href="/fravora/manual.html">User Manual</a>
+    <a href="/fravora/glossary.html">Glossary</a>
+    <a href="/fravora/privacy.html">Privacy Policy</a>
+    <a href="/fravora/data-deletion.html">Data Deletion</a>
+    <a href="/fravora/release-notes.html">Release Notes</a>
+    <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+  </div>
+</nav>
+
+
+  <main>
+  <div class="content-header" style="text-align: center; margin-bottom: 3rem;">
+    <h1 style="font-family:'Syne'; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 0.5rem;">Google Photos Slideshow vs Dedicated Photo Frame App: What's the Difference?</h1>
+    
+  </div>
+
+  <div class="blog-content" style="color: var(--muted); line-height: 1.8; font-size: 1rem;">
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Google Photos Slideshow vs Dedicated Photo Frame App: What's the Difference?",
+    "description": "Google Photos slideshow vs a dedicated Android photo frame app: compare scheduling, NAS support, overlays, offline playback, and long-running reliability.",
+    "image": "https://aniujual.github.io/fravora/images/screen_settings_overlays.webp",
+    "author": { "@type": "Person", "name": "aniujual" },
+    "publisher": { "@type": "Organization", "name": "Fravora: Digital Photo Frame", "logo": { "@type": "ImageObject", "url": "https://aniujual.github.io/fravora/images/fravora.png" } },
+    "datePublished": "2026-08-09",
+    "dateModified": "2026-08-09",
+    "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/google-photos-slideshow-vs-photo-frame-app.html"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aniujual.github.io/fravora/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://aniujual.github.io/fravora/blog/index.html" },
+      { "@type": "ListItem", "position": 3, "name": "Google Photos Slideshow vs Photo Frame App", "item": "https://aniujual.github.io/fravora/blog/google-photos-slideshow-vs-photo-frame-app.html" }
+    ]
+  }
+</script>
+
+<p>Google Photos has a built-in slideshow feature — you can run it on a Chromecast, Android TV, or as a screensaver on a Pixel device. For casual use it works. But once you want scheduling, NAS sources, overlays, reliable always-on operation, or mixing photo sources, you run into its limits quickly. This comparison breaks down what Google Photos' slideshow actually offers versus what a dedicated Android photo frame app delivers.</p>
+
+<h2>At a glance</h2>
+<table class="comp-table">
+  <thead><tr><th>Feature</th><th>Fravora (dedicated frame app)</th><th>Google Photos slideshow</th></tr></thead>
+  <tbody>
+    <tr><td>NAS / local folder support</td><td><span class="check">✓</span> Full SMB + local device folders</td><td><span class="cross">—</span> Google Photos library only</td></tr>
+    <tr><td>Scheduled on/off hours</td><td><span class="check">✓</span> Daily schedule with per-day customisation</td><td><span class="cross">—</span></td></tr>
+    <tr><td>Clock overlay</td><td><span class="check">✓</span> Configurable size and position</td><td><span class="cross">—</span></td></tr>
+    <tr><td>Weather overlay</td><td><span class="check">✓</span> (PRO)</td><td><span class="cross">—</span></td></tr>
+    <tr><td>Photo metadata display</td><td><span class="check">✓</span> Date, location, landmark (PRO)</td><td>Limited</td></tr>
+    <tr><td>Internet radio</td><td><span class="check">✓</span></td><td><span class="cross">—</span></td></tr>
+    <tr><td>Voice control</td><td><span class="check">✓</span> Wake word + commands (PRO)</td><td><span class="cross">—</span></td></tr>
+    <tr><td>Offline playback</td><td><span class="check">✓</span> Cached NAS and local photos</td><td>Requires active internet</td></tr>
+    <tr><td>Transition effects</td><td><span class="check">✓</span> 10 effects + cinematic motion (PRO)</td><td>Basic</td></tr>
+    <tr><td>Mix multiple photo sources</td><td><span class="check">✓</span> NAS + Google Photos + Immich + local</td><td><span class="cross">—</span> Google Photos only</td></tr>
+    <tr><td>Long-running reliability</td><td><span class="check">✓</span> Built for always-on frame use</td><td>Designed for casual viewing sessions</td></tr>
+    <tr><td>Hidden photos management</td><td><span class="check">✓</span> Per-photo hide with thumbnail browser</td><td><span class="cross">—</span></td></tr>
+  </tbody>
+</table>
+
+<h2>What Google Photos slideshow actually is</h2>
+<p>Google Photos offers a few slideshow-adjacent features: a Chromecast ambient mode, an Android screensaver option, and a basic in-app slideshow within the Photos app. These are convenience features — useful for quickly showing photos on a TV or during a party, but not designed for 24/7 dedicated frame operation.</p>
+<p>They have no scheduling (the slideshow runs whenever you start it, not on a timer), no clock or weather overlays, no way to mix in photos from a NAS or local folder, and no outage recovery if internet drops. The photo selection is your entire Google Photos library or a specific album, but not a curated mix from multiple different sources.</p>
+
+<h2>The source problem</h2>
+<p>The biggest practical limitation of Google Photos' slideshow approach is that it only shows Google Photos. If you also keep photos on a home NAS, old photos in local folders, or a self-hosted Immich server, those photos simply do not appear. You either have to upload everything to Google Photos (which has storage limits and privacy implications) or accept that a significant portion of your photo library stays off the frame.</p>
+<p>A dedicated frame app solves this by mixing sources. A single Fravora album can simultaneously pull from Google Photos picks, a NAS share, local device folders, and an Immich server. All sources rotate together in the same slideshow.</p>
+
+<h2>Scheduling and standby</h2>
+<p>A dedicated frame should wake up when you are home and go to sleep overnight. Google Photos slideshow has no scheduling — it runs until you stop it manually or the device sleeps. Fravora's running-hours system lets you set a start and end time for every day, with custom per-day schedules if needed. Outside those hours the screen shows a standby clock or goes fully black, and the device stays tappable to open the menu.</p>
+
+<h2>Always-on reliability</h2>
+<p>Google Photos' slideshow features are not designed to run continuously on a tablet mounted on a wall. They can be interrupted by notifications, system updates, battery saver modes, and other apps. A dedicated frame app is built around this use case — handling background keep-alive, outage recovery, memory pressure, and long-session stability explicitly.</p>
+
+<h2>When Google Photos slideshow is enough</h2>
+<ul>
+  <li>You want to quickly show a photo album to guests on a TV via Chromecast</li>
+  <li>Your entire photo library is in Google Photos and you want a zero-config screensaver on a Pixel device</li>
+  <li>You do not need scheduling, overlays, or non-Google-Photos sources</li>
+</ul>
+
+<h2>When you need a dedicated app</h2>
+<ul>
+  <li>You want a dedicated always-on frame that runs on a schedule</li>
+  <li>Your photos are on a NAS, local drive, Immich, or a mix of sources</li>
+  <li>You want a clock, weather, or photo metadata shown alongside photos</li>
+  <li>You want transition effects, cinematic motion, or voice control</li>
+  <li>You want to hide specific photos without deleting them</li>
+</ul>
+
+<div class="links">
+  <a href="../download.html">Get Fravora</a>
+  <a href="google-photos-digital-photo-frame.html">Google Photos setup guide</a>
+  <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
+  <a href="digital-photo-frame-weather-overlay.html">Weather overlay guide</a>
+  <a href="fravora-vs-nixplay.html">Fravora vs Nixplay</a>
+  <a href="fravora-vs-aura-frame.html">Fravora vs Aura Frame</a>
+  <a href="fravora-vs-frameo.html">Fravora vs Frameo</a>
+</div>
+
+  </div>
+
+  <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center;">
+    <a href="/fravora/blog/index.html" style="color: var(--accent2); text-decoration: none; font-weight: 600;">← Back to Blog</a>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="footer-left">
+    <img src="/fravora/images/fravora.png" alt="" />
+    <span>© 2026 aniujual software</span>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:aniujual.dev@yahoo.com">Contact</a>
+    <a href="/fravora/manual.html">User Manual</a>
+    <a href="/fravora/features.html">Features</a>
+    <a href="/fravora/how-it-works.html">How It Works</a>
+    <a href="/fravora/download.html">Download</a>
+    <a href="/fravora/blog/index.html">Blog</a>
+    <a href="/fravora/glossary.html">Glossary</a>
+    <a href="/fravora/privacy.html">Privacy Policy</a>
+    <a href="/fravora/data-deletion.html">Data Deletion</a>
+    <a href="/fravora/release-notes.html">Release Notes</a>
+  </div>
+</footer>
+
+
+  <script src="/fravora/js/main.js"></script>
+  
+</body>
+</html>

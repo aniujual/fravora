@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <script src="/fravora/js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Turn an Android Tablet Into a Digital Photo Frame</title>
+  <meta name="description" content="Step-by-step guide to turning any Android or Amazon Fire tablet into a dedicated digital photo frame: hardware setup, always-on display, scheduling, photo sources, and overlays." />
+  <link rel="canonical" href="http://localhost:4000/fravora/blog/android-tablet-photo-frame.html" />
+
+  
+  <meta property="og:image" content="http://localhost:4000/fravora/images/screen_frame2.webp" />
+  <meta name="twitter:image" content="http://localhost:4000/fravora/images/screen_frame2.webp" />
+  
+
+  <link rel="icon" type="image/png" href="/fravora/images/fravora.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/fravora/css/global.css" />
+
+  
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CQF87DK78N');
+  </script>
+</head>
+<body>
+
+  <nav>
+  <a class="nav-logo" href="/fravora/index.html">
+    <img src="/fravora/images/fravora.png" alt="Fravora logo" />
+    <span>Fravora</span>
+  </a>
+  <button class="nav-toggle" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">☰</button>
+  <div class="nav-links" id="siteNav">
+    <a href="/fravora/index.html">Home</a>
+    <a href="/fravora/features.html">Features</a>
+    <a href="/fravora/how-it-works.html">How It Works</a>
+    <a href="/fravora/download.html">Download</a>
+    <a class="active" href="/fravora/blog/index.html">Blog</a>
+    <a href="/fravora/manual.html">User Manual</a>
+    <a href="/fravora/glossary.html">Glossary</a>
+    <a href="/fravora/privacy.html">Privacy Policy</a>
+    <a href="/fravora/data-deletion.html">Data Deletion</a>
+    <a href="/fravora/release-notes.html">Release Notes</a>
+    <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+  </div>
+</nav>
+
+
+  <main>
+  <div class="content-header" style="text-align: center; margin-bottom: 3rem;">
+    <h1 style="font-family:'Syne'; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 0.5rem;">How to Turn an Android Tablet Into a Digital Photo Frame</h1>
+    
+  </div>
+
+  <div class="blog-content" style="color: var(--muted); line-height: 1.8; font-size: 1rem;">
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Turn an Android Tablet Into a Digital Photo Frame",
+    "description": "Step-by-step guide to turning any Android or Amazon Fire tablet into a dedicated digital photo frame: hardware setup, always-on display, scheduling, photo sources, and overlays.",
+    "image": "https://aniujual.github.io/fravora/images/screen_frame2.webp",
+    "author": {
+      "@type": "Person",
+      "name": "aniujual"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Fravora: Digital Photo Frame",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://aniujual.github.io/fravora/images/fravora.png"
+      }
+    },
+    "datePublished": "2026-08-09",
+    "dateModified": "2026-08-09",
+    "mainEntityOfPage": "https://aniujual.github.io/fravora/blog/android-tablet-photo-frame.html"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aniujual.github.io/fravora/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://aniujual.github.io/fravora/blog/index.html" },
+      { "@type": "ListItem", "position": 3, "name": "How to Turn an Android Tablet Into a Digital Photo Frame", "item": "https://aniujual.github.io/fravora/blog/android-tablet-photo-frame.html" }
+    ]
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can any Android tablet be used as a digital photo frame?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Any Android tablet running Android 8 or later can run a digital photo frame app. Older tablets work well as dedicated frames since you are not running heavy apps on them. Amazon Fire tablets also work via the Amazon Appstore." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I keep an Android tablet screen on all the time for a photo frame?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Enable Keep Screen Awake in the frame app settings, and disable aggressive battery optimisation for the app in Android Settings → Battery → App battery usage. For tablets left on a charger permanently, also disable any sleep-when-charging limits in Developer Options." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a photo frame app drain the tablet battery?",
+        "acceptedAnswer": { "@type": "Answer", "text": "If the tablet is plugged in permanently, battery drain is not a concern. For tablets on battery only, use the running-hours scheduling feature to turn the display off during night hours, which significantly reduces battery use." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Amazon Fire tablet work as a digital photo frame?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Fravora is available on the Amazon Appstore and works on Fire tablets. All core features including Google Photos, local folders, scheduling, and overlays work on Fire OS." }
+      }
+    ]
+  }
+</script>
+
+<h1>How to turn an Android tablet into a digital photo frame</h1>
+<p class="meta">Updated August 9, 2026 · 10 min read</p>
+
+<p>Buying a dedicated digital photo frame means paying for locked-down hardware with limited source options and recurring subscription fees. An Android tablet you already own — or one you can pick up cheaply — gives you far more control: any photo source, any layout, scheduled playback, weather overlays, and no annual fee.</p>
+
+<h2>Which Android tablets work best</h2>
+<p>Almost any Android tablet running Android 8 or later works. For a dedicated always-on frame the key specs are screen quality and charging stability, not processing power. Good options across price ranges:</p>
+<ul>
+  <li><strong>Amazon Fire tablets (HD 8, HD 10):</strong> Inexpensive, widely available, and supported via the Amazon Appstore. Good for fixed wall or shelf mounting. Fire OS works well for always-on use.</li>
+  <li><strong>Samsung Galaxy Tab A series:</strong> Reliable build quality, good display brightness, and standard Android that supports the full Google ecosystem including Google Photos.</li>
+  <li><strong>Lenovo Tab series:</strong> Competitive pricing with solid displays. Good for budget builds.</li>
+  <li><strong>Old tablets you already own:</strong> A tablet that is too slow for general use often still has a perfectly capable display. Dedicated frame use is not demanding.</li>
+</ul>
+
+<h2>Hardware setup</h2>
+<ol>
+  <li><strong>Choose your location first.</strong> Decide whether the tablet will sit on a shelf, stand on a desk, or mount on a wall. Route your power cable before committing to a position.</li>
+  <li><strong>Get a stand or mount.</strong> For shelf or desk: any tablet stand works. For walls: adhesive mounts or slim VESA adapters designed for tablets keep cables hidden.</li>
+  <li><strong>Use a permanent power source.</strong> The tablet should stay plugged in. Use a short, right-angle USB cable to keep the connection tidy and reduce stress on the port.</li>
+  <li><strong>Disable battery optimisation for the frame app.</strong> Go to Android Settings → Apps → Fravora → Battery → Unrestricted. This prevents the system from killing the app during idle periods.</li>
+  <li><strong>Disable screen timeout.</strong> The frame app handles screen-on state via its own Keep Screen Awake setting. You can also set the system display timeout to the maximum or use Developer Options to keep the screen awake while charging.</li>
+</ol>
+
+<h2>App setup in Fravora</h2>
+<p>When you first launch Fravora, the onboarding walks you through choosing a photo source — local folders, Google Photos, NAS, Immich, or any other supported type — and creating your first album. Your frame is already showing photos by the time onboarding finishes. After that, fine-tune the display settings:</p>
+<ol>
+  <li>Enable <strong>Fullscreen Mode</strong> in Settings → Appearance to hide the status bar and navigation buttons for a clean display.</li>
+  <li>Enable <strong>Keep Screen Awake</strong> in Settings → Appearance so the display stays on during slideshow hours.</li>
+  <li>Set <strong>Running Hours</strong> in Settings → Slideshow so the frame wakes and sleeps on your schedule. Outside those hours the screen shows a standby clock or goes black.</li>
+  <li>To add more photo sources or source types, go to <strong>Settings → Sources</strong>.</li>
+</ol>
+
+<h2>Choosing your photo sources</h2>
+<p>The right source depends on where your photos live. You can use any combination:</p>
+<ul>
+  <li><strong>Local device folders:</strong> Copy photos to the tablet's storage or SD card and add those folders as sources. Completely offline, no accounts needed.</li>
+  <li><strong>Google Photos:</strong> Use the official Google Photos Picker to select which photos appear on the frame. Photos are cached locally and display without a live internet connection once downloaded.</li>
+  <li><strong>NAS / SMB network share:</strong> Connect directly to a Synology, QNAP, or Windows share on your home network. Photos stay on your NAS and are served over Wi-Fi.</li>
+  <li><strong>OneDrive, Dropbox, or Immich:</strong> Pick specific cloud folders or Immich albums as sources. Useful if your photo library lives in another cloud service.</li>
+</ul>
+
+<h2>Display and overlay settings</h2>
+<p>Fravora gives you control over what appears on top of photos. Useful settings for a home display:</p>
+<ul>
+  <li><strong>Clock overlay:</strong> Shows the current time. Position it in any corner at small, medium, or large size.</li>
+  <li><strong>Weather overlay (PRO):</strong> Shows current temperature and conditions. Requires GPS permission or a manually set location.</li>
+  <li><strong>Photo metadata (PRO):</strong> Shows when and where a photo was taken, with landmark name lookup for travel photos.</li>
+  <li><strong>Display Mode:</strong> Choose Fit (full photo visible) or Fill (zoom to cover the full screen). In Fit mode, choose a backdrop style — Mirrored or Gradient — to fill the letterbox area.</li>
+</ul>
+
+<h2>Transition and motion effects (PRO)</h2>
+<p>The free tier uses a hard cut between photos. PRO adds ten transition styles including Crossfade, Slide, Cube, and Parallax, plus cinematic motion effects — Ken Burns pan-and-zoom, Drift, and Vignette Pulse — that keep static photos feeling alive. Transition speed is also configurable.</p>
+
+<h2>OLED burn-in protection</h2>
+<p>If your tablet has an OLED display, leaving static overlays in the same position 24/7 can cause image retention. Fravora's Anti-burn-in overlay effect (PRO) periodically micro-shifts overlay positions and varies their opacity. The Bouncing standby clock (PRO) prevents burn-in from a fixed clock position during off-hours.</p>
+
+<div class="panel">
+  <h2>Amazon Fire tablet notes</h2>
+  <p>Fire tablets run Fire OS, a modified Android fork. Fravora is available on the Amazon Appstore and supports all core features on Fire OS. Google Photos requires signing into a Google account, which Fire tablets support via a standard browser login during the Google Photos Picker flow. NAS/SMB connections work normally over Wi-Fi. Voice control using wake-word detection also works on Fire tablets.</p>
+
+  <h2>Keeping the frame running long-term</h2>
+  <p>The most common failure mode for always-on frames is the app being killed by the system. To prevent this: grant the frame app unrestricted battery access, disable any power-saving modes that restrict background apps, and set Fravora as the device's home app if you want it to restart automatically after a reboot. Use the running-hours schedule to give the device rest periods, which also extends display life.</p>
+</div>
+
+<div class="links">
+  <a href="../download.html">Get Fravora</a>
+  <a href="../features.html">All features</a>
+  <a href="../how-it-works.html">Setup walkthrough</a>
+  <a href="google-photos-digital-photo-frame.html">Google Photos guide</a>
+  <a href="nas-smb-photo-frame-android.html">NAS photo frame guide</a>
+</div>
+
+  </div>
+
+  <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center;">
+    <a href="/fravora/blog/index.html" style="color: var(--accent2); text-decoration: none; font-weight: 600;">← Back to Blog</a>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="footer-left">
+    <img src="/fravora/images/fravora.png" alt="" />
+    <span>© 2026 aniujual software</span>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:aniujual.dev@yahoo.com">Contact</a>
+    <a href="/fravora/manual.html">User Manual</a>
+    <a href="/fravora/features.html">Features</a>
+    <a href="/fravora/how-it-works.html">How It Works</a>
+    <a href="/fravora/download.html">Download</a>
+    <a href="/fravora/blog/index.html">Blog</a>
+    <a href="/fravora/glossary.html">Glossary</a>
+    <a href="/fravora/privacy.html">Privacy Policy</a>
+    <a href="/fravora/data-deletion.html">Data Deletion</a>
+    <a href="/fravora/release-notes.html">Release Notes</a>
+  </div>
+</footer>
+
+
+  <script src="/fravora/js/main.js"></script>
+  
+</body>
+</html>
