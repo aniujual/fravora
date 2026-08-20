@@ -32,5 +32,6 @@ jobs:
             --exclude 'https://fonts\.googleapis\.com'
             --exclude 'https://fonts\.gstatic\.com'
             --exclude 'https://www\.amazon\.com'
+            --exclude 'https://aniujual\.github\.io'
             './_site/**/*.html'
           fail: true
