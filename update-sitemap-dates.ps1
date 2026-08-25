@@ -7,7 +7,7 @@ $urls = [regex]::Matches($sitemap, '<loc>(https://[^<]+)</loc>')
 foreach ($match in $urls) {
     $url = $match.Groups[1].Value
     # Derive relative file path from URL
-    $rel = $url -replace 'https://aniujual.github.io/fravora/', ''
+    $rel = $url -replace 'https://fravora.app/', ''
     if ($rel -eq '' -or $rel -eq '/') { $rel = 'index.html' }
 
     $date = git log -1 --format='%as' -- $rel 2>$null
