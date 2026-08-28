@@ -1,9 +1,46 @@
 (function () {
   let lunrIndex, pagesData;
 
+  function getSearchJsonUrl() {
+    if (document.currentScript && document.currentScript.src) {
+      const scriptUrl = new URL(document.currentScript.src, window.location.href);
+      return new URL('../search.json', scriptUrl).toString();
+    }
+
+    return new URL('/search.json', window.location.origin).toString();
+  }
+
+  function safeSearch(query) {
+    try {
+      return lunrIndex.search(query);
+    } catch {
+      const escapedQuery = query.replace(/[+\-!(){}\[\]^"~*?:\\/]/g, '\\$&');
+      try {
+        return lunrIndex.search(escapedQuery);
+      } catch {
+        return [];
+      }
+    }
+  }
+
   async function initSearch() {
-    const response = await fetch('/fravora/search.json');
-    pagesData = await response.json();
+    const searchInput = document.getElementById('manualSearch');
+    const resultsDiv = document.getElementById('searchResults');
+
+    if (!searchInput || !resultsDiv) return;
+
+    try {
+      const response = await fetch(getSearchJsonUrl());
+      if (!response.ok) {
+        throw new Error(`Search index load failed: ${response.status}`);
+      }
+      pagesData = await response.json();
+    } catch (error) {
+      console.error(error);
+      resultsDiv.innerHTML = '<p class="no-results">Search is currently unavailable.</p>';
+      resultsDiv.style.display = 'none';
+      return;
+    }
 
     lunrIndex = lunr(function () {
       this.ref('url');
@@ -15,21 +52,16 @@
       });
     });
 
-    const searchInput = document.getElementById('manualSearch');
-    const resultsDiv = document.getElementById('searchResults');
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value;
+      if (query.length < 2) {
+        resultsDiv.style.display = 'none';
+        return;
+      }
 
-    if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        const query = e.target.value;
-        if (query.length < 2) {
-          resultsDiv.style.display = 'none';
-          return;
-        }
-
-        const results = lunrIndex.search(query);
-        displayResults(results, resultsDiv);
-      });
-    }
+      const results = safeSearch(query);
+      displayResults(results, resultsDiv);
+    });
   }
 
   function displayResults(results, container) {
