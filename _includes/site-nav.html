@@ -3,6 +3,11 @@
     <img src="{{ site.baseurl }}/images/fravora.png" alt="Fravora logo" />
     <span>Fravora</span>
   </a>
+  <div class="nav-search">
+    <label class="sr-only" for="navSiteSearch">Search site</label>
+    <input type="text" id="navSiteSearch" placeholder="Search the site" autocomplete="off" data-search-page="{{ site.baseurl }}/search-site.html" />
+    <div id="navSiteSearchResults" class="search-results" style="display:none;"></div>
+  </div>
   <button class="nav-toggle" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">☰</button>
   <div class="nav-links" id="siteNav">
     <a{% if include.active == 'home' %} class="active"{% endif %} href="{{ site.baseurl }}/index.html">Home</a>

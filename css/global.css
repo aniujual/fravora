@@ -56,7 +56,7 @@ main :target {
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: flex-start;
   padding: 0 2rem; height: 64px;
   background: var(--nav-bg);
   backdrop-filter: blur(16px);
@@ -66,7 +66,7 @@ nav {
 .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
 .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
 .nav-logo span { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text); letter-spacing: 0.02em; }
-.nav-links { display: flex; align-items: center; gap: 0.25rem; }
+.nav-links { display: flex; align-items: center; gap: 0.25rem; min-width: 0; margin-left: auto; }
 .nav-links a {
   text-decoration: none; color: var(--muted);
   font-size: 0.9rem; font-weight: 500;
@@ -74,6 +74,63 @@ nav {
   transition: color 0.2s, background 0.2s;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--text); background: var(--surface); }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.nav-search {
+  position: relative;
+  margin-left: clamp(0.9rem, 2.6vw, 2rem);
+  margin-right: clamp(0.9rem, 2.4vw, 1.8rem);
+  flex: 0 1 270px;
+}
+.nav-search input {
+  width: 100%;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.85rem;
+  padding: 0.4rem 0.65rem 0.4rem 2rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.nav-search input::placeholder { color: var(--muted); }
+.nav-search::before {
+  content: "⌕";
+  position: absolute;
+  left: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+  font-size: 0.95rem;
+}
+.nav-search input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--glow);
+}
+.nav-search .search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: min(420px, 78vw);
+  max-height: 420px;
+  overflow-y: auto;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+  z-index: 250;
+}
 .theme-btn {
   margin-left: 0.75rem; background: var(--surface);
   border: 1px solid var(--border); color: var(--muted);
@@ -364,15 +421,15 @@ nav {
 .sidebar-nav a.active { background: var(--surface); color: var(--accent2); font-weight: 600; border-color: var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
 /* Manual search dropdown cards */
-#searchResults {
+.search-results {
   padding: 8px;
 }
 
-#searchResults .search-result-item + .search-result-item {
+.search-results .search-result-item + .search-result-item {
   margin-top: 8px;
 }
 
-#searchResults .search-result-item a {
+.search-results .search-result-item a {
   display: block;
   text-decoration: none;
   border: 1px solid var(--border);
@@ -382,13 +439,13 @@ nav {
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
-#searchResults .search-result-item a:hover {
+.search-results .search-result-item a:hover {
   background: rgba(155,93,229,0.14);
   border-color: var(--accent);
   transform: translateX(2px);
 }
 
-#searchResults .search-result-item h4 {
+.search-results .search-result-item h4 {
   font-family: 'Syne', sans-serif;
   font-size: 0.9rem;
   line-height: 1.35;
@@ -396,14 +453,14 @@ nav {
   color: var(--text);
 }
 
-#searchResults .search-result-item p {
+.search-results .search-result-item p {
   margin: 0;
   color: var(--muted);
   font-size: 0.8rem;
   line-height: 1.5;
 }
 
-#searchResults .no-results {
+.search-results .no-results {
   margin: 0;
   padding: 10px 12px;
   border: 1px dashed var(--border);
@@ -982,8 +1039,28 @@ footer a:hover { color: var(--accent); }
 
 /* ── MOBILE ── */
 @media (max-width: 900px) {
-  nav { padding: 0 1rem; }
+  nav { padding: 0 1rem; justify-content: space-between; gap: 0.45rem; }
   .nav-toggle { display: inline-flex; }
+  .nav-search {
+    flex: 1;
+    min-width: 115px;
+    margin: 0;
+  }
+  .nav-search::before {
+    left: 0.75rem;
+  }
+  .nav-search input {
+    height: 36px;
+    width: 100%;
+    padding-left: 2rem;
+    font-size: 0.82rem;
+  }
+  .nav-search .search-results {
+    left: auto;
+    right: 0;
+    width: min(92vw, 420px);
+    max-height: 300px;
+  }
   .nav-links {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
     flex-direction: column; align-items: stretch; gap: 0.45rem; padding: 0.75rem 1rem 1rem;

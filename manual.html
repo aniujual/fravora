@@ -4,7 +4,7 @@ title: "User Manual – Fravora: Digital Photo Frame"
 description: "Fravora: Digital Photo Frame user manual for Android photo frame setup with Google Photos, NAS/SMB, overlays, radio, music playlists, voice control, and troubleshooting."
 og_image: "images/screen_settings_slideshow.webp"
 active_nav: "manual"
-extra_js: "search.js"
+extra_js: "manual-search.js"
 ---
 
 <div class="manual-layout">
@@ -12,9 +12,10 @@ extra_js: "search.js"
   <!-- SIDEBAR (Menu) -->
   <aside class="manual-sidebar" id="sidebar">
     <div class="sidebar-section">
-      <div class="search-container" style="margin-bottom: 20px;">
-        <input type="text" id="manualSearch" placeholder="Search manual..." style="width:100%; padding:8px 12px; border-radius:8px; border:1px solid var(--border); background:var(--surface); color:var(--text); font-size:14px;" />
-        <div id="searchResults" style="display:none; position:absolute; background:var(--bg2); border:1px solid var(--border); border-radius:8px; max-height:400px; overflow-y:auto; z-index:100; width:260px; box-shadow:0 10px 25px rgba(0,0,0,0.5);"></div>
+      <div class="search-container" style="margin-bottom: 20px; position: relative;">
+        <input type="text" id="manualSearch" placeholder="Search manual sections..." style="width:100%; padding:8px 12px; border-radius:8px; border:1px solid var(--border); background:var(--surface); color:var(--text); font-size:14px;" />
+        <div id="searchResults" class="search-results" style="display:none; position:absolute; background:var(--bg2); border:1px solid var(--border); border-radius:8px; max-height:400px; overflow-y:auto; z-index:100; width:260px; box-shadow:0 10px 25px rgba(0,0,0,0.5);"></div>
+        <a href="search-site.html" style="display:inline-block; margin-top:8px; font-size:12px; color:var(--accent2); text-decoration:none;">Search entire site</a>
       </div>
 
       <div class="sidebar-label">Getting Started</div>
