@@ -5,6 +5,7 @@ baseurl: ""
 
 markdown: kramdown
 # theme: minima # Removed as we use custom layouts in _layouts/
+# Static assets should be cached longer to improve repeat-visit performance.
 exclude:
   - .artifacts
   - .idea
@@ -16,3 +17,8 @@ exclude:
   - SEARCH_CONSOLE_INDEXING_CHECKLIST.md
   - LOCAL_CONTENT_SOURCES.md
   - update-sitemap-dates.ps1
+
+webrick: {}
+
+# Static asset caching is set via hosting config when deployed. This keeps assets re-usable on repeat visits.
+

@@ -205,7 +205,10 @@ active_nav: "home"
   <div class="orb orb3"></div>
   <div class="hero-content">
     <div class="hero-badge"><span>●</span> Android App</div>
-    <img src="images/fravora.png" alt="Fravora" class="hero-logo" />
+    <picture>
+      <source srcset="images/fravora.webp" type="image/webp" />
+      <img src="images/fravora.png" alt="Fravora" class="hero-logo" width="140" height="158" decoding="async" fetchpriority="high" />
+    </picture>
     <h1>Fravora: <em>Digital Photo Frame</em><br />for Android devices</h1>
     <p class="hero-sub">
       Turn any Android device into a smart digital photo frame with offline slideshow and video playback from local folders, NAS/SMB shares, and cloud sources like Google Photos, Microsoft OneDrive, Dropbox, and Immich.
@@ -328,7 +331,7 @@ active_nav: "home"
     <div class="tv-mockup-wrap">
       <div class="tv-frame">
         <div class="tv-screen">
-          <img id="frameImg" src="images/screen_frame1.webp" alt="Android digital photo frame app screenshot showing Nara, Japan with weather and time overlays" />
+          <img id="frameImg" src="images/screen_frame1-optimized.webp" alt="Android digital photo frame app screenshot showing Nara, Japan with weather and time overlays" width="1100" height="687" fetchpriority="high" decoding="async" />
         </div>
       </div>
       <div class="tv-stand"></div>

@@ -24,13 +24,26 @@
   <link rel="stylesheet" href="{{ site.baseurl }}/css/{{ page.extra_css }}" />
   {% endif %}
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CQF87DK78N');
+    window.addEventListener('load', function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+
+      var gtagScript = document.createElement('script');
+      gtagScript.async = true;
+      gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N';
+      document.head.appendChild(gtagScript);
+
+      gtag('js', new Date());
+      gtag('config', 'G-CQF87DK78N');
+    });
   </script>
+
+  <script defer src="{{ site.baseurl }}/js/main.js"></script>
+  <script defer src="{{ site.baseurl }}/js/site-search.js"></script>
+  {% if page.extra_js %}
+  <script defer src="{{ site.baseurl }}/js/{{ page.extra_js }}"></script>
+  {% endif %}
 </head>
 <body>
 
@@ -39,11 +52,5 @@
   {{ content }}
 
   {% include site-footer.html base=site.baseurl %}
-
-  <script src="{{ site.baseurl }}/js/main.js"></script>
-  <script src="{{ site.baseurl }}/js/site-search.js"></script>
-  {% if page.extra_js %}
-  <script src="{{ site.baseurl }}/js/{{ page.extra_js }}"></script>
-  {% endif %}
 </body>
 </html>
