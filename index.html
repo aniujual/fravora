@@ -276,6 +276,8 @@ active_nav: "home"
     <a href="download.html">Download Fravora</a>
     <a href="blog/nas-music-frame-android.html">NAS music guide</a>
     <a href="blog/fire-tablet-smart-calendar.html">Fire tablet guide</a>
+    <a href="blog/google-photos-digital-photo-frame.html">Google Photos guide</a>
+    <a href="blog/immich-photo-frame-android.html">Immich photo frame guide</a>
     <a href="blog/self-hosted-photo-frame-immich-smb.html">Self-hosted guide</a>
   </div>
 </section>
@@ -374,12 +376,12 @@ active_nav: "home"
   <p class="section-label">Full control</p>
   <h2 class="section-title">Every detail, your way</h2>
 
-  <div class="screenshots-tabs" role="tablist">
-    <button class="tab-btn active" data-tab="radio" role="tab">📻 Radio</button>
-    <button class="tab-btn" data-tab="overlays" role="tab">🌤️ Overlays</button>
-    <button class="tab-btn" data-tab="layout" role="tab">🗂️ Overlay Layout</button>
-    <button class="tab-btn" data-tab="slideshow" role="tab">🖼️ Slideshow</button>
-    <button class="tab-btn" data-tab="voice" role="tab">🎙️ Voice</button>
+  <div class="screenshots-tabs" role="tablist" aria-label="Fravora settings tabs">
+    <button class="tab-btn active" data-tab="radio" role="tab" aria-label="Show radio settings" aria-selected="true">📻 Radio</button>
+    <button class="tab-btn" data-tab="overlays" role="tab" aria-label="Show overlay settings" aria-selected="false">🌤️ Overlays</button>
+    <button class="tab-btn" data-tab="layout" role="tab" aria-label="Show overlay layout settings" aria-selected="false">🗂️ Overlay Layout</button>
+    <button class="tab-btn" data-tab="slideshow" role="tab" aria-label="Show slideshow settings" aria-selected="false">🖼️ Slideshow</button>
+    <button class="tab-btn" data-tab="voice" role="tab" aria-label="Show voice settings" aria-selected="false">🎙️ Voice</button>
   </div>
 
   <div class="screenshots-stage">
@@ -631,116 +633,116 @@ active_nav: "home"
   <h2 class="section-title">Common questions</h2>
   <div class="faq-list">
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-1">
         Does Fravora support Google Photos slideshows?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">Yes. Fravora supports Google Photos alongside local folders, SMB/NAS shares, Microsoft OneDrive, Dropbox, and Immich, so you're never limited to one photo source.</div>
+      <div class="faq-a" id="faq-answer-1">Yes. Fravora supports Google Photos alongside local folders, SMB/NAS shares, Microsoft OneDrive, Dropbox, and Immich, so you're never limited to one photo source.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-2">
         Does it show ads?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">Only if you choose to. New users get a one-time 1-hour Pro trial, and free users can optionally watch rewarded ads for temporary Pro access. The slideshow itself is never interrupted.</div>
+      <div class="faq-a" id="faq-answer-2">Only if you choose to. New users get a one-time 1-hour Pro trial, and free users can optionally watch rewarded ads for temporary Pro access. The slideshow itself is never interrupted.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-3">
         Can I show weather and audio on top of my photos?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">Yes. Fravora can display live weather, a clock, photo metadata, and now-playing audio information over your slideshow.</div>
+      <div class="faq-a" id="faq-answer-3">Yes. Fravora can display live weather, a clock, photo metadata, and now-playing audio information over your slideshow.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-4">
         Does it work offline?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">Yes. Local and SMB/NAS sources work without internet. Scheduling and screen saver behavior continue as configured.</div>
+      <div class="faq-a" id="faq-answer-4">Yes. Local and SMB/NAS sources work without internet. Scheduling and screen saver behavior continue as configured.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-5">
         Does Fravora work as a NAS photo frame without internet?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">Yes. Fravora works as an offline NAS photo frame when using local folders or SMB/NAS sources on your local network. Internet is only needed for cloud sources and online services like radio.</div>
+      <div class="faq-a" id="faq-answer-5">Yes. Fravora works as an offline NAS photo frame when using local folders or SMB/NAS sources on your local network. Internet is only needed for cloud sources and online services like radio.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-6">
         Does it support SMB / NAS?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">Yes, on the free tier. Enter your share credentials in the app and pick which folders to include.</div>
+      <div class="faq-a" id="faq-answer-6">Yes, on the free tier. Enter your share credentials in the app and pick which folders to include.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-7">
         Will my photos be uploaded anywhere?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">No. Photos are read from your local or SMB/NAS sources and are not uploaded to Fravora servers.</div>
+      <div class="faq-a" id="faq-answer-7">No. Photos are read from your local or SMB/NAS sources and are not uploaded to Fravora servers.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-8">
         Why is voice control a Pro feature?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">Voice control uses Android speech recognition services that require ongoing maintenance, and keeping it in Pro helps sustain the free tier without forced slideshow ads.</div>
+      <div class="faq-a" id="faq-answer-8">Voice control uses Android speech recognition services that require ongoing maintenance, and keeping it in Pro helps sustain the free tier without forced slideshow ads.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-9">
         What devices does it run on?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">Fravora runs on Android tablets and dedicated Android display devices, and it works well for mounted or docked always-on frame setups.</div>
+      <div class="faq-a" id="faq-answer-9">Fravora runs on Android tablets and dedicated Android display devices, and it works well for mounted or docked always-on frame setups.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-10">
         How do I turn my tablet into a digital photo frame?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">Install Fravora, complete first-launch onboarding to set sources and your first album, tune slideshow settings, dock your tablet, and enable always-on display behavior.</div>
+      <div class="faq-a" id="faq-answer-10">Install Fravora, complete first-launch onboarding to set sources and your first album, tune slideshow settings, dock your tablet, and enable always-on display behavior.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-11">
         Is there a voice-controlled photo frame app?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">Yes. Fravora supports wake phrase and voice commands so you can control slideshow and audio without touching the screen.</div>
+      <div class="faq-a" id="faq-answer-11">Yes. Fravora supports wake phrase and voice commands so you can control slideshow and audio without touching the screen.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-12">
         Can I use an old Android tablet as a photo frame?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">Absolutely. Older Android tablets work well as dedicated frame displays, especially with Fravora offline playback and scheduling.</div>
+      <div class="faq-a" id="faq-answer-12">Absolutely. Older Android tablets work well as dedicated frame displays, especially with Fravora offline playback and scheduling.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-13">
         Does Fravora work with Synology or QNAP NAS?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">Yes. Fravora connects to Synology and QNAP NAS over standard SMB shares so photos can stay on your local network while the slideshow runs offline.</div>
+      <div class="faq-a" id="faq-answer-13">Yes. Fravora connects to Synology and QNAP NAS over standard SMB shares so photos can stay on your local network while the slideshow runs offline.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-14">
         What's the best free digital photo frame app for Android?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">If you want a free Android photo frame app with no forced slideshow ads, offline playback, and NAS support, Fravora's free tier is designed for that use case.</div>
+      <div class="faq-a" id="faq-answer-14">If you want a free Android photo frame app with no forced slideshow ads, offline playback, and NAS support, Fravora's free tier is designed for that use case.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-15">
         Can I turn a Fire tablet into a photo frame with Fravora?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">Yes, on compatible Amazon Fire tablets. Fravora can run as a dedicated photo frame display with local folders, NAS/SMB sources, and scheduled playback.</div>
+      <div class="faq-a" id="faq-answer-15">Yes, on compatible Amazon Fire tablets. Fravora can run as a dedicated photo frame display with local folders, NAS/SMB sources, and scheduled playback.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-answer-16">
         Do I need a cloud subscription to use Fravora?
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <div class="faq-a">No. Fravora works as an offline digital photo frame using local folders and SMB/NAS shares, so you can run it without a cloud subscription.</div>
+      <div class="faq-a" id="faq-answer-16">No. Fravora works as an offline digital photo frame using local folders and SMB/NAS shares, so you can run it without a cloud subscription.</div>
     </div>
   </div>
 </section>
