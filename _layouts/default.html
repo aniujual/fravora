@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title | default: site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}" />
-  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+  {% assign canonical_path = page.url | replace: 'index.html', '' | replace: '//', '/' %}
+  <link rel="canonical" href="{{ site.url }}{{ canonical_path }}" />
 
   {% if page.og_image %}
-  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/{{ page.og_image }}" />
-  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/{{ page.og_image }}" />
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/{{ page.og_image | remove_first: '/' }}" />
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/{{ page.og_image | remove_first: '/' }}" />
   {% endif %}
 
   <link rel="icon" type="image/png" href="{{ site.baseurl }}/images/fravora.png" />

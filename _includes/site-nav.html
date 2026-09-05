@@ -1,5 +1,5 @@
 <nav>
-  <a class="nav-logo" href="{{ site.baseurl }}/index.html">
+  <a class="nav-logo" href="{{ site.baseurl }}/">
     <img src="{{ site.baseurl }}/images/fravora.png" alt="Fravora logo" />
     <span>Fravora</span>
   </a>
@@ -10,11 +10,11 @@
   </div>
   <button class="nav-toggle" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav">☰</button>
   <div class="nav-links" id="siteNav">
-    <a{% if include.active == 'home' %} class="active"{% endif %} href="{{ site.baseurl }}/index.html">Home</a>
+    <a{% if include.active == 'home' %} class="active"{% endif %} href="{{ site.baseurl }}/">Home</a>
     <a{% if include.active == 'features' %} class="active"{% endif %} href="{{ site.baseurl }}/features.html">Features</a>
     <a{% if include.active == 'how-it-works' %} class="active"{% endif %} href="{{ site.baseurl }}/how-it-works.html">How It Works</a>
     <a{% if include.active == 'download' %} class="active"{% endif %} href="{{ site.baseurl }}/download.html">Download</a>
-    <a{% if include.active == 'blog' %} class="active"{% endif %} href="{{ site.baseurl }}/blog/index.html">Blog</a>
+    <a{% if include.active == 'blog' %} class="active"{% endif %} href="{{ site.baseurl }}/blog/">Blog</a>
     <a{% if include.active == 'manual' %} class="active"{% endif %} href="{{ site.baseurl }}/manual.html">User Manual</a>
     <a{% if include.active == 'glossary' %} class="active"{% endif %} href="{{ site.baseurl }}/glossary.html">Glossary</a>
     <a{% if include.active == 'privacy' %} class="active"{% endif %} href="{{ site.baseurl }}/privacy.html">Privacy Policy</a>

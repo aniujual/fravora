@@ -1,7 +1,7 @@
 ---
 layout: blog-post
 title: "Build a High-Performance Music Frame with NAS & Android | Fravora Blog"
-description: "Learn how to sync your music library from Synology or QNAP NAS to an Android photo frame using SMB, hierarchical playlists, and Fravora's Sync Inspector."
+description: "Learn how to build a music frame from Synology or QNAP NAS to an Android device using SMB, folder-based playlists, and Fravora's music library tools."
 og_image: "images/screen_settings_radio.webp"
 active_nav: "blog"
 ---
@@ -11,7 +11,7 @@ active_nav: "blog"
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Build a High-Performance Music Frame with NAS & Android",
-    "description": "Learn how to sync your music library from Synology or QNAP NAS to an Android photo frame using SMB, hierarchical playlists, and Fravora's Sync Inspector.",
+    "description": "Learn how to build a music frame from Synology or QNAP NAS to an Android device using SMB, folder-based playlists, and Fravora's music library tools.",
     "image": "https://fravora.app/images/screen_settings_radio.webp",
     "author": {
       "@type": "Person",
@@ -59,17 +59,17 @@ active_nav: "blog"
 
 <h1>Build a High-Performance Music Frame with NAS & Android</h1>
 <p class="meta">Published August 20, 2026 · 7 min read</p>
-<p>While many users turn their Android tablets into digital photo frames, a growing number of enthusiasts are using them as dedicated <strong>NAS Music Streamers</strong>. With the release of Fravora v1.1.2, you can now sync your entire music library directly from a Synology, QNAP, or Windows network share with high-performance playback and advanced library management.</p>
+<p>While many users turn their Android tablets into digital photo frames, a growing number of enthusiasts are using them as dedicated <strong>NAS Music Streamers</strong>. Fravora can read music directly from a Synology, QNAP, or Windows network share with high-performance playback and folder-based playlist management.</p>
 
 <h2>Why stream music from your NAS?</h2>
 <p>Cloud streaming services are convenient, but they often lack support for high-fidelity local files (FLAC, ALAC) or deep metadata customization. By using a NAS photo frame setup for audio, you keep your files private, avoid subscriptions, and leverage the storage you already own.</p>
 
 <h2>Key v1.1.2 Music Features for NAS Users</h2>
 <ul>
-  <li><strong>SMB/NAS Music Syncing</strong>: High-performance library syncing directly from network shares.</li>
-  <li><strong>Hierarchical Playlists</strong>: Create complex, rule-based playlists that mirror your folder structure.</li>
-  <li><strong>Sync Inspector</strong>: A new tree-view tool that helps you visualize exactly how your remote files map to your playlists.</li>
-  <li><strong>Smart Re-linking</strong>: If your NAS IP changes or files move, Fravora automatically re-links tracks by relative path or content identity tokens.</li>
+  <li><strong>Folder-based playlists</strong>: Add whole folders or individual files and keep playback organized by folder structure.</li>
+  <li><strong>Manual refresh</strong>: Rescan on demand and review Added/Removed/Re-linked counts.</li>
+  <li><strong>Smart Re-linking</strong>: If your NAS IP changes or files move, Fravora restores access or re-links tracks by relative path or identity token.</li>
+  <li><strong>Automatic background scanning</strong>: PRO can rescan on a configurable interval.</li>
 </ul>
 
 <div class="panel">
@@ -78,14 +78,14 @@ active_nav: "blog"
     <li>Connect your Synology or QNAP NAS in <strong>Settings → Sources</strong> using the SMB provider.</li>
     <li>Go to <strong>Settings → Audio → Music</strong> and create a new playlist.</li>
     <li>Use the <strong>Add Folder</strong> action and select your music root on the network share.</li>
-    <li>Open the <strong>Sync Inspector</strong> to verify the hierarchical mapping of your library.</li>
-    <li>Set the <strong>Scan Interval</strong> (PRO) so Fravora automatically discovers new albums added to your NAS.</li>
+    <li>Use <strong>Refresh Now</strong> to verify Added/Removed/Re-linked counts.</li>
+    <li>Set the <strong>Scan Interval</strong> (PRO) so Fravora automatically discovers new music added to your NAS.</li>
   </ul>
   <p>This setup allows your Android device to act as a high-quality music hub that plays alongside your photo slideshow, complete with background playback and lockscreen controls.</p>
 </div>
 
 <h2>Deduplication and Library Integrity</h2>
-<p>Fravora's deduplication system ensures that your library stays clean. It uses an identity token (normalized filename + size + tags) to prevent duplicate tracks, even if they exist in multiple folders on your NAS. On the Free tier, this is always active to keep things simple; PRO users can toggle it for specific playlist needs.</p>
+<p>Fravora's deduplication system ensures that your library stays clean. It uses an identity token (normalized filename + size + date + title + artist) to prevent duplicate tracks, even if they exist in multiple folders on your NAS. On the Free tier, this is always active to keep things simple; PRO users can toggle it for specific playlist needs.</p>
 
 <div class="links">
   <a href="../manual.html#audio">Audio manual chapter</a>

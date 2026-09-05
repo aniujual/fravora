@@ -56,7 +56,7 @@ extra_js: "manual-search.js"
     <div class="content-header" style="margin-bottom: 64px; border-bottom: 1px solid var(--border); padding-bottom: 48px;">
       <div class="badge" style="display:inline-block; background:rgba(155,93,229,0.1); color:var(--accent2); padding:6px 16px; border-radius:999px; font-size:0.75rem; font-weight:800; margin-bottom:1.5rem; text-transform:uppercase; letter-spacing:0.1em; border: 1px solid var(--glow);">📖 Documentation</div>
       <h1 style="font-family:'Syne'; font-size: clamp(2.5rem, 6vw, 3.5rem); margin-bottom: 1.5rem; line-height: 1.1;">User Manual</h1>
-      <p style="color:var(--muted); line-height:1.8; font-size: 1.15rem; max-width: 700px;">Everything you need to set up, personalize, and get the most out of Fravora, from first launch to advanced gestures and voice workflows.</p>
+      <p style="color:var(--muted); line-height:1.8; font-size: 1.15rem; max-width: 700px;">Everything you need to set up, personalize, and get the most out of Fravora, from first launch to advanced gestures, overlays, audio, and voice workflows.</p>
     </div>
 
     <!-- QUICK START -->
@@ -65,7 +65,7 @@ extra_js: "manual-search.js"
       <p style="margin-bottom: 20px;">Go from install to your first running slideshow in five first-launch onboarding steps:</p>
       <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:12px; color:var(--muted); line-height:1.7;">
         <li>Open Fravora and complete <strong>first-launch onboarding</strong>. You can replay it anytime from <strong>Settings → Support → Replay Onboarding</strong>.</li>
-        <li>During onboarding, choose at least one photo source: local folder, SMB/NAS share, Google Photos, Microsoft OneDrive, Dropbox, or Immich.</li>
+        <li>During onboarding, choose at least one photo source: local folder, SMB/NAS share, Google Photos picked photos, Microsoft OneDrive, Dropbox, or Immich.</li>
         <li>Finish onboarding album setup by creating your first album and attaching your selected folders or cloud collections.</li>
         <li>In <strong>Settings → Slideshow</strong>, set your preferred interval, display mode, and optional running hours.</li>
         <li>Return to the frame view. The slideshow starts automatically once images are found.</li>
@@ -91,7 +91,7 @@ extra_js: "manual-search.js"
 
       <div class="box">
         <h2>Local Folders</h2>
-        <p>Add folders from internal storage, SD card, or USB media using Android's system picker. Fravora stores only the access grants required for playback.</p>
+        <p>Add folders from internal storage, SD card, or USB media using Android's system picker. On Android TV devices without SAF support, Fravora uses a custom MediaStore-based folder picker instead.</p>
         <p style="margin-top: 0.8rem;"><strong>PRO:</strong> Albums can reference multiple local folders. Free tier is limited to one local folder per album.</p>
       </div>
 
@@ -99,6 +99,7 @@ extra_js: "manual-search.js"
         <h2>Cloud Sources</h2>
         <p>Supported cloud providers are Google Photos, Microsoft OneDrive, Dropbox, and Immich. The source flow is unified, so setup is consistent across providers.</p>
         <ul style="padding-left: 1.2rem; margin-top: 0.7rem; display:flex; flex-direction:column; gap:10px;">
+          <li>Google Photos uses the official Picker flow with hand-selected picks, append support, and clear-picks actions per connection.</li>
           <li>Free tier includes one cloud connection with base limits.</li>
           <li>PRO expands cloud limits across all supported providers.</li>
           <li>You can re-link or switch cloud accounts without rebuilding all albums.</li>
@@ -111,7 +112,7 @@ extra_js: "manual-search.js"
           <li><strong>Image Cache Size:</strong> 128 MB to 2 GB with automatic pruning.</li>
           <li><strong>Low Storage Alert:</strong> warns when configured cache exceeds available storage.</li>
           <li><strong>Scan Interval (PRO):</strong> 5 to 120 minutes for periodic source refreshes.</li>
-          <li><strong>Google Photos headroom:</strong> reserves device free-space before downloading cloud items.</li>
+          <li><strong>Google Photos headroom:</strong> reserves device free-space before downloading cloud items and shows a warning if the target exceeds available space.</li>
           <li><strong>Clear Cache:</strong> available for image cache and Google Photos cache.</li>
         </ul>
       </div>
@@ -126,7 +127,7 @@ extra_js: "manual-search.js"
           <li><strong>Create album:</strong> name it, then attach SMB folders, local folders, and/or cloud collections.</li>
           <li><strong>Enable for playback:</strong> only enabled albums are included in slideshow rotation.</li>
           <li><strong>Include subfolders:</strong> recursive folder scanning for deeper imports (PRO).</li>
-          <li><strong>Image counters:</strong> each album shows visible, hidden, and total image counts.</li>
+          <li><strong>Image counters:</strong> each album shows visible, hidden, total, and pending Google Photos download counts.</li>
           <li><strong>Hidden photos:</strong> hide photos globally or per album and restore them later from <strong>Settings → Albums → Hidden photos</strong>.</li>
         </ul>
       </div>
@@ -140,11 +141,14 @@ extra_js: "manual-search.js"
         <h2>Playback settings</h2>
         <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
           <li><strong>Photo Interval:</strong> 10 to 600 seconds.</li>
-          <li><strong>Image Order:</strong> Date Added, Taken Date, Album Order, File Name, Random, or Smart Shuffle (PRO).</li>
+          <li><strong>Instant Startup:</strong> last-session and random startup can show a cached photo immediately while scans complete in the background.</li>
+          <li><strong>Pause/Resume Semantics:</strong> overlays, dialogs, and settings pause the timer without resetting the remaining time.</li>
+          <li><strong>Image Order:</strong> Date Uploaded, Date Taken, Album Order, File Name, Random, or Smart Shuffle (PRO).</li>
           <li><strong>Smart Shuffle (PRO):</strong> reduces back-to-back similar shots by recognizing burst-like file/time patterns.</li>
           <li><strong>Display Mode:</strong> Fit (no crop) or Fill (edge crop).</li>
           <li><strong>Image Backdrop Style (PRO):</strong> styles empty letterbox areas in Fit mode.</li>
-          <li><strong>Transition Effects:</strong> Free is hard cut only; PRO adds 10+ transitions and transition speed control.</li>
+          <li><strong>Transition Effects:</strong> Free is hard cut only; PRO adds multiple animated transitions and transition speed control.</li>
+          <li><strong>Cinematic Effects (PRO):</strong> Ken Burns, Drift, Vignette Pulse, and other motion presets.</li>
         </ul>
       </div>
       <div class="box">
@@ -152,11 +156,11 @@ extra_js: "manual-search.js"
         <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
           <li>Daily running window with start/end times.</li>
           <li>Custom day-by-day schedule support.</li>
-          <li>Standby style outside running hours: large clock or full black screen.</li>
-          <li>Bouncing standby clock for OLED burn-in reduction (PRO).</li>
+          <li>Standby style outside running hours: digital clock, black screen, or bouncing clock (PRO).</li>
+          <li>Bouncing standby clock and overlay micro-shifts help reduce OLED burn-in risk.</li>
         </ul>
       </div>
-      <p class="callout">If an SMB share goes offline, Fravora continues with reachable sources and cached photos, then exposes quick Retry/Open Sources actions when intervention is needed.</p>
+      <p class="callout">If an SMB share goes offline, Fravora keeps the slideshow running from available images and shows a non-blocking warning when at least one image remains available.</p>
     </section>
 
     <!-- APPEARANCE -->
@@ -164,14 +168,14 @@ extra_js: "manual-search.js"
       <h2>🎨 Appearance</h2>
       <div class="box">
         <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
-          <li><strong>App Theme:</strong> System, Light, or Dark.</li>
-          <li><strong>App Color Scheme (PRO):</strong> seven complete UI themes.</li>
+          <li><strong>App Theme:</strong> Light, Dark, or System.</li>
+          <li><strong>Color Schemes (PRO):</strong> seven curated themes with previews.</li>
           <li><strong>App Language:</strong> follow system language or force a selected language.</li>
-          <li><strong>App Font Size (PRO):</strong> Small, Medium, or Large.</li>
+          <li><strong>App Font Size (PRO):</strong> Small, Medium, Large, or Extra Large.</li>
           <li><strong>Fullscreen Mode:</strong> hides system bars for a true frame look.</li>
           <li><strong>Keep Screen Awake:</strong> prevents sleep while Fravora is foregrounded.</li>
+          <li><strong>Premium Dashboard UI:</strong> card-based settings layout with unified iconography and themed tinting.</li>
           <li><strong>TV Compatibility:</strong> supports Android/Google TV and Amazon Fire TV launchers.</li>
-          <li><strong>Settings Photo Background (PRO):</strong> blurred current photo as Settings backdrop.</li>
         </ul>
       </div>
     </section>
@@ -182,16 +186,17 @@ extra_js: "manual-search.js"
       <p>Overlays are information layers shown on top of photos during playback. Each one can be enabled, sized, and positioned independently.</p>
       <div class="box">
         <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
-          <li><strong>Clock:</strong> configurable time/date display (free).</li>
+          <li><strong>Clock:</strong> configurable time/date display with trial timer toggle.</li>
           <li><strong>Weather:</strong> live local weather overlay with forecast details (PRO).</li>
           <li><strong>Photo metadata:</strong> taken date, location, and landmarks from EXIF (PRO).</li>
           <li><strong>Now Playing:</strong> scrolling station/song info while audio is active (PRO).</li>
           <li><strong>Ambient logo:</strong> pulsing Fravora icon and quick audio control target (PRO).</li>
           <li><strong>Photo index:</strong> current position indicator, such as 42 / 500 (PRO).</li>
+          <li><strong>Speech recognition text:</strong> real-time on-screen feedback for voice commands.</li>
           <li><strong>Anti burn-in:</strong> micro-shifts overlays and adjusts opacity over time (PRO).</li>
         </ul>
       </div>
-      <p class="callout"><strong>Overlay Layout (PRO):</strong> assign weather, clock, metadata, and logo to a 2x2 corner grid with collision-safe placement. On Free, clock position remains fixed.</p>
+      <p class="callout"><strong>Overlay Layout (PRO):</strong> assign weather, clock, metadata, and logo to a 2x2 corner grid with collision-safe placement. Now Playing and Photo Index can use center slots.</p>
     </section>
 
     <!-- AUDIO -->
@@ -202,10 +207,9 @@ extra_js: "manual-search.js"
       <div class="box">
         <h2>Radio (Free + PRO)</h2>
         <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
-          <li>Search by station name, genre, language, or country. Free has a daily search cap.</li>
-          <li>Play/Pause/Stop controls are always available.</li>
-          <li>Free keeps station selection during the current app session; PRO persists across restarts.</li>
-          <li>PRO unlocks favorites, recently played history, advanced filters, unlimited search, and auto-play options.</li>
+          <li>Search by station name with free search limits, or use advanced filters in PRO.</li>
+          <li>Play, pause, edit, and delete are available for the current station.</li>
+          <li>PRO unlocks favorites, recently played history, auto-add prompts, and auto-play options.</li>
           <li>PRO enables background playback and lockscreen/notification media controls.</li>
           <li>Fravora marks failed stations in-session so unstable streams are easy to avoid.</li>
         </ul>
@@ -246,7 +250,7 @@ extra_js: "manual-search.js"
           <li><strong>Wait for follow-up</strong> keeps listening briefly for multi-step interactions.</li>
           <li>Command window is adjustable (3 to 7 seconds).</li>
           <li>Runtime feature gating executes commands only when corresponding Voice toggles are enabled.</li>
-          <li>Video audio can pause/duck automatically while listening and resume after recognition.</li>
+          <li>Video audio can pause or duck automatically while listening and resume after recognition.</li>
         </ul>
       </div>
       <p style="color: var(--muted);">Visual feedback: blue frame means listening, green means command accepted, red means recognition unavailable/failed.</p>
@@ -333,7 +337,7 @@ extra_js: "manual-search.js"
       <div class="box">
         <h2>Free includes</h2>
         <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
-          <li>Uninterrupted slideshow, scheduling, and one album/source baseline setup.</li>
+          <li>Uninterrupted slideshow, scheduling, and core album/source baseline setup.</li>
           <li>Local folders, NAS/SMB support, and one cloud connection baseline.</li>
           <li>Clock overlay, hidden-photo controls, and core radio playback/search.</li>
         </ul>
@@ -342,7 +346,7 @@ extra_js: "manual-search.js"
         <h2>PRO unlocks</h2>
         <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
           <li>Expanded source/album/cloud limits and recursive include-subfolders.</li>
-          <li>Smart Shuffle, transition effects, transition speed, and backdrop styles.</li>
+          <li>Smart Shuffle, transition effects, transition speed, cinematic effects, and backdrop styles.</li>
           <li>Weather/metadata/now-playing/ambient overlays plus anti burn-in.</li>
           <li>Background audio, favorites/history, advanced station filters, and unlimited music playlists.</li>
           <li>Voice control, calendar, color schemes, font sizing, and advanced UI controls.</li>
@@ -379,21 +383,21 @@ extra_js: "manual-search.js"
       <details class="box" style="padding: 0; overflow: hidden;">
         <summary style="cursor:pointer; padding: 1rem 1.2rem; font-family:'Syne';">SMB / NAS share will not connect</summary>
         <div style="padding: 0 1.2rem 1.2rem; color: var(--muted);">
-          Use <code>hostname/sharename</code>, verify credentials, test guest access if supported, increase retry count for unstable links, and confirm local network reachability.
+          Use <code>hostname/sharename</code>, verify credentials, test connection, increase retry count for unstable links, and confirm local network reachability.
         </div>
       </details>
 
       <details class="box" style="padding: 0; overflow: hidden;">
         <summary style="cursor:pointer; padding: 1rem 1.2rem; font-family:'Syne';">Google Photos import is blocked or storage keeps filling up</summary>
         <div style="padding: 0 1.2rem 1.2rem; color: var(--muted);">
-          Free up storage, increase Google Photos headroom, clear stale cloud cache, and watch status icons for blocked/partial/full recovery states.
+          Free up storage, increase Google Photos headroom, clear stale cloud cache, and watch status icons for blocked, partial-recovery, and full-recovery states.
         </div>
       </details>
 
       <details class="box" style="padding: 0; overflow: hidden;">
         <summary style="cursor:pointer; padding: 1rem 1.2rem; font-family:'Syne';">Voice control is not enabling reliably</summary>
         <div style="padding: 0 1.2rem 1.2rem; color: var(--muted);">
-          Install Speech Services by Google, set it as default voice input, grant microphone permission, complete disclaimer acknowledgement, and increase command window if needed.
+          Install Speech Services by Google, set it as default voice input, grant microphone permission, complete disclaimer acknowledgement, and increase the command window if needed.
         </div>
       </details>
 
