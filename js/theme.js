@@ -57,9 +57,20 @@
     setTheme(initialTheme);
   }
 
+  function syncThemeState() {
+    var resolvedTheme = resolveTheme();
+    setTheme(resolvedTheme);
+    updateThemeButtonIcon(
+      document.getElementById('themeBtn'),
+      document.documentElement.getAttribute('data-theme')
+    );
+  }
+
   function wireThemeSync() {
     var btn = document.getElementById('themeBtn');
     if (!btn) return;
+    if (btn.getAttribute('data-theme-wired') === 'true') return;
+    btn.setAttribute('data-theme-wired', 'true');
 
     var appliedTheme = document.documentElement.getAttribute('data-theme');
     updateThemeButtonIcon(btn, appliedTheme);
@@ -74,5 +85,19 @@
 
   initializeThemeState();
 
-  window.addEventListener('DOMContentLoaded', wireThemeSync);
+  if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', wireThemeSync);
+  } else {
+    wireThemeSync();
+  }
+  window.addEventListener('storage', function (event) {
+    if (event.key && event.key !== THEME_KEY) return;
+    syncThemeState();
+  });
+  window.addEventListener('pageshow', syncThemeState);
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) {
+      syncThemeState();
+    }
+  });
 })();
