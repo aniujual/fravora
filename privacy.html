@@ -9,7 +9,7 @@ active_nav: "privacy"
 <main>
   <div class="page-header" style="text-align: center; margin-bottom: 4rem;">
     <h1 style="font-family:'Syne'; font-size: clamp(2rem, 6vw, 3.2rem); margin-bottom: 1rem;">Privacy Policy</h1>
-    <p style="color: var(--muted); font-size: 1.1rem;">Last Updated: May 1, 2026</p>
+    <p style="color: var(--muted); font-size: 1.1rem;">Last Updated: September 22, 2026</p>
   </div>
 
   <div class="copy-card">
@@ -51,13 +51,16 @@ active_nav: "privacy"
       </ul>
       <p>This data is anonymous and aggregated and does not include personally identifiable information. It is used solely to understand how the App is used and to improve its features and stability. It cannot be used to identify you personally.</p>
 
-      <h3>1.3 Advertising Identifiers</h3>
+      <h3>1.3 Website Analytics</h3>
+      <p>When you visit fravora.app, we use Google Analytics, provided through a separate Firebase project for this website, to understand aggregate website use. Google Analytics may collect information such as pages viewed, approximate location derived from your IP address, device and browser type, referral source, and session duration. We use this information to maintain and improve the website. Website analytics is kept separate from the App's Firebase Analytics data and is not used to identify you personally. We ask for your choice before enabling website analytics; you can change it at any time using the Analytics Preferences link in the site footer.</p>
+
+      <h3>1.4 Advertising Identifiers</h3>
       <p>If you choose to watch a rewarded advertisement to obtain temporary Pro tier access, that advertisement is served by Google AdMob. AdMob may collect and use your device's advertising identifier to serve personalized or non-personalized ads, depending on your consent settings and regional privacy regulations. For more information on how Google uses this data, please refer to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
 
-      <h3>1.4 Location Data</h3>
+      <h3>1.5 Location Data</h3>
       <p>If you enable the weather overlay feature, Fravora will request access to your device's location to retrieve local weather forecasts from a third-party weather service. Your location is used only for the immediate weather request and is not stored, logged, or shared beyond what is necessary to fulfill that request.</p>
 
-      <h3>1.5 Voice Data</h3>
+      <h3>1.6 Voice Data</h3>
       <p>If you use the voice control feature (Pro tier), voice processing is handled in two stages:</p>
       <ul>
         <li>Wake phrase detection is processed entirely on your device using the OpenWakeWord library. No audio data is transmitted externally during wake phrase detection.</li>
@@ -65,10 +68,10 @@ active_nav: "privacy"
       </ul>
       <p>Fravora does not store, log, or retain any audio recordings or transcripts of your voice commands. Voice control is an optional feature and can be disabled at any time from the App's settings.</p>
 
-      <h3>1.6 Photo Metadata</h3>
+      <h3>1.7 Photo Metadata</h3>
       <p>If you enable the metadata overlay feature (Pro tier), Fravora reads EXIF data embedded in your photos, including location coordinates and date taken, solely for the purpose of displaying this information as an overlay during the slideshow. This metadata is read locally from your photos and is never transmitted to our servers or shared with any third party.</p>
 
-      <h3>1.7 Issue Reports</h3>
+      <h3>1.8 Issue Reports</h3>
       <p>If you use the in-app issue reporting feature, you will be directed to send an email to our support address. Any information you include in that email — such as a description of the issue, your device details, or any attachments you choose to add — is shared with us voluntarily and is used solely to investigate and resolve the reported issue. We do not share this information with third parties.</p>
     </div>
 
@@ -97,13 +100,13 @@ active_nav: "privacy"
       <p>Used for app licensing and billing verification. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy policy</a>.</p>
 
       <h3>3.2 Google Firebase</h3>
-      <p>We use Firebase Analytics to collect anonymous usage data as described in Section 1.2, and Firebase Remote Config to deliver app configuration updates without requiring an app update. No personally identifiable information is transmitted through these services. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy policy</a>.</p>
+      <p>We use Firebase Analytics to collect anonymous App usage data as described in Section 1.2, and Firebase Remote Config to deliver app configuration updates without requiring an app update. A separate Firebase project provides Google Analytics for this website as described in Section 1.3. No personally identifiable information is intentionally transmitted through these services. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy policy</a>.</p>
 
       <h3>3.3 Google AdMob</h3>
       <p>Used to serve rewarded advertisements when you explicitly choose to watch an ad to unlock temporary Pro tier access. AdMob may use advertising identifiers and cookies. You can opt out of personalized advertising through your device settings under <strong>Google &gt; Ads &gt; Opt out of Ads Personalization</strong>. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy policy</a>.</p>
 
       <h3>3.4 Cloud Storage Providers (optional, user-initiated)</h3>
-      <p>Current cloud sources are Google Photos, Microsoft OneDrive, Dropbox, and Immich. If you choose to connect a cloud source, Fravora uses provider-appropriate authorization (OAuth where available, or server URL + API key for Immich) to access only the specific media items, folders, or albums you select. The following applies to all cloud provider integrations:</p>
+      <p>Current cloud sources are Google Photos, Microsoft OneDrive, Dropbox, Google Drive, and Immich. If you choose to connect a cloud source, Fravora uses provider-appropriate authorization (Google or Microsoft OAuth, Dropbox OAuth, or server URL + API key for Immich) to access only the specific media items, folders, or albums you select. The following applies to all cloud provider integrations:</p>
       <ul>
         <li>Access is strictly limited to the media items and folders you explicitly select</li>
         <li>Your photos are downloaded to your device solely for display in the slideshow</li>

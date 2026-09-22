@@ -26,18 +26,82 @@
   {% endif %}
 
   <script>
-    window.addEventListener('load', function () {
+    (function () {
+      var measurementId = 'G-SYJXC7D6RF';
+      var consentStorageKey = 'fravoraAnalyticsConsent';
+
+      function loadAnalytics() {
+        if (window.fravoraAnalyticsLoaded) {
+          return;
+        }
+
+        window.fravoraAnalyticsLoaded = true;
       window.dataLayer = window.dataLayer || [];
       function gtag(){ dataLayer.push(arguments); }
 
       var gtagScript = document.createElement('script');
       gtagScript.async = true;
-      gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-CQF87DK78N';
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
       document.head.appendChild(gtagScript);
 
       gtag('js', new Date());
-      gtag('config', 'G-CQF87DK78N');
-    });
+        gtag('config', measurementId);
+      }
+
+      function removeConsentBanner() {
+        var banner = document.getElementById('analytics-consent');
+        if (banner) {
+          banner.remove();
+        }
+      }
+
+      function saveConsent(choice) {
+        localStorage.setItem(consentStorageKey, choice);
+        removeConsentBanner();
+
+        if (choice === 'granted') {
+          loadAnalytics();
+        } else {
+          window['ga-disable-' + measurementId] = true;
+        }
+      }
+
+      function showConsentBanner() {
+        if (document.getElementById('analytics-consent')) {
+          return;
+        }
+
+        var banner = document.createElement('section');
+        banner.id = 'analytics-consent';
+        banner.className = 'analytics-consent';
+        banner.setAttribute('aria-label', 'Analytics preferences');
+        banner.innerHTML = '<p>We use optional Google Analytics to understand how this website is used. <a href="{{ site.baseurl }}/privacy.html">Privacy Policy</a></p><div class="analytics-consent-actions"><button type="button" data-analytics-consent="denied">Reject</button><button type="button" class="analytics-consent-accept" data-analytics-consent="granted">Accept analytics</button></div>';
+        document.body.appendChild(banner);
+
+        banner.addEventListener('click', function (event) {
+          var choice = event.target.getAttribute('data-analytics-consent');
+          if (choice) {
+            saveConsent(choice);
+          }
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var consent = localStorage.getItem(consentStorageKey);
+        if (consent === 'granted') {
+          loadAnalytics();
+        } else if (consent !== 'denied') {
+          showConsentBanner();
+        }
+
+        document.addEventListener('click', function (event) {
+          if (event.target.closest('[data-manage-analytics]')) {
+            event.preventDefault();
+            showConsentBanner();
+          }
+        });
+      });
+    })();
   </script>
 
   <script defer src="{{ site.baseurl }}/js/main.js"></script>

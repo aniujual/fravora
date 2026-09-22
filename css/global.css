@@ -38,6 +38,44 @@ body {
   overflow-x: hidden;
 }
 
+.analytics-consent {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: min(38rem, calc(100% - 2rem));
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+}
+.analytics-consent p { color: var(--muted); font-size: 0.9rem; line-height: 1.45; }
+.analytics-consent a { color: var(--accent2); }
+.analytics-consent-actions { display: flex; flex: 0 0 auto; gap: 0.5rem; }
+.analytics-consent button {
+  min-height: 36px;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.analytics-consent .analytics-consent-accept { background: var(--accent); border-color: var(--accent); color: #fff; }
+.analytics-consent button:hover { border-color: var(--accent2); }
+
+@media (max-width: 620px) {
+  .analytics-consent { align-items: stretch; flex-direction: column; }
+  .analytics-consent-actions { justify-content: flex-end; }
+}
+
 /* ── GLOBAL LAYOUT ── */
 main {
   max-width: 1000px;
@@ -195,7 +233,13 @@ nav {
 .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 8vw, 4.2rem); font-weight: 800; line-height: 1.05; color: var(--text); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
 .hero h1 em { font-style: normal; color: var(--accent); }
 .hero-sub { font-size: clamp(1rem, 2.5vw, 1.25rem); color: var(--muted); line-height: 1.6; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+.hero-integrations { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.55rem; max-width: 760px; margin: -0.8rem auto 2rem; }
+.hero-integrations span { color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 0.42rem 0.72rem; font-size: 0.78rem; font-weight: 600; }
 .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+.hero-review-proof { color: var(--text); font-size: 0.9rem; font-weight: 700; margin: -1.5rem 0 1.5rem; }
+.hero-review-proof span { color: #f5b942; }
+.hero-review-proof a { color: var(--accent2); margin-left: 0.4rem; text-decoration: none; }
+.hero-review-proof a:hover { text-decoration: underline; }
 .hero-trust { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; color: var(--muted); font-size: 0.85rem; font-weight: 500; }
 .hero-trust span { display: flex; align-items: center; gap: 0.4rem; }
 .hero-trust span::before { content: "✓"; color: var(--green); font-weight: 800; }
@@ -307,6 +351,14 @@ nav {
 .feature-icon { font-size: 1.75rem; margin-bottom: 1rem; display: block; }
 .feature-card h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--text); }
 .feature-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+.feature-card-highlight { border-color: rgba(155,93,229,0.45); }
+
+/* ── HOME: PURCHASE CALLOUT ── */
+.purchase-callout { max-width: 1000px; margin: -1rem auto 2rem; padding: 1.4rem 1.6rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; background: linear-gradient(100deg, rgba(155,93,229,0.16), rgba(67,97,238,0.12)); border: 1px solid var(--accent); border-radius: 16px; }
+.purchase-callout strong { display: block; color: var(--text); font-family: 'Syne', sans-serif; font-size: 1.2rem; margin-bottom: 0.35rem; }
+.purchase-callout p { color: var(--muted); margin: 0; line-height: 1.55; }
+.text-link { color: var(--accent2); font-weight: 700; text-decoration: none; white-space: nowrap; }
+.text-link:hover { text-decoration: underline; }
 
 /* ── RELEASE NOTES CARDS ── */
 .release-card {
@@ -1079,6 +1131,10 @@ footer a:hover { color: var(--accent); }
   .comp-wrap {
     margin-left: -2px;
     margin-right: -2px;
+  }
+  .purchase-callout {
+    align-items: flex-start;
+    flex-direction: column;
   }
   .different .grid article {
     flex-direction: column;
