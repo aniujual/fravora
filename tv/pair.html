@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connect Fravora TV</title>
+  <script src="https://accounts.google.com/gsi/client"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0e0e10;
+      color: #f2f2f2;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+    .card {
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+    p#status {
+      color: #b3b3b3;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      min-height: 1.4em;
+      margin-bottom: 28px;
+    }
+    button {
+      background: #4f8cff;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+    button:active:not(:disabled) {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Connect Fravora TV</h1>
+    <p id="status">Tap the button below and sign in with the Google account you want your TV to use for Google Photos.</p>
+    <button id="connectBtn" onclick="startPairing()">Connect to Google Photos</button>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+    import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+    import { getFirestore, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+
+    // ---- REPLACE with your project's actual Firebase config ----
+    // Firebase Console -> Project settings -> General -> Your apps -> SDK setup and configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBhXal-ibRtoTPKVg9TPZCgQrMUlh88DPM",
+      authDomain: "fravora-c5b45.firebaseapp.com",
+      projectId: "fravora-c5b45",
+      storageBucket: "fravora-c5b45.firebasestorage.app",
+      messagingSenderId: "131742204232",
+      appId: "1:131742204232:web:468c81104777ae26ecf37d"
+    };
+
+    // ---- REPLACE with your actual Web OAuth Client ID ----
+    const WEB_CLIENT_ID = "131742204232-bubc4sdu428f1rrt8khrjgt39541qq9c.apps.googleusercontent.com";
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    const statusEl = document.getElementById("status");
+    const btnEl = document.getElementById("connectBtn");
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get("code");
+
+    if (!code) {
+      statusEl.textContent = "No pairing code found. Please scan the QR code shown on your TV.";
+      btnEl.disabled = true;
+    }
+
+    // Sign in anonymously as soon as the page loads, so it's already
+    // resolved by the time the user taps the button.
+    signInAnonymously(auth).catch((error) => {
+      console.error("Anonymous auth failed", error);
+      statusEl.textContent = "Couldn't set up a secure connection. Please reload the page.";
+      btnEl.disabled = true;
+    });
+
+    window.startPairing = () => {
+      if (!code) return;
+
+      btnEl.disabled = true;
+      statusEl.textContent = "Opening Google sign-in…";
+
+      const tokenClient = google.accounts.oauth2.initTokenClient({
+        client_id: WEB_CLIENT_ID,
+        scope: "https://www.googleapis.com/auth/photospicker.mediaitems.readonly",
+        callback: async (response) => {
+          if (response.error) {
+            console.error("Auth error", response);
+            statusEl.textContent = "Permission wasn't granted. Tap the button to try again.";
+            btnEl.disabled = false;
+            return;
+          }
+
+          if (!auth.currentUser) {
+            statusEl.textContent = "Connection wasn't ready. Please reload the page and try again.";
+            btnEl.disabled = false;
+            return;
+          }
+
+          try {
+            await updateDoc(doc(db, "pairings", code), {
+              accessToken: response.access_token
+            });
+            statusEl.textContent = "Success! You can now look at your TV.";
+          } catch (e) {
+            console.error("Firestore error", e);
+            statusEl.textContent = "Something went wrong sending your connection to the TV. Please try again.";
+            btnEl.disabled = false;
+          }
+        }
+      });
+
+      tokenClient.requestAccessToken();
+    };
+  </script>
+</body>
+</html>
