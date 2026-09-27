@@ -128,10 +128,26 @@
             return;
           }
 
+          const pairingRef = doc(db, "pairings", code);
+          // GIS returns expires_in as seconds (string or number); the TV uses it for token expiry.
+          const expiresIn = Number.parseInt(response.expires_in, 10);
+          const payload = { accessToken: response.access_token };
+          if (Number.isFinite(expiresIn) && expiresIn > 0) {
+            payload.expiresIn = expiresIn;
+          }
+
           try {
-            await updateDoc(doc(db, "pairings", code), {
-              accessToken: response.access_token
-            });
+            try {
+              await updateDoc(pairingRef, payload);
+            } catch (e) {
+              // Rules may not allow expiresIn yet; the token alone is enough, the TV falls back to 50 minutes.
+              if (e && e.code === "permission-denied" && "expiresIn" in payload) {
+                console.warn("expiresIn rejected by rules; retrying with accessToken only", e);
+                await updateDoc(pairingRef, { accessToken: response.access_token });
+              } else {
+                throw e;
+              }
+            }
             statusEl.textContent = "Success! You can now look at your TV.";
           } catch (e) {
             console.error("Firestore error", e);
