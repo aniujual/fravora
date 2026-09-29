@@ -70,6 +70,7 @@
     <p id="status">Tap the button below and sign in with the Google account you want your TV to use for Google Photos.</p>
     <p id="pairingCode"></p>
     <button id="connectBtn" onclick="startPairing()" disabled>Connect to Google Photos</button>
+    <button id="retryBtn" onclick="retryPairing()" hidden>Try again</button>
   </div>
 
   <script type="module">
@@ -103,6 +104,7 @@
     const statusEl = document.getElementById("status");
     const pairingCodeEl = document.getElementById("pairingCode");
     const btnEl = document.getElementById("connectBtn");
+    const retryBtn = document.getElementById("retryBtn");
 
     const params = new URLSearchParams(window.location.search);
     const state = params.get("state");
@@ -110,27 +112,22 @@
     const isDropboxStart = !isDropboxReturn && params.get("provider") === "DROPBOX";
     let pairingCode = isDropboxReturn ? state.slice("DROPBOX:".length) : params.get("code");
 
-    if (isDropboxReturn) {
-      if (!pairingCode) {
-        try {
-          pairingCode = sessionStorage.getItem("dropboxPairingCode");
-        } catch (error) {
-          console.warn("Couldn't read the saved pairing code", error);
-        }
-      }
+    if (isDropboxReturn && !pairingCode) {
       try {
-        sessionStorage.removeItem("dropboxPairingCode");
+        pairingCode = sessionStorage.getItem("dropboxPairingCode");
       } catch (error) {
-        console.warn("Couldn't clear the saved pairing code", error);
+        console.warn("Couldn't read the saved pairing code", error);
       }
     }
 
+    const isDropboxFlow = isDropboxStart || isDropboxReturn;
     const challenge = params.get("challenge");
     const hasValidPairingCode = PAIRING_CODE_PATTERN.test(pairingCode || "");
     const hasValidChallenge = !isDropboxStart || CODE_CHALLENGE_PATTERN.test(challenge || "");
 
     if (!hasValidPairingCode || !hasValidChallenge) {
       statusEl.textContent = "This pairing link is invalid. Please scan the QR code shown on your TV again.";
+      clearReturnState();
     } else if (isDropboxStart) {
       statusEl.textContent = "Continue to Dropbox and sign in with the account you want your TV to use. Confirm that this code matches your TV:";
       pairingCodeEl.textContent = pairingCode.match(/.{1,4}/g).join("-");
@@ -138,7 +135,46 @@
       btnEl.textContent = "Continue to Dropbox";
     } else if (isDropboxReturn) {
       statusEl.textContent = "Finishing your Dropbox connection…";
+      btnEl.style.display = "none";
     }
+
+    // Deferred to terminal outcomes only, so a transient failure can still be retried or reloaded.
+    function clearReturnState() {
+      if (!isDropboxReturn) return;
+      try {
+        sessionStorage.removeItem("dropboxPairingCode");
+      } catch (error) {
+        console.warn("Couldn't clear the saved pairing code", error);
+      }
+      history.replaceState(null, "", location.pathname);
+    }
+
+    function showTerminal(message) {
+      statusEl.textContent = message;
+      btnEl.disabled = true;
+      retryBtn.hidden = true;
+      clearReturnState();
+    }
+
+    function showRetryable(message) {
+      statusEl.textContent = message;
+      btnEl.disabled = true;
+      retryBtn.hidden = false;
+    }
+
+    function showExpired() {
+      showTerminal("This code has expired. Scan the new QR code on your TV.");
+    }
+
+    function showAlreadyUsed() {
+      showTerminal("This code has already been used. Check your TV.");
+    }
+
+    window.retryPairing = () => {
+      retryBtn.hidden = true;
+      statusEl.textContent = "Trying again\u2026";
+      initializePairing();
+    };
 
     async function initializePairing() {
       if (!hasValidPairingCode || !hasValidChallenge) return;
@@ -149,11 +185,17 @@
         const pairingSnapshot = await getDoc(pairingRef);
         const pairingData = pairingSnapshot.data();
 
-        if (!pairingSnapshot.exists()
-            || Object.prototype.hasOwnProperty.call(pairingData, "authCode")
-            || Object.prototype.hasOwnProperty.call(pairingData, "authError")) {
-          statusEl.textContent = "This code has expired. Scan the new QR code on your TV.";
-          btnEl.disabled = true;
+        // The TV creates Dropbox documents with authCode and authError already present but null,
+        // so only a non-null value means the document has been used.
+        if (!pairingSnapshot.exists()) {
+          showExpired();
+          return;
+        }
+
+        if (pairingData.authCode != null
+            || pairingData.authError != null
+            || (!isDropboxFlow && pairingData.accessToken != null)) {
+          showAlreadyUsed();
           return;
         }
 
@@ -164,29 +206,40 @@
         }
       } catch (error) {
         console.error("Pairing setup failed", error);
-        statusEl.textContent = "Couldn't set up a secure connection. Please reload the page.";
-        btnEl.disabled = true;
+        showRetryable("Couldn't set up a secure connection. Check your connection, then tap Try again or reload the page.");
       }
     }
 
     async function finishDropboxPairing(pairingRef) {
       const dropboxError = params.get("error");
+      const denied = dropboxError === "access_denied";
+      const authorizationCode = params.get("code");
 
-      if (dropboxError === "access_denied") {
-        await updateDoc(pairingRef, { authError: "denied" });
-      } else if (dropboxError) {
-        statusEl.textContent = "Dropbox sign-in couldn't be completed. Please scan the QR code on your TV and try again.";
+      if ((dropboxError && !denied) || (!denied && (!authorizationCode || authorizationCode.length > 512))) {
+        showTerminal("Dropbox sign-in couldn't be completed. Please scan the QR code on your TV and try again.");
         return;
-      } else {
-        const authorizationCode = params.get("code");
-        if (!authorizationCode || authorizationCode.length > 512) {
-          statusEl.textContent = "Dropbox sign-in couldn't be completed. Please scan the QR code on your TV and try again.";
-          return;
-        }
-        await updateDoc(pairingRef, { authCode: params.get("code") });
       }
 
-      statusEl.textContent = "You're signed in. Return to your TV.";
+      try {
+        if (denied) {
+          await updateDoc(pairingRef, { authError: "denied" });
+        } else {
+          await updateDoc(pairingRef, { authCode: authorizationCode });
+        }
+      } catch (error) {
+        // The rules reject the write once the document is gone or more than 15 minutes old.
+        if (error && (error.code === "permission-denied" || error.code === "not-found")) {
+          showExpired();
+          return;
+        }
+        console.error("Couldn't relay the Dropbox result", error);
+        showRetryable("Couldn't send your connection to the TV. Check your connection, then tap Try again or reload the page.");
+        return;
+      }
+
+      showTerminal(denied
+        ? "Access was declined. Return to your TV."
+        : "You're signed in. Return to your TV.");
     }
 
     initializePairing();
