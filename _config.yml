@@ -13,7 +13,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules/
-  - 2-week-roadmap.md
   - SEARCH_CONSOLE_INDEXING_CHECKLIST.md
   - LOCAL_CONTENT_SOURCES.md
   - update-sitemap-dates.ps1

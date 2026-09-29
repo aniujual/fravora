@@ -67,9 +67,9 @@
 <body>
   <div class="card">
     <h1>Connect Fravora TV</h1>
-    <p id="status">Tap the button below and sign in with the Google account you want your TV to use for Google Photos.</p>
+    <p id="status">Checking your pairing code…</p>
     <p id="pairingCode"></p>
-    <button id="connectBtn" onclick="startPairing()" disabled>Connect to Google Photos</button>
+    <button id="connectBtn" onclick="startPairing()" disabled>Connect</button>
     <button id="retryBtn" onclick="retryPairing()" hidden>Try again</button>
   </div>
 
@@ -96,6 +96,19 @@
     const REDIRECT_URI = "https://fravora.app/tv/pair.html";
     const PAIRING_CODE_PATTERN = /^[A-Za-z0-9]{10,16}$/;
     const CODE_CHALLENGE_PATTERN = /^[A-Za-z0-9_-]{43}$/;
+
+    // Keys match the app's GoogleAuthorizationProvider enum.
+    const GOOGLE_PROVIDERS = {
+      PHOTOS: {
+        label: "Google Photos",
+        scope: "https://www.googleapis.com/auth/photospicker.mediaitems.readonly"
+      },
+      DRIVE: {
+        label: "Google Drive",
+        scope: "https://www.googleapis.com/auth/drive.readonly"
+      }
+    };
+    let googleProvider = null;
 
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
@@ -201,9 +214,26 @@
 
         if (isDropboxReturn) {
           await finishDropboxPairing(pairingRef);
-        } else {
-          btnEl.disabled = false;
+          return;
         }
+
+        if (isDropboxStart) {
+          btnEl.disabled = false;
+          return;
+        }
+
+        // Taken from the document, not the URL, so a crafted link cannot widen the requested scope.
+        const providerName = pairingData.provider;
+        const resolved = Object.hasOwn(GOOGLE_PROVIDERS, providerName) ? GOOGLE_PROVIDERS[providerName] : null;
+        if (!resolved) {
+          showTerminal("This pairing link is invalid. Please scan the QR code shown on your TV again.");
+          return;
+        }
+
+        googleProvider = resolved;
+        statusEl.textContent = `Tap the button below and sign in with the Google account you want your TV to use for ${resolved.label}.`;
+        btnEl.textContent = `Connect to ${resolved.label}`;
+        btnEl.disabled = false;
       } catch (error) {
         console.error("Pairing setup failed", error);
         showRetryable("Couldn't set up a secure connection. Check your connection, then tap Try again or reload the page.");
@@ -276,7 +306,7 @@
 
       const tokenClient = google.accounts.oauth2.initTokenClient({
         client_id: WEB_CLIENT_ID,
-        scope: "https://www.googleapis.com/auth/photospicker.mediaitems.readonly",
+        scope: googleProvider.scope,
         callback: async (response) => {
           if (response.error) {
             console.error("Auth error", response);

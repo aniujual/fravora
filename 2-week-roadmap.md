@@ -1,0 +1,78 @@
+# Fravora Site 2-Week Roadmap
+
+Date started: 2026-06-27
+
+## Week 1
+- [x] Upgrade homepage SEO headline, metadata, and keyword-oriented section structure.
+- [x] Expand homepage FAQ with high-intent search questions and matching structured data.
+- [x] Add crawlable internal-link destination pages for features, setup flow, and download.
+- [x] Add blog hub and 3 long-tail informational articles.
+
+## Week 2
+- [x] Add Article JSON-LD to each blog post.
+- [x] Add Breadcrumb schema to new landing pages and blog content.
+- [x] Add social image alt metadata (OG/Twitter) for new pages.
+- [x] Add sitemap lastmod values for crawl freshness.
+- [x] Create Search Console indexing checklist file.
+- [x] Standardize top navigation links across all pages.
+- [x] Replace phone-focused marketing copy with tablet-first wording.
+- [x] Add compact mobile navigation menu behavior across site pages.
+- [x] Migrate top-row header to a shared runtime template (single script source) to avoid per-page nav edits.
+- [x] Align website naming with Play Store app title (Fravora: Digital Photo Frame).
+- [x] Standardize bottom footer navigation with a shared runtime template.
+- [x] Update site-wide copyright attribution to aniujual software.
+- [x] Add homepage SEO depth pass (intent paragraph, provider mentions near top, expanded FAQ long-tail coverage, and keyword-forward alt text).
+- [x] Fix cross-page dark/light theme persistence so toggle state carries between pages.
+- [x] Remove duplicated per-page theme scripts and centralize theme handling in shared navigation logic.
+- [x] Add Open Graph image variants for each new landing page and blog post.
+- [x] Add performance pass (image compression and lazy loading review) for Core Web Vitals.
+- [x] Align homepage, landing pages, and blog SEO copy with the current Play Store listing and app name (Fravora: Digital Photo Frame).
+- [x] Add Amazon Appstore listing links alongside Google Play entry points across the site.
+- [x] Normalize Google Play and Amazon Appstore CTA styling so both stores are visually equal.
+- [x] Sync website content with latest local source additions (FEATURES, FEATURES_BY_TIER, CHANGELOG).
+- [x] Update features.html with new entries from FEATURES.md and FEATURES_BY_TIER.md (Music tab, Calendar, Cinematic effects, Image Backdrop Style, Hidden Photos, OLED burn-in protection, Color Schemes, OneDrive/Dropbox/Immich cloud detail).
+- [x] Add three SEO-targeted blog articles: Google Photos digital photo frame, NAS/SMB photo frame Android, Android tablet as digital photo frame.
+- [x] Add Immich photo frame blog article.
+- [x] Add weather overlay blog article (digital-photo-frame-weather-overlay.html).
+- [x] Add FAQPage JSON-LD schema to features.html, how-it-works.html, and download.html.
+- [x] Add contextual cross-links from old blog articles to new ones.
+- [x] Add contextual blog links from features.html, how-it-works.html, and download.html.
+- [x] Add Free vs PRO breakdown section to download.html with anchor #free-vs-pro.
+- [x] Update sitemap.xml lastmod dates for all modified pages to 2026-08-09.
+- [x] Create update-sitemap-dates.ps1 script for future git-log-based sitemap date automation.
+- [x] Add custom 404.html branded page with links to main site areas.
+- [x] Write three competitor comparison articles: Fravora vs Nixplay, Fravora vs Aura Frame, Google Photos slideshow vs photo frame app.
+- [x] Create glossary.html with 12 technical terms (NAS, SMB, Immich, EXIF, Ken Burns, OLED burn-in, overlay, running hours, SAF, Smart Shuffle, Google Photos Picker, album).
+- [x] Add Glossary link to shared footer across all pages.
+- [x] Fix Jekyll migration layout regressions by restoring missing shared CSS selectors and nav parity (including Glossary in top navigation).
+- [x] Restore index page fidelity: wider "Why people choose Fravora", larger screenshot panel visuals, real Play Store review quotes, and full 16-question FAQ.
+- [x] Add homepage screenshot lightbox (fullscreen modal with close button, next/previous controls, and keyboard navigation).
+- [x] Restore features page density by expanding icon cards from 9 to ~20 and widening lead paragraph to match section width.
+- [x] Restore richer long-form content on how-it-works page (expanded steps, checklist, fuller Q&A, and broader support links).
+- [x] Improve question/answer readability in how-it-works Common Questions by splitting into styled Q&A cards.
+- [x] Rebuild sitemap.xml with priority and changefreq values for all URLs.
+- [x] Align setup instructions site-wide with onboarding-first flow (How It Works, manual, FAQ, and blog checklist).
+- [x] Standardize onboarding setup microcopy to one term ("first-launch onboarding") across setup pages.
+- [x] Restore reduced text depth on non-excluded pages by expanding download, manual, and release-notes to match original long-form content.
+- [x] Improve manual page UX: keep left menu fixed, ensure section anchors land with visible titles, and increase section intro/separation readability.
+- [x] Apply site-wide hash-anchor offset so in-page links (manual/privacy/glossary) stop with section titles visible below fixed navigation.
+- [x] Fix homepage light-theme hero contrast by removing the dark vignette effect and increasing intro/trust text readability.
+- [x] Deduplicate sitemap entries and add missing canonical blog URLs while intentionally excluding 404 and tmp pages.
+- [x] Create why-upgrade-to-pro.html detailing what each PRO feature does (motion/transitions, sources, overlays, radio, music, voice control), linked from nav, footer, download.html, and sitemap.xml.
+- [x] Migrate site-wide absolute links/canonical URLs from aniujual.github.io/fravora to fravora.app and switch Jekyll baseurl to root.
+- [x] Normalize canonical URLs and internal blog links to prefer clean /blog/ and / paths instead of index.html duplicates.
+- [x] Remove the remaining blog/index.html references from structured data and SEO checklist URLs to keep canonical URLs clean.
+- [x] Add CNAME file for GitHub Pages custom domain persistence (fravora.app).
+- [x] Split search UX: manual-only section search in User Manual plus dedicated top-nav global site search bar.
+- [x] Reposition global nav search between brand and Home with larger always-visible input for discoverability.
+- [x] Add Escape-key shortcut to clear search inputs and close search result menus (manual + site search).
+- [x] Close manual-search results and clear query field immediately when a manual result is selected.
+- [ ] Submit updated sitemap and request indexing for new URLs in Google Search Console.
+- [ ] Review Search Console query data and expand FAQs based on real impressions.
+- [x] Improve homepage conversion clarity: simplify the hero, elevate social proof, surface one-time Pro positioning, consolidate overlapping feature copy, and clarify optional rewarded ads versus slideshow ads.
+- [x] Reconcile website cloud-source claims with the Android implementation and document Google Drive support across core pages and relevant guides.
+- [x] Move website analytics to a dedicated Firebase project and disclose website analytics in the privacy policy.
+- [x] Extend TV pairing with Dropbox PKCE authorization-code relay, on-load pairing staleness checks, and validated QR parameters without changing the Google token flow.
+- [x] Fix TV pairing review findings: value-based staleness check (TV creates Dropbox documents with null authCode/authError), Google accessToken staleness check, declined-access message, expiry mapping for rejected relay writes, authorization code stripped from the URL, and hidden button on the Dropbox return.
+- [x] Make TV pairing recoverable: defer URL and sessionStorage clearing to terminal outcomes only, keep transient network failures retryable, and add a Try again button that re-runs the pairing check without a reload.
+- [x] Fix Google Drive TV pairing: resolve the provider from the pairing document (PHOTOS/DRIVE allowlist) to request the matching OAuth scope and show provider-specific wording, instead of always requesting the Google Photos scope.
