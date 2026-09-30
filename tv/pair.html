@@ -146,7 +146,7 @@
       statusEl.textContent = "This pairing link is invalid. Return to Fravora and open a new pairing link.";
       clearReturnState();
     } else if (isDropboxStart) {
-      statusEl.textContent = "Continue to Dropbox and sign in with the account you want Fravora TV to use. Confirm that this code matches the code shown on your TV:";
+      statusEl.textContent = "Continue to Dropbox and sign in with the account you want to connect to Fravora. Confirm that this code matches the code shown on your TV:";
       pairingCodeEl.textContent = pairingCode.match(/.{1,4}/g).join("-");
       pairingCodeEl.style.display = "block";
       btnEl.textContent = "Continue to Dropbox";
