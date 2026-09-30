@@ -351,6 +351,15 @@
             statusEl.textContent = "Couldn't send your connection to Fravora. Check your connection, then tap Try again or reload the page.";
             btnEl.disabled = false;
           }
+        },
+        // Fires when this browser can't open or keep the Google sign-in popup.
+        error_callback: (error) => {
+          const type = error && error.type;
+          console.warn("Google sign-in popup error", type);
+          statusEl.textContent = type === "popup_closed"
+            ? "Google sign-in was closed before it finished. Tap the button to try again. If it keeps failing, open this page in Chrome or Firefox, or on another device."
+            : "This browser couldn't open Google sign-in. Open this page in Chrome or Firefox, or scan the QR code in Fravora with another device.";
+          btnEl.disabled = false;
         }
       });
 
