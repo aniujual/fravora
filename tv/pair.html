@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Connect Fravora TV</title>
+  <title>Connect Fravora</title>
   <script src="https://accounts.google.com/gsi/client"></script>
   <style>
     :root {
@@ -62,15 +62,19 @@
     button:active:not(:disabled) {
       transform: scale(0.98);
     }
+    button:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 3px;
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>Connect Fravora TV</h1>
-    <p id="status">Checking your pairing code…</p>
+    <h1>Connect Fravora</h1>
+    <p id="status" role="status" aria-live="polite">Checking your pairing code…</p>
     <p id="pairingCode"></p>
-    <button id="connectBtn" onclick="startPairing()" disabled>Connect</button>
-    <button id="retryBtn" onclick="retryPairing()" hidden>Try again</button>
+    <button id="connectBtn" type="button" onclick="startPairing()" disabled>Connect</button>
+    <button id="retryBtn" type="button" onclick="retryPairing()" hidden>Try again</button>
   </div>
 
   <script type="module">
@@ -139,10 +143,10 @@
     const hasValidChallenge = !isDropboxStart || CODE_CHALLENGE_PATTERN.test(challenge || "");
 
     if (!hasValidPairingCode || !hasValidChallenge) {
-      statusEl.textContent = "This pairing link is invalid. Please scan the QR code shown on your TV again.";
+      statusEl.textContent = "This pairing link is invalid. Return to Fravora and open a new pairing link.";
       clearReturnState();
     } else if (isDropboxStart) {
-      statusEl.textContent = "Continue to Dropbox and sign in with the account you want your TV to use. Confirm that this code matches your TV:";
+      statusEl.textContent = "Continue to Dropbox and sign in with the account you want Fravora TV to use. Confirm that this code matches the code shown on your TV:";
       pairingCodeEl.textContent = pairingCode.match(/.{1,4}/g).join("-");
       pairingCodeEl.style.display = "block";
       btnEl.textContent = "Continue to Dropbox";
@@ -176,11 +180,11 @@
     }
 
     function showExpired() {
-      showTerminal("This code has expired. Scan the new QR code on your TV.");
+      showTerminal("This code has expired. Return to Fravora and open a new pairing link.");
     }
 
     function showAlreadyUsed() {
-      showTerminal("This code has already been used. Check your TV.");
+      showTerminal("This code has already been used. Return to Fravora.");
     }
 
     window.retryPairing = () => {
@@ -226,12 +230,12 @@
         const providerName = pairingData.provider;
         const resolved = Object.hasOwn(GOOGLE_PROVIDERS, providerName) ? GOOGLE_PROVIDERS[providerName] : null;
         if (!resolved) {
-          showTerminal("This pairing link is invalid. Please scan the QR code shown on your TV again.");
+          showTerminal("This pairing link is invalid. Return to Fravora and open a new pairing link.");
           return;
         }
 
         googleProvider = resolved;
-        statusEl.textContent = `Tap the button below and sign in with the Google account you want your TV to use for ${resolved.label}.`;
+        statusEl.textContent = `Tap the button below and sign in with the Google account you want to use with Fravora for ${resolved.label}.`;
         btnEl.textContent = `Connect to ${resolved.label}`;
         btnEl.disabled = false;
       } catch (error) {
@@ -246,7 +250,7 @@
       const authorizationCode = params.get("code");
 
       if ((dropboxError && !denied) || (!denied && (!authorizationCode || authorizationCode.length > 512))) {
-        showTerminal("Dropbox sign-in couldn't be completed. Please scan the QR code on your TV and try again.");
+        showTerminal("Dropbox sign-in couldn't be completed. Return to Fravora and open a new pairing link.");
         return;
       }
 
@@ -262,14 +266,14 @@
           showExpired();
           return;
         }
-        console.error("Couldn't relay the Dropbox result", error);
-        showRetryable("Couldn't send your connection to the TV. Check your connection, then tap Try again or reload the page.");
+        console.error("Couldn't relay the Dropbox result");
+        showRetryable("Couldn't send your connection to Fravora. Check your connection, then tap Try again or reload the page.");
         return;
       }
 
       showTerminal(denied
-        ? "Access was declined. Return to your TV."
-        : "You're signed in. Return to your TV.");
+        ? "Access was declined. Return to the Fravora app."
+        : "You're signed in. Return to the Fravora app.");
     }
 
     initializePairing();
@@ -309,7 +313,7 @@
         scope: googleProvider.scope,
         callback: async (response) => {
           if (response.error) {
-            console.error("Auth error", response);
+            console.error("Google authorization failed");
             statusEl.textContent = "Permission wasn't granted. Tap the button to try again.";
             btnEl.disabled = false;
             return;
@@ -341,10 +345,10 @@
                 throw e;
               }
             }
-            statusEl.textContent = "Success! You can now look at your TV.";
+            statusEl.textContent = "You're connected. Return to the Fravora app.";
           } catch (e) {
-            console.error("Firestore error", e);
-            statusEl.textContent = "Something went wrong sending your connection to the TV. Please try again.";
+            console.error("Couldn't relay the Google result");
+            statusEl.textContent = "Couldn't send your connection to Fravora. Check your connection, then tap Try again or reload the page.";
             btnEl.disabled = false;
           }
         }
