@@ -106,7 +106,7 @@ active_nav: "privacy"
       <p>Used to serve rewarded advertisements when you explicitly choose to watch an ad to unlock temporary Pro tier access. AdMob may use advertising identifiers and cookies. You can opt out of personalized advertising through your device settings under <strong>Google &gt; Ads &gt; Opt out of Ads Personalization</strong>. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy policy</a>.</p>
 
       <h3>3.4 Cloud Storage Providers (optional, user-initiated)</h3>
-      <p>Current cloud sources are Google Photos, Microsoft OneDrive, Dropbox, Google Drive, and Immich. If you choose to connect a cloud source, Fravora uses provider-appropriate authorization (Google or Microsoft OAuth, Dropbox OAuth, or server URL + API key for Immich). The App's media browsing and display are based on the items, folders, or albums you select, but the technical scope of a provider's authorization may be broader, as described for Google Drive below.</p>
+      <p>Current public-release cloud sources are Google Photos, Microsoft OneDrive, Dropbox, and Immich. Test builds may include Google Drive integration. If you choose to connect a cloud source, Fravora uses provider-appropriate authorization (Google OAuth for Google Photos and Google Drive in test builds, Microsoft OAuth, Dropbox OAuth, or server URL + API key for Immich). The App's media browsing and display are based on the items, folders, or albums you select; the technical scope of Google Drive authorization may be broader, as described below.</p>
       <ul>
         <li>Your photos are downloaded to your device solely for display in the slideshow</li>
         <li>Photos are cached locally on your device at screen resolution to improve performance</li>
@@ -115,10 +115,10 @@ active_nav: "privacy"
         <li>You can disconnect a cloud account in the App or revoke access through the provider</li>
       </ul>
 
-      <h4>Google Drive</h4>
-      <p>If you connect Google Drive, Fravora uses the Google Drive API with the <code>drive.readonly</code> OAuth scope so you can browse Drive folders using Fravora's folder picker and select folders or media for the slideshow. This is a broad, read-only Google permission: Google's authorization is not technically restricted to only the folders you select in Fravora, even though the App's browsing and intended use are based on your selections. Fravora does not create, edit, delete, or upload Drive files, and does not use Drive data for advertising or analytics. Selected media is retrieved for display and cached on your device. You can disconnect the account in the App or revoke access through Google.</p>
+      <h4>Google Drive (test builds only)</h4>
+      <p>Google Drive integration is not available in the current public release, but may be present in test builds. When enabled, Fravora uses the Google Drive API with the <code>drive.readonly</code> OAuth scope so testers can browse Drive folders using Fravora's folder picker and select folders or media for the slideshow. This is a broad, read-only Google permission: Google's authorization is not technically restricted to only the folders selected in Fravora, even though the App's browsing and intended use are based on those selections. Fravora does not create, edit, delete, or upload Drive files, and does not use Drive data for advertising or analytics. Selected media is retrieved for display and cached on the device. Testers can disconnect the account in the App or revoke access through Google.</p>
 
-      <p>Google Photos and Google Drive use short-lived Google access tokens; Fravora does not request or store Google refresh tokens. During TV pairing, a short-lived Google access token is temporarily relayed through Firebase Firestore as described in Section 4.5.</p>
+      <p>Google Photos and Google Drive in test builds use short-lived Google access tokens; Fravora does not request or store Google refresh tokens. During TV pairing, a short-lived Google access token is temporarily relayed through Firebase Firestore as described in Section 4.5.</p>
 
       <h3>3.5 Google Photos API (additional disclosure)</h3>
       <p>When you connect a Google Photos account, Fravora requests access to your Google Photos library solely to display your photos in the slideshow. Specifically:</p>
@@ -148,7 +148,7 @@ active_nav: "privacy"
       <p>All app configuration, including your selected photo sources, album settings, scheduling preferences, overlay settings, and all other app preferences, is stored locally on your device in private app storage accessible only to Fravora.</p>
 
       <h3>4.2 Credential Security</h3>
-      <p>Credentials for network shares (SMB) and cloud authorization credentials are stored securely on your device using Android's EncryptedSharedPreferences. Authorization is provider-specific: Google Photos and Google Drive use short-lived Google access tokens, and Fravora does not request or store Google refresh tokens. During TV account pairing, some provider-specific authorization values are temporarily relayed through Firebase Firestore; see Section 4.5. Fravora does not operate its own server that receives or stores your photos.</p>
+      <p>Credentials for network shares (SMB) and cloud authorization credentials are stored securely on your device using Android's EncryptedSharedPreferences. Authorization is provider-specific: Google Photos and Google Drive in test builds use short-lived Google access tokens, and Fravora does not request or store Google refresh tokens. During TV account pairing, some provider-specific authorization values are temporarily relayed through Firebase Firestore; see Section 4.5. Fravora does not operate its own server that receives or stores your photos.</p>
 
       <h3>4.3 Photo Cache</h3>
       <p>Photos from all sources (local, network, and cloud) are cached locally on your device at screen resolution to improve slideshow performance. The cache size is configurable in the App's settings. Cached photos are stored in private app storage and are not accessible to other apps.</p>
@@ -157,7 +157,7 @@ active_nav: "privacy"
       <p>EXIF metadata read from your photos for the metadata overlay feature is used in memory only and is never written to external storage or transmitted externally.</p>
 
       <h3>4.5 No Fravora-Operated Photo Servers</h3>
-      <p>Fravora does not operate its own server that receives or stores your photos. The App does communicate with third-party services listed in Section 3. Firebase Firestore has a limited, temporary role as a relay during TV account pairing: for Google Photos or Google Drive, a short-lived Google access token is relayed through a temporary pairing document; for Dropbox, only an authorization code is relayed, not a Dropbox access or refresh token. The PKCE code verifier remains on your device. A pairing document is deleted exactly once when the token or code arrives, or if pairing is cancelled or times out. Pending pairing codes are also tracked locally so orphaned documents can be swept later. Firestore is not used to store photos or long-term account credentials.</p>
+      <p>Fravora does not operate its own server that receives or stores your photos. The App does communicate with third-party services listed in Section 3. Firebase Firestore has a limited, temporary role as a relay during TV account pairing: for Google Photos or Google Drive in test builds, a short-lived Google access token is relayed through a temporary pairing document; for Dropbox, only an authorization code is relayed, not a Dropbox access or refresh token. The PKCE code verifier remains on your device. A pairing document is deleted exactly once when the token or code arrives, or if pairing is cancelled or times out. Pending pairing codes are also tracked locally so orphaned documents can be swept later. Firestore is not used to store photos or long-term account credentials.</p>
     </div>
 
     <!-- Section 5 -->

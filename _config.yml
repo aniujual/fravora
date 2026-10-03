@@ -15,6 +15,7 @@ exclude:
   - node_modules/
   - SEARCH_CONSOLE_INDEXING_CHECKLIST.md
   - LOCAL_CONTENT_SOURCES.md
+  - 2-week-roadmap.md
   - update-sitemap-dates.ps1
 
 webrick: {}
