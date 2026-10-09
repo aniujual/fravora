@@ -9,7 +9,7 @@ active_nav: "data-deletion"
 <main>
   <div class="page-header" style="text-align: center; margin-bottom: 4rem;">
     <h1 style="font-family:'Syne'; font-size: clamp(2rem, 6vw, 3.2rem); margin-bottom: 1rem;">Data Deletion Policy</h1>
-    <p style="color: var(--muted); font-size: 1.1rem;">Last updated: 07/10/2026</p>
+    <p style="color: var(--muted); font-size: 1.1rem;">Last updated: 09/10/2026</p>
   </div>
 
   <div class="copy-card">
@@ -29,10 +29,11 @@ active_nav: "data-deletion"
       <h2 style="font-family:'Syne'; font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">What Data Fravora Collects</h2>
       <p style="margin-bottom: 1rem;">Fravora may access or process the following types of data:</p>
       <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; color: var(--muted); line-height: 1.7;">
-        <li>Local device files (photos, images) - processed locally on the device</li>
-        <li>Network information - used to access shared folders or internet radio streams</li>
-        <li>Approximate location - used when you enable weather to request local weather information, and for radio region selection</li>
-        <li>With consent, pseudonymous Firebase Analytics events and Crashlytics reports, linked to a random identifier; Google may process technical data such as an IP address when transmitted</li>
+        <li>Local device files (photos, images) - processed locally on the device; only when location or landmark names are enabled, photo coordinates rounded to 2 decimals (about 1 km) are sent to OpenStreetMap Nominatim and place-name results are cached on your device</li>
+        <li>Network information - used to access shared folders or internet radio streams. At startup, GitHub Pages receives your IP address and standard HTTP request details for the configuration file, with no identifier, before you answer the consent dialog and regardless of your answer; see Privacy Policy Section 2.12</li>
+        <li>Weather location - weather is off by default on new installations; earlier enabled settings are kept. When on, it uses device location with permission, otherwise approximate IP-based location through ipwho.is. Coordinates go to Open-Meteo and MET Norway for forecasts; city searches go to Open-Meteo geocoding. Location is not stored and no weather request happens while weather is off</li>
+        <li>With consent, pseudonymous Firebase Analytics events and Crashlytics reports, linked to a random identifier; Google may process technical data such as an IP address when transmitted. Separately, on the Google Play build, starting TV pairing or cloud scanning uses Firebase App Check with Google Play Integrity, which sends device attestation data to Google</li>
+        <li>Google Photos and Google Drive (only if you connect them) - selected media is downloaded to your device for the slideshow. Fravora has no server copy. During TV pairing, a short-lived access token is relayed temporarily through Firebase Firestore and deleted as soon as the TV receives it</li>
       </ul>
       <p style="margin-bottom: 1rem;">The App does not require the following details for core photo-frame use:</p>
       <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; color: var(--muted); line-height: 1.7;">
@@ -44,6 +45,11 @@ active_nav: "data-deletion"
         <li>Registration details</li>
       </ul>
       <div class="callout" style="background: var(--bg2); border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 12px 12px 0;">Fravora does not operate its own server for storing photos. Firebase Firestore is used as a temporary relay during TV pairing.</div>
+    </div>
+
+    <div class="policy-section" style="margin-bottom: 3rem;">
+      <h2 style="font-family:'Syne'; font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">Deleting Google data</h2>
+      <p>To remove Fravora's access to Google Photos or Google Drive, delete the source in the app (Settings &gt; Sources). Fravora revokes its access with Google and deletes the stored credentials, the source settings and the cached media from your device. You can also revoke access at any time in your Google Account under Security &gt; Third-party apps and services. Uninstalling the app deletes all data stored on your device. Temporary TV pairing records are normally deleted within seconds, and any leftover records are removed at least once a year.</p>
     </div>
 
     <div class="policy-section" style="margin-bottom: 3rem;">
@@ -71,7 +77,7 @@ active_nav: "data-deletion"
         <li>Requesting deletion of Firebase data associated with your app-instance identifier, where available</li>
         <li>Providing instructions on how to reset or clear data stored locally on your device, including the locally stored consent choice</li>
       </ul>
-      <p>We will guide you through any steps needed on your device if applicable.</p>
+      <p>We will guide you through any steps needed on your device if applicable. You can turn off usage statistics and crash reports in Settings &gt; Support. Turning off usage statistics stops collection and resets analytics data on your device; turning off crash reports stops collection and deletes unsent reports. Data already sent is kept until the retention periods in Privacy Policy Section 2.11 end. The startup configuration request happens regardless of these choices.</p>
     </div>
 
     <div class="policy-section" style="margin-bottom: 3rem;">

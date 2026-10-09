@@ -189,7 +189,7 @@ extra_js: "manual-search.js"
         <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
           <li><strong>Clock:</strong> configurable time/date display with trial timer toggle.</li>
           <li><strong>Weather:</strong> live local weather overlay with forecast details (PRO).</li>
-          <li><strong>Photo metadata:</strong> taken date, location, and landmarks from EXIF (PRO).</li>
+          <li><strong>Photo metadata:</strong> taken date, location, and landmarks from EXIF read on your device (PRO). Enabling location or landmark names sends coordinates rounded to 2 decimals (about 1 km) to OpenStreetMap Nominatim; results are cached on your device.</li>
           <li><strong>Now Playing:</strong> scrolling station/song info while audio is active (PRO).</li>
           <li><strong>Ambient logo:</strong> pulsing Fravora icon and quick audio control target (PRO).</li>
           <li><strong>Photo index:</strong> current position indicator, such as 42 / 500 (PRO).</li>
@@ -302,7 +302,7 @@ extra_js: "manual-search.js"
     <!-- WEATHER FORECAST -->
     <section id="weather-forecast" class="section">
       <h2>🌦️ Weather Forecast</h2>
-      <p class="callout"><strong>PRO feature.</strong> Tap the weather overlay in frame view to open full-screen forecast details.</p>
+      <p class="callout"><strong>PRO feature.</strong> Weather is off by default on new installations; users who enabled it earlier keep their setting. When on, it uses device location with permission, otherwise approximate IP-based location through ipwho.is. Coordinates go to Open-Meteo and MET Norway for forecasts, and city searches go to Open-Meteo geocoding. Location is not stored, and no weather request happens while the setting is off. Tap the weather overlay in frame view to open full-screen forecast details.</p>
       <div class="box">
         <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
           <li>24-hour hourly strip plus 7-day daily forecast cards.</li>

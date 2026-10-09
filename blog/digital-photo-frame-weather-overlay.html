@@ -53,7 +53,7 @@ active_nav: "blog"
       {
         "@type": "Question",
         "name": "How does the frame know my location for weather?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Fravora uses the device GPS to determine your location. You need to grant location permission when enabling the weather overlay. The app shows a warning if the overlay is enabled without location permission." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Weather is optional and off by default on new installations; users who enabled it earlier keep their setting. When it is on, Fravora uses device location if permission is granted, otherwise approximate IP-based location through ipwho.is. Coordinates go to Open-Meteo and MET Norway for forecasts, and city searches go to Open-Meteo geocoding. Fravora does not store location or make weather requests while weather is off." }
       }
     ]
   }
@@ -73,11 +73,11 @@ active_nav: "blog"
 </ul>
 
 <h2>Setup: what the onboarding covers</h2>
-<p>When you first launch Fravora, the onboarding walks you through adding photo sources and creating your first album. After your frame is running, enable the weather overlay from Settings:</p>
+<p>When you first launch Fravora, the onboarding walks you through adding photo sources and creating your first album. Weather is off by default on new installations; users who enabled it earlier keep their setting. After your frame is running, enable the weather overlay from Settings:</p>
 <ol>
   <li>Open <strong>Settings → Overlays</strong>.</li>
   <li>Enable the <strong>Weather</strong> toggle.</li>
-  <li>Grant location permission when prompted. Fravora uses GPS to determine your location for local weather data. A warning icon appears if weather is enabled without location permission.</li>
+  <li>Grant location permission if you want to use device location. Without permission, Fravora uses approximate IP-based location through ipwho.is, which receives your IP address.</li>
   <li>Choose your preferred temperature unit (Celsius or Fahrenheit) and overlay size.</li>
   <li>Optionally open <strong>Overlay Layout</strong> to move the weather widget to a different corner — by default it appears in the top-left, but you can place it in any of the four corners or center slots.</li>
 </ol>
@@ -108,7 +108,7 @@ active_nav: "blog"
   <p><strong>Office or hallway:</strong> Weather at Large size in a top corner is visible from a distance and does not require interaction unless you want the full forecast detail.</p>
 
   <h2>Privacy note</h2>
-  <p>Fravora uses GPS location only for weather data — it does not store, transmit, or log your location to any external service beyond the weather API request. Location is read locally on the device and used only to fetch a weather response.</p>
+  <p>When weather is on, Fravora uses device location if permission is granted, otherwise approximate IP-based location through ipwho.is. Coordinates are sent to Open-Meteo and MET Norway for forecasts; city searches go to Open-Meteo's geocoding service. Fravora does not store location. No weather request happens while the setting is off.</p>
 </div>
 
 <div class="links">
