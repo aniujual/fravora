@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Data Deletion Policy - Fravora: Digital Photo Frame"
-description: "How to request deletion of any third-party data associated with Fravora: Digital Photo Frame usage."
+description: "How to request deletion of pseudonymous Firebase data associated with Fravora: Digital Photo Frame usage."
 og_image: "images/screen_frame1.webp"
 active_nav: "data-deletion"
 ---
@@ -9,19 +9,19 @@ active_nav: "data-deletion"
 <main>
   <div class="page-header" style="text-align: center; margin-bottom: 4rem;">
     <h1 style="font-family:'Syne'; font-size: clamp(2rem, 6vw, 3.2rem); margin-bottom: 1rem;">Data Deletion Policy</h1>
-    <p style="color: var(--muted); font-size: 1.1rem;">Last updated: 22/03/2026</p>
+    <p style="color: var(--muted); font-size: 1.1rem;">Last updated: 09/10/2026</p>
   </div>
 
   <div class="copy-card">
     <div class="policy-section" style="margin-bottom: 3rem;">
       <p style="font-size: 1.1rem; line-height: 1.8; color: var(--muted); margin-bottom: 1.5rem;">
-        Fravora does not create user accounts and does not store any personal information on external servers.
-        All data used by the app stays on the user's device unless it is required by third-party services such as
-        advertising networks or analytics providers.
+        Fravora does not create user accounts. App settings and photo sources are stored locally. If you consent,
+        pseudonymous usage statistics and crash reports are processed by Google Firebase; website analytics is a
+        separate service that runs only with your choice. Fravora contains no advertising.
       </p>
       <p style="font-size: 1.1rem; line-height: 1.8; color: var(--muted);">
         Even though Fravora does not maintain user accounts, we provide a way for users to request deletion of any
-        data that may be associated with their use of the app.
+        data that may be associated with their use of the App, including Firebase data linked to a random app-instance identifier.
       </p>
     </div>
 
@@ -29,28 +29,34 @@ active_nav: "data-deletion"
       <h2 style="font-family:'Syne'; font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">What Data Fravora Collects</h2>
       <p style="margin-bottom: 1rem;">Fravora may access or process the following types of data:</p>
       <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; color: var(--muted); line-height: 1.7;">
-        <li>Local device files (photos, images) - processed locally on the device</li>
-        <li>Network information - used to access shared folders or internet radio streams</li>
-        <li>Approximate location - used only if required by advertising SDKs or radio region selection</li>
-        <li>Advertising identifiers - used by third-party ad networks to show relevant ads</li>
+        <li>Local device files (photos, images) - processed locally on the device; only when location or landmark names are enabled, photo coordinates rounded to 2 decimals (about 1 km) are sent to OpenStreetMap Nominatim and place-name results are cached on your device</li>
+        <li>Network information - used to access shared folders or internet radio streams. At startup, GitHub Pages receives your IP address and standard HTTP request details for the configuration file, with no identifier, before you answer the consent dialog and regardless of your answer; see Privacy Policy Section 2.12</li>
+        <li>Weather location - weather is off by default on new installations; earlier enabled settings are kept. When on, it uses device location with permission, otherwise approximate IP-based location through ipwho.is. Coordinates go to Open-Meteo and MET Norway for forecasts; city searches go to Open-Meteo geocoding. Location is not stored and no weather request happens while weather is off</li>
+        <li>With consent, pseudonymous Firebase Analytics events and Crashlytics reports, linked to a random identifier; Google may process technical data such as an IP address when transmitted. Separately, on the Google Play build, starting TV pairing or cloud scanning uses Firebase App Check with Google Play Integrity, which sends device attestation data to Google</li>
+        <li>Google Photos and Google Drive (only if you connect them) - selected media is downloaded to your device for the slideshow. Fravora has no server copy. During TV pairing, a short-lived access token is relayed temporarily through Firebase Firestore and deleted as soon as the TV receives it</li>
       </ul>
-      <p style="margin-bottom: 1rem;">Fravora does not collect:</p>
+      <p style="margin-bottom: 1rem;">The App does not require the following details for core photo-frame use:</p>
       <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; color: var(--muted); line-height: 1.7;">
-        <li>Names</li>
-        <li>Email addresses</li>
-        <li>Phone numbers</li>
-        <li>Passwords</li>
-        <li>User-generated content</li>
-        <li>Any data that can personally identify a user</li>
+        <li>Your name</li>
+        <li>Your email address</li>
+        <li>Your phone number</li>
+        <li>A Fravora user account</li>
+        <li>A Fravora user profile</li>
+        <li>Registration details</li>
       </ul>
-      <div class="callout" style="background: var(--bg2); border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 12px 12px 0;">Fravora does not store any data on its own servers.</div>
+      <div class="callout" style="background: var(--bg2); border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 12px 12px 0;">Fravora does not operate its own server for storing photos. Firebase Firestore is used as a temporary relay during TV pairing.</div>
+    </div>
+
+    <div class="policy-section" style="margin-bottom: 3rem;">
+      <h2 style="font-family:'Syne'; font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">Deleting Google data</h2>
+      <p>To remove Fravora's access to Google Photos or Google Drive, delete the source in the app (Settings &gt; Sources). Fravora revokes its access with Google and deletes the stored credentials, the source settings and the cached media from your device. You can also revoke access at any time in your Google Account under Security &gt; Third-party apps and services. Uninstalling the app deletes all data stored on your device. Temporary TV pairing records are normally deleted within seconds, and any leftover records are removed at least once a year.</p>
     </div>
 
     <div class="policy-section" style="margin-bottom: 3rem;">
       <h2 style="font-family:'Syne'; font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">How to Request Data Deletion</h2>
       <p style="margin-bottom: 1.5rem;">
-        If you would like to request deletion of any data associated with your use of Fravora (such as analytics data
-        or advertising identifiers stored by third-party partners), you may contact us at:
+        If you would like to request deletion of data associated with your use of Fravora, including pseudonymous
+        analytics or crash-report data processed by Google Firebase, contact us at:
       </p>
       <div class="callout" style="background: var(--bg2); border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0; border-radius: 0 12px 12px 0;"><a href="mailto:aniujual.dev@yahoo.com" style="color: var(--accent2); font-weight: 700; text-decoration: none;">aniujual.dev@yahoo.com</a></div>
       <p style="margin-bottom: 1rem;">Please include the following information in your request:</p>
@@ -59,7 +65,7 @@ active_nav: "data-deletion"
         <li>The platform you are using (for example, Amazon Appstore)</li>
         <li>Any additional details that may help us process your request</li>
       </ul>
-      <p>We will respond to your request and complete the deletion process within 30 days.</p>
+      <p>We will respond to your request within one month. Requests for data held by Google may also need to be made to Google.</p>
     </div>
 
     <div class="policy-section" style="margin-bottom: 3rem;">
@@ -68,11 +74,10 @@ active_nav: "data-deletion"
         Because Fravora does not store personal accounts or maintain user profiles, deletion requests typically involve:
       </p>
       <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; color: var(--muted); line-height: 1.7;">
-        <li>Clearing analytics data associated with your device</li>
-        <li>Requesting removal of advertising identifiers from third-party partners</li>
-        <li>Providing instructions on how to reset or clear data stored locally on your device</li>
+        <li>Requesting deletion of Firebase data associated with your app-instance identifier, where available</li>
+        <li>Providing instructions on how to reset or clear data stored locally on your device, including the locally stored consent choice</li>
       </ul>
-      <p>We will guide you through any steps needed on your device if applicable.</p>
+      <p>We will guide you through any steps needed on your device if applicable. You can turn off usage statistics and crash reports in Settings &gt; Support. Turning off usage statistics stops collection and resets analytics data on your device; turning off crash reports stops collection and deletes unsent reports. Data already sent is kept until the retention periods in Privacy Policy Section 2.11 end. The startup configuration request happens regardless of these choices.</p>
     </div>
 
     <div class="policy-section" style="margin-bottom: 3rem;">

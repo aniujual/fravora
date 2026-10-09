@@ -65,7 +65,7 @@ extra_js: "manual-search.js"
       <p style="margin-bottom: 20px;">Go from install to your first running slideshow in five first-launch onboarding steps:</p>
       <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:12px; color:var(--muted); line-height:1.7;">
         <li>Open Fravora and complete <strong>first-launch onboarding</strong>. You can replay it anytime from <strong>Settings → Support → Replay Onboarding</strong>.</li>
-        <li>During onboarding, choose at least one photo source: local folder, SMB/NAS share, Google Photos picked photos, Microsoft OneDrive, Dropbox, or Immich.</li>
+        <li>During onboarding, choose at least one photo source: local folder, SMB/NAS share, Google Photos picked photos, Microsoft OneDrive, Dropbox, Google Drive, or Immich.</li>
         <li>Finish onboarding album setup by creating your first album and attaching your selected folders or cloud collections.</li>
         <li>In <strong>Settings → Slideshow</strong>, set your preferred interval, display mode, and optional running hours.</li>
         <li>Return to the frame view. The slideshow starts automatically once images are found.</li>
@@ -97,9 +97,10 @@ extra_js: "manual-search.js"
 
       <div class="box">
         <h2>Cloud Sources</h2>
-        <p>Supported cloud providers are Google Photos, Microsoft OneDrive, Dropbox, and Immich. The source flow is unified, so setup is consistent across providers.</p>
+        <p>Supported cloud providers are Google Photos, Microsoft OneDrive, Dropbox, Google Drive, and Immich. The source flow is unified, so setup is consistent across providers.</p>
         <ul style="padding-left: 1.2rem; margin-top: 0.7rem; display:flex; flex-direction:column; gap:10px;">
           <li>Google Photos uses the official Picker flow with hand-selected picks, append support, and clear-picks actions per connection.</li>
+          <li>Google Drive uses Google sign-in and folder selection, with optional subfolder inclusion for PRO users.</li>
           <li>Free tier includes one cloud connection with base limits.</li>
           <li>PRO expands cloud limits across all supported providers.</li>
           <li>You can re-link or switch cloud accounts without rebuilding all albums.</li>
@@ -188,7 +189,7 @@ extra_js: "manual-search.js"
         <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
           <li><strong>Clock:</strong> configurable time/date display with trial timer toggle.</li>
           <li><strong>Weather:</strong> live local weather overlay with forecast details (PRO).</li>
-          <li><strong>Photo metadata:</strong> taken date, location, and landmarks from EXIF (PRO).</li>
+          <li><strong>Photo metadata:</strong> taken date, location, and landmarks from EXIF read on your device (PRO). Enabling location or landmark names sends coordinates rounded to 2 decimals (about 1 km) to OpenStreetMap Nominatim; results are cached on your device.</li>
           <li><strong>Now Playing:</strong> scrolling station/song info while audio is active (PRO).</li>
           <li><strong>Ambient logo:</strong> pulsing Fravora icon and quick audio control target (PRO).</li>
           <li><strong>Photo index:</strong> current position indicator, such as 42 / 500 (PRO).</li>
@@ -301,7 +302,7 @@ extra_js: "manual-search.js"
     <!-- WEATHER FORECAST -->
     <section id="weather-forecast" class="section">
       <h2>🌦️ Weather Forecast</h2>
-      <p class="callout"><strong>PRO feature.</strong> Tap the weather overlay in frame view to open full-screen forecast details.</p>
+      <p class="callout"><strong>PRO feature.</strong> Weather is off by default on new installations; users who enabled it earlier keep their setting. When on, it uses device location with permission, otherwise approximate IP-based location through ipwho.is. Coordinates go to Open-Meteo and MET Norway for forecasts, and city searches go to Open-Meteo geocoding. Location is not stored, and no weather request happens while the setting is off. Tap the weather overlay in frame view to open full-screen forecast details.</p>
       <div class="box">
         <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
           <li>24-hour hourly strip plus 7-day daily forecast cards.</li>
@@ -352,7 +353,7 @@ extra_js: "manual-search.js"
           <li>Voice control, calendar, color schemes, font sizing, and advanced UI controls.</li>
         </ul>
       </div>
-      <p class="callout">Temporary PRO can also be enabled via rewarded ads. When temporary PRO expires, PRO preferences are preserved and restored automatically on reactivation.</p>
+      <p class="callout">PRO features are unlocked with a one-time in-app purchase. Your PRO preferences are preserved and restored when you reactivate your purchase.</p>
     </section>
 
     <!-- FAQ -->
