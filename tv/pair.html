@@ -137,10 +137,6 @@
       PHOTOS: {
         label: "Google Photos",
         scope: "https://www.googleapis.com/auth/photospicker.mediaitems.readonly"
-      },
-      DRIVE: {
-        label: "Google Drive",
-        scope: "https://www.googleapis.com/auth/drive.readonly"
       }
     };
     let googleProvider = null;
@@ -278,9 +274,7 @@
 
         googleProvider = resolved;
         statusEl.textContent = `Tap the button below and sign in with the Google account you want to use with Fravora for ${resolved.label}.`;
-        providerDisclosureEl.textContent = resolved === GOOGLE_PROVIDERS.DRIVE
-          ? "Fravora will get read-only access to your Google Drive so you can choose folders to show in your slideshow. Fravora never changes or deletes your files."
-          : "Fravora will access only the photos and videos you select in Google Photos, to show them in your slideshow.";
+        providerDisclosureEl.textContent = "Fravora will access only the photos and videos you select in Google Photos, to show them in your slideshow.";
         providerDisclosureEl.hidden = false;
         btnEl.textContent = `Connect to ${resolved.label}`;
         btnEl.disabled = false;

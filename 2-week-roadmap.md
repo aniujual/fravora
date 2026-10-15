@@ -70,9 +70,7 @@ Date started: 2026-06-27
 - [ ] Submit updated sitemap and request indexing for new URLs in Google Search Console.
 - [ ] Review Search Console query data and expand FAQs based on real impressions.
 - [x] Improve homepage conversion clarity: simplify the hero, elevate social proof, surface one-time Pro positioning, consolidate overlapping feature copy, and clarify optional rewarded ads versus slideshow ads.
-- [x] Reconcile website cloud-source claims with the Android implementation and document Google Drive support across core pages and relevant guides.
 - [x] Move website analytics to a dedicated Firebase project and disclose website analytics in the privacy policy.
 - [x] Extend TV pairing with Dropbox PKCE authorization-code relay, on-load pairing staleness checks, and validated QR parameters without changing the Google token flow.
 - [x] Fix TV pairing review findings: value-based staleness check (TV creates Dropbox documents with null authCode/authError), Google accessToken staleness check, declined-access message, expiry mapping for rejected relay writes, authorization code stripped from the URL, and hidden button on the Dropbox return.
 - [x] Make TV pairing recoverable: defer URL and sessionStorage clearing to terminal outcomes only, keep transient network failures retryable, and add a Try again button that re-runs the pairing check without a reload.
-- [x] Fix Google Drive TV pairing: resolve the provider from the pairing document (PHOTOS/DRIVE allowlist) to request the matching OAuth scope and show provider-specific wording, instead of always requesting the Google Photos scope.
