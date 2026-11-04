@@ -9,13 +9,62 @@ active_nav: "release-notes"
 <main>
   <div style="text-align: center; margin-bottom: 4rem;">
     <h1 style="font-family:'Syne'; font-size: clamp(2rem, 6vw, 3.2rem); margin-bottom: 1rem;">Release Notes</h1>
-    <p class="lead" style="max-width: 720px; margin: 0 auto; color: var(--muted); font-size: 1.1rem; line-height: 1.7;">Recent updates, feature additions, and bug fixes published from the app changelog.</p>
+    <p class="lead" style="max-width: 720px; margin: 0 auto; color: var(--muted); font-size: 1.1rem; line-height: 1.7;">Recent updates, feature additions, and bug fixes published from the app changelog. Version 1.1.3 is prepared for release; app store availability is pending.</p>
+  </div>
+
+  <div class="release-card">
+    <div class="release-head">
+      <h2>Version 1.1.3</h2>
+      <div class="build-tag">vc10055</div>
+    </div>
+    <p>Store availability pending.</p>
+    <div class="release-grid">
+      <div class="release-block features">
+        <h3>Features</h3>
+        <ul>
+          <li>Removed rewarded ads and replaced them with a Free PRO Preview button in Settings &rarr; Support that grants one hour of temporary PRO with a single tap.</li>
+          <li>Added instant startup using the last displayed photo, or a random cached photo in Random and Smart Shuffle modes, while the library scan completes in the background.</li>
+          <li>Added a Background sync cooldown setting to control the breathing room between remote background tasks.</li>
+          <li>Replaced Close App in the Android TV in-frame menu with an Audio Shortcut that adapts to playback state and user tier.</li>
+          <li>Added playlist wrap-around, individual track deletion, and a Clear all tracks action with confirmation.</li>
+          <li>Added video duration extraction across local, SMB, and cloud sources, background video thumbnails, dedicated Video Backdrop settings, and a Video Only album mode.</li>
+          <li>Added TV Manipulation Mode: long-press the D-pad center button to zoom and pan photos and videos.</li>
+          <li>Added a PRO video progress overlay showing current and total time, with a subtle progress bar and improved Android TV player pooling.</li>
+          <li>Added thermal-aware Android TV performance scaling that disables cinematic effects and caps video duration during device heat events.</li>
+          <li>Added five transitions: Split Half, 3D Page Flip, Circle Reveal, Venetian Blinds, and Whirlwind, plus six new cinematic effects.</li>
+          <li>Added photo filename and folder-path metadata toggles, with source-type prefixes when multiple sources are active.</li>
+          <li>Added multi-location weather with location tabs, city search and removal, sunrise and sunset times, and a PRO Adaptive Weather Colors option.</li>
+          <li>Added TV D-pad spatial navigation for overlays and the notification strip, focusable notification actions, and visible scrollbars in overflowing settings and Audio sections.</li>
+          <li>Google Play builds on Android 13 and later now use system photo-folder selection, with a dialog when unavailable. Older Android and Amazon access is unchanged.</li>
+          <li>Improved photo location and nearby-landmark discovery with an offline locality fallback, English landmark names where available, and better recovery from service failures.</li>
+          <li>Added a QR code and local web transfer option for entering an Immich server URL and API key from another device on the local network.</li>
+        </ul>
+      </div>
+      <div class="release-block fixes">
+        <h3>Bug Fixes</h3>
+        <ul>
+          <li>Fixed SMB videos stalling after the preceding video finishes and made Smart Skip work consistently during video playback, watchdog timeouts, and video-to-video transitions.</li>
+          <li>Excluded network recycle bins and system trash folders from recursive SMB slideshow scans.</li>
+          <li>Fixed transitions restarting and unnecessary media-loading animations after returning from Settings, and fast swipes snapping back to the previous photo.</li>
+          <li>Preserved music track position when switching to Radio or stopping playback, and saved playlist edits before starting playback from the editor.</li>
+          <li>Reduced radio stuttering and unexpected muting by serializing remote background tasks, and cleared saved radio selection on startup when PRO access has expired.</li>
+          <li>Improved startup scanning and downloads, reduced SMB lock contention, and fixed crashes when opening Settings during large library scans.</li>
+          <li>Fixed incorrect empty-album messages in Video Only mode and missing location and taken-date metadata for SMB and cloud photos.</li>
+          <li>Reduced cinematic-effect recompositions, memory leaks, battery drain, and sluggishness, and moved database work off the main thread to prevent onboarding and settings freezes.</li>
+          <li>Fixed freezes after Google Play Services disconnects, background weather and location hangs, and crashes or loading loops caused by corrupted legacy settings.</li>
+          <li>Fixed background audio-service startup crashes on newer Android versions and backdrop decoding crashes caused by invalid or revoked content URIs.</li>
+          <li>Fixed notification strip items disappearing after closing Settings on TV.</li>
+          <li>Improved D-pad focus in the playlist editor, Calendar and Weather Forecast overlays, and TV Settings, including Back dismissal, focus restoration, and navigation through locked toggles.</li>
+          <li>Fixed reconnect attempts exceeding the configured NAS retry interval and paused downloads from unreachable sources until they recover.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <div class="release-card">
     <div class="release-head">
       <h2>Version 1.1.2</h2>
-      <div class="build-tag">vc10048</div>
+      <div class="build-tag">vc10049</div>
     </div>
     <div class="release-grid">
       <div class="release-block features">
