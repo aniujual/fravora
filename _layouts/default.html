@@ -2,7 +2,8 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <script src="{{ site.baseurl }}/js/theme.js"></script>
+  {% assign asset_version = site.time | date: '%s' %}
+  <script src="{{ site.baseurl }}/js/theme.js?v={{ asset_version }}"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title | default: site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}" />
@@ -18,12 +19,12 @@
   {% endif %}
 
   <link rel="icon" type="image/png" href="{{ site.baseurl }}/images/fravora.png" />
-  <link rel="stylesheet" href="{{ site.baseurl }}/css/fonts.css" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/fonts.css?v={{ asset_version }}" />
 
-  <link rel="stylesheet" href="{{ site.baseurl }}/css/global.css" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/global.css?v={{ asset_version }}" />
 
   {% if page.extra_css %}
-  <link rel="stylesheet" href="{{ site.baseurl }}/css/{{ page.extra_css }}" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/{{ page.extra_css }}?v={{ asset_version }}" />
   {% endif %}
 
   <script>
@@ -105,10 +106,10 @@
     })();
   </script>
 
-  <script defer src="{{ site.baseurl }}/js/main.js"></script>
-  <script defer src="{{ site.baseurl }}/js/site-search.js"></script>
+  <script defer src="{{ site.baseurl }}/js/main.js?v={{ asset_version }}"></script>
+  <script defer src="{{ site.baseurl }}/js/site-search.js?v={{ asset_version }}"></script>
   {% if page.extra_js %}
-  <script defer src="{{ site.baseurl }}/js/{{ page.extra_js }}"></script>
+  <script defer src="{{ site.baseurl }}/js/{{ page.extra_js }}?v={{ asset_version }}"></script>
   {% endif %}
 </head>
 <body class="site-page page-{{ page.active_nav | default: 'article' }}">
