@@ -95,7 +95,7 @@ extra_js: "manual-search.js"
       <div class="box">
         <h2>Local Folders</h2>
         <p>Add folders from internal storage, SD card, or USB media using Android's system picker. On Android TV devices without SAF support, Fravora uses a custom MediaStore-based folder picker instead.</p>
-        <p style="margin-top: 0.8rem;"><strong>PRO:</strong> Albums can reference multiple local folders. Free tier is limited to one local folder per album.</p>
+        <p style="margin-top: 0.8rem;"><strong>Free:</strong> one local folder source and one local-folder target per album. <strong>PRO:</strong> add more local folders and targets.</p>
       </div>
 
       <div class="box">
@@ -103,8 +103,8 @@ extra_js: "manual-search.js"
         <p>Supported cloud providers are Google Photos, Microsoft OneDrive, Dropbox, and Immich. The source flow is unified, so setup is consistent across providers.</p>
         <ul style="padding-left: 1.2rem; margin-top: 0.7rem; display:flex; flex-direction:column; gap:10px;">
           <li>Google Photos uses the official Picker flow with hand-selected picks, append support, and clear-picks actions per connection.</li>
-          <li>Free tier includes one cloud connection with base limits.</li>
-          <li>PRO expands cloud limits across all supported providers.</li>
+          <li>Free includes one cloud connection and one cloud target assignment per album, within the overall one-album limit.</li>
+          <li>Free also allows one SMB source and one SMB folder target per album; PRO expands source, target, album, and cloud-connection limits.</li>
           <li>You can re-link or switch cloud accounts without rebuilding all albums.</li>
         </ul>
       </div>
@@ -114,9 +114,9 @@ extra_js: "manual-search.js"
         <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
           <li><strong>Image Cache Size:</strong> 128 MB to 2 GB with automatic pruning.</li>
           <li><strong>Low Storage Alert:</strong> warns when configured cache exceeds available storage.</li>
-          <li><strong>Scan Interval (PRO):</strong> 5 to 120 minutes for periodic source refreshes.</li>
+          <li><strong>Album Scan Interval (PRO):</strong> 5, 10, 15, 30, 60, 120, 360, or 720 minutes, or Never (default 5 minutes). Free uses a fixed 60-minute interval; provider cooldowns can still apply.</li>
           <li><strong>Google Photos headroom:</strong> reserves device free-space before downloading cloud items and shows a warning if the target exceeds available space.</li>
-          <li><strong>Clear Cache:</strong> available for image cache and Google Photos cache.</li>
+          <li><strong>Clear Cache:</strong> clear the regular image cache; Google Photos picks can be cleared per connection from the album workflow.</li>
         </ul>
       </div>
     </section>
@@ -134,7 +134,7 @@ extra_js: "manual-search.js"
           <li><strong>Hidden photos:</strong> hide photos globally or per album and restore them later from <strong>Settings → Albums → Hidden photos</strong>.</li>
         </ul>
       </div>
-      <p class="callout" style="margin-top: 1rem;">If all photos in enabled albums are hidden, Fravora shows a blank slideshow until some images are unhidden.</p>
+      <p class="callout" style="margin-top: 1rem;">If hidden-photo filtering leaves an album with no visible photos, Fravora explains that hidden items caused the empty state and links to Hidden Photos management.</p>
     </section>
 
     <!-- SLIDESHOW -->
@@ -189,9 +189,9 @@ extra_js: "manual-search.js"
       <p>Overlays are information layers shown on top of photos during playback. Each one can be enabled, sized, and positioned independently.</p>
       <div class="box">
         <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
-          <li><strong>Clock:</strong> configurable time/date display with trial timer toggle.</li>
+          <li><strong>Clock:</strong> size and first-day-of-week are configurable for all users; time and date formats are PRO. The temporary PRO timer can be shown below the clock.</li>
           <li><strong>Weather:</strong> live local weather overlay with forecast details (PRO).</li>
-          <li><strong>Photo metadata:</strong> taken date, location, and landmarks from EXIF read on your device (PRO). Enabling location or landmark names sends coordinates rounded to 2 decimals (about 1 km) to OpenStreetMap Nominatim; results are cached on your device.</li>
+          <li><strong>Photo metadata (PRO):</strong> show capture dates, locality, and nearby landmark names from EXIF read on your device. Optional geographic lookups resolve and cache place labels on-device; photo files are not sent to lookup services.</li>
           <li><strong>Now Playing:</strong> scrolling station/song info while audio is active (PRO).</li>
           <li><strong>Ambient logo:</strong> pulsing Fravora icon and quick audio control target (PRO).</li>
           <li><strong>Photo index:</strong> current position indicator, such as 42 / 500 (PRO).</li>
@@ -225,7 +225,7 @@ extra_js: "manual-search.js"
           <li>Add whole folders recursively or individual files (MP3, M4A, AAC, FLAC, OGG, OPUS, WAV, AMR).</li>
           <li>Manual refresh reports Added/Removed/Re-linked tracks.</li>
           <li>Free keeps deduplication always on; PRO can disable deduplication.</li>
-          <li>PRO adds automatic background scanning with configurable intervals and expanded sort modes.</li>
+          <li>PRO adds automatic background scanning every 5, 10, 15, 30, 60, or 120 minutes, or Never (default 10 minutes), plus expanded sort modes. Free can refresh manually.</li>
         </ul>
       </div>
 
@@ -336,12 +336,12 @@ extra_js: "manual-search.js"
     <!-- FREE VS PRO -->
     <section id="pro" class="section">
       <h2>⭐ Free vs PRO</h2>
-      <p>The free tier is fully usable for daily photo frame operation. PRO removes limits and unlocks advanced capabilities with a one-time purchase (no subscription).</p>
+      <p>The free tier is fully usable for daily photo frame operation. New users receive a default 24-hour PRO trial, and free users can claim one 60-minute PRO preview per day. Permanent PRO is a one-time purchase with no subscription.</p>
       <div class="box">
         <h2>Free includes</h2>
         <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
           <li>Uninterrupted slideshow, scheduling, and core album/source baseline setup.</li>
-          <li>Local folders, NAS/SMB support, and one cloud connection baseline.</li>
+          <li>One local-folder source, one SMB source, one cloud connection, and one album, within the per-album target limits.</li>
           <li>Clock overlay, hidden-photo controls, and core radio playback/search.</li>
         </ul>
       </div>
@@ -350,7 +350,7 @@ extra_js: "manual-search.js"
         <ul style="padding-left: 1.2rem; display:flex; flex-direction:column; gap:10px;">
           <li>Expanded source/album/cloud limits and recursive include-subfolders.</li>
           <li>Smart Shuffle, transition effects, transition speed, cinematic effects, and backdrop styles.</li>
-          <li>Weather/metadata/now-playing/ambient overlays plus anti burn-in.</li>
+          <li>Weather, metadata, now-playing, ambient logo, and anti-burn-in overlays.</li>
           <li>Background audio, favorites/history, advanced station filters, and unlimited music playlists.</li>
           <li>Voice control, calendar, color schemes, font sizing, and advanced UI controls.</li>
         </ul>

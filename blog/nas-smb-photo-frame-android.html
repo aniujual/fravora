@@ -77,7 +77,7 @@ active_nav: "blog"
 
 <h2>Why NAS is the best source for a home photo frame</h2>
 <ul>
-  <li><strong>Privacy:</strong> Photo files are served from your own hardware. The App still requests a configuration file at startup regardless of consent. Optional online features and consent-based analytics or crash reports may contact third parties; enabling location or landmark names sends photo coordinates rounded to 2 decimals to OpenStreetMap Nominatim, not photo files.</li>
+  <li><strong>Privacy:</strong> Photo files are served from your own hardware. The App still requests a configuration file at startup regardless of consent. Optional online features and consent-based analytics or crash reports may contact third parties; PRO locality and landmark lookups can use photo metadata, but do not send photo files.</li>
   <li><strong>No storage limits:</strong> A NAS can hold hundreds of thousands of photos. The frame scans and rotates through them without any per-device cap.</li>
   <li><strong>Single source of truth:</strong> Your organised folder structure on the NAS is exactly what the frame sees — no duplicate library to maintain.</li>
   <li><strong>Offline resilience:</strong> If your internet goes down, the frame keeps running because the NAS is local.</li>
@@ -111,13 +111,13 @@ active_nav: "blog"
   <li><strong>Local cache:</strong> All SMB images are cached on the device. The slideshow continues from cache during outages.</li>
   <li><strong>Non-blocking warning:</strong> A small warning icon appears in the notification strip if a share is unreachable, but playback continues on available photos.</li>
   <li><strong>NAS reconnect interval:</strong> Configure how often the app retries a failed share (1, 5, 10, 15, 30, or 60 minutes, or never). Once reconnected, the scan resumes automatically.</li>
-  <li><strong>SMB retry count:</strong> Set how many connection attempts the app makes per operation (3 to 7 retries). Useful for shares that take a moment to wake from standby.</li>
+  <li><strong>SMB retry count:</strong> Set 1 to 5 connection attempts per operation (default 3). Useful for shares that take a moment to wake from standby.</li>
   <li><strong>Full blocking overlay:</strong> Only appears if every source fails and zero cached photos are available — includes a Retry button and direct link to Sources settings.</li>
 </ul>
 
 <h2>Folder organisation and scanning</h2>
-<p>You can select multiple folders from the same share and combine them in a single album. Scanning is recursive by default on PRO — the app walks into subfolders automatically. On the free tier, scanning is folder-level only (subfolders are a PRO feature). New photos added to the NAS folders are picked up automatically on the next scan.</p>
-<p>Configure how often the app scans for new content under <strong>Settings → Sources → Scan Interval</strong> (PRO). The free tier uses a fixed default interval.</p>
+<p>You can select multiple folders from the same share and combine them in an album with PRO. Free is limited to one SMB source and one SMB folder target in its single album. Recursive scanning is a PRO option for SMB, local, OneDrive, and Dropbox folder targets. New photos are picked up on a later scan, subject to provider cooldowns.</p>
+<p>Set the per-album scan interval in the album editor (PRO): 5, 10, 15, 30, 60, 120, 360, or 720 minutes, or Never. Free uses a fixed 60-minute interval; cloud providers can enforce separate scan and manual-refresh cooldowns.</p>
 
 <h2>Mixing NAS with other sources</h2>
 <p>You are not limited to NAS only. A single album can combine NAS folder targets with local device folders, Google Photos picks, OneDrive folders, and Immich albums. All sources play together in the rotation. If the NAS goes down temporarily, photos from other sources continue displaying.</p>

@@ -64,7 +64,7 @@ active_nav: "blog"
 
 <h2>Handling NAS sleep and outages</h2>
 <p>Synology NAS devices can go into a low-power sleep state when idle. If the NAS is asleep when the frame tries to scan, Fravora treats it as a temporary outage: the slideshow continues from cached photos, a non-blocking warning icon appears in the notification strip, and the app retries automatically. Configure the retry interval (1/5/10/15/30/60 minutes) under <strong>Settings → Sources → NAS reconnect interval</strong>.</p>
-<p>If your Synology has HDD spin-down enabled, the first scan after a sleep period may take 10–30 seconds for the drives to spin up. Increase the SMB retry count (up to 7 retries) in Settings → Sources to handle this gracefully.</p>
+<p>If your Synology has HDD spin-down enabled, the first scan after a sleep period may take 10–30 seconds for the drives to spin up. Increase the SMB retry count (up to 5 attempts) in Settings → Sources to handle this gracefully.</p>
 
 <div class="panel">
   <h2>Using Synology as a music source too</h2>
