@@ -198,32 +198,19 @@ active_nav: "home"
 </script>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="orb orb3"></div>
+<section class="hero hero--home">
   <div class="hero-content">
+    <div class="hero-brand">
     <div class="hero-badge"><span>●</span> Android App</div>
     <picture>
       <source srcset="images/fravora.webp" type="image/webp" />
-      <img src="images/fravora.png" alt="Fravora" class="hero-logo" width="140" height="158" decoding="async" fetchpriority="high" />
+      <img src="images/fravora.png" alt="Fravora" class="hero-logo" width="140" height="158" decoding="async" />
     </picture>
+    </div>
     <h1>Fravora: <em>Digital Photo Frame</em><br />for Android devices</h1>
     <p class="hero-sub">
       Turn any Android tablet, phone, Fire tablet, or TV into a calm, reliable digital photo frame. Keep your photos under your control, play them offline, and add the features that make an always-on display useful.
     </p>
-    <div class="hero-integrations" aria-label="Fravora sources and features">
-      <span>Local folders</span>
-      <span>NAS / SMB</span>
-      <span>Google Photos</span>
-      <span>OneDrive</span>
-      <span>Dropbox</span>
-      <span>Immich</span>
-      <span>Radio</span>
-      <span>Weather</span>
-      <span>Calendar</span>
-      <span>Voice control</span>
-    </div>
     <div class="cta-group">
       <a class="cta-btn store-cta" href="https://play.google.com/store/apps/details?id=com.aniujual.fravora" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2 2 0 0 0 2.14-.21l12.44-7.19-3.13-3.12-11.45 10.52zM20.65 9.22l-3.34-1.93-3.51 3.5 3.51 3.51 3.37-1.95a2 2 0 0 0-.03-3.13zM1 1.45A2 2 0 0 0 .5 2.87v18.27a2 2 0 0 0 .5 1.41L14.4 12 1 1.45zm13.39 9.14L2.82.38A2 2 0 0 0 1 .17L14.39 10.59l.01-4z"/></svg>
@@ -242,9 +229,28 @@ active_nav: "home"
       <span>Works offline</span>
     </div>
   </div>
+  <figure class="hero-preview">
+    <div class="hero-device">
+      <img src="images/screen_frame1-optimized.webp" alt="Fravora running as an Android photo frame with a Nara, Japan photo, weather, clock, and radio overlays" width="1100" height="687" fetchpriority="high" decoding="async" />
+    </div>
+    <figcaption>Photos, weather, and radio. One frame, fully yours.</figcaption>
+  </figure>
 </section>
 
-<main>
+<div class="hero-integrations source-strip" aria-label="Fravora sources and features">
+  <span>Local folders</span>
+  <span>NAS / SMB</span>
+  <span>Google Photos</span>
+  <span>OneDrive</span>
+  <span>Dropbox</span>
+  <span>Immich</span>
+  <span>Radio</span>
+  <span>Weather</span>
+  <span>Calendar</span>
+  <span>Voice control</span>
+</div>
+
+<main class="home-main">
 <section class="intent-copy" aria-label="Why people choose Fravora">
   <p class="section-label">Why people choose Fravora</p>
   <div class="copy-card">
@@ -343,17 +349,14 @@ active_nav: "home"
     <div class="tv-mockup-wrap">
       <div class="tv-frame">
         <div class="tv-screen">
-          <img id="frameImg" src="images/screen_frame1-optimized.webp" alt="Android digital photo frame app screenshot showing Nara, Japan with weather and time overlays" width="1100" height="687" fetchpriority="high" decoding="async" />
+          <img id="frameImg" src="images/screen_frame1-optimized.webp" alt="Fravora photo frame showing Nara, Japan with weather, clock, and radio overlays" width="1100" height="687" loading="lazy" decoding="async" />
         </div>
       </div>
       <div class="tv-stand"></div>
       <div class="tv-base"></div>
     </div>
 
-    <div class="frame-dots">
-      <button class="frame-dot active" data-idx="0" aria-label="Frame photo 1"></button>
-      <button class="frame-dot" data-idx="1" aria-label="Frame photo 2"></button>
-    </div>
+    <div class="frame-dots" role="group" aria-label="Choose a frame photo"></div>
     <p class="frame-caption" id="frameCaption">Nara, Japan — weather overlay, clock, and now-playing audio info all in one glance</p>
   </div>
 </section>
@@ -762,35 +765,81 @@ active_nav: "home"
 <script>
   // Frame photo switcher
   const frameImages = [
-    { src: 'images/screen_frame1.webp', caption: 'Nara, Japan — weather overlay, clock, and now-playing radio info all in one glance' },
-    { src: 'images/screen_frame2.webp', caption: 'Kyoto, Japan — Nijo Castle garden. Radio station and current song shown at the top' },
+    { src: 'images/screen_frame1.webp', alt: 'Fravora photo frame showing Nara, Japan with weather, clock, and radio overlays', caption: 'Nara, Japan — weather overlay, clock, and now-playing radio info all in one glance' },
+    { src: 'images/screen_frame2.webp', alt: 'Fravora photo frame showing Nijo Castle garden in Kyoto with radio station and current song overlays', caption: 'Kyoto, Japan — Nijo Castle garden. Radio station and current song shown at the top' },
   ];
   const frameImg = document.getElementById('frameImg');
   const frameCaption = document.getElementById('frameCaption');
-  const frameDots = document.querySelectorAll('.frame-dot');
+  const frameDotContainer = document.querySelector('.frame-dots');
+  const frameDots = [];
   let frameIdx = 0;
   let frameTimer;
+  let frameSwapTimer;
+  let frameTransitionId = 0;
 
-  function showFrame(idx) {
-    frameIdx = idx;
-    if (!frameImg) return;
-    frameImg.style.opacity = '0';
-    setTimeout(() => {
-      frameImg.src = frameImages[idx].src;
-      frameImg.alt = frameImages[idx].caption;
-      frameCaption.textContent = frameImages[idx].caption;
-      frameImg.style.opacity = '1';
-    }, 300);
-    frameDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  if (frameDotContainer) {
+    frameImages.forEach((frame, idx) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = `frame-dot${idx === frameIdx ? ' active' : ''}`;
+      dot.dataset.idx = String(idx);
+      dot.setAttribute('aria-label', `Frame photo ${idx + 1}`);
+      dot.setAttribute('aria-pressed', String(idx === frameIdx));
+      dot.addEventListener('click', () => {
+        clearInterval(frameTimer);
+        showFrame(idx);
+        frameTimer = setInterval(() => showFrame((frameIdx + 1) % frameImages.length), 5000);
+      });
+      frameDotContainer.appendChild(dot);
+      frameDots.push(dot);
+    });
   }
 
-  frameDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      clearInterval(frameTimer);
-      showFrame(parseInt(dot.dataset.idx));
-      frameTimer = setInterval(() => showFrame((frameIdx + 1) % frameImages.length), 5000);
-    });
-  });
+  function showFrame(idx) {
+    if (!frameImg || !frameImages.length) return;
+
+    const nextIdx = ((idx % frameImages.length) + frameImages.length) % frameImages.length;
+    const nextFrame = frameImages[nextIdx];
+    const transitionId = ++frameTransitionId;
+    clearTimeout(frameSwapTimer);
+
+    const preloadedFrame = new Image();
+    let frameReady = false;
+
+    function swapFrame() {
+      if (transitionId !== frameTransitionId) return;
+      frameIdx = nextIdx;
+      frameImg.src = nextFrame.src;
+      frameImg.alt = nextFrame.alt;
+      if (frameCaption) frameCaption.textContent = nextFrame.caption;
+      frameDots.forEach((dot, dotIdx) => {
+        const isActive = dotIdx === nextIdx;
+        dot.classList.toggle('active', isActive);
+        dot.setAttribute('aria-pressed', String(isActive));
+      });
+      frameImg.style.opacity = '1';
+    }
+
+    function onFrameReady() {
+      if (frameReady || transitionId !== frameTransitionId) return;
+      frameReady = true;
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        swapFrame();
+        return;
+      }
+
+      frameImg.style.opacity = '0';
+      frameSwapTimer = setTimeout(swapFrame, 400);
+    }
+
+    preloadedFrame.addEventListener('load', onFrameReady, { once: true });
+    preloadedFrame.addEventListener('error', () => {
+      if (transitionId === frameTransitionId) frameImg.style.opacity = '1';
+    }, { once: true });
+    preloadedFrame.src = nextFrame.src;
+    if (preloadedFrame.complete && preloadedFrame.naturalWidth > 0) onFrameReady();
+  }
 
   frameTimer = setInterval(() => showFrame((frameIdx + 1) % frameImages.length), 5000);
 

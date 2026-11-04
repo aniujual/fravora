@@ -24,7 +24,20 @@ document.addEventListener('DOMContentLoaded', function() {
       if (event.key === 'Escape') closeNav();
     });
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 900) closeNav();
+      if (window.innerWidth > 1100) closeNav();
+    });
+  }
+
+  const manualChapters = document.querySelector('.manual-chapters');
+  if (manualChapters) {
+    const manualViewport = window.matchMedia('(max-width: 900px)');
+    const updateManualChapters = () => { manualChapters.open = !manualViewport.matches; };
+    updateManualChapters();
+    manualViewport.addEventListener('change', updateManualChapters);
+    manualChapters.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (manualViewport.matches) manualChapters.open = false;
+      });
     });
   }
 

@@ -8,6 +8,7 @@ Thumbs.db
 
 # Build artifacts
 _site/
+.artifacts/
 .jekyll-cache/
 .jekyll-metadata
 node_modules/

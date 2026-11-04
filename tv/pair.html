@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Connect Fravora</title>
+  <link rel="icon" type="image/png" href="/images/fravora.png">
+  <link rel="stylesheet" href="/css/fonts.css">
   <script src="https://accounts.google.com/gsi/client"></script>
   <style>
     :root {
@@ -15,50 +17,58 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #0e0e10;
-      color: #f2f2f2;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(ellipse at 10% 0, rgba(155,93,229,0.15), transparent 650px), #0e0b14;
+      color: #e8e0f5;
+      font-family: 'DM Sans', sans-serif;
       padding: 24px;
       box-sizing: border-box;
     }
     .card {
-      max-width: 420px;
+      max-width: 480px;
       width: 100%;
       text-align: center;
     }
     h1 {
-      font-size: 1.4rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      line-height: 1.2;
       margin-bottom: 8px;
     }
     p#status {
-      color: #b3b3b3;
+      color: #b2a7c7;
       font-size: 0.95rem;
       line-height: 1.4;
       min-height: 1.4em;
       margin-bottom: 28px;
+    }
+    .pairing-notice {
+      color: #b2a7c7;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin: 0 0 20px;
     }
     #pairingCode {
       display: none;
       margin: -12px 0 28px;
       font-size: 1.15rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
-      color: #f2f2f2;
+      letter-spacing: 0;
+      color: #e8e0f5;
     }
     #providerDisclosure {
-      color: #b3b3b3;
+      color: #b2a7c7;
       font-size: 0.9rem;
       line-height: 1.5;
       margin: 0 0 20px;
     }
     .footer {
       margin-top: 32px;
-      color: #b3b3b3;
+      color: #b2a7c7;
       font-size: 0.8rem;
       line-height: 1.5;
     }
     .footer a {
-      color: #9bbcff;
+      color: #c77dff;
     }
     .footer-links {
       display: flex;
@@ -68,10 +78,10 @@
       margin-top: 10px;
     }
     button {
-      background: #4f8cff;
+      background: #7c3aed;
       color: #fff;
       border: none;
-      border-radius: 999px;
+      border-radius: 8px;
       padding: 14px 32px;
       font-size: 1rem;
       font-weight: 600;
@@ -88,11 +98,18 @@
       outline: 3px solid #fff;
       outline-offset: 3px;
     }
+    .pairing-logo { width: 56px; height: auto; margin-bottom: 24px; }
+    .card { overflow-wrap: anywhere; }
+    .footer { padding-top: 24px; border-top: 1px solid #2e2640; }
+    .footer a { text-underline-offset: 3px; }
+    button:hover:not(:disabled) { background: #6d28d9; }
   </style>
 </head>
 <body>
   <div class="card">
+    <img class="pairing-logo" src="/images/fravora.png" alt="Fravora" width="56" height="63">
     <h1>Connect Fravora</h1>
+    <p class="pairing-notice">To pair, this page uses Firebase to verify the code and relay your temporary Google access token or Dropbox authorization code to your TV. It creates a temporary anonymous Firebase account and attempts to delete it when the pairing flow ends. Google or Dropbox handles your provider sign-in.</p>
     <p id="status" role="status" aria-live="polite">Checking your pairing code…</p>
     <p id="pairingCode"></p>
     <p id="providerDisclosure" hidden></p>
@@ -110,7 +127,7 @@
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
-    import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+    import { deleteUser, getAuth, signInAnonymously, signOut } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
     import { getFirestore, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
 
     // ---- REPLACE with your project's actual Firebase config ----
@@ -204,11 +221,28 @@
       history.replaceState(null, "", location.pathname);
     }
 
+    async function deleteAnonymousAccount() {
+      const user = auth.currentUser;
+      if (!user || !user.isAnonymous) return;
+
+      try {
+        await deleteUser(user);
+      } catch (error) {
+        console.warn("Couldn't delete temporary Firebase account", error);
+        try {
+          await signOut(auth);
+        } catch (signOutError) {
+          console.warn("Couldn't clear temporary Firebase session", signOutError);
+        }
+      }
+    }
+
     function showTerminal(message) {
       statusEl.textContent = message;
       btnEl.disabled = true;
       retryBtn.hidden = true;
       clearReturnState();
+      void deleteAnonymousAccount();
     }
 
     function showRetryable(message) {
@@ -385,7 +419,7 @@
                 throw e;
               }
             }
-            statusEl.textContent = "You're connected. Return to the Fravora app.";
+            showTerminal("You're connected. Return to the Fravora app.");
           } catch (e) {
             console.error("Couldn't relay the Google result");
             statusEl.textContent = "Couldn't send your connection to Fravora. Check your connection, then tap Try again or reload the page.";
