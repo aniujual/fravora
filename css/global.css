@@ -286,10 +286,10 @@ nav {
   background: #000;
   border-radius: 10px;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
   position: relative;
 }
-.tv-screen img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.4s ease; }
+.tv-screen img { width: 100%; height: 100%; object-fit: contain; transition: opacity 0.4s ease; }
 .tv-stand {
   width: 100px; height: 40px; background: #111; margin: -2px auto 0;
   clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);

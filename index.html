@@ -2,7 +2,7 @@
 layout: default
 title: "Fravora: Digital Photo Frame App for Android — NAS, Cloud & Radio"
 description: "Smart Android digital photo frame with NAS/SMB, local, and cloud slideshows (Google Photos picked photos, OneDrive, Dropbox, Immich), radio, weather, and voice control. No subscription."
-og_image: "images/screen_frame1.webp"
+og_image: "images/screen_frame_autumn.webp"
 active_nav: "home"
 ---
 
@@ -46,7 +46,7 @@ active_nav: "home"
           "https://play.google.com/store/apps/details?id=com.aniujual.fravora",
           "https://www.amazon.com/dp/B0H45FCGX6"
         ],
-        "image": "https://fravora.app/images/screen_frame1.webp",
+        "image": "https://fravora.app/images/screen_frame_autumn.webp",
         "downloadUrl": "https://play.google.com/store/apps/details?id=com.aniujual.fravora",
         "installUrl": "https://play.google.com/store/apps/details?id=com.aniujual.fravora",
         "offers": {
@@ -231,7 +231,7 @@ active_nav: "home"
   </div>
   <figure class="hero-preview">
     <div class="hero-device">
-      <img src="images/screen_frame1-optimized.webp" alt="Fravora running as an Android photo frame with a Nara, Japan photo, weather, clock, and radio overlays" width="1100" height="687" fetchpriority="high" decoding="async" />
+      <img src="images/screen_frame_autumn.webp" alt="Fravora displaying a Japanese temple framed by red maple leaves with weather, radio, and clock overlays" width="2560" height="1600" fetchpriority="high" decoding="async" />
     </div>
     <figcaption>Photos, weather, and radio. One frame, fully yours.</figcaption>
   </figure>
@@ -349,7 +349,7 @@ active_nav: "home"
     <div class="tv-mockup-wrap">
       <div class="tv-frame">
         <div class="tv-screen">
-          <img id="frameImg" src="images/screen_frame1-optimized.webp" alt="Fravora photo frame showing Nara, Japan with weather, clock, and radio overlays" width="1100" height="687" loading="lazy" decoding="async" />
+          <img id="frameImg" src="images/screen_frame_autumn.webp" alt="Fravora showing a Japanese temple framed by red maple leaves with weather, radio, and clock overlays" width="2560" height="1600" loading="lazy" decoding="async" />
         </div>
       </div>
       <div class="tv-stand"></div>
@@ -389,76 +389,97 @@ active_nav: "home"
   <p class="section-label">Full control</p>
   <h2 class="section-title">Every detail, your way</h2>
 
-  <div class="screenshots-tabs" role="tablist" aria-label="Fravora settings tabs">
-    <button class="tab-btn active" data-tab="radio" role="tab" aria-label="Show radio settings" aria-selected="true">📻 Radio</button>
-    <button class="tab-btn" data-tab="overlays" role="tab" aria-label="Show overlay settings" aria-selected="false">🌤️ Overlays</button>
-    <button class="tab-btn" data-tab="layout" role="tab" aria-label="Show overlay layout settings" aria-selected="false">🗂️ Overlay Layout</button>
-    <button class="tab-btn" data-tab="slideshow" role="tab" aria-label="Show slideshow settings" aria-selected="false">🖼️ Slideshow</button>
-    <button class="tab-btn" data-tab="voice" role="tab" aria-label="Show voice settings" aria-selected="false">🎙️ Voice</button>
+  <div class="screenshots-tabs" role="tablist" aria-label="Fravora feature screenshots">
+    <button class="tab-btn active" data-tab="sources" role="tab" aria-label="Show source settings" aria-selected="true">Sources</button>
+    <button class="tab-btn" data-tab="slideshow" role="tab" aria-label="Show slideshow settings" aria-selected="false">Slideshow</button>
+    <button class="tab-btn" data-tab="appearance" role="tab" aria-label="Show appearance settings" aria-selected="false">Appearance</button>
+    <button class="tab-btn" data-tab="overlays" role="tab" aria-label="Show overlay settings" aria-selected="false">Overlays</button>
+    <button class="tab-btn" data-tab="audio" role="tab" aria-label="Show audio settings" aria-selected="false">Audio</button>
+    <button class="tab-btn" data-tab="weather" role="tab" aria-label="Show weather forecast" aria-selected="false">Weather</button>
+    <button class="tab-btn" data-tab="calendar" role="tab" aria-label="Show calendar" aria-selected="false">Calendar</button>
+    <button class="tab-btn" data-tab="voice" role="tab" aria-label="Show voice settings" aria-selected="false">Voice</button>
   </div>
 
   <div class="screenshots-stage">
-
-    <div class="screenshot-panel active" id="tab-radio">
-      <div class="tablet-mockup">
-        <div class="tablet-screen">
-          <img src="images/screen_settings_radio.webp" alt="Fravora Android photo frame app radio settings screen showing station favourites and scheduling" loading="lazy" decoding="async" />
-        </div>
-      </div>
+    <div class="screenshot-panel active" id="tab-sources">
+      <div class="tablet-mockup"><div class="tablet-screen">
+        <img src="images/screen_settings_sources.webp" alt="Fravora Sources settings for SMB shares, local folders, cloud sources, cache, and network retry controls" loading="lazy" decoding="async" />
+      </div></div>
       <div class="screenshot-desc">
-        <h3>Radio & favourites</h3>
-        <p>Save favourite stations, schedule when radio plays each day, and keep music going in the background — all in one place.</p>
-      </div>
-    </div>
-
-    <div class="screenshot-panel" id="tab-overlays">
-      <div class="tablet-mockup">
-        <div class="tablet-screen">
-          <img src="images/screen_settings_overlays.webp" alt="Fravora Android photo frame app overlays settings screen showing time, weather, and photo info toggles" loading="lazy" decoding="async" />
-        </div>
-      </div>
-      <div class="screenshot-desc">
-        <h3>Overlay visibility</h3>
-        <p>Toggle weather, clock, photo metadata, and now-playing info individually. Choose exact sizes for each element.</p>
-      </div>
-    </div>
-
-    <div class="screenshot-panel" id="tab-layout">
-      <div class="tablet-mockup">
-        <div class="tablet-screen">
-          <img src="images/screen_settings_overlays2.webp" alt="Fravora Android photo frame app overlay layout settings showing a 2x2 corner assignment grid" loading="lazy" decoding="async" />
-        </div>
-      </div>
-      <div class="screenshot-desc">
-        <h3>Overlay layout</h3>
-        <p>Assign weather, clock, metadata, and ambient logo across a 2x2 corner grid with collision-safe swaps and optional hide states.</p>
+        <h3>Photo sources</h3>
+        <p>Bring together NAS shares, local folders, and cloud connections, with cache and network recovery controls in one place.</p>
       </div>
     </div>
 
     <div class="screenshot-panel" id="tab-slideshow">
-      <div class="tablet-mockup">
-        <div class="tablet-screen">
-          <img src="images/screen_settings_slideshow.webp" alt="Fravora Android photo frame app slideshow settings showing photo interval, order, transitions, and screen saver options" loading="lazy" decoding="async" />
-        </div>
-      </div>
+      <div class="tablet-mockup"><div class="tablet-screen">
+        <img src="images/screen_settings_slideshow_dashboard.webp" alt="Fravora Slideshow settings for running hours, standby, sync cooldown, and visual styles" loading="lazy" decoding="async" />
+      </div></div>
       <div class="screenshot-desc">
-        <h3>Slideshow & scheduling</h3>
-        <p>Set photo intervals, display mode, transition effects, and running hours with per-day schedules. Set it once and forget it.</p>
+        <h3>Slideshow &amp; schedules</h3>
+        <p>Set running hours and standby behavior, then tune background sync, photo transitions, and image or video backdrops.</p>
+      </div>
+    </div>
+
+    <div class="screenshot-panel" id="tab-appearance">
+      <div class="tablet-mockup"><div class="tablet-screen">
+        <img src="images/screen_settings_appearance.webp" alt="Fravora color scheme selector with seven theme previews in light and dark modes" loading="lazy" decoding="async" />
+      </div></div>
+      <div class="screenshot-desc">
+        <h3>Color schemes</h3>
+        <p>Choose from seven curated palettes and preview each theme in light or dark mode.</p>
+      </div>
+    </div>
+
+    <div class="screenshot-panel" id="tab-overlays">
+      <div class="tablet-mockup"><div class="tablet-screen">
+        <img src="images/screen_settings_overlays_dashboard.webp" alt="Fravora Overlays settings for clock, weather, photo information, layout, and burn-in protection" loading="lazy" decoding="async" />
+      </div></div>
+      <div class="screenshot-desc">
+        <h3>Overlays &amp; placement</h3>
+        <p>Choose which details appear over photos, arrange them around the frame, and enable display protection.</p>
+      </div>
+    </div>
+
+    <div class="screenshot-panel" id="tab-audio">
+      <div class="tablet-mockup"><div class="tablet-screen">
+        <img src="images/screen_settings_audio.webp" alt="Fravora Audio settings with Radio and Music tabs, Bluetooth output, background playback, and autoplay controls" loading="lazy" decoding="async" />
+      </div></div>
+      <div class="screenshot-desc">
+        <h3>Radio &amp; music</h3>
+        <p>Switch between radio and folder-based music, manage Bluetooth output, and configure playback behavior.</p>
+      </div>
+    </div>
+
+    <div class="screenshot-panel" id="tab-weather">
+      <div class="tablet-mockup"><div class="tablet-screen">
+        <img src="images/screen_weather_forecast.webp" alt="Fravora full-screen weather forecast with multiple locations, sunrise and sunset, and the next 24 hours" loading="lazy" decoding="async" />
+      </div></div>
+      <div class="screenshot-desc">
+        <h3>Weather forecast (PRO)</h3>
+        <p>Check current conditions, sunrise and sunset, and the next 24 hours, with saved locations at a glance.</p>
+      </div>
+    </div>
+
+    <div class="screenshot-panel" id="tab-calendar">
+      <div class="tablet-mockup"><div class="tablet-screen">
+        <img src="images/screen_calendar.webp" alt="Fravora calendar with Month, Week, Day, and Agenda views and marked event dates" loading="lazy" decoding="async" />
+      </div></div>
+      <div class="screenshot-desc">
+        <h3>Calendar &amp; reminders (PRO)</h3>
+        <p>Move between Month, Week, Day, and Agenda views, with event dates marked directly on the calendar.</p>
       </div>
     </div>
 
     <div class="screenshot-panel" id="tab-voice">
-      <div class="tablet-mockup">
-        <div class="tablet-screen">
-          <img src="images/screen_settings_voice.webp" alt="Fravora Android photo frame app voice control settings showing wake phrase, command categories, and listening window" loading="lazy" decoding="async" />
-        </div>
-      </div>
+      <div class="tablet-mockup"><div class="tablet-screen">
+        <img src="images/screen_settings_voice.webp" alt="Fravora Voice Control settings showing the wake phrase, follow-up listening, command window, recognized text, and Audio, Slideshow, and Assistant toggles" loading="lazy" decoding="async" />
+      </div></div>
       <div class="screenshot-desc">
-        <h3>Voice control</h3>
-        <p>Wake phrase detection runs on-device; command recognition uses Android speech recognition. Tune the listening window and enable radio, slideshow, or assistant categories.</p>
+        <h3>Voice control (PRO)</h3>
+        <p>Set a wake phrase and listening window, then choose which slideshow, audio, or assistant commands to enable.</p>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -765,6 +786,7 @@ active_nav: "home"
 <script>
   // Frame photo switcher
   const frameImages = [
+    { src: 'images/screen_frame_autumn.webp', alt: 'Fravora photo frame showing a Japanese temple framed by red maple leaves with weather, clock, and radio overlays', caption: 'Koyasan, Japan — red maple leaves, weather, clock, and now-playing radio info' },
     { src: 'images/screen_frame1.webp', alt: 'Fravora photo frame showing Nara, Japan with weather, clock, and radio overlays', caption: 'Nara, Japan — weather overlay, clock, and now-playing radio info all in one glance' },
     { src: 'images/screen_frame2.webp', alt: 'Fravora photo frame showing Nijo Castle garden in Kyoto with radio station and current song overlays', caption: 'Kyoto, Japan — Nijo Castle garden. Radio station and current song shown at the top' },
   ];
